@@ -42,3 +42,27 @@ body {
   background: var(--gold-soft);
   color: var(--forest-deep);
 }
+
+.home-marquee {
+  display: inline-block;
+  animation: home-marquee-shift 18s linear infinite;
+}
+
+@keyframes home-marquee-shift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .home-marquee {
+    animation: none;
+  }
+}

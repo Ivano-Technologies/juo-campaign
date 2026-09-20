@@ -68,6 +68,7 @@ export function JoinForm() {
         Full name
         <input
           required
+          autoComplete="name"
           name="name"
           value={values.name}
           onChange={(event) => setValues({ ...values, name: event.target.value })}
@@ -78,6 +79,7 @@ export function JoinForm() {
         Email
         <input
           required
+          autoComplete="email"
           type="email"
           name="email"
           value={values.email}
@@ -89,6 +91,7 @@ export function JoinForm() {
         Phone
         <input
           required
+          autoComplete="tel"
           type="tel"
           name="phone"
           value={values.phone}

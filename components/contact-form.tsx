@@ -63,6 +63,7 @@ export function ContactForm() {
         Full name
         <input
           required
+          autoComplete="name"
           name="name"
           value={values.name}
           onChange={(event) => setValues({ ...values, name: event.target.value })}
@@ -73,6 +74,7 @@ export function ContactForm() {
         Email
         <input
           required
+          autoComplete="email"
           type="email"
           name="email"
           value={values.email}

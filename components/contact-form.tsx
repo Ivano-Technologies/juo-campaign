@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/button";
 import { FormStatusNote } from "@/components/form-status";
-import { FORM_NOT_READY } from "@/lib/forms";
+import { CONTACT_SUCCESS, readJsonMessage } from "@/lib/forms";
 
 type ContactState = {
   name: string;
@@ -11,6 +11,8 @@ type ContactState = {
   message: string;
   privacy: boolean;
 };
+
+type StatusTone = "error" | "info" | "success";
 
 const initial: ContactState = {
   name: "",
@@ -23,6 +25,7 @@ export function ContactForm() {
   const [values, setValues] = useState<ContactState>(initial);
   const [pending, setPending] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
+  const [tone, setTone] = useState<StatusTone>("info");
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -35,15 +38,19 @@ export function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
-      const payload = (await response.json()) as { message?: string };
+      const payload = (await readJsonMessage(response));
 
-      if (response.status === 501) {
-        setStatus(payload.message ?? FORM_NOT_READY.message);
+      if (response.ok) {
+        setTone("success");
+        setStatus(payload.message ?? CONTACT_SUCCESS.message);
+        setValues(initial);
         return;
       }
 
+      setTone("error");
       setStatus(payload.message ?? "Something went wrong. Please try again later.");
     } catch {
+      setTone("error");
       setStatus("Could not reach the campaign server. Please try again later.");
     } finally {
       setPending(false);
@@ -56,6 +63,7 @@ export function ContactForm() {
         Full name
         <input
           required
+          autoComplete="name"
           name="name"
           value={values.name}
           onChange={(event) => setValues({ ...values, name: event.target.value })}
@@ -66,6 +74,7 @@ export function ContactForm() {
         Email
         <input
           required
+          autoComplete="email"
           type="email"
           name="email"
           value={values.email}
@@ -100,11 +109,11 @@ export function ContactForm() {
           I have read the{" "}
           <a href="/privacy" className="text-brand-blue underline">
             privacy notice
-          </a>
-          .
+          </a>{" "}
+          and agree that the campaign desk may use these details to reply.
         </span>
       </label>
-      {status ? <FormStatusNote tone="info" message={status} /> : null}
+      {status ? <FormStatusNote tone={tone} message={status} /> : null}
       <Button type="submit" variant="primary" disabled={pending}>
         {pending ? "Sending…" : "Send message"}
       </Button>

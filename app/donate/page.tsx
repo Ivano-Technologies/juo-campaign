@@ -24,7 +24,7 @@ export default function DonatePage() {
         </Button>
       </PageHero>
       <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-        <div className="rounded-2xl border border-line bg-paper p-8">
+        <div className="rounded-2xl border border-line bg-brand-white p-8">
           <h2 className="font-serif text-3xl">NGN first</h2>
           <p className="mt-4 text-muted">
             International and card options stay gated until counsel and
@@ -33,7 +33,7 @@ export default function DonatePage() {
           </p>
           <p className="mt-4 text-sm text-muted">
             See{" "}
-            <a href="/privacy" className="text-forest underline">
+            <a href="/privacy" className="text-brand-blue underline">
               privacy
             </a>{" "}
             for how donor data will be handled when donations open.

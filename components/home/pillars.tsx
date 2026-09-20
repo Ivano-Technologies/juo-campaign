@@ -2,9 +2,9 @@ import { homePillars } from "@/lib/home";
 
 export function HomePillars() {
   return (
-    <section className="bg-cream">
+    <section className="bg-brand-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-24">
-        <p className="text-xs uppercase tracking-[0.28em] text-clay">
+        <p className="text-xs uppercase tracking-[0.28em] text-brand-red">
           Our six pillars
         </p>
         <h2 className="mt-3 font-serif text-4xl sm:text-5xl">
@@ -19,9 +19,9 @@ export function HomePillars() {
           {homePillars.map((pillar) => (
             <li
               key={pillar.number}
-              className="rounded-2xl border border-line bg-paper p-6"
+              className="rounded-2xl border border-line bg-brand-white p-6"
             >
-              <p className="font-serif text-3xl text-gold">{pillar.number}</p>
+              <p className="font-serif text-3xl text-brand-red">{pillar.number}</p>
               <h3 className="mt-2 font-serif text-2xl">{pillar.title}</h3>
               <p className="mt-3 text-sm leading-6 text-muted">{pillar.body}</p>
             </li>

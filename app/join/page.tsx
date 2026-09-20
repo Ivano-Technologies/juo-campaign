@@ -27,7 +27,7 @@ export default function JoinPage() {
           </p>
           <p>
             Read the{" "}
-            <a href="/privacy" className="text-forest underline">
+            <a href="/privacy" className="text-brand-blue underline">
               privacy notice
             </a>{" "}
             before you submit. Until IVA-21, the join API returns 501 so

@@ -1,19 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --forest: #123c2e;
-  --forest-deep: #0b241c;
-  --gold: #c9a227;
-  --gold-soft: #e8d48b;
-  --clay: #c45c26;
-  --cream: #f6f1e6;
-  --paper: #fffdf8;
+  /* IVA-33 — Chris Brand Manual color system. Exact hexes only. */
+  --brand-blue: #40449B; /* Royal / Persian Blue — 70% backgrounds, headers, banners, structure */
+  --brand-white: #FFFFFF; /* 20% content areas, text on dark */
+  --brand-red: #EF2B35; /* 10% CTAs, accents, highlights */
+
+  /* Neutrals for body copy and borders (not brand colors). */
   --ink: #1c1915;
   --muted: #5c574e;
   --line: #d9d0c0;
+
+  /* Legacy semantic names resolve to the three brand hexes — no extra palette. */
+  --forest: var(--brand-blue);
+  --forest-deep: var(--brand-blue);
+  --gold: var(--brand-red);
+  --gold-soft: var(--brand-white);
+  --clay: var(--brand-red);
+  --cream: var(--brand-white);
+  --paper: var(--brand-white);
 }
 
 @theme inline {
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-white: var(--brand-white);
+  --color-brand-red: var(--brand-red);
   --color-forest: var(--forest);
   --color-forest-deep: var(--forest-deep);
   --color-gold: var(--gold);
@@ -24,8 +35,8 @@
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-line: var(--line);
-  --font-sans: var(--font-source);
-  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-poppins), Arial, sans-serif;
+  --font-serif: var(--font-montserrat), Arial, sans-serif;
 }
 
 html {
@@ -33,14 +44,24 @@ html {
 }
 
 body {
-  background: var(--cream);
+  background: var(--brand-white);
   color: var(--ink);
-  font-family: var(--font-source), "Segoe UI", sans-serif;
+  font-family: var(--font-poppins), Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-montserrat), Arial, sans-serif;
+  font-weight: 700;
 }
 
 ::selection {
-  background: var(--gold-soft);
-  color: var(--forest-deep);
+  background: var(--brand-red);
+  color: var(--brand-white);
 }
 
 .home-marquee {

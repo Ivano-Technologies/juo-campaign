@@ -3,9 +3,9 @@ import { opportunityCards } from "@/lib/home";
 
 export function HomeVision() {
   return (
-    <section className="bg-paper">
+    <section className="bg-brand-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-24">
-        <p className="text-xs uppercase tracking-[0.28em] text-clay">
+        <p className="text-xs uppercase tracking-[0.28em] text-brand-red">
           The vision
         </p>
         <h2 className="mt-3 max-w-3xl font-serif text-4xl leading-tight sm:text-5xl">
@@ -21,7 +21,7 @@ export function HomeVision() {
           {opportunityCards.map((card) => (
             <li
               key={card.title}
-              className="overflow-hidden rounded-2xl border border-line bg-cream"
+              className="overflow-hidden rounded-2xl border border-line bg-brand-white"
             >
               <PlaceholderMedia
                 id={card.image.id}

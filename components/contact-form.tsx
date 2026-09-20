@@ -51,7 +51,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-4 rounded-2xl border border-line bg-paper p-6 shadow-sm">
+    <form onSubmit={onSubmit} className="grid gap-4 rounded-2xl border border-line bg-brand-white p-6 shadow-sm">
       <label className="grid gap-1 text-sm">
         Full name
         <input
@@ -59,7 +59,7 @@ export function ContactForm() {
           name="name"
           value={values.name}
           onChange={(event) => setValues({ ...values, name: event.target.value })}
-          className="rounded-lg border border-line bg-cream px-3 py-2"
+          className="rounded-lg border border-line bg-brand-white px-3 py-2"
         />
       </label>
       <label className="grid gap-1 text-sm">
@@ -70,7 +70,7 @@ export function ContactForm() {
           name="email"
           value={values.email}
           onChange={(event) => setValues({ ...values, email: event.target.value })}
-          className="rounded-lg border border-line bg-cream px-3 py-2"
+          className="rounded-lg border border-line bg-brand-white px-3 py-2"
         />
       </label>
       <label className="grid gap-1 text-sm">
@@ -83,7 +83,7 @@ export function ContactForm() {
           onChange={(event) =>
             setValues({ ...values, message: event.target.value })
           }
-          className="rounded-lg border border-line bg-cream px-3 py-2"
+          className="rounded-lg border border-line bg-brand-white px-3 py-2"
         />
       </label>
       <label className="flex items-start gap-2 text-sm text-muted">
@@ -98,7 +98,7 @@ export function ContactForm() {
         />
         <span>
           I have read the{" "}
-          <a href="/privacy" className="text-forest underline">
+          <a href="/privacy" className="text-brand-blue underline">
             privacy notice
           </a>
           .

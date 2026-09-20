@@ -18,7 +18,7 @@ export function BrandMarks({ variant }: BrandMarksProps) {
   const markHeight = variant === "hero" ? "h-12" : "h-9";
 
   return (
-    <div className={`flex items-center ${plates[variant]}`}>
+    <div className={`inline-flex w-fit max-w-full items-center ${plates[variant]}`}>
       <Image
         src={brand.marks.ndcLogo}
         alt="Nigeria Democratic Congress"

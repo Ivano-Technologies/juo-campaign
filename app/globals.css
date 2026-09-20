@@ -157,6 +157,12 @@ h6 {
 
 .home-marquee-static {
   display: none;
+  padding: 0.85rem 1.25rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
 .home-marquee-track {
@@ -219,17 +225,11 @@ h6 {
   }
 
   .home-marquee-track {
-    display: none;
-    animation: none;
+    display: none !important;
+    animation: none !important;
   }
 
   .home-marquee-static {
-    display: block;
-    padding: 0.85rem 1.25rem;
-    text-align: center;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
+    display: block !important;
   }
 }

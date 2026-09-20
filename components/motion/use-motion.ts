@@ -31,15 +31,6 @@ export function usePrefersReducedMotion(): boolean {
   );
 }
 
-/** SSR and first paint assume reduced so tickers never flash for motion-sensitive users. */
-export function usePrefersReducedMotionSafe(): boolean {
-  return useSyncExternalStore(
-    subscribeReducedMotion,
-    getReducedMotionSnapshot,
-    () => true,
-  );
-}
-
 export function useInViewOnce<T extends HTMLElement = HTMLDivElement>(
   options: IntersectionObserverInit = defaultInView,
 ): [RefObject<T | null>, boolean] {

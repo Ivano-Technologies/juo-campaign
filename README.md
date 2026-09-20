@@ -68,6 +68,16 @@ Helpers live in `lib/supabase/`. They return `null` when env is missing so local
 
 This scaffold ships with `robots: noindex` so the Vercel preview does not compete with the live WordPress domain before cutover. Remove noindex when the custom domain goes live.
 
-## Brand lock (IVA-24)
+## Brand lock (IVA-24 + IVA-33)
 
 Display name: **John Upan Odey Jnr**. Education: University of Uyo (bachelor’s) + University of Ilorin (MBA) + Harvard Kennedy School certificate. Age 48, born Obudu. Current roles (FirstTrust / Hyers / Independent Director) are listed as Brand-confirmed.
+
+Exact color tokens from Chris Brand Manual (do not approximate):
+
+| Token | Hex | Role |
+|---|---|---|
+| `--brand-blue` | `#40449B` | 70% — backgrounds, headers, banners, structure (Royal / Persian Blue) |
+| `--brand-white` | `#FFFFFF` | 20% — content areas, text on dark |
+| `--brand-red` | `#EF2B35` | 10% — CTAs, accents, highlights |
+
+Typography: **Montserrat Bold** (headlines), **Poppins** (body), **Arial** (fallback). Marks live in `public/brand/` (NDC logo + candidate marks). Larger poster PDFs (Blue / White / 4 / 5) stay in the brand kit / Asana for now.

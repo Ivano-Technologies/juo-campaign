@@ -39,19 +39,19 @@ function CounterStat({ stat, active }: { stat: Stat; active: boolean }) {
   const value = useCountUp(stat.value, active);
 
   return (
-    <div className="rounded-2xl border border-paper/15 bg-forest-deep/55 px-5 py-4 text-center backdrop-blur-sm">
+    <div className="rounded-2xl border border-brand-white/15 bg-brand-blue/55 px-5 py-4 text-center backdrop-blur-sm">
       <p className="sr-only">
         {stat.value}
         {stat.suffix} {stat.label}
       </p>
       <p
         aria-hidden="true"
-        className="font-serif text-4xl tabular-nums text-gold-soft sm:text-5xl"
+        className="font-serif text-4xl tabular-nums text-brand-red sm:text-5xl"
       >
         {value}
         {stat.suffix}
       </p>
-      <p className="mt-2 text-xs uppercase tracking-[0.2em] text-paper/80">
+      <p className="mt-2 text-xs uppercase tracking-[0.2em] text-brand-white/80">
         {stat.label}
       </p>
     </div>

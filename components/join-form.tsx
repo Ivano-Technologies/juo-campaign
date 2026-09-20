@@ -56,7 +56,7 @@ export function JoinForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-4 rounded-2xl border border-line bg-paper p-6 shadow-sm">
+    <form onSubmit={onSubmit} className="grid gap-4 rounded-2xl border border-line bg-brand-white p-6 shadow-sm">
       <label className="grid gap-1 text-sm">
         Full name
         <input
@@ -64,7 +64,7 @@ export function JoinForm() {
           name="name"
           value={values.name}
           onChange={(event) => setValues({ ...values, name: event.target.value })}
-          className="rounded-lg border border-line bg-cream px-3 py-2"
+          className="rounded-lg border border-line bg-brand-white px-3 py-2"
         />
       </label>
       <label className="grid gap-1 text-sm">
@@ -75,7 +75,7 @@ export function JoinForm() {
           name="email"
           value={values.email}
           onChange={(event) => setValues({ ...values, email: event.target.value })}
-          className="rounded-lg border border-line bg-cream px-3 py-2"
+          className="rounded-lg border border-line bg-brand-white px-3 py-2"
         />
       </label>
       <label className="grid gap-1 text-sm">
@@ -86,7 +86,7 @@ export function JoinForm() {
           name="phone"
           value={values.phone}
           onChange={(event) => setValues({ ...values, phone: event.target.value })}
-          className="rounded-lg border border-line bg-cream px-3 py-2"
+          className="rounded-lg border border-line bg-brand-white px-3 py-2"
         />
       </label>
       <label className="grid gap-1 text-sm">
@@ -96,7 +96,7 @@ export function JoinForm() {
           name="lga"
           value={values.lga}
           onChange={(event) => setValues({ ...values, lga: event.target.value })}
-          className="rounded-lg border border-line bg-cream px-3 py-2"
+          className="rounded-lg border border-line bg-brand-white px-3 py-2"
         >
           <option value="">Select</option>
           {crossRiverLgas.map((lga) => (
@@ -113,7 +113,7 @@ export function JoinForm() {
           name="interest"
           value={values.interest}
           onChange={(event) => setValues({ ...values, interest: event.target.value })}
-          className="rounded-lg border border-line bg-cream px-3 py-2"
+          className="rounded-lg border border-line bg-brand-white px-3 py-2"
         >
           <option value="">Select</option>
           {joinInterests.map((interest) => (
@@ -135,7 +135,7 @@ export function JoinForm() {
         />
         <span>
           I have read the{" "}
-          <a href="/privacy" className="text-forest underline">
+          <a href="/privacy" className="text-brand-blue underline">
             privacy notice
           </a>{" "}
           and agree that the campaign may contact me about volunteering and

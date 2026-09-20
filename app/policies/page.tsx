@@ -29,9 +29,9 @@ export default function PoliciesPage() {
           {policyPillars.map((pillar) => (
             <li
               key={pillar}
-              className="rounded-2xl border border-line bg-paper p-6"
+              className="rounded-2xl border border-line bg-brand-white p-6"
             >
-              <p className="text-xs uppercase tracking-[0.2em] text-clay">
+              <p className="text-xs uppercase tracking-[0.2em] text-brand-red">
                 Pillar
               </p>
               <h2 className="mt-2 font-serif text-2xl">{pillar}</h2>

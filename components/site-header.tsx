@@ -4,6 +4,7 @@ import type { Route } from "next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { BrandMarks } from "@/components/brand-marks";
 import { Button } from "@/components/button";
 import { navItems, site } from "@/lib/site";
 
@@ -12,18 +13,15 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-forest-deep/40 bg-forest text-paper">
+    <header className="sticky top-0 z-40 border-b border-brand-blue bg-brand-blue text-brand-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
-        <Link href="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold-soft font-serif text-sm font-semibold text-forest-deep">
-            {site.shortName}
-          </span>
-          <span className="leading-tight">
-            <span className="block truncate font-serif text-base">{site.name}</span>
-            <span className="block text-[11px] uppercase tracking-[0.18em] text-gold-soft">
-              {site.tagline}
-            </span>
-          </span>
+        <Link
+          href="/"
+          className="flex min-w-0 items-center gap-3"
+          onClick={() => setOpen(false)}
+        >
+          <BrandMarks variant="header" />
+          <span className="sr-only">{site.name}</span>
         </Link>
 
         <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Primary">
@@ -39,8 +37,8 @@ export function SiteHeader() {
                 aria-current={active ? "page" : undefined}
                 className={`rounded-full px-2.5 py-1.5 text-[13px] transition ${
                   active
-                    ? "bg-paper/15 text-gold-soft"
-                    : "text-paper/85 hover:bg-paper/10 hover:text-paper"
+                    ? "bg-brand-white/15 text-brand-white"
+                    : "text-brand-white/85 hover:bg-brand-white/10 hover:text-brand-white"
                 }`}
               >
                 {item.label}
@@ -60,7 +58,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-flex items-center rounded-full border border-paper/30 px-3 py-1.5 text-sm xl:hidden"
+          className="inline-flex items-center rounded-full border border-brand-white/30 px-3 py-1.5 text-sm xl:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((value) => !value)}
@@ -72,7 +70,7 @@ export function SiteHeader() {
       {open ? (
         <nav
           id="mobile-nav"
-          className="border-t border-paper/10 px-4 py-4 xl:hidden"
+          className="border-t border-brand-white/10 px-4 py-4 xl:hidden"
           aria-label="Mobile"
         >
           <ul className="grid gap-1">
@@ -80,7 +78,7 @@ export function SiteHeader() {
               <li key={item.href}>
                 <Link
                   href={item.href as Route}
-                  className="block rounded-lg px-3 py-2 text-paper hover:bg-paper/10"
+                  className="block rounded-lg px-3 py-2 text-brand-white hover:bg-brand-white/10"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}

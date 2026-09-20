@@ -57,7 +57,7 @@ export default function WhoIsJuoPage() {
         </article>
 
         <aside className="space-y-6">
-          <div className="rounded-2xl border border-line bg-paper p-6">
+          <div className="rounded-2xl border border-line bg-brand-white p-6">
             <h2 className="font-serif text-2xl">Education</h2>
             <ul className="mt-4 grid gap-4">
               {education.map((item) => (
@@ -68,7 +68,7 @@ export default function WhoIsJuoPage() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-line bg-paper p-6">
+          <div className="rounded-2xl border border-line bg-brand-white p-6">
             <h2 className="font-serif text-2xl">Current roles</h2>
             <ul className="mt-4 grid gap-3 text-sm text-muted">
               {currentRoles.map((role) => (
@@ -76,7 +76,7 @@ export default function WhoIsJuoPage() {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-line bg-paper p-6">
+          <div className="rounded-2xl border border-line bg-brand-white p-6">
             <h2 className="font-serif text-2xl">Connect</h2>
             <p className="mt-3 text-sm text-muted">
               {site.phoneDisplay}

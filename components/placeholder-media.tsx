@@ -27,7 +27,7 @@ export function PlaceholderMedia({
   return (
     <figure
       className={`relative overflow-hidden ${
-        slot.fit === "contain" ? "bg-cream" : "bg-forest-deep"
+        slot.fit === "contain" ? "bg-brand-white" : "bg-brand-blue"
       } ${className}`}
       data-media-slot={slot.id}
       data-media-file={slot.file}

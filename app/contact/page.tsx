@@ -19,18 +19,18 @@ export default function ContactPage() {
       />
       <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2">
         <div className="space-y-6">
-          <div className="rounded-2xl border border-line bg-paper p-6">
+          <div className="rounded-2xl border border-line bg-brand-white p-6">
             <h2 className="font-serif text-2xl">Campaign desk</h2>
             <ul className="mt-4 grid gap-2 text-muted">
               <li>
                 Phone:{" "}
-                <a href={site.phoneHref} className="text-forest underline">
+                <a href={site.phoneHref} className="text-brand-blue underline">
                   {site.phoneDisplay}
                 </a>
               </li>
               <li>
                 Email:{" "}
-                <a href={`mailto:${site.email}`} className="text-forest underline">
+                <a href={`mailto:${site.email}`} className="text-brand-blue underline">
                   {site.email}
                 </a>
               </li>
@@ -39,11 +39,11 @@ export default function ContactPage() {
           </div>
           <p className="text-sm text-muted">
             For volunteer interest, use{" "}
-            <a href="/join" className="text-forest underline">
+            <a href="/join" className="text-brand-blue underline">
               Join the Movement
             </a>
             . Read{" "}
-            <a href="/privacy" className="text-forest underline">
+            <a href="/privacy" className="text-brand-blue underline">
               privacy
             </a>{" "}
             before sending personal data.

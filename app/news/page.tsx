@@ -24,7 +24,7 @@ export default function NewsPage() {
         </Button>
       </PageHero>
       <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-        <div className="rounded-2xl border border-dashed border-line bg-paper p-8 text-center">
+        <div className="rounded-2xl border border-dashed border-line bg-brand-white p-8 text-center">
           <h2 className="font-serif text-2xl">No stories yet</h2>
           <p className="mt-3 text-muted">
             When the first campaign-approved item is ready, it will appear here.

@@ -5,12 +5,12 @@ type Variant = "primary" | "secondary" | "gold" | "ghost";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-clay text-paper hover:bg-[#a84c1f] border-transparent",
+    "bg-brand-red text-brand-white hover:bg-brand-red/90 border-transparent",
   secondary:
-    "bg-forest text-paper hover:bg-forest-deep border-transparent",
-  gold: "bg-gold text-forest-deep hover:bg-gold-soft border-transparent",
+    "bg-brand-blue text-brand-white hover:bg-brand-blue/90 border-transparent",
+  gold: "bg-brand-white text-brand-blue hover:bg-brand-white/90 border-transparent",
   ghost:
-    "bg-transparent text-paper border-paper/40 hover:border-paper hover:bg-paper/10",
+    "bg-transparent text-brand-white border-brand-white/40 hover:border-brand-white hover:bg-brand-white/10",
 };
 
 type ButtonProps = {

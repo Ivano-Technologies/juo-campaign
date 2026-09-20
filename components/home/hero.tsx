@@ -15,8 +15,9 @@ export function HomeHero() {
       />
       <div className="absolute inset-0 bg-gradient-to-r from-forest-deep via-forest-deep/80 to-forest/30" />
       <div className="relative mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-end px-4 py-16 sm:px-6 lg:py-24">
-        <p className="text-xs uppercase tracking-[0.32em] text-gold-soft">
-          {site.tagline} · {campaignHashtag}
+        <p className="text-xs tracking-[0.28em] text-gold-soft">
+          <span className="uppercase">{site.tagline}</span>
+          <span> · {campaignHashtag}</span>
         </p>
         <h1 className="mt-4 max-w-4xl font-serif text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
           Cross River can do better with…
@@ -37,6 +38,9 @@ export function HomeHero() {
           </Button>
         </div>
         <HeroCounters stats={heroStats} />
+        <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-gold-soft/90">
+          TODO: Hostinger 2026 hero photo
+        </p>
       </div>
     </section>
   );

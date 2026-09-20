@@ -24,7 +24,7 @@ export function HomeTogetherBanner() {
         <h2 className="mt-4 font-serif text-4xl uppercase leading-tight sm:text-6xl">
           Together — a new CRS is possible
         </h2>
-        <p className="mt-4 text-sm uppercase tracking-[0.28em] text-gold-soft">
+        <p className="mt-4 text-sm tracking-[0.22em] text-gold-soft">
           {campaignHashtag}
         </p>
       </div>

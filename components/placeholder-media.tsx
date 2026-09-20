@@ -33,7 +33,7 @@ export function PlaceholderMedia({
         unoptimized
         className={imageClassName}
       />
-      <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-forest-deep/75 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-gold-soft">
+      <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-forest-deep/80 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-gold-soft">
         {slot.todo}
       </figcaption>
     </figure>

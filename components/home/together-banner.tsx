@@ -16,8 +16,8 @@ export function HomeTogetherBanner() {
           sizes="(min-width: 768px) 50vw, 100vw"
         />
       </div>
-      <div className="absolute inset-0 bg-forest-deep/50" />
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
+      <div className="absolute inset-0 z-[1] bg-forest-deep/40" />
+      <div className="absolute inset-0 z-[2] flex flex-col items-center justify-center px-4 text-center">
         <p className="text-xs uppercase tracking-[0.32em] text-gold-soft">
           let’s change that
         </p>

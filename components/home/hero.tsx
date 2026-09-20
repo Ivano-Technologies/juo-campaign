@@ -6,15 +6,23 @@ import { site } from "@/lib/site";
 
 export function HomeHero() {
   return (
-    <section className="relative isolate min-h-[88vh] overflow-hidden bg-forest text-paper">
-      <PlaceholderMedia
-        id="hero-full-bleed"
-        className="absolute inset-0 z-0 min-h-[88vh]"
-        imageClassName="object-cover object-[center_42%]"
-        priority
-        sizes="100vw"
+    <section className="relative isolate min-h-[88vh] overflow-hidden bg-forest-deep text-paper">
+      <div className="absolute inset-0 z-0">
+        <PlaceholderMedia
+          id="hero-full-bleed"
+          className="h-full w-full"
+          imageClassName="object-cover object-[center_20%]"
+          priority
+          sizes="100vw"
+        />
+      </div>
+      <div
+        className="absolute inset-0 z-[1]"
+        style={{
+          background:
+            "linear-gradient(180deg, rgb(11 36 28 / 0.12) 0%, rgb(11 36 28 / 0.22) 40%, rgb(11 36 28 / 0.72) 74%, rgb(11 36 28 / 0.92) 100%)",
+        }}
       />
-      <div className="absolute inset-0 z-[1] bg-gradient-to-t from-forest-deep via-forest-deep/50 to-transparent" />
       <div className="relative z-[2] mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-end px-4 py-16 sm:px-6 lg:py-24">
         <p className="text-xs tracking-[0.28em] text-gold-soft">
           <span className="uppercase">{site.tagline}</span>

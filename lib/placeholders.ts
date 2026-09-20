@@ -3,9 +3,9 @@ export const mediaBase = "/media/2026";
 export const placeholderSlots = [
   {
     id: "hero-full-bleed",
-    src: `${mediaBase}/Group-1171274746.png`,
-    file: "Group-1171274746.png",
-    alt: "John Upan Odey Jnr with Cross River community and church leaders",
+    src: `${mediaBase}/F6FA4786-A1FE-415C-9980-199A9F25ACEF_11zon.webp`,
+    file: "F6FA4786-A1FE-415C-9980-199A9F25ACEF_11zon.webp",
+    alt: "John Upan Odey Jnr walking with supporters at a Cross River campaign gathering",
     usedOn: "Home hero",
     fit: "cover",
   },
@@ -95,7 +95,7 @@ export const placeholderSlots = [
     file: "47618FAD-5069-4350-BC38-C4278E0B58CE_11zon-Background-Removed.png",
     alt: "John Upan Odey Jnr in traditional attire",
     usedOn: "Meet John Upan Odey",
-    fit: "contain",
+    fit: "cover",
   },
   {
     id: "meet-cutout-3",
@@ -103,7 +103,7 @@ export const placeholderSlots = [
     file: "D992271D-2B3E-45B2-A598-C63843DD7C18-Background-Removed.png",
     alt: "John Upan Odey Jnr in a navy suit",
     usedOn: "Meet John Upan Odey",
-    fit: "contain",
+    fit: "cover",
   },
 ] as const;
 

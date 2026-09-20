@@ -13,7 +13,7 @@ export function HomeHero() {
         priority
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-forest-deep via-forest-deep/80 to-forest/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/95 via-forest-deep/70 to-forest-deep/25" />
       <div className="relative mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-end px-4 py-16 sm:px-6 lg:py-24">
         <p className="text-xs tracking-[0.28em] text-gold-soft">
           <span className="uppercase">{site.tagline}</span>
@@ -38,9 +38,6 @@ export function HomeHero() {
           </Button>
         </div>
         <HeroCounters stats={heroStats} />
-        <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-gold-soft/90">
-          TODO: Hostinger 2026 hero photo
-        </p>
       </div>
     </section>
   );

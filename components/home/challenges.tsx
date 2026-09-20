@@ -33,7 +33,7 @@ export function HomeChallenges() {
         </div>
         <PlaceholderMedia
           id="challenges-cutout"
-          className="aspect-[3/4] w-full rounded-[2rem]"
+          className="aspect-[3/4] w-full rounded-[2rem] bg-gradient-to-b from-paper to-line"
           sizes="(min-width: 1024px) 40vw, 100vw"
         />
       </div>

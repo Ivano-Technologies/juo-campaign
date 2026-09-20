@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { PlaceholderId } from "@/lib/placeholders";
 import { placeholderById } from "@/lib/placeholders";
 
-type PlaceholderMediaProps = {
+type CampaignMediaProps = {
   id: PlaceholderId;
   className?: string;
   imageClassName?: string;
@@ -13,29 +13,34 @@ type PlaceholderMediaProps = {
 export function PlaceholderMedia({
   id,
   className = "",
-  imageClassName = "object-cover",
+  imageClassName,
   priority = false,
   sizes,
-}: PlaceholderMediaProps) {
+}: CampaignMediaProps) {
   const slot = placeholderById(id);
+  const isSvg = slot.src.endsWith(".svg");
+  const fitClass =
+    slot.fit === "contain"
+      ? "object-contain object-bottom"
+      : "object-cover object-center";
 
   return (
     <figure
-      className={`relative overflow-hidden bg-forest-deep ${className}`}
-      data-placeholder-slot={slot.id}
+      className={`relative overflow-hidden ${
+        slot.fit === "contain" ? "bg-cream" : "bg-forest-deep"
+      } ${className}`}
+      data-media-slot={slot.id}
+      data-media-file={slot.file}
     >
       <Image
         src={slot.src}
-        alt={slot.todo}
+        alt={slot.alt}
         fill
         sizes={sizes}
         priority={priority}
-        unoptimized
-        className={imageClassName}
+        unoptimized={isSvg}
+        className={imageClassName ?? fitClass}
       />
-      <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-forest-deep/80 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-gold-soft">
-        {slot.todo}
-      </figcaption>
     </figure>
   );
 }

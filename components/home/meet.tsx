@@ -28,17 +28,17 @@ export function HomeMeet() {
         <div className="grid grid-cols-2 gap-3">
           <PlaceholderMedia
             id={meetCutouts[0].id}
-            className="col-span-2 aspect-[16/10] rounded-3xl"
+            className="col-span-2 aspect-[16/10] rounded-3xl bg-forest"
             sizes="(min-width: 1024px) 40vw, 100vw"
           />
           <PlaceholderMedia
             id={meetCutouts[1].id}
-            className="aspect-[3/4] rounded-3xl"
+            className="aspect-[3/4] rounded-3xl bg-forest"
             sizes="(min-width: 1024px) 20vw, 50vw"
           />
           <PlaceholderMedia
             id={meetCutouts[2].id}
-            className="aspect-[3/4] rounded-3xl"
+            className="aspect-[3/4] rounded-3xl bg-forest"
             sizes="(min-width: 1024px) 20vw, 50vw"
           />
         </div>

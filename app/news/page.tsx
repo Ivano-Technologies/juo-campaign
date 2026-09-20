@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Button } from "@/components/button";
-import { PageHero } from "@/components/page-hero";
+import { CtaRow, PageHero } from "@/components/page-hero";
 
 export const metadata: Metadata = {
   title: "News",
@@ -16,12 +15,7 @@ export default function NewsPage() {
         title="News"
         lede="This is the real news room for the campaign. Demo law posts from the old WordPress theme are not coming across. Verified speeches, press notes, and gallery items will land here after Brand photos and copy."
       >
-        <Button href="/contact" variant="gold">
-          Contact
-        </Button>
-        <Button href="/manifesto" variant="ghost">
-          Manifesto
-        </Button>
+        <CtaRow />
       </PageHero>
       <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
         <div className="rounded-2xl border border-dashed border-line bg-brand-white p-8 text-center">

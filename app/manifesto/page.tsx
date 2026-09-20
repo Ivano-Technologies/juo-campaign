@@ -17,11 +17,17 @@ export default function ManifestoPage() {
         title="Manifesto"
         lede="The approved spine is already public. The downloadable manifesto PDF is still with the campaign (IVA-17). This page will host the file and a web summary as soon as it arrives."
       >
-        <Button href="/policies" variant="gold">
+        <Button href="/policies" variant="white">
           Policies
         </Button>
         <Button href="/join" variant="ghost">
           Join the Movement
+        </Button>
+        <Button href="/donate" variant="ghost">
+          Donate
+        </Button>
+        <Button href="/contact" variant="ghost">
+          Contact
         </Button>
       </PageHero>
       <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6">

@@ -16,8 +16,11 @@ export default function DonatePage() {
         title="Donate"
         lede="Donations will be naira-first. The live processor is not connected on this scaffold. Confirmation and failure screens are ready for the payment flow."
       >
-        <Button href="/join" variant="ghost">
+        <Button href="/join" variant="primary">
           Join the Movement
+        </Button>
+        <Button href="/manifesto" variant="white">
+          Manifesto
         </Button>
         <Button href="/contact" variant="ghost">
           Contact
@@ -30,6 +33,9 @@ export default function DonatePage() {
             International and card options stay gated until counsel and
             banking sign off. This page will host the approved amounts,
             receipt language, and processor widget — not a demo GiveWP form.
+          </p>
+          <p className="mt-6 inline-flex rounded-full border border-brand-blue/20 bg-brand-white px-4 py-2 text-sm font-semibold text-brand-blue">
+            Donate in NGN — coming soon
           </p>
           <p className="mt-4 text-sm text-muted">
             See{" "}

@@ -1,7 +1,7 @@
 import type { Route } from "next";
 import Link from "next/link";
 import { BrandMarks } from "@/components/brand-marks";
-import { Button } from "@/components/button";
+import { PrimaryCtas } from "@/components/primary-ctas";
 import { brand } from "@/lib/brand";
 import { campaignHashtag } from "@/lib/home";
 import { navItems, site } from "@/lib/site";
@@ -21,14 +21,7 @@ export function SiteFooter() {
           <p className="mt-3 max-w-md text-xs tracking-wide text-brand-white/80">
             {brand.hashtags.join(" · ")}
           </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Button href="/join" variant="primary" className="px-4 py-2">
-              Join
-            </Button>
-            <Button href="/donate" variant="gold" className="px-4 py-2">
-              Donate
-            </Button>
-          </div>
+          <PrimaryCtas compact className="mt-6" />
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-brand-red">
@@ -62,11 +55,6 @@ export function SiteFooter() {
             <li>
               <Link href="/privacy" className="hover:text-brand-red">
                 Privacy
-              </Link>
-            </li>
-            <li>
-              <Link href="/manifesto" className="hover:text-brand-red">
-                Manifesto
               </Link>
             </li>
           </ul>

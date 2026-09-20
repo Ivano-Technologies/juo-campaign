@@ -1,4 +1,4 @@
-import { Button } from "@/components/button";
+import { PrimaryCtaButtons } from "@/components/primary-ctas";
 
 type PageHeroProps = {
   kicker?: string;
@@ -10,7 +10,7 @@ type PageHeroProps = {
 export function PageHero({ kicker, title, lede, children }: PageHeroProps) {
   return (
     <section className="bg-brand-blue text-brand-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
         {kicker ? (
           <p className="text-xs uppercase tracking-[0.28em] text-brand-red">
             {kicker}
@@ -20,27 +20,14 @@ export function PageHero({ kicker, title, lede, children }: PageHeroProps) {
           {title}
         </h1>
         <p className="mt-5 max-w-2xl text-lg text-brand-white/85">{lede}</p>
-        {children ? <div className="mt-8 flex flex-wrap gap-3">{children}</div> : null}
+        {children ? (
+          <div className="mt-8 flex flex-wrap gap-3">{children}</div>
+        ) : null}
       </div>
     </section>
   );
 }
 
 export function CtaRow() {
-  return (
-    <>
-      <Button href="/join" variant="primary">
-        Join the Movement
-      </Button>
-      <Button href="/donate" variant="gold">
-        Donate
-      </Button>
-      <Button href="/manifesto" variant="ghost">
-        Manifesto
-      </Button>
-      <Button href="/contact" variant="ghost">
-        Contact
-      </Button>
-    </>
-  );
+  return <PrimaryCtaButtons />;
 }

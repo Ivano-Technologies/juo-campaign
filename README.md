@@ -22,7 +22,7 @@ Stack: **Next.js App Router + TypeScript + Tailwind CSS v4 + pnpm**. Supabase is
 
 Nav: Home / Who is JUO / Policies / Manifesto / Join / Donate / News / Contact.
 
-Primary CTAs: Join the Movement, Donate, Manifesto, Contact.
+Primary CTAs: Join the Movement, Donate, Manifesto, Contact — red / white / ghost on brand blue (`#EF2B35` / `#FFFFFF` / `#40449B`). The sticky header is IA only (desktop from `lg`, accessible mobile menu below). Donate is NGN-gated until a processor is wired; there is no fake checkout.
 
 Lawyer / attorney / TheGem / practice demo content is not on this site.
 

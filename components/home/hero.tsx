@@ -9,12 +9,13 @@ export function HomeHero() {
     <section className="relative isolate min-h-[88vh] overflow-hidden bg-forest text-paper">
       <PlaceholderMedia
         id="hero-full-bleed"
-        className="absolute inset-0"
+        className="absolute inset-0 z-0 min-h-[88vh]"
+        imageClassName="object-cover object-[center_42%]"
         priority
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/95 via-forest-deep/70 to-forest-deep/25" />
-      <div className="relative mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-end px-4 py-16 sm:px-6 lg:py-24">
+      <div className="absolute inset-0 z-[1] bg-gradient-to-t from-forest-deep via-forest-deep/50 to-transparent" />
+      <div className="relative z-[2] mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-end px-4 py-16 sm:px-6 lg:py-24">
         <p className="text-xs tracking-[0.28em] text-gold-soft">
           <span className="uppercase">{site.tagline}</span>
           <span> · {campaignHashtag}</span>

@@ -15,7 +15,7 @@ export default function JoinPage() {
       <PageHero
         kicker="Get involved"
         title="Join the Movement"
-        lede="This campaign belongs to Cross Riverians who want competence, unity, and work — in every ward and from the diaspora. Tell us how you want to help. Submissions go live with IVA-21."
+        lede="This campaign belongs to Cross Riverians who want competence, unity, and work — in every ward and from the diaspora. Tell us how you want to help."
       >
         <Button href="/donate" variant="white">
           Donate
@@ -31,9 +31,10 @@ export default function JoinPage() {
         <div className="space-y-4 text-muted">
           <h2 className="font-serif text-3xl text-ink">What happens next</h2>
           <p>
-            When forms are connected, a volunteer coordinator will follow up
-            on the interest you select. We will not treat this as voter
-            registration, and we will not share your details as a public
+            A volunteer coordinator will follow up on the interest you select —
+            ward work, professional skills, media, donations, or Diaspora
+            Connect if you are outside Cross River. We will not treat this as
+            voter registration, and we will not share your details as a public
             petition.
           </p>
           <p>
@@ -41,8 +42,8 @@ export default function JoinPage() {
             <a href="/privacy" className="text-brand-blue underline">
               privacy notice
             </a>{" "}
-            before you submit. Until IVA-21, the join API returns 501 so
-            nothing is stored.
+            before you submit. Your details are stored so the campaign can
+            contact you about volunteering and updates.
           </p>
         </div>
         <JoinForm />

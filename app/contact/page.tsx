@@ -16,7 +16,7 @@ export default function ContactPage() {
       <PageHero
         kicker="Official channels"
         title="Contact"
-        lede="Write to the campaign desk. The message form is on the page; submissions wait on IVA-21 so nothing is stored until the backend is ready."
+        lede="Write to the campaign desk. The message form on this page is live."
       >
         <Button href="/join" variant="primary">
           Join the Movement

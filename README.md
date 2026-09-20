@@ -2,7 +2,7 @@
 
 Official Next.js rebuild for **[votejohnupanodey.com](https://votejohnupanodey.com)** — the John Upan Odey Jnr campaign (NDC, Cross River 2027).
 
-Stack: **Next.js App Router + TypeScript + Tailwind CSS v4 + pnpm**. Supabase is wired softly (clients only). Join/contact storage is **IVA-21**. Manifesto PDF is **IVA-17**. Custom domain cutover is **IVA-25**.
+Stack: **Next.js App Router + TypeScript + Tailwind CSS v4 + pnpm**. Join/contact forms write to Supabase (`join_submissions`, `contact_messages`) with insert-only RLS. Manifesto PDF is **IVA-17**. Custom domain cutover is **IVA-25**.
 
 ## Routes (brand-approved)
 
@@ -52,10 +52,12 @@ Node 20+. Package manager is pnpm (`packageManager` field in `package.json`).
 - `NEXT_PUBLIC_SUPABASE_URL` — `https://xxljlhgjjirewkovuzif.supabase.co` (project **JUO**, `eu-west-1`)
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY` — publishable/anon key (do **not** commit)
 
-Helpers live in `lib/supabase/`. They return `null` when env is missing so local/CI builds stay green without secrets. Form routes **do not** write to Supabase yet:
+Helpers live in `lib/supabase/`. They return `null` when env is missing so local/CI builds stay green without secrets. Form routes insert with the anon key (RLS is insert-only; no select):
 
-- `POST /api/join` → **501** until IVA-21
-- `POST /api/contact` → **501** until IVA-21
+- `POST /api/join` → **201** on success, **400** if invalid, **503** if Supabase env is missing or the insert fails
+- `POST /api/contact` → same status contract
+
+Schema for those tables is documented in `supabase/migrations/` (already applied on project **JUO**).
 
 ## Vercel
 

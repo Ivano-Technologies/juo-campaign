@@ -1,4 +1,5 @@
 import { Button } from "@/components/button";
+import { Reveal, RevealMedia } from "@/components/motion/reveal";
 import { PlaceholderMedia } from "@/components/placeholder-media";
 import { meetBio, meetCutouts, meetEducationLine } from "@/lib/home";
 import { site } from "@/lib/site";
@@ -7,7 +8,7 @@ export function HomeMeet() {
   return (
     <section className="bg-brand-white">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
-        <div>
+        <Reveal>
           <p className="text-xs uppercase tracking-[0.28em] text-brand-red">
             Meet {site.name}
           </p>
@@ -24,8 +25,8 @@ export function HomeMeet() {
           <Button href="/john-upan-odey" variant="secondary" className="mt-8">
             Who is John Upan Odey Jnr
           </Button>
-        </div>
-        <div className="grid grid-cols-2 gap-3">
+        </Reveal>
+        <RevealMedia className="grid grid-cols-2 gap-3">
           <PlaceholderMedia
             id={meetCutouts[0].id}
             className="col-span-2 aspect-[16/10] rounded-3xl bg-brand-blue"
@@ -41,7 +42,7 @@ export function HomeMeet() {
             className="aspect-[3/4] rounded-3xl bg-brand-blue"
             sizes="(min-width: 1024px) 20vw, 50vw"
           />
-        </div>
+        </RevealMedia>
       </div>
     </section>
   );

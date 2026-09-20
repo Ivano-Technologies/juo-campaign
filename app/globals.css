@@ -64,17 +64,130 @@ h6 {
   color: var(--brand-white);
 }
 
-.home-marquee {
-  display: inline-block;
-  animation: home-marquee-shift 18s linear infinite;
+/* IVA-34 — homepage motion. Hidden only after `.motion-js` so no-JS stays visible. */
+.motion-reveal,
+.motion-item {
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--motion-delay, 0ms);
 }
 
-@keyframes home-marquee-shift {
+.motion-js .motion-reveal:not(.motion-reveal-in),
+.motion-js .motion-stagger:not(.is-inview) > .motion-item {
+  opacity: 0;
+  transform: translateY(1.15rem);
+}
+
+.motion-reveal-in,
+.motion-stagger.is-inview > .motion-item {
+  opacity: 1;
+  transform: none;
+}
+
+.motion-stagger.is-inview > .motion-item:nth-child(1) {
+  --motion-delay: 0ms;
+}
+.motion-stagger.is-inview > .motion-item:nth-child(2) {
+  --motion-delay: 80ms;
+}
+.motion-stagger.is-inview > .motion-item:nth-child(3) {
+  --motion-delay: 160ms;
+}
+.motion-stagger.is-inview > .motion-item:nth-child(4) {
+  --motion-delay: 240ms;
+}
+.motion-stagger.is-inview > .motion-item:nth-child(5) {
+  --motion-delay: 320ms;
+}
+.motion-stagger.is-inview > .motion-item:nth-child(6) {
+  --motion-delay: 400ms;
+}
+.motion-stagger.is-inview > .motion-item:nth-child(n + 7) {
+  --motion-delay: 480ms;
+}
+
+.motion-card {
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease,
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.motion-cta:hover {
+  transform: translateY(-2px);
+}
+
+.motion-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgb(64 68 155 / 0.14);
+}
+
+.motion-card-on-blue:hover {
+  border-color: rgb(255 255 255 / 0.28);
+  box-shadow: 0 14px 36px rgb(0 0 0 / 0.28);
+}
+
+.motion-meet-media img {
+  transition: transform 1.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.motion-js .motion-meet-media:not(.is-inview) img {
+  transform: scale(1.035) translateY(6px);
+}
+
+.hero-caption-slide {
+  transition: opacity 0.7s ease;
+}
+
+.hero-caption-slide:not(.is-active) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-caption-slide.is-active {
+  opacity: 1;
+}
+
+.home-marquee-band {
+  overflow: hidden;
+  border-block: 1px solid rgb(255 255 255 / 0.12);
+}
+
+.home-marquee-static {
+  display: none;
+}
+
+.home-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: home-marquee-scroll 34s linear infinite;
+}
+
+.home-marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 0.85rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.home-marquee-group span::after {
+  content: "•";
+  margin-left: 2.5rem;
+  color: var(--brand-red);
+}
+
+@keyframes home-marquee-scroll {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(8px);
+    transform: translateX(-50%);
   }
 }
 
@@ -83,7 +196,40 @@ h6 {
     scroll-behavior: auto;
   }
 
-  .home-marquee {
+  .motion-js .motion-reveal:not(.motion-reveal-in),
+  .motion-js .motion-stagger:not(.is-inview) > .motion-item,
+  .motion-js .motion-meet-media:not(.is-inview) img {
+    opacity: 1;
+    transform: none;
+  }
+
+  .motion-reveal,
+  .motion-item,
+  .motion-card,
+  .motion-meet-media img,
+  .hero-caption-slide {
+    transition: none;
+  }
+
+  .motion-card:hover,
+  .motion-card-on-blue:hover,
+  .motion-cta:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .home-marquee-track {
+    display: none;
     animation: none;
+  }
+
+  .home-marquee-static {
+    display: block;
+    padding: 0.85rem 1.25rem;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
   }
 }

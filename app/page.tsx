@@ -3,6 +3,7 @@ import { HomeChallenges } from "@/components/home/challenges";
 import { HomeFuture } from "@/components/home/future";
 import { HomeGetInvolved } from "@/components/home/get-involved";
 import { HomeHero } from "@/components/home/hero";
+import { HomeMarquee } from "@/components/home/marquee";
 import { HomeMeet } from "@/components/home/meet";
 import { HomePillars } from "@/components/home/pillars";
 import { HomeTogetherBanner } from "@/components/home/together-banner";
@@ -20,6 +21,7 @@ export default function HomePage() {
     <>
       <HomeHero />
       <HomeChallenges />
+      <HomeMarquee />
       <HomeTogetherBanner />
       <HomeVision />
       <HomePillars />

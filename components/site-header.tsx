@@ -9,10 +9,10 @@ import { PrimaryCtas } from "@/components/primary-ctas";
 import { isNavActive, navItems, site } from "@/lib/site";
 
 function navLinkClass(active: boolean): string {
-  return `block whitespace-nowrap rounded-full px-2.5 py-1.5 text-[13px] font-medium transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-white ${
+  return `block whitespace-nowrap rounded-full px-2.5 py-1.5 text-[13px] font-medium transition-[color,background-color,transform] duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-white ${
     active
       ? "bg-brand-white text-brand-blue"
-      : "text-brand-white/85 hover:bg-brand-white/10 hover:text-brand-white"
+      : "text-brand-white/85 hover:bg-brand-white/15 hover:text-brand-white"
   }`;
 }
 
@@ -55,7 +55,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6">
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-3"
+          className="flex min-w-0 items-center gap-3 transition-opacity duration-200 ease-out hover:opacity-90"
           onClick={() => setOpen(false)}
         >
           <span className="min-w-0 max-w-[min(100%,14.5rem)] overflow-hidden sm:max-w-none">
@@ -83,7 +83,7 @@ export function SiteHeader() {
         <button
           ref={menuButtonRef}
           type="button"
-          className="inline-flex shrink-0 items-center rounded-full border border-brand-white/30 px-3 py-1.5 text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-white lg:hidden"
+          className="inline-flex shrink-0 items-center rounded-full border border-brand-white/30 px-3 py-1.5 text-sm transition-[color,background-color,border-color] duration-200 ease-out hover:border-brand-white hover:bg-brand-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-white lg:hidden"
           aria-expanded={open}
           aria-controls={menuId}
           aria-label={open ? "Close navigation menu" : "Open navigation menu"}

@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/motion/reveal";
 import { campaignHashtag } from "@/lib/home";
 import { PlaceholderMedia } from "@/components/placeholder-media";
 
@@ -17,7 +18,10 @@ export function HomeTogetherBanner() {
         />
       </div>
       <div className="absolute inset-0 z-[1] bg-brand-blue/40" />
-      <div className="absolute inset-0 z-[2] flex flex-col items-center justify-center px-4 text-center">
+      <Reveal
+        as="div"
+        className="absolute inset-0 z-[2] flex flex-col items-center justify-center px-4 text-center"
+      >
         <p className="text-xs uppercase tracking-[0.32em] text-brand-red">
           let’s change that
         </p>
@@ -27,7 +31,7 @@ export function HomeTogetherBanner() {
         <p className="mt-4 text-sm tracking-[0.22em] text-brand-white">
           {campaignHashtag}
         </p>
-      </div>
+      </Reveal>
     </section>
   );
 }

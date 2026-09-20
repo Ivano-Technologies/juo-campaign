@@ -5,11 +5,11 @@ export type ButtonVariant = "primary" | "secondary" | "white" | "ghost";
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand-red text-brand-white hover:bg-brand-red/90 border-transparent",
+    "bg-brand-red text-brand-white hover:bg-brand-red/90 border-transparent hover:shadow-[0_10px_24px_rgb(239_43_53_/_0.28)]",
   secondary:
-    "bg-brand-blue text-brand-white hover:bg-brand-blue/90 border-transparent",
+    "bg-brand-blue text-brand-white hover:bg-brand-blue/90 border-transparent hover:shadow-[0_10px_24px_rgb(64_68_155_/_0.28)]",
   white:
-    "bg-brand-white text-brand-blue hover:bg-brand-white/90 border-transparent",
+    "bg-brand-white text-brand-blue hover:bg-brand-white/90 border-transparent hover:shadow-[0_10px_24px_rgb(255_255_255_/_0.22)]",
   ghost:
     "bg-transparent text-brand-white border-brand-white/40 hover:border-brand-white hover:bg-brand-white/10",
 };
@@ -40,7 +40,7 @@ export function Button({
   disabled = false,
   onClick,
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center rounded-full border font-semibold tracking-wide transition ${sizes[size]} ${variants[variant]} disabled:cursor-not-allowed disabled:opacity-60 ${className}`;
+  const classes = `motion-cta inline-flex items-center justify-center rounded-full border font-semibold tracking-wide transition-[color,background-color,border-color,box-shadow,transform] duration-200 ease-out ${sizes[size]} ${variants[variant]} disabled:cursor-not-allowed disabled:opacity-60 ${className}`;
 
   if (href) {
     return (

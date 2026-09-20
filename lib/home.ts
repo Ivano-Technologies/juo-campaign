@@ -3,6 +3,31 @@ import { placeholderById } from "@/lib/placeholders";
 
 export const campaignHashtag = "#OurTimeOurState";
 
+export const heroCaptionSets = [
+  {
+    kicker: "John Upan Odey",
+    title: "Cross River can do better with…",
+    lede: `…jobs, innovation, and opportunity for every young person. ${site.unityLine}. ${site.prosperityLine}.`,
+  },
+  {
+    kicker: "Cross Riverian",
+    title: "Building opportunities",
+    lede: "A Fresh Start that puts talent, land, and communities to work.",
+  },
+  {
+    kicker: "Can do better",
+    title: "A greater one is possible",
+    lede: `${site.unityLine}. We produce. We process. We prosper.`,
+  },
+  {
+    kicker: campaignHashtag,
+    title: "Our time. Our state.",
+    lede: "Together — a new Cross River is possible.",
+  },
+] as const;
+
+export type HeroCaptionSet = (typeof heroCaptionSets)[number];
+
 export const heroStats = [
   { value: 5, suffix: "M+", label: "Citizens" },
   { value: 18, suffix: "", label: "Local Government Areas" },
@@ -90,11 +115,15 @@ export const homePillars = [
   },
 ] as const;
 
-export const futureStats = [
-  { value: "10,000+", label: "New jobs" },
-  { value: "500+", label: "Startups" },
-  { value: "FOR US", label: "A future built" },
+export const futureCountStats = [
+  { value: 10000, suffix: "+", label: "New jobs", grouped: true },
+  { value: 500, suffix: "+", label: "Startups", grouped: true },
 ] as const;
+
+export const futureTextStat = {
+  display: "FOR US",
+  label: "A future built",
+} as const;
 
 export const futureHighlights = [
   "Every ward has functional healthcare",

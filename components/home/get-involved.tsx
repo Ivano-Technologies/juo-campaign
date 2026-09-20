@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Reveal } from "@/components/motion/reveal";
 import { PrimaryCtas } from "@/components/primary-ctas";
 import { brand } from "@/lib/brand";
 import { campaignHashtag } from "@/lib/home";
@@ -7,7 +8,7 @@ import { site } from "@/lib/site";
 export function HomeGetInvolved() {
   return (
     <section className="bg-brand-blue text-brand-white">
-      <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-4 py-16 sm:px-6 lg:flex-row lg:items-center">
+      <Reveal className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-4 py-16 sm:px-6 lg:flex-row lg:items-center">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-center">
           <Image
             src={brand.marks.officialPoster}
@@ -36,7 +37,7 @@ export function HomeGetInvolved() {
           </div>
         </div>
         <PrimaryCtas />
-      </div>
+      </Reveal>
     </section>
   );
 }

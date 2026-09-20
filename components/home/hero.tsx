@@ -1,9 +1,9 @@
 import { BrandMarks } from "@/components/brand-marks";
 import { HeroCounters } from "@/components/hero-counters";
+import { HeroCaptions } from "@/components/motion/hero-captions";
 import { PlaceholderMedia } from "@/components/placeholder-media";
 import { PrimaryCtas } from "@/components/primary-ctas";
-import { campaignHashtag, heroStats } from "@/lib/home";
-import { site } from "@/lib/site";
+import { heroCaptionSets, heroStats } from "@/lib/home";
 
 export function HomeHero() {
   return (
@@ -27,17 +27,7 @@ export function HomeHero() {
       />
       <div className="relative z-[2] mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-end px-4 py-16 sm:px-6 lg:py-24">
         <BrandMarks variant="hero" />
-        <p className="mt-6 text-xs tracking-[0.28em] text-brand-white">
-          <span className="uppercase">{site.tagline}</span>
-          <span> · {campaignHashtag}</span>
-        </p>
-        <h1 className="mt-4 max-w-4xl font-serif text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
-          Cross River can do better with…
-        </h1>
-        <p className="mt-5 max-w-2xl text-lg text-brand-white/85 sm:text-xl">
-          …jobs, innovation, and opportunity for every young person.{" "}
-          {site.unityLine}. {site.prosperityLine}.
-        </p>
+        <HeroCaptions sets={heroCaptionSets} />
         <PrimaryCtas className="mt-8" />
         <HeroCounters stats={heroStats} />
       </div>

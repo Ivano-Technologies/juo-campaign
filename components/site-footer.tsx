@@ -30,7 +30,10 @@ export function SiteFooter() {
           <ul className="mt-3 grid gap-2 text-sm">
             {navItems.map((item) => (
               <li key={item.href}>
-                <Link href={item.href as Route} className="hover:text-brand-red">
+                <Link
+                  href={item.href as Route}
+                  className="transition-colors duration-200 ease-out hover:text-brand-red"
+                >
                   {item.label}
                 </Link>
               </li>
@@ -43,17 +46,26 @@ export function SiteFooter() {
           </p>
           <ul className="mt-3 grid gap-2 text-sm">
             <li>
-              <a href={site.phoneHref} className="hover:text-brand-red">
+              <a
+                href={site.phoneHref}
+                className="transition-colors duration-200 ease-out hover:text-brand-red"
+              >
                 {site.phoneDisplay}
               </a>
             </li>
             <li>
-              <a href={`mailto:${site.email}`} className="hover:text-brand-red">
+              <a
+                href={`mailto:${site.email}`}
+                className="transition-colors duration-200 ease-out hover:text-brand-red"
+              >
                 {site.email}
               </a>
             </li>
             <li>
-              <Link href="/privacy" className="hover:text-brand-red">
+              <Link
+                href="/privacy"
+                className="transition-colors duration-200 ease-out hover:text-brand-red"
+              >
                 Privacy
               </Link>
             </li>

@@ -1,0 +1,56 @@
+import type { Metadata } from "next";
+import { ContactForm } from "@/components/contact-form";
+import { PageHero } from "@/components/page-hero";
+import { site } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Official contact for the John Upan Odey Jnr campaign: phone, email, and a message form.",
+};
+
+export default function ContactPage() {
+  return (
+    <>
+      <PageHero
+        kicker="Official channels"
+        title="Contact"
+        lede="Write to the campaign desk. The message form is on the page; submissions wait on IVA-21 so nothing is stored until the backend is ready."
+      />
+      <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2">
+        <div className="space-y-6">
+          <div className="rounded-2xl border border-line bg-paper p-6">
+            <h2 className="font-serif text-2xl">Campaign desk</h2>
+            <ul className="mt-4 grid gap-2 text-muted">
+              <li>
+                Phone:{" "}
+                <a href={site.phoneHref} className="text-forest underline">
+                  {site.phoneDisplay}
+                </a>
+              </li>
+              <li>
+                Email:{" "}
+                <a href={`mailto:${site.email}`} className="text-forest underline">
+                  {site.email}
+                </a>
+              </li>
+              <li>Web: {site.domain}</li>
+            </ul>
+          </div>
+          <p className="text-sm text-muted">
+            For volunteer interest, use{" "}
+            <a href="/join" className="text-forest underline">
+              Join the Movement
+            </a>
+            . Read{" "}
+            <a href="/privacy" className="text-forest underline">
+              privacy
+            </a>{" "}
+            before sending personal data.
+          </p>
+        </div>
+        <ContactForm />
+      </section>
+    </>
+  );
+}

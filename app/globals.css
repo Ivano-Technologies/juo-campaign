@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --forest: #123c2e;
+  --forest-deep: #0b241c;
+  --gold: #c9a227;
+  --gold-soft: #e8d48b;
+  --clay: #c45c26;
+  --cream: #f6f1e6;
+  --paper: #fffdf8;
+  --ink: #1c1915;
+  --muted: #5c574e;
+  --line: #d9d0c0;
+}
+
+@theme inline {
+  --color-forest: var(--forest);
+  --color-forest-deep: var(--forest-deep);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-clay: var(--clay);
+  --color-cream: var(--cream);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --font-sans: var(--font-source);
+  --font-serif: var(--font-fraunces);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-source), "Segoe UI", sans-serif;
+}
+
+::selection {
+  background: var(--gold-soft);
+  color: var(--forest-deep);
+}

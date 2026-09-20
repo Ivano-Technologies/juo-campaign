@@ -17,11 +17,17 @@ export default function PoliciesPage() {
         title="Policies"
         lede="These are the manifesto pillars for the rebuild — not the old demo ‘six pillars’. Detailed page copy waits on the approved manifesto PDF (IVA-17)."
       >
-        <Button href="/manifesto" variant="gold">
+        <Button href="/manifesto" variant="white">
           Manifesto
         </Button>
         <Button href="/join" variant="ghost">
           Join the Movement
+        </Button>
+        <Button href="/donate" variant="ghost">
+          Donate
+        </Button>
+        <Button href="/contact" variant="ghost">
+          Contact
         </Button>
       </PageHero>
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">

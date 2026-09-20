@@ -15,7 +15,7 @@ export default function DonateConfirmPage() {
         title="Donation confirmation"
         lede="If you reached this page after a successful payment, thank you. A receipt will follow once the naira processor is live. This screen is in place for that flow."
       >
-        <Button href="/" variant="gold">
+        <Button href="/" variant="white">
           Back home
         </Button>
         <Button href="/join" variant="ghost">

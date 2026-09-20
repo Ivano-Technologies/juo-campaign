@@ -1,7 +1,7 @@
 import { BrandMarks } from "@/components/brand-marks";
-import { Button } from "@/components/button";
 import { HeroCounters } from "@/components/hero-counters";
 import { PlaceholderMedia } from "@/components/placeholder-media";
+import { PrimaryCtas } from "@/components/primary-ctas";
 import { campaignHashtag, heroStats } from "@/lib/home";
 import { site } from "@/lib/site";
 
@@ -38,17 +38,7 @@ export function HomeHero() {
           …jobs, innovation, and opportunity for every young person.{" "}
           {site.unityLine}. {site.prosperityLine}.
         </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Button href="/join" variant="primary">
-            Join the Movement
-          </Button>
-          <Button href="/donate" variant="gold">
-            Donate
-          </Button>
-          <Button href="/manifesto" variant="ghost">
-            Manifesto
-          </Button>
-        </div>
+        <PrimaryCtas className="mt-8" />
         <HeroCounters stats={heroStats} />
       </div>
     </section>

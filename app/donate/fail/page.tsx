@@ -16,7 +16,7 @@ export default function DonateFailPage() {
         title="Donation unsuccessful"
         lede="The payment did not complete. No charge should have gone through. Retry from the donate page when the processor is connected, or contact the campaign if you were billed in error."
       >
-        <Button href="/donate" variant="gold">
+        <Button href="/donate" variant="white">
           Return to Donate
         </Button>
         <Button href="/contact" variant="ghost">

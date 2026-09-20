@@ -8,14 +8,14 @@ type BrandMarksProps = {
 };
 
 const plates: Record<BrandMarksVariant, string> = {
-  header: "gap-2 rounded-md bg-brand-white px-2 py-1",
+  header: "gap-1.5 rounded-md bg-brand-white px-1.5 py-0.5 sm:gap-2 sm:px-2 sm:py-1",
   hero: "gap-3 rounded-lg bg-brand-white px-3 py-2",
   footer: "gap-3 rounded-md bg-brand-white px-3 py-2",
 };
 
 export function BrandMarks({ variant }: BrandMarksProps) {
-  const ndcHeight = variant === "hero" ? "h-10" : "h-8";
-  const markHeight = variant === "hero" ? "h-12" : "h-9";
+  const ndcHeight = variant === "hero" ? "h-10" : variant === "header" ? "h-7 sm:h-8" : "h-8";
+  const markHeight = variant === "hero" ? "h-12" : variant === "header" ? "h-8 sm:h-9" : "h-9";
 
   return (
     <div className={`inline-flex w-fit max-w-full items-center ${plates[variant]}`}>

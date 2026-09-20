@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button } from "@/components/button";
+import { PrimaryCtas } from "@/components/primary-ctas";
 import { brand } from "@/lib/brand";
 import { campaignHashtag } from "@/lib/home";
 import { site } from "@/lib/site";
@@ -35,14 +35,7 @@ export function HomeGetInvolved() {
             </p>
           </div>
         </div>
-        <div className="flex flex-wrap gap-3">
-          <Button href="/join" variant="primary">
-            Join the Movement
-          </Button>
-          <Button href="/donate" variant="gold">
-            Donate
-          </Button>
-        </div>
+        <PrimaryCtas />
       </div>
     </section>
   );

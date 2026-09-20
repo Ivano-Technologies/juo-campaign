@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Button } from "@/components/button";
 import { ContactForm } from "@/components/contact-form";
 import { PageHero } from "@/components/page-hero";
 import { site } from "@/lib/site";
@@ -16,7 +17,17 @@ export default function ContactPage() {
         kicker="Official channels"
         title="Contact"
         lede="Write to the campaign desk. The message form is on the page; submissions wait on IVA-21 so nothing is stored until the backend is ready."
-      />
+      >
+        <Button href="/join" variant="primary">
+          Join the Movement
+        </Button>
+        <Button href="/donate" variant="white">
+          Donate
+        </Button>
+        <Button href="/manifesto" variant="ghost">
+          Manifesto
+        </Button>
+      </PageHero>
       <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2">
         <div className="space-y-6">
           <div className="rounded-2xl border border-line bg-brand-white p-6">

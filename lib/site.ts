@@ -33,6 +33,16 @@ export const primaryCtas = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
+export type NavHref = (typeof navItems)[number]["href"];
+export type PrimaryCtaHref = (typeof primaryCtas)[number]["href"];
+
+export function isNavActive(pathname: string, href: NavHref): boolean {
+  if (href === "/") {
+    return pathname === "/";
+  }
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export const education = [
   {
     school: "University of Uyo",

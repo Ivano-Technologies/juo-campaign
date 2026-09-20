@@ -1,17 +1,28 @@
 import type { Route } from "next";
 import Link from "next/link";
+import { Button } from "@/components/button";
+import { campaignHashtag } from "@/lib/home";
 import { navItems, site } from "@/lib/site";
 
 export function SiteFooter() {
   return (
     <footer className="bg-forest-deep text-paper">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
-        <div>
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-4">
+        <div className="md:col-span-2">
           <p className="font-serif text-2xl">{site.name}</p>
           <p className="mt-2 text-sm text-gold-soft">{site.office}</p>
-          <p className="mt-4 max-w-sm text-sm text-paper/80">
-            {site.unityLine}. {site.tagline}. {site.agenda}.
+          <p className="mt-4 max-w-md text-sm text-paper/80">
+            {site.tagline}. {site.unityLine}. {site.prosperityLine}.{" "}
+            {campaignHashtag}
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Button href="/join" variant="primary" className="px-4 py-2">
+              Join
+            </Button>
+            <Button href="/donate" variant="gold" className="px-4 py-2">
+              Donate
+            </Button>
+          </div>
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-gold-soft">
@@ -45,6 +56,11 @@ export function SiteFooter() {
             <li>
               <Link href="/privacy" className="hover:text-gold-soft">
                 Privacy
+              </Link>
+            </li>
+            <li>
+              <Link href="/manifesto" className="hover:text-gold-soft">
+                Manifesto
               </Link>
             </li>
           </ul>

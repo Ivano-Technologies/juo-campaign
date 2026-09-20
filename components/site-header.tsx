@@ -13,20 +13,20 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-forest-deep/40 bg-forest text-paper">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-soft font-serif text-sm font-semibold text-forest-deep">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
+        <Link href="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold-soft font-serif text-sm font-semibold text-forest-deep">
             {site.shortName}
           </span>
           <span className="leading-tight">
-            <span className="block font-serif text-base">{site.name}</span>
+            <span className="block truncate font-serif text-base">{site.name}</span>
             <span className="block text-[11px] uppercase tracking-[0.18em] text-gold-soft">
               {site.tagline}
             </span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Primary">
           {navItems.map((item) => {
             const active =
               item.href === "/"
@@ -36,7 +36,8 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href as Route}
-                className={`rounded-full px-3 py-1.5 text-sm transition ${
+                aria-current={active ? "page" : undefined}
+                className={`rounded-full px-2.5 py-1.5 text-[13px] transition ${
                   active
                     ? "bg-paper/15 text-gold-soft"
                     : "text-paper/85 hover:bg-paper/10 hover:text-paper"
@@ -48,15 +49,18 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="hidden lg:block">
-          <Button href="/donate" variant="gold">
+        <div className="hidden items-center gap-2 lg:flex">
+          <Button href="/join" variant="primary" className="px-4 py-2">
+            Join
+          </Button>
+          <Button href="/donate" variant="gold" className="px-4 py-2">
             Donate
           </Button>
         </div>
 
         <button
           type="button"
-          className="inline-flex items-center rounded-full border border-paper/30 px-3 py-1.5 text-sm lg:hidden"
+          className="inline-flex items-center rounded-full border border-paper/30 px-3 py-1.5 text-sm xl:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((value) => !value)}
@@ -68,7 +72,7 @@ export function SiteHeader() {
       {open ? (
         <nav
           id="mobile-nav"
-          className="border-t border-paper/10 px-4 py-4 lg:hidden"
+          className="border-t border-paper/10 px-4 py-4 xl:hidden"
           aria-label="Mobile"
         >
           <ul className="grid gap-1">
@@ -84,6 +88,14 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Button href="/join" variant="primary" className="px-4 py-2">
+              Join
+            </Button>
+            <Button href="/donate" variant="gold" className="px-4 py-2">
+              Donate
+            </Button>
+          </div>
         </nav>
       ) : null}
     </header>

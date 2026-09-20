@@ -5,13 +5,6 @@ import type { heroStats } from "@/lib/home";
 
 type Stat = (typeof heroStats)[number];
 
-function prefersReducedMotion(): boolean {
-  if (typeof window === "undefined") {
-    return true;
-  }
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
-
 function useCountUp(target: number, active: boolean): number {
   const [value, setValue] = useState(0);
 
@@ -19,17 +12,15 @@ function useCountUp(target: number, active: boolean): number {
     if (!active) {
       return;
     }
-    if (prefersReducedMotion()) {
-      setValue(target);
-      return;
-    }
 
-    const durationMs = 1400;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const durationMs = reduced ? 0 : 1400;
     const startedAt = performance.now();
     let frame = 0;
 
     const tick = (now: number) => {
-      const progress = Math.min(1, (now - startedAt) / durationMs);
+      const progress =
+        durationMs === 0 ? 1 : Math.min(1, (now - startedAt) / durationMs);
       const eased = 1 - (1 - progress) ** 3;
       setValue(Math.round(target * eased));
       if (progress < 1) {

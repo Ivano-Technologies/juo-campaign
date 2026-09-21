@@ -20,10 +20,6 @@ import {
   visionPillars,
   visionPillarsIntro,
   visionPillarsTitle,
-  visionShareHashtags,
-  visionWalkBody,
-  visionWalkCtas,
-  visionWalkTitle,
   visionWhyBody,
   visionWhyTitle,
 } from "@/lib/vision";
@@ -85,7 +81,7 @@ export default function VisionPage() {
                 <Button
                   key={cta.href}
                   href={cta.href}
-                  variant={cta.href === "/manifesto" ? "white" : cta.href === "/join" ? "primary" : "ghost"}
+                  variant="ghost"
                 >
                   {cta.label}
                 </Button>

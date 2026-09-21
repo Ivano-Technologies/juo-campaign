@@ -80,12 +80,14 @@ export function SiteHeader() {
 
         <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
           <div className="hidden items-center gap-3 lg:flex">
-            <Link
+            <Button
               href="/join"
-              className="bg-brand-red px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white transition duration-200 hover:bg-brand-red/90"
+              variant="ghost"
+              size="sm"
+              className="text-[12px] font-bold uppercase tracking-[0.12em]"
             >
               Join the Movement
-            </Link>
+            </Button>
             <SocialRow
               className="gap-1.5"
               iconClassName="flex h-7 w-7 items-center justify-center text-white/90 transition duration-200 hover:text-brand-red"

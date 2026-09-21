@@ -3,7 +3,7 @@ import { Montserrat, Poppins } from "next/font/google";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { site } from "@/lib/site";
+import { canonicalOrigin, site } from "@/lib/site";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -21,7 +21,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`https://${site.domain}`),
+  metadataBase: new URL(canonicalOrigin),
   title: {
     default: `${site.name} | ${site.tagline} for Cross River`,
     template: `%s | ${site.name}`,
@@ -38,7 +38,8 @@ export const metadata: Metadata = {
     "A Fresh Start",
   ],
   robots: {
-    index: false,
+    // Preview/dev stay noindex. Production must be indexable for GSC.
+    index: process.env.VERCEL_ENV === "production",
     follow: true,
   },
   openGraph: {

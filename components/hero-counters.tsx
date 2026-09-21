@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { heroStats } from "@/lib/home";
+import { isPublishedHeroStat, type HeroStat } from "@/lib/home";
 
-type Stat = (typeof heroStats)[number];
+type Stat = HeroStat;
 
 function useCountUp(target: number, active: boolean): number {
   const [value, setValue] = useState(0);
@@ -85,10 +85,10 @@ export function HeroCounters({ stats }: { stats: readonly Stat[] }) {
   return (
     <div
       ref={rootRef}
-      className="mt-10 grid gap-3 sm:grid-cols-3"
+      className="mt-10 grid gap-3 sm:grid-cols-2"
       aria-label="Cross River at a glance"
     >
-      {stats.map((stat) => (
+      {stats.filter(isPublishedHeroStat).map((stat) => (
         <CounterStat key={stat.label} stat={stat} active={active} />
       ))}
     </div>

@@ -5,7 +5,12 @@ import { useEffect, useState } from "react";
 import { StatGlyph } from "@/components/icons";
 import { useInView } from "@/components/motion/use-in-view";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
-import { heroStats, statsBackdrop } from "@/lib/home";
+import {
+  heroStats,
+  isPublishedHeroStat,
+  statsBackdrop,
+  type HeroStat,
+} from "@/lib/home";
 
 function useCountUp(target: number, active: boolean, reduced: boolean): number {
   const [value, setValue] = useState(0);
@@ -44,7 +49,7 @@ function StatCell({
   active,
   reduced,
 }: {
-  stat: (typeof heroStats)[number];
+  stat: HeroStat;
   active: boolean;
   reduced: boolean;
 }) {
@@ -82,8 +87,8 @@ export function HomeStatsBar() {
         className="object-cover opacity-35"
       />
       <div className="absolute inset-0 bg-navy/80" />
-      <div className="relative mx-auto grid max-w-[1280px] items-center gap-10 px-6 sm:grid-cols-2 lg:grid-cols-4">
-        {heroStats.map((stat) => (
+      <div className="relative mx-auto grid max-w-[1280px] items-center gap-10 px-6 sm:grid-cols-3">
+        {heroStats.filter(isPublishedHeroStat).map((stat) => (
           <StatCell
             key={stat.label}
             stat={stat}

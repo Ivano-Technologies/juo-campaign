@@ -66,7 +66,7 @@ export function Button({
 
     return (
       <Link
-        href={href}
+        href={href as Route}
         className={classes}
         aria-current={selected ? "page" : undefined}
         onClick={onClick}

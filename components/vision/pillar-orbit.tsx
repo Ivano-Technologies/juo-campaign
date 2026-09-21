@@ -199,7 +199,7 @@ export function PillarOrbit() {
             {String(active + 1).padStart(2, "0")}
           </p>
           <h3 className="mt-2 font-serif text-2xl leading-tight font-bold text-brand-white sm:text-3xl">
-            {current}
+            {current.name}
           </h3>
           <p className="mt-4 text-base leading-snug font-semibold text-balance text-brand-white sm:text-lg">
             {visionOrbitUnityLine}

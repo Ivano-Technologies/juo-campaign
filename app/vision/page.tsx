@@ -20,10 +20,6 @@ import {
   visionPillars,
   visionPillarsIntro,
   visionPillarsTitle,
-  visionShareHashtags,
-  visionWalkBody,
-  visionWalkCtas,
-  visionWalkTitle,
   visionWhyBody,
   visionWhyTitle,
 } from "@/lib/vision";
@@ -59,7 +55,7 @@ export default function VisionPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(visionJsonLd) }}
       />
       <section className="bg-brand-blue text-brand-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-4 py-16 sm:gap-10 sm:px-6 sm:py-20">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-14 sm:flex-row sm:items-center sm:justify-between sm:gap-10 sm:px-6 sm:py-20">
           <div className="min-w-0 flex-1">
             <p className="text-xs uppercase tracking-[0.28em] text-brand-red">
               {visionHeroEyebrow}
@@ -85,7 +81,7 @@ export default function VisionPage() {
                 <Button
                   key={cta.href}
                   href={cta.href}
-                  variant={cta.href === "/manifesto" ? "white" : cta.href === "/join" ? "primary" : "ghost"}
+                  variant="ghost"
                 >
                   {cta.label}
                 </Button>
@@ -93,7 +89,7 @@ export default function VisionPage() {
             </nav>
           </div>
           <CandidateMark
-            className="h-24 w-24 shrink-0 sm:h-36 sm:w-36 lg:h-44 lg:w-44"
+            className="h-20 w-20 shrink-0 self-start sm:h-36 sm:w-36 sm:self-auto lg:h-44 lg:w-44"
             priority
           />
         </div>

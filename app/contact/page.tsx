@@ -2,12 +2,17 @@ import type { Metadata } from "next";
 import { Button } from "@/components/button";
 import { ContactForm } from "@/components/contact-form";
 import { PageHero } from "@/components/page-hero";
-import { site } from "@/lib/site";
+import { pageShareTags } from "@/lib/page-seo";
+import { pageTitle, site } from "@/lib/site";
+
+const contactTitle = pageTitle("Contact");
+const contactDescription =
+  "Official contact for the John Upan Odey Jnr campaign: phone, email, and a message form.";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Official contact for the John Upan Odey Jnr campaign: phone, email, and a message form.",
+  description: contactDescription,
+  ...pageShareTags(contactTitle, contactDescription),
 };
 
 export default function ContactPage() {

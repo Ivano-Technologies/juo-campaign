@@ -58,7 +58,7 @@ export function SiteHeader() {
         </button>
 
         <nav
-          className="hidden min-w-0 flex-1 items-center justify-center gap-5 xl:gap-7 lg:flex"
+          className="hidden min-w-0 flex-1 items-center justify-center gap-3 xl:gap-7 lg:flex"
           aria-label="Primary"
         >
           {wpNavItems.map((item) => {
@@ -68,7 +68,7 @@ export function SiteHeader() {
                 key={item.label}
                 href={item.href as Route}
                 aria-current={active ? "page" : undefined}
-                className={`text-[13px] font-semibold uppercase tracking-[0.18em] transition duration-200 hover:text-brand-red ${
+                className={`inline-flex min-h-11 items-center text-[12px] font-semibold uppercase tracking-[0.12em] transition duration-200 hover:text-brand-red xl:text-[13px] xl:tracking-[0.18em] ${
                   active ? "text-brand-white" : "text-brand-white/90"
                 }`}
               >
@@ -80,15 +80,17 @@ export function SiteHeader() {
 
         <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
           <div className="hidden items-center gap-3 lg:flex">
-            <Link
+            <Button
               href="/join"
-              className="bg-brand-red px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white transition duration-200 hover:bg-brand-red/90"
+              variant="ghost"
+              size="sm"
+              className="min-h-11 text-[12px] font-bold uppercase tracking-[0.12em]"
             >
               Join the Movement
-            </Link>
+            </Button>
             <SocialRow
-              className="gap-1.5"
-              iconClassName="flex h-7 w-7 items-center justify-center text-white/90 transition duration-200 hover:text-brand-red"
+              className="hidden gap-1.5 xl:flex"
+              iconClassName="flex h-11 w-11 items-center justify-center text-white/90 transition duration-200 hover:text-brand-red"
             />
           </div>
           <Link

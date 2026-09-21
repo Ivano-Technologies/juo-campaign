@@ -35,10 +35,10 @@ export function HomeChallenges() {
 
   return (
     <section ref={sectionRef} className="bg-brand-white">
-      <div className="grid min-h-[38rem] lg:grid-cols-2">
+      <div className="grid min-h-[38rem] lg:min-h-[48rem] lg:grid-cols-2">
         <div className="flex flex-col justify-center bg-navy px-5 py-14 text-brand-white sm:px-12 sm:py-16 lg:px-16 lg:py-20">
           <h2 className="font-serif text-[2.5rem] leading-[0.95] font-extrabold tracking-tight text-brand-white uppercase sm:text-6xl lg:text-7xl">
-            Challenges{" "}
+            Challenges
             <br />
             We Face
           </h2>
@@ -58,29 +58,29 @@ export function HomeChallenges() {
           </ul>
         </div>
 
-        <div className="flex flex-col justify-end gap-6 overflow-visible bg-brand-white px-4 py-10 sm:flex-row sm:items-end sm:gap-8 sm:px-8 lg:min-h-[46rem] lg:px-12">
-          <div className="relative mx-auto h-[22rem] w-full max-w-md shrink-0 sm:mx-0 sm:h-[32rem] sm:w-[min(100%,26rem)] lg:h-[40rem] lg:w-[30rem]">
-            <Image
-              src={challengesCutout.src}
-              alt={challengesCutout.alt}
-              fill
-              sizes="(min-width: 1024px) 28vw, 90vw"
-              className="object-contain object-bottom"
-            />
-          </div>
-          <div className="flex shrink-0 flex-col justify-end pb-2 sm:min-w-[16.5rem] sm:pb-16 lg:min-w-[20rem] lg:pb-24">
-            <p className="font-serif text-5xl leading-none font-black tracking-tight text-navy uppercase sm:text-6xl lg:text-[3.5rem]">
+        <div className="challenges-pane relative w-full self-stretch overflow-hidden bg-brand-white px-2 py-0 sm:overflow-visible sm:px-3 lg:px-4">
+          <div className="challenges-lockup relative z-10 flex h-full flex-col justify-end pb-2 sm:pb-3 lg:pb-5">
+            <p className="challenges-word font-serif font-black tracking-tight text-navy uppercase">
               Let&apos;s
             </p>
             <p
-              className="challenges-word-change mt-3 font-serif text-5xl leading-none font-black tracking-tight text-change-blue uppercase sm:mt-4 sm:text-6xl lg:text-[3.5rem]"
+              className="challenges-word challenges-word-change font-serif font-black tracking-tight text-change-blue uppercase"
               style={{ transform: `translate3d(0, ${offset}px, 0)` }}
             >
               Change
             </p>
-            <p className="challenges-word-that mt-3 font-serif text-5xl leading-none font-black tracking-tight text-that-navy uppercase sm:mt-4 sm:text-6xl lg:text-[3.5rem]">
+            <p className="challenges-word challenges-word-that font-serif font-black tracking-tight text-that-navy uppercase">
               That
             </p>
+          </div>
+          <div className="challenges-portrait pointer-events-none absolute inset-y-0 right-0 z-0">
+            <Image
+              src={challengesCutout.src}
+              alt={challengesCutout.alt}
+              fill
+              sizes="(min-width: 1024px) 36vw, 70vw"
+              className="object-contain object-right-bottom"
+            />
           </div>
         </div>
       </div>

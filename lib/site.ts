@@ -43,6 +43,7 @@ export const navItems = [
 export const footerQuickLinks = [
   { href: "/", label: "Home" },
   { href: "/vision", label: "The Vision" },
+  { href: "/manifesto", label: "Manifesto" },
   { href: "/meet-your-reps", label: "Meet Your Reps" },
   { href: "/diaspora-connect", label: "Diaspora Connect" },
   { href: "/donate", label: "Donate" },

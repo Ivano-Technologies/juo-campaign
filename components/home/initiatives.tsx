@@ -9,7 +9,7 @@ export function HomeInitiatives() {
   return (
     <section aria-labelledby="featured-initiatives-heading">
       <div className="grid md:grid-cols-3">
-        <article className="flex min-h-[18rem] flex-col justify-center bg-brand-white px-10 py-14 text-center">
+        <article className="flex min-h-[18rem] flex-col justify-center bg-brand-white px-6 py-14 text-center sm:px-10">
           <h3 className="font-serif text-2xl font-bold tracking-[0.08em] text-navy uppercase">
             Youth Skills &amp; Startup Fund
           </h3>
@@ -27,7 +27,7 @@ export function HomeInitiatives() {
             className="object-cover"
           />
         </figure>
-        <article className="flex min-h-[18rem] flex-col justify-center bg-brand-white px-10 py-14 text-center">
+        <article className="flex min-h-[18rem] flex-col justify-center bg-brand-white px-6 py-14 text-center sm:px-10">
           <h3 className="font-serif text-2xl font-bold tracking-[0.08em] text-navy uppercase">
             Tourism 2.0
           </h3>

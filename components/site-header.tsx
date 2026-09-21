@@ -4,6 +4,7 @@ import type { Route } from "next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
+import { Button } from "@/components/button";
 import { CandidateMark, SocialRow } from "@/components/socials";
 import { isNavActive, site, wpNavItems } from "@/lib/site";
 
@@ -75,12 +76,14 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto hidden items-center gap-3 lg:flex">
-          <Link
+          <Button
             href="/join"
-            className="border border-brand-white bg-transparent px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white transition-[color,background-color,border-color,transform] duration-200 hover:bg-brand-white hover:text-navy active:bg-brand-white active:text-navy motion-safe:active:scale-[0.98]"
+            variant="ghost"
+            size="sm"
+            className="text-[12px] font-bold uppercase tracking-[0.12em]"
           >
             Join the Movement
-          </Link>
+          </Button>
           <SocialRow
             className="gap-1.5"
             iconClassName="flex h-7 w-7 items-center justify-center text-white/90 transition duration-200 hover:text-brand-red"
@@ -123,13 +126,15 @@ export function SiteHeader() {
             );
           })}
         </ul>
-        <Link
+        <Button
           href="/join"
-          className="mt-4 inline-flex min-h-11 items-center border border-brand-white bg-transparent px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white transition-[color,background-color,border-color,transform] duration-200 hover:bg-brand-white hover:text-navy active:bg-brand-white active:text-navy motion-safe:active:scale-[0.98]"
+          variant="ghost"
+          size="sm"
+          className="mt-4 min-h-11 text-[12px] font-bold uppercase tracking-[0.12em]"
           onClick={() => setOpen(false)}
         >
           Join the Movement
-        </Link>
+        </Button>
         <SocialRow className="mt-4" />
       </nav>
     </header>

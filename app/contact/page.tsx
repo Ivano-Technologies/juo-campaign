@@ -18,7 +18,7 @@ export default function ContactPage() {
         title="Contact"
         lede="Write to the campaign desk. The message form on this page is live."
       >
-        <Button href="/join" variant="primary">
+        <Button href="/join" variant="ghost">
           Join the Movement
         </Button>
         <Button href="/donate" variant="white">

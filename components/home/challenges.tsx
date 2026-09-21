@@ -37,20 +37,20 @@ export function HomeChallenges() {
     <section ref={sectionRef} className="bg-brand-white">
       <div className="grid min-h-[38rem] lg:grid-cols-2">
         <div className="flex flex-col justify-center bg-navy px-8 py-16 text-brand-white sm:px-12 lg:px-16 lg:py-20">
-          <h2 className="font-serif text-5xl font-extrabold tracking-tight text-brand-white uppercase sm:text-6xl">
+          <h2 className="font-serif text-6xl font-extrabold tracking-tight text-brand-white uppercase sm:text-7xl">
             Challenges
             <br />
             We Face
           </h2>
           <DiamondRule count={5} />
-          <ul className="mt-14 grid max-w-lg grid-cols-2 gap-x-10 gap-y-14">
+          <ul className="mt-12 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-12 sm:mt-14 sm:gap-x-12 sm:gap-y-16">
             {challenges.map((item) => (
               <li
                 key={item.id}
-                className="flex max-w-[18rem] flex-col items-center text-center"
+                className="flex max-w-[22rem] flex-col items-center text-center"
               >
                 <ProhibitIcon />
-                <p className="mt-4 text-base leading-7 text-brand-white sm:text-lg">
+                <p className="mt-5 text-lg leading-8 text-brand-white sm:text-xl sm:leading-9 lg:text-[1.375rem] lg:leading-9">
                   {item.body}
                 </p>
               </li>

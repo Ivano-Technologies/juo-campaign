@@ -88,7 +88,7 @@ export function ProhibitIcon() {
   return (
     <svg
       viewBox="0 0 24 24"
-      className="h-10 w-10 text-white/85"
+      className="h-12 w-12 text-white/85"
       fill="none"
       aria-hidden="true"
     >

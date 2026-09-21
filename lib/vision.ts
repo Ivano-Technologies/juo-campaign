@@ -10,8 +10,10 @@ export const visionPageTitle =
 export const visionPageDescription =
   "John Upan Odey Jnr’s vision for Cross River 2027: A Fresh Start. One People, One Cross River. We produce. We process. We prosper.";
 
+export const visionHeadlineLead = "A Fresh Start —";
+export const visionHeadlineLockup = "One People, One Cross River";
 export const visionHeadline =
-  "A Fresh Start — One People, One Cross River";
+  `${visionHeadlineLead} ${visionHeadlineLockup}` as const;
 
 /** Brand-audit pillar names only — no body until the manifesto (IVA-17). */
 export const visionPillars = [

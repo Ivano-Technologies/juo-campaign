@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/button";
-import { PageHero } from "@/components/page-hero";
+import { CandidateMark } from "@/components/socials";
 import { site } from "@/lib/site";
 import {
-  visionHeadline,
+  visionHeadlineLead,
+  visionHeadlineLockup,
   visionJsonLd,
   visionPageDescription,
   visionPageTitle,
@@ -39,11 +40,28 @@ export default function VisionPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(visionJsonLd) }}
       />
-      <PageHero
-        kicker="The Vision"
-        title={visionHeadline}
-        lede={site.prosperityLine.toUpperCase()}
-      />
+      <section className="bg-brand-blue text-brand-white">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-4 py-16 sm:gap-10 sm:px-6 sm:py-20">
+          <div className="min-w-0 flex-1">
+            <p className="text-xs uppercase tracking-[0.28em] text-brand-red">
+              The Vision
+            </p>
+            <h1 className="mt-3 max-w-4xl font-serif text-4xl leading-[1.15] sm:text-5xl">
+              <span className="block">{visionHeadlineLead}</span>
+              <span className="mt-1 block text-brand-red">
+                {visionHeadlineLockup}
+              </span>
+            </h1>
+            <p className="mt-5 max-w-2xl text-lg tracking-[0.04em] text-brand-white/85">
+              {site.prosperityLine.toUpperCase()}
+            </p>
+          </div>
+          <CandidateMark
+            className="h-24 w-24 shrink-0 sm:h-36 sm:w-36 lg:h-44 lg:w-44"
+            priority
+          />
+        </div>
+      </section>
 
       <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
         <h2 className="font-serif text-3xl text-ink">Why this vision</h2>

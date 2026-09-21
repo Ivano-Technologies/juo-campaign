@@ -30,7 +30,7 @@ export default function DonatePage() {
       <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
         <DonateForm />
         <div className="space-y-4 text-muted">
-          <h2 className="font-serif text-3xl text-ink">How giving will work</h2>
+          <h2 className="pr-14 font-serif text-3xl text-ink md:pr-0">How giving will work</h2>
           <p>
             Approved amounts, receipt language, and the processor widget will
             live on this page — not a ported GiveWP form. International and

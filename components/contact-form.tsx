@@ -95,7 +95,7 @@ export function ContactForm() {
           className="rounded-lg border border-line bg-brand-white px-3 py-2"
         />
       </label>
-      <label className="flex items-start gap-2 text-sm text-muted">
+      <label className="flex min-h-11 items-start gap-3 py-2.5 text-sm text-muted">
         <input
           required
           type="checkbox"
@@ -103,7 +103,7 @@ export function ContactForm() {
           onChange={(event) =>
             setValues({ ...values, privacy: event.target.checked })
           }
-          className="mt-1"
+          className="mt-0.5 h-5 w-5 shrink-0 accent-brand-red"
         />
         <span>
           I have read the{" "}

@@ -114,7 +114,7 @@ export function SiteHeader() {
                 <Link
                   href={item.href as Route}
                   aria-current={active ? "page" : undefined}
-                  className="block px-2 py-2.5 text-sm font-semibold uppercase tracking-[0.16em] text-brand-white/90"
+                  className="flex min-h-11 items-center px-2 py-2.5 text-sm font-semibold uppercase tracking-[0.16em] text-brand-white/90"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
@@ -125,7 +125,7 @@ export function SiteHeader() {
         </ul>
         <Link
           href="/join"
-          className="mt-4 inline-flex bg-brand-red px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white"
+          className="mt-4 inline-flex min-h-11 items-center bg-brand-red px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white"
           onClick={() => setOpen(false)}
         >
           Join the Movement

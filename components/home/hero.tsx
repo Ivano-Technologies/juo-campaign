@@ -33,7 +33,7 @@ export function HomeHero() {
       ? "justify-start text-left"
       : "justify-end text-right";
   const captionY =
-    slide.captionY === "center" ? "items-center" : "items-end pb-16 sm:pb-20";
+    slide.captionY === "center" ? "items-center" : "items-end";
 
   return (
     <section
@@ -83,7 +83,7 @@ export function HomeHero() {
 
       <button
         type="button"
-        className="absolute top-1/2 left-4 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/25 text-2xl text-white backdrop-blur-sm transition hover:bg-black/45"
+        className="absolute bottom-5 left-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/25 text-2xl text-white backdrop-blur-sm transition hover:bg-black/45 md:top-1/2 md:bottom-auto md:left-4 md:-translate-y-1/2"
         aria-label="Previous slide"
         onClick={() => go(index - 1)}
       >
@@ -91,7 +91,7 @@ export function HomeHero() {
       </button>
       <button
         type="button"
-        className="absolute top-1/2 right-4 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/25 text-2xl text-white backdrop-blur-sm transition hover:bg-black/45"
+        className="absolute bottom-5 right-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/25 text-2xl text-white backdrop-blur-sm transition hover:bg-black/45 md:top-1/2 md:bottom-auto md:right-4 md:-translate-y-1/2"
         aria-label="Next slide"
         onClick={() => go(index + 1)}
       >
@@ -99,7 +99,7 @@ export function HomeHero() {
       </button>
 
       <div
-        className={`relative z-[2] flex h-full px-8 sm:px-16 lg:px-24 ${captionBox} ${captionY}`}
+        className={`relative z-[2] flex h-full px-6 pb-24 sm:px-16 md:pb-16 lg:px-24 ${captionBox} ${captionY}`}
       >
         <div
           key={slide.src + slide.title}

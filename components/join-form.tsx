@@ -133,7 +133,7 @@ export function JoinForm() {
           ))}
         </select>
       </label>
-      <label className="flex items-start gap-2 text-sm text-muted">
+      <label className="flex min-h-11 items-start gap-3 py-2.5 text-sm text-muted">
         <input
           required
           type="checkbox"
@@ -141,7 +141,7 @@ export function JoinForm() {
           onChange={(event) =>
             setValues({ ...values, privacy: event.target.checked })
           }
-          className="mt-1"
+          className="mt-0.5 h-5 w-5 shrink-0 accent-brand-red"
         />
         <span>
           I have read the{" "}

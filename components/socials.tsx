@@ -9,7 +9,7 @@ type SocialRowProps = {
 
 export function SocialRow({
   className = "",
-  iconClassName = "flex h-8 w-8 items-center justify-center bg-white/10 text-white transition hover:bg-brand-red",
+  iconClassName = "flex h-11 w-11 items-center justify-center bg-white/10 text-white transition hover:bg-brand-red",
 }: SocialRowProps) {
   return (
     <ul className={`flex items-center gap-2 ${className}`.trim()}>

@@ -32,7 +32,7 @@ export function HomeVision() {
                     type="button"
                     role="tab"
                     aria-selected={isActive}
-                    className={`flex w-full items-center gap-3 text-left text-sm font-semibold tracking-[0.16em] uppercase transition ${
+                    className={`flex min-h-11 w-full items-center gap-3 py-2.5 text-left text-sm font-semibold tracking-[0.16em] uppercase transition ${
                       isActive
                         ? "text-brand-red"
                         : "text-brand-white/80 hover:text-brand-white"

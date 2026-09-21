@@ -14,7 +14,7 @@ export default function MeetYourRepsPage() {
       <PageHero
         kicker="The movement"
         title="Meet Your Reps"
-        lede="Ward and LGA coordinators will be published here. This is a placeholder until Kezie expands homepage-only IVA-35 into full keep-pages."
+        lede="Ward and LGA coordinators for the John Upan Odey Jnr campaign will be published here."
       >
         <Button href="/join" variant="white">
           Join the Movement

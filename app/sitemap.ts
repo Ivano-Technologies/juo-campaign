@@ -1,14 +1,14 @@
 import type { MetadataRoute } from "next";
 import { canonicalOrigin } from "@/lib/site";
 
-/** Public, indexable routes. Do not include 404 paths such as /vision. */
+/** Public, indexable routes. Canonical Vision is /vision; /the-vision 301s. */
 const publicPaths = [
   "/",
   "/join",
   "/donate",
   "/contact",
   "/manifesto",
-  "/the-vision",
+  "/vision",
   "/john-upan-odey",
   "/meet-your-reps",
   "/diaspora-connect",

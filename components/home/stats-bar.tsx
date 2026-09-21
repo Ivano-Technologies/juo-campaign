@@ -73,7 +73,7 @@ export function HomeStatsBar() {
   const reduced = usePrefersReducedMotion();
 
   return (
-    <section ref={ref} className="relative isolate overflow-hidden bg-navy py-16 text-brand-white">
+    <section ref={ref} className="relative isolate overflow-hidden bg-navy py-20 text-brand-white sm:py-24">
       <Image
         src={statsBackdrop}
         alt=""

@@ -13,9 +13,9 @@ export function HomePillars() {
         {homePillars.map((pillar) => (
           <li
             key={pillar.number}
-            className={`min-h-[22rem] px-8 py-12 text-brand-white sm:min-h-[24rem] sm:px-10 ${toneClass[pillar.tone]}`}
+            className={`min-h-[24rem] px-8 py-12 text-brand-white sm:min-h-[26rem] sm:px-10 ${toneClass[pillar.tone]}`}
           >
-            <p className="font-serif text-6xl font-light text-brand-white/90 sm:text-7xl">
+            <p className="font-serif text-7xl font-light text-brand-white/90 sm:text-8xl">
               {pillar.number}
             </p>
             <h3 className="mt-8 font-serif text-xl font-extrabold tracking-tight uppercase">

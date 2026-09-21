@@ -55,15 +55,15 @@ export function HomeChallenges() {
           </ul>
         </div>
 
-        <div className="relative min-h-[32rem] overflow-hidden bg-brand-white">
+        <div className="relative min-h-[36rem] overflow-hidden bg-brand-white lg:min-h-[42rem]">
           <p
-            className="pointer-events-none absolute top-[18%] left-[6%] font-serif text-[6.5rem] leading-none font-black tracking-tight text-navy/90 uppercase select-none sm:text-[8rem]"
+            className="pointer-events-none absolute top-[8%] left-[4%] z-[1] font-serif text-[5.5rem] leading-[0.85] font-black tracking-tight text-navy uppercase select-none sm:text-[7.5rem]"
             aria-hidden="true"
           >
             Let&apos;s
           </p>
           <p
-            className="pointer-events-none absolute top-[38%] left-[8%] z-[2] font-serif text-[6rem] leading-none font-black tracking-tight text-cyan uppercase select-none sm:text-[7.5rem]"
+            className="pointer-events-none absolute top-[32%] left-[6%] z-[2] font-serif text-[5.2rem] leading-none font-black tracking-tight text-cyan uppercase select-none sm:text-[7rem]"
             style={{ transform: `translate3d(0, ${offset}px, 0)` }}
             aria-hidden="true"
           >
@@ -74,10 +74,10 @@ export function HomeChallenges() {
             alt={challengesCutout.alt}
             fill
             sizes="(min-width: 1024px) 54vw, 100vw"
-            className="relative z-[3] object-contain object-[center_bottom]"
+            className="relative z-[3] object-contain object-[center_80%]"
           />
           <p
-            className="pointer-events-none absolute right-[18%] bottom-[18%] z-[4] font-serif text-5xl font-black tracking-tight text-navy uppercase sm:text-6xl"
+            className="pointer-events-none absolute right-[16%] bottom-[16%] z-[4] font-serif text-5xl font-black tracking-tight text-navy uppercase sm:right-[20%] sm:text-6xl"
             aria-hidden="true"
           >
             That

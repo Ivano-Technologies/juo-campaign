@@ -18,7 +18,7 @@ export const site = {
 /** www-primary canonical origin. Apex redirects to www. */
 export const canonicalOrigin = `https://www.${site.domain}` as const;
 
-/** Kezie-locked WP homepage chrome (IVA-35). */
+/** WP homepage chrome (IVA-35). */
 export const wpNavItems = [
   { href: "/", label: "Home" },
   { href: "/vision", label: "The Vision" },

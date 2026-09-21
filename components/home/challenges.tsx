@@ -25,7 +25,7 @@ export function HomeChallenges() {
       const rect = node.getBoundingClientRect();
       const view = window.innerHeight || 1;
       const progress = (view / 2 - (rect.top + rect.height / 2)) / view;
-      setOffset(Math.max(-28, Math.min(28, progress * 56)));
+      setOffset(Math.max(-10, Math.min(10, progress * 20)));
     };
 
     onScroll();
@@ -58,8 +58,8 @@ export function HomeChallenges() {
           </ul>
         </div>
 
-        <div className="grid items-end gap-2 overflow-hidden bg-brand-white px-4 py-10 sm:grid-cols-[minmax(0,1fr)_16.5rem] sm:items-center sm:gap-3 sm:px-6 lg:min-h-[46rem] lg:grid-cols-[minmax(0,1fr)_20rem] lg:px-10">
-          <div className="relative mx-auto h-[22rem] w-full max-w-md sm:mx-0 sm:h-[28rem] lg:h-[38rem] lg:max-w-none">
+        <div className="flex flex-col justify-end gap-6 overflow-visible bg-brand-white px-4 py-10 sm:flex-row sm:items-end sm:gap-8 sm:px-8 lg:min-h-[46rem] lg:px-12">
+          <div className="relative mx-auto h-[22rem] w-full max-w-md shrink-0 sm:mx-0 sm:h-[32rem] sm:w-[min(100%,26rem)] lg:h-[40rem] lg:w-[30rem]">
             <Image
               src={challengesCutout.src}
               alt={challengesCutout.alt}
@@ -68,17 +68,17 @@ export function HomeChallenges() {
               className="object-contain object-bottom"
             />
           </div>
-          <div className="flex min-w-0 flex-col justify-center pb-4 sm:pb-0">
-            <p className="font-serif text-5xl leading-[0.82] font-black tracking-tight text-navy uppercase sm:text-6xl lg:text-[3.9rem]">
+          <div className="flex shrink-0 flex-col justify-end pb-2 sm:min-w-[16.5rem] sm:pb-16 lg:min-w-[20rem] lg:pb-24">
+            <p className="font-serif text-5xl leading-none font-black tracking-tight text-navy uppercase sm:text-6xl lg:text-[3.5rem]">
               Let&apos;s
             </p>
             <p
-              className="challenges-word-change font-serif text-5xl leading-[0.82] font-black tracking-tight text-change-blue uppercase sm:text-6xl lg:text-[3.9rem]"
+              className="challenges-word-change mt-3 font-serif text-5xl leading-none font-black tracking-tight text-change-blue uppercase sm:mt-4 sm:text-6xl lg:text-[3.5rem]"
               style={{ transform: `translate3d(0, ${offset}px, 0)` }}
             >
               Change
             </p>
-            <p className="challenges-word-that font-serif text-5xl leading-[0.82] font-black tracking-tight text-that-navy uppercase sm:text-6xl lg:text-[3.9rem]">
+            <p className="challenges-word-that mt-3 font-serif text-5xl leading-none font-black tracking-tight text-that-navy uppercase sm:mt-4 sm:text-6xl lg:text-[3.5rem]">
               That
             </p>
           </div>

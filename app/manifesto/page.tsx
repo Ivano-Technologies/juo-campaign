@@ -15,12 +15,14 @@ import {
   manifestoPageDescription,
   manifestoPageTitle,
 } from "@/lib/manifesto";
+import { pageShareTags } from "@/lib/page-seo";
 
 export const metadata: Metadata = {
   title: {
     absolute: manifestoPageTitle,
   },
   description: manifestoPageDescription,
+  ...pageShareTags(manifestoPageTitle, manifestoPageDescription),
 };
 
 export default function ManifestoPage() {

@@ -14,7 +14,7 @@ export const manifestoDownloadLabel = "Manifesto PDF — coming when published";
 export const manifestoComingTitle = "Coming with the approved PDF";
 export const manifestoComingBody = [
   "The official manifesto for John Upan Odey Jnr’s Cross River 2027 NDC campaign will be published here as an approved PDF with a clear web readout.",
-  "This page is an interim shell on purpose. It does not invent policy text, commitment lists, budgets, or programme detail. When Brand releases the manifesto (IVA-17), this route becomes the home for download and summary.",
+  "This page is an interim shell on purpose. It does not invent policy text, commitment lists, budgets, or programme detail. When the approved manifesto PDF is published, this route becomes the home for download and summary.",
 ] as const;
 
 export const manifestoCarryTitle = "What the manifesto will carry";

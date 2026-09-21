@@ -11,12 +11,14 @@ import {
   newsroomBody,
   newsroomTitle,
 } from "@/lib/news";
+import { pageShareTags } from "@/lib/page-seo";
 
 export const metadata: Metadata = {
   title: {
     absolute: newsPageTitle,
   },
   description: newsPageDescription,
+  ...pageShareTags(newsPageTitle, newsPageDescription),
 };
 
 export default function NewsPage() {

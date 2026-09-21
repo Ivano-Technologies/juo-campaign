@@ -12,6 +12,7 @@ import {
   policiesPageTitle,
   policiesTenTitle,
 } from "@/lib/policies";
+import { pageShareTags } from "@/lib/page-seo";
 import { visionPillars } from "@/lib/vision";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     absolute: policiesPageTitle,
   },
   description: policiesPageDescription,
+  ...pageShareTags(policiesPageTitle, policiesPageDescription),
 };
 
 export default function PoliciesPage() {

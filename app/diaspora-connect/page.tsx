@@ -20,12 +20,14 @@ import {
   diasporaWhoItems,
   diasporaWhoTitle,
 } from "@/lib/diaspora";
+import { pageShareTags } from "@/lib/page-seo";
 
 export const metadata: Metadata = {
   title: {
     absolute: diasporaPageTitle,
   },
   description: diasporaPageDescription,
+  ...pageShareTags(diasporaPageTitle, diasporaPageDescription),
 };
 
 export default function DiasporaConnectPage() {

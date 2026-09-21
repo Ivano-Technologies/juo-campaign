@@ -15,6 +15,7 @@ import {
   repsServeBody,
   repsServeTitle,
 } from "@/lib/reps";
+import { pageShareTags } from "@/lib/page-seo";
 import { crossRiverLgas } from "@/lib/site";
 
 const directoryLgas = crossRiverLgas.filter(
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
     absolute: repsPageTitle,
   },
   description: repsPageDescription,
+  ...pageShareTags(repsPageTitle, repsPageDescription),
 };
 
 export default function MeetYourRepsPage() {

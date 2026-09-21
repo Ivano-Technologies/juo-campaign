@@ -16,12 +16,14 @@ import {
   donateTransparencyBody,
   donateTransparencyTitle,
 } from "@/lib/donate-copy";
+import { pageShareTags } from "@/lib/page-seo";
 
 export const metadata: Metadata = {
   title: {
     absolute: donatePageTitle,
   },
   description: donatePageDescription,
+  ...pageShareTags(donatePageTitle, donatePageDescription),
 };
 
 export default function DonatePage() {

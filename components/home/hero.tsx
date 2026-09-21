@@ -103,8 +103,8 @@ export function HomeHero() {
       >
         <div
           key={slide.src + slide.title}
-          className={`max-w-3xl ${reduced ? "" : "caption-enter"} ${
-            slide.align === "left" ? "lg:max-w-xl" : ""
+          className={`w-max max-w-[min(58rem,calc(100vw-3.5rem))] ${reduced ? "" : "caption-enter"} ${
+            slide.align === "left" ? "lg:max-w-[38rem]" : ""
           }`}
         >
           <p
@@ -112,7 +112,7 @@ export function HomeHero() {
           >
             {slide.kicker}
           </p>
-          <h1 className="mt-2 font-serif text-4xl leading-[0.95] font-extrabold tracking-tight whitespace-pre-line text-brand-white uppercase sm:text-5xl lg:text-[4.35rem] lg:whitespace-pre">
+          <h1 className="mt-2 font-serif text-4xl leading-[0.95] font-extrabold tracking-[-0.03em] whitespace-pre-line text-brand-white uppercase sm:text-5xl lg:text-[3.85rem] lg:whitespace-pre xl:text-[4.15rem]">
             {slide.title}
           </h1>
           {slide.lede !== "" ? (
@@ -133,7 +133,7 @@ export function HomeHero() {
                 alt=""
                 width={88}
                 height={88}
-                className="h-16 w-16 sm:h-20 sm:w-20"
+                className="vote-spin h-16 w-16 sm:h-20 sm:w-20"
               />
               <p className="font-serif text-xl font-semibold text-brand-white italic sm:text-2xl">
                 {slide.signature}

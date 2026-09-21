@@ -42,7 +42,7 @@ export function HomeChallenges() {
             <br />
             We Face
           </h2>
-          <DiamondRule />
+          <DiamondRule count={5} />
           <ul className="mt-14 grid max-w-md grid-cols-2 gap-x-8 gap-y-12">
             {challenges.map((item) => (
               <li
@@ -58,9 +58,9 @@ export function HomeChallenges() {
           </ul>
         </div>
 
-        <div className="relative min-h-[36rem] overflow-hidden bg-brand-white lg:min-h-[46rem]">
+        <div className="relative min-h-[42rem] overflow-hidden bg-brand-white lg:min-h-[46rem]">
           <p
-            className="pointer-events-none absolute top-[30%] left-[0%] z-[1] font-serif text-[4.4rem] leading-[0.82] font-black tracking-tight text-navy uppercase select-none sm:left-[2%] sm:text-[6.6rem] lg:top-[32%] lg:text-[7.2rem]"
+            className="pointer-events-none absolute top-[28%] left-[-12%] z-[1] font-serif text-[4.4rem] leading-[0.82] font-black tracking-tight text-navy uppercase select-none sm:left-[-6%] sm:text-[6.6rem] lg:top-[30%] lg:left-[-4%] lg:text-[7.2rem]"
             aria-hidden="true"
           >
             Let&apos;s
@@ -73,14 +73,14 @@ export function HomeChallenges() {
             className="relative z-[2] object-contain object-[center_78%]"
           />
           <p
-            className="challenges-word-change pointer-events-none absolute top-[50%] left-[3%] z-[3] font-serif text-[4.2rem] leading-none font-black tracking-tight text-change-blue uppercase select-none sm:left-[6%] sm:text-[6.4rem] lg:top-[52%] lg:text-[7rem]"
+            className="challenges-word-change pointer-events-none absolute top-[48%] left-[1%] z-[3] font-serif text-[4.2rem] leading-none font-black tracking-tight text-change-blue uppercase select-none sm:left-[4%] sm:text-[6.4rem] lg:top-[50%] lg:text-[7rem]"
             style={{ transform: `translate3d(0, ${offset}px, 0)` }}
             aria-hidden="true"
           >
             Change
           </p>
           <p
-            className="challenges-word-that pointer-events-none absolute right-[6%] bottom-[10%] z-[3] font-serif text-5xl font-black tracking-tight text-that-navy uppercase select-none sm:right-[10%] sm:bottom-[11%] sm:text-6xl lg:text-7xl"
+            className="challenges-word-that pointer-events-none absolute right-[6%] bottom-[14%] z-[3] font-serif text-6xl font-black tracking-tight text-that-navy uppercase select-none sm:right-[8%] sm:bottom-[16%] sm:text-7xl lg:text-[5.25rem]"
             aria-hidden="true"
           >
             That

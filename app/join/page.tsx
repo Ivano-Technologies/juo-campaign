@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BrandMarks } from "@/components/brand-marks";
 import { Button } from "@/components/button";
 import { JoinForm } from "@/components/join-form";
 import { PageHero } from "@/components/page-hero";
@@ -16,6 +17,7 @@ export default function JoinPage() {
         kicker="Get involved"
         title="Join the Movement"
         lede="This campaign belongs to Cross Riverians who want competence, unity, and work — in every ward and from the diaspora. Tell us how you want to help."
+        aside={<BrandMarks variant="join" />}
       >
         <Button href="/donate" variant="white">
           Donate

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/button";
+import { DonateForm } from "@/components/donate-form";
 import { PageHero } from "@/components/page-hero";
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ export default function DonatePage() {
       <PageHero
         kicker="Support the work"
         title="Donate"
-        lede="Donations will be naira-first. The live processor is not connected on this scaffold. Confirmation and failure screens are ready for the payment flow."
+        lede="Stand up a naira-first gift for a Fresh Start in Cross River. Checkout stays gated until the campaign processor is connected — amounts and this page are ready now."
       >
         <Button href="/join" variant="primary">
           Join the Movement
@@ -26,32 +27,27 @@ export default function DonatePage() {
           Contact
         </Button>
       </PageHero>
-      <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-        <div className="rounded-2xl border border-line bg-brand-white p-8">
-          <h2 className="font-serif text-3xl">NGN first</h2>
-          <p className="mt-4 text-muted">
-            International and card options stay gated until counsel and
-            banking sign off. This page will host the approved amounts,
-            receipt language, and processor widget — not a demo GiveWP form.
+      <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <DonateForm />
+        <div className="min-w-0 space-y-4 text-muted">
+          <h2 className="pr-14 font-serif text-3xl text-ink md:pr-0">How giving will work</h2>
+          <p>
+            Approved amounts, receipt language, and the processor widget will
+            live on this page — not a ported GiveWP form. International and
+            card options remain closed until counsel signs off.
           </p>
-          <p className="mt-6 inline-flex rounded-full border border-brand-blue/20 bg-brand-white px-4 py-2 text-sm font-semibold text-brand-blue">
-            Donate in NGN — coming soon
-          </p>
-          <p className="mt-4 text-sm text-muted">
-            See{" "}
-            <a href="/privacy" className="text-brand-blue underline">
-              privacy
+          <p>
+            Confirmation and unsuccessful payment screens are already in place
+            at{" "}
+            <a href="/donate/confirm" className="text-brand-blue underline">
+              /donate/confirm
             </a>{" "}
-            for how donor data will be handled when donations open.
+            and{" "}
+            <a href="/donate/fail" className="text-brand-blue underline">
+              /donate/fail
+            </a>
+            .
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="/join" variant="primary">
-              Join the Movement
-            </Button>
-            <Button href="/contact" variant="secondary">
-              Contact
-            </Button>
-          </div>
         </div>
       </section>
     </>

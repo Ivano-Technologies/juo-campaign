@@ -20,7 +20,7 @@ const sizes = {
 } as const;
 
 type ButtonProps = {
-  href?: Route;
+  href?: Route | "/#the-vision";
   children: React.ReactNode;
   variant?: ButtonVariant;
   size?: keyof typeof sizes;

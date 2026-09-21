@@ -1,33 +1,38 @@
 import { homePillars } from "@/lib/home";
 
+const toneClass: Record<(typeof homePillars)[number]["tone"], string> = {
+  navy: "bg-navy",
+  blue: "bg-pillar-blue",
+  red: "bg-brand-red",
+  navyDeep: "bg-pillar-navy-deep",
+  blueDeep: "bg-pillar-blue-deep",
+  maroon: "bg-pillar-maroon",
+};
+
 export function HomePillars() {
   return (
-    <section className="bg-brand-white">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-24">
-        <p className="text-xs uppercase tracking-[0.28em] text-brand-red">
-          Our six pillars
-        </p>
-        <h2 className="mt-3 font-serif text-4xl sm:text-5xl">
-          A Fresh Start, in practice
-        </h2>
-        <p className="mt-4 max-w-2xl text-muted">
-          Campaign home blocks from the live site, rewritten without legal-demo
-          residue. Full manifesto commitments stay on Policies when the PDF
-          lands.
-        </p>
-        <ol className="mt-10 grid gap-5 md:grid-cols-2">
-          {homePillars.map((pillar) => (
-            <li
-              key={pillar.number}
-              className="rounded-2xl border border-line bg-brand-white p-6"
-            >
-              <p className="font-serif text-3xl text-brand-red">{pillar.number}</p>
-              <h3 className="mt-2 font-serif text-2xl">{pillar.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted">{pillar.body}</p>
-            </li>
-          ))}
-        </ol>
-      </div>
+    <section aria-label="Six pillars">
+      <ol className="grid sm:grid-cols-2 lg:grid-cols-3">
+        {homePillars.map((pillar) => (
+          <li
+            key={pillar.number}
+            className={`min-h-[24rem] px-8 py-12 text-brand-white sm:min-h-[26rem] sm:px-10 ${toneClass[pillar.tone]}`}
+          >
+            <p className="font-serif text-7xl font-light text-brand-white/90 sm:text-8xl">
+              {pillar.number}
+            </p>
+            <h3 className="mt-8 font-serif text-xl font-extrabold tracking-tight uppercase">
+              {pillar.title}
+            </h3>
+            <p className="mt-4 max-w-sm text-sm leading-6 text-brand-white/90">
+              {pillar.lead}
+            </p>
+            <p className="mt-3 max-w-sm text-sm leading-6 text-brand-white/80">
+              {pillar.body}
+            </p>
+          </li>
+        ))}
+      </ol>
     </section>
   );
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/button";
+import { ManifestoPlayer } from "@/components/manifesto-player";
 import { PageHero } from "@/components/page-hero";
+import { manifestoPlaceholderLabel } from "@/lib/manifesto";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -15,12 +17,9 @@ export default function ManifestoPage() {
       <PageHero
         kicker="Read the plan"
         title="Manifesto"
-        lede="The approved spine is already public. The downloadable manifesto PDF is still with the campaign (IVA-17). This page will host the file and a web summary as soon as it arrives."
+        lede="Listen to the public spine, or download the PDF when IVA-17 lands. Until then this page is a shell with a readout and a gated download — not invented policy."
       >
-        <Button href="/policies" variant="white">
-          Policies
-        </Button>
-        <Button href="/join" variant="ghost">
+        <Button href="/join" variant="white">
           Join the Movement
         </Button>
         <Button href="/donate" variant="ghost">
@@ -30,13 +29,14 @@ export default function ManifestoPage() {
           Contact
         </Button>
       </PageHero>
-      <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+      <section className="mx-auto max-w-3xl space-y-8 px-4 py-16 sm:px-6">
+        <ManifestoPlayer />
         <ol className="grid gap-6">
           {[
             site.tagline,
             site.unityLine,
             site.prosperityLine,
-            "10 Commitments",
+            "10 Commitments — in the approved PDF",
             site.agenda,
           ].map((step, index) => (
             <li
@@ -50,10 +50,7 @@ export default function ManifestoPage() {
             </li>
           ))}
         </ol>
-        <p className="mt-8 text-sm text-muted">
-          No invented policy claims. When the PDF is approved, Shipping will
-          attach it here and expand the web summary from that source only.
-        </p>
+        <p className="text-sm text-muted">{manifestoPlaceholderLabel}</p>
       </section>
     </>
   );

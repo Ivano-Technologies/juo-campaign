@@ -15,6 +15,16 @@ export const site = {
   domain: "votejohnupanodey.com",
 } as const;
 
+/** Kezie-locked WP homepage chrome (IVA-35). */
+export const wpNavItems = [
+  { href: "/", label: "Home" },
+  { href: "/#the-vision", label: "The Vision" },
+  { href: "/meet-your-reps", label: "Meet Your Reps" },
+  { href: "/diaspora-connect", label: "Diaspora Connect" },
+  { href: "/donate", label: "Donate" },
+] as const;
+
+/** Existing campaign pages — footer / stubs, not the WP header. */
 export const navItems = [
   { href: "/", label: "Home" },
   { href: "/john-upan-odey", label: "Who is JUO" },
@@ -26,6 +36,51 @@ export const navItems = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
+export const footerQuickLinks = [
+  { href: "/", label: "Home" },
+  { href: "/#the-vision", label: "The Vision" },
+  { href: "/meet-your-reps", label: "Meet Your Reps" },
+  { href: "/diaspora-connect", label: "Diaspora Connect" },
+  { href: "/donate", label: "Donate" },
+  { href: "/join", label: "Join the Movement" },
+] as const;
+
+export const footerAboutLinks = [
+  { href: "/john-upan-odey", label: "Who is JUO" },
+  { href: "/contact", label: "Contact" },
+  { href: "/news", label: "News" },
+  { href: "/manifesto", label: "Manifesto" },
+  { href: "/privacy", label: "Privacy" },
+] as const;
+
+export const socialLinks = [
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61590512712490",
+    icon: "facebook",
+  },
+  {
+    name: "X",
+    href: "https://x.com/johnupanodey",
+    icon: "x",
+  },
+  {
+    name: "YouTube",
+    href: "https://youtube.com/@johnupanodey",
+    icon: "youtube",
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/johnupanodey",
+    icon: "instagram",
+  },
+  {
+    name: "TikTok",
+    href: "https://www.tiktok.com/@johnupanodey",
+    icon: "tiktok",
+  },
+] as const;
+
 export const primaryCtas = [
   { href: "/join", label: "Join the Movement" },
   { href: "/donate", label: "Donate" },
@@ -34,13 +89,16 @@ export const primaryCtas = [
 ] as const;
 
 export type NavHref = (typeof navItems)[number]["href"];
+export type WpNavHref = (typeof wpNavItems)[number]["href"];
 export type PrimaryCtaHref = (typeof primaryCtas)[number]["href"];
+export type SocialIcon = (typeof socialLinks)[number]["icon"];
 
-export function isNavActive(pathname: string, href: NavHref): boolean {
-  if (href === "/") {
-    return pathname === "/";
+export function isNavActive(pathname: string, href: string): boolean {
+  const path = href.split("#")[0] || "/";
+  if (path === "/") {
+    return pathname === "/" && !href.includes("#");
   }
-  return pathname === href || pathname.startsWith(`${href}/`);
+  return pathname === path || pathname.startsWith(`${path}/`);
 }
 
 export const education = [

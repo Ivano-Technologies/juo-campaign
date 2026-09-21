@@ -2,16 +2,27 @@
 
 :root {
   /* IVA-33 — Chris Brand Manual color system. Exact hexes only. */
-  --brand-blue: #40449B; /* Royal / Persian Blue — 70% backgrounds, headers, banners, structure */
-  --brand-white: #FFFFFF; /* 20% content areas, text on dark */
-  --brand-red: #EF2B35; /* 10% CTAs, accents, highlights */
+  --brand-blue: #40449B;
+  --brand-white: #FFFFFF;
+  --brand-red: #EF2B35;
 
-  /* Neutrals for body copy and borders (not brand colors). */
+  /* WP recording navy / cyan — used where the live site is deeper than brand-blue. */
+  --navy: #0b2342;
+  --navy-mid: #123056;
+  --cyan: #3ecfff;
+  --mint: #7dffc2;
+  --pillar-blue: #1e56c8;
+  /* WP bottom-row pillars: same hue family, one shade deeper than 01–03. */
+  --pillar-navy-deep: #031830;
+  --pillar-blue-deep: #1a487c;
+  --pillar-maroon: #a73233;
+  --change-blue: #0591f9;
+  --that-navy: #042d5b;
+
   --ink: #1c1915;
   --muted: #5c574e;
   --line: #d9d0c0;
 
-  /* Legacy semantic names resolve to the three brand hexes — no extra palette. */
   --forest: var(--brand-blue);
   --forest-deep: var(--brand-blue);
   --gold: var(--brand-red);
@@ -25,6 +36,16 @@
   --color-brand-blue: var(--brand-blue);
   --color-brand-white: var(--brand-white);
   --color-brand-red: var(--brand-red);
+  --color-navy: var(--navy);
+  --color-navy-mid: var(--navy-mid);
+  --color-cyan: var(--cyan);
+  --color-mint: var(--mint);
+  --color-pillar-blue: var(--pillar-blue);
+  --color-pillar-navy-deep: var(--pillar-navy-deep);
+  --color-pillar-blue-deep: var(--pillar-blue-deep);
+  --color-pillar-maroon: var(--pillar-maroon);
+  --color-change-blue: var(--change-blue);
+  --color-that-navy: var(--that-navy);
   --color-forest: var(--forest);
   --color-forest-deep: var(--forest-deep);
   --color-gold: var(--gold);
@@ -64,18 +85,77 @@ h6 {
   color: var(--brand-white);
 }
 
-.home-marquee {
-  display: inline-block;
-  animation: home-marquee-shift 18s linear infinite;
+@keyframes caption-enter {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@keyframes home-marquee-shift {
+@keyframes vote-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes word-cycle {
+  0%,
+  18% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  22%,
+  28% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes glass-marquee {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(8px);
+    transform: translateX(-50%);
   }
+}
+
+.caption-enter {
+  animation: caption-enter 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.vote-spin {
+  animation: vote-spin 14s linear infinite;
+}
+
+.future-built-word {
+  animation: word-cycle 2.8s ease-in-out infinite;
+}
+
+.glass-marquee-track {
+  animation: glass-marquee 28s linear infinite;
+}
+
+.potential-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #ffffff;
+  text-stroke: 1.5px #ffffff;
+}
+
+.challenges-word-change,
+.challenges-word-that {
+  -webkit-text-stroke: 0.055em #ffffff;
+  paint-order: stroke fill;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -83,7 +163,10 @@ h6 {
     scroll-behavior: auto;
   }
 
-  .home-marquee {
-    animation: none;
+  .caption-enter,
+  .vote-spin,
+  .future-built-word,
+  .glass-marquee-track {
+    animation: none !important;
   }
 }

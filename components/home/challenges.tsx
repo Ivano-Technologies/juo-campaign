@@ -1,41 +1,88 @@
-import { PlaceholderMedia } from "@/components/placeholder-media";
-import { challenges } from "@/lib/home";
+"use client";
+
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import { DiamondRule, ProhibitIcon } from "@/components/icons";
+import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
+import { challenges, challengesCutout } from "@/lib/home";
 
 export function HomeChallenges() {
+  const reduced = usePrefersReducedMotion();
+  const sectionRef = useRef<HTMLElement>(null);
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    if (reduced) {
+      return;
+    }
+
+    const node = sectionRef.current;
+    if (!node) {
+      return;
+    }
+
+    const onScroll = () => {
+      const rect = node.getBoundingClientRect();
+      const view = window.innerHeight || 1;
+      const progress = (view / 2 - (rect.top + rect.height / 2)) / view;
+      setOffset(Math.max(-10, Math.min(10, progress * 20)));
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [reduced]);
+
   return (
-    <section className="bg-brand-white">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
-        <div>
-          <p className="text-xs uppercase tracking-[0.28em] text-brand-red">
-            Unlimited potential
-          </p>
-          <h2 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">
-            Challenges we face
+    <section ref={sectionRef} className="bg-brand-white">
+      <div className="grid min-h-[38rem] lg:grid-cols-2">
+        <div className="flex flex-col justify-center bg-navy px-5 py-14 text-brand-white sm:px-12 sm:py-16 lg:px-16 lg:py-20">
+          <h2 className="font-serif text-[2.5rem] leading-[0.95] font-extrabold tracking-tight text-brand-white uppercase sm:text-6xl lg:text-7xl">
+            Challenges
+            <br />
+            We Face
           </h2>
-          <p className="mt-4 max-w-xl text-muted">
-            Cross River has the talent and the land. The work is to turn that
-            potential into prosperity for every community.
-          </p>
-          <ul className="mt-8 grid gap-4">
+          <DiamondRule count={5} />
+          <ul className="mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 sm:mt-14 sm:grid-cols-2 sm:gap-x-12 sm:gap-y-16">
             {challenges.map((item) => (
               <li
-                key={item.title}
-                className="rounded-2xl border border-line bg-brand-white p-5"
+                key={item.id}
+                className="flex max-w-[22rem] flex-col items-center text-center"
               >
-                <h3 className="font-serif text-2xl">{item.title}</h3>
-                <p className="mt-2 text-sm text-muted">{item.body}</p>
+                <ProhibitIcon />
+                <p className="mt-5 text-lg leading-8 text-brand-white sm:text-xl sm:leading-9 lg:text-2xl lg:leading-10">
+                  {item.body}
+                </p>
               </li>
             ))}
           </ul>
-          <p className="home-marquee mt-8 text-xs uppercase tracking-[0.22em] text-brand-blue">
-            The future demands a different approach
-          </p>
         </div>
-        <PlaceholderMedia
-          id="challenges-cutout"
-          className="aspect-[3/4] w-full rounded-[2rem] bg-gradient-to-b from-brand-white to-line"
-          sizes="(min-width: 1024px) 40vw, 100vw"
-        />
+
+        <div className="flex flex-col justify-end gap-6 overflow-visible bg-brand-white px-4 py-10 sm:flex-row sm:items-end sm:gap-8 sm:px-8 lg:min-h-[46rem] lg:px-12">
+          <div className="relative mx-auto h-[22rem] w-full max-w-md shrink-0 sm:mx-0 sm:h-[32rem] sm:w-[min(100%,26rem)] lg:h-[40rem] lg:w-[30rem]">
+            <Image
+              src={challengesCutout.src}
+              alt={challengesCutout.alt}
+              fill
+              sizes="(min-width: 1024px) 28vw, 90vw"
+              className="object-contain object-bottom"
+            />
+          </div>
+          <div className="flex shrink-0 flex-col justify-end pb-2 sm:min-w-[16.5rem] sm:pb-16 lg:min-w-[20rem] lg:pb-24">
+            <p className="font-serif text-5xl leading-none font-black tracking-tight text-navy uppercase sm:text-6xl lg:text-[3.5rem]">
+              Let&apos;s
+            </p>
+            <p
+              className="challenges-word-change mt-3 font-serif text-5xl leading-none font-black tracking-tight text-change-blue uppercase sm:mt-4 sm:text-6xl lg:text-[3.5rem]"
+              style={{ transform: `translate3d(0, ${offset}px, 0)` }}
+            >
+              Change
+            </p>
+            <p className="challenges-word-that mt-3 font-serif text-5xl leading-none font-black tracking-tight text-that-navy uppercase sm:mt-4 sm:text-6xl lg:text-[3.5rem]">
+              That
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

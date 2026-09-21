@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* IVA-33 — Chris Brand Manual color system. Exact hexes only. */
+  /* IVA-33 — Brand Manual color system. Exact hexes only. */
   --brand-blue: #40449B;
   --brand-white: #FFFFFF;
   --brand-red: #EF2B35;

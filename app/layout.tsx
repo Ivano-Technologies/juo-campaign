@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
+import { GoogleAnalytics } from "@/components/google-analytics";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -74,6 +75,7 @@ export default function RootLayout({
         </main>
         <SiteFooter />
         <ScrollToTop />
+        <GoogleAnalytics />
       </body>
     </html>
   );

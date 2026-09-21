@@ -1,6 +1,6 @@
 import { site } from "@/lib/site";
 
-/** Null until IVA-17 delivers the approved manifesto PDF. */
+/** Null until the approved manifesto PDF is delivered. */
 export const manifestoPdfHref: string | null = null;
 
 export const manifestoPageTitle =

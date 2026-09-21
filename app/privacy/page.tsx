@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
-import { site } from "@/lib/site";
+import { pageShareTags } from "@/lib/page-seo";
+import { pageTitle, site } from "@/lib/site";
+
+const privacyTitle = pageTitle("Privacy");
+const privacyDescription =
+  "How the John Upan Odey Jnr campaign handles personal data from join, contact, and donation forms, including Diaspora Connect.";
 
 export const metadata: Metadata = {
   title: "Privacy",
-  description:
-    "How the John Upan Odey Jnr campaign handles personal data from join, contact, and donation forms, including Diaspora Connect.",
+  description: privacyDescription,
+  ...pageShareTags(privacyTitle, privacyDescription),
 };
 
 export default function PrivacyPage() {

@@ -44,7 +44,7 @@ export function DonateForm() {
               <button
                 key={value}
                 type="button"
-                className={`rounded-full border px-4 py-2.5 text-sm font-semibold transition ${
+                className={`min-h-11 rounded-full border px-4 py-2.5 text-sm font-semibold transition ${
                   active
                     ? "border-brand-red bg-brand-red text-brand-white"
                     : "border-line bg-brand-white text-ink hover:border-brand-blue"
@@ -74,7 +74,7 @@ export function DonateForm() {
             setCustom(event.target.value);
             setStatus(null);
           }}
-          className="rounded-lg border border-line bg-brand-white px-3 py-2"
+          className="min-h-11 rounded-lg border border-line bg-brand-white px-3 py-2"
         />
       </label>
 

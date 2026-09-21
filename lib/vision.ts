@@ -67,7 +67,7 @@ export const visionOrbitBackdrop = "/vision/destination-cross-river.webp";
 export const visionOrbitAccent = "/vision/a-new-crs.webp";
 export const visionOgImage = brand.marks.officialPoster;
 
-/** Brand spine only — no invented pillar policy (IVA-17). */
+/** Brand spine only — no invented pillar policy. */
 export const visionOrbitUnityLine =
   `${site.tagline}. ${site.unityLine}.` as const;
 export const visionOrbitProsperityLine = site.prosperityLine;

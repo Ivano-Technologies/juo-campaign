@@ -29,10 +29,10 @@ export function PageHero({
               {kicker}
             </p>
           ) : null}
-          <h1 className="mt-3 max-w-4xl font-serif text-4xl leading-tight sm:text-5xl">
+          <h1 className="mt-3 max-w-4xl font-serif text-[2rem] leading-tight sm:text-5xl">
             {title}
           </h1>
-          <p className="mt-5 max-w-2xl text-lg text-brand-white/85">{lede}</p>
+          <p className="mt-5 max-w-2xl text-base leading-7 text-brand-white/85 sm:text-lg">{lede}</p>
           {children ? (
             <div className="mt-8 flex flex-wrap gap-3">{children}</div>
           ) : null}

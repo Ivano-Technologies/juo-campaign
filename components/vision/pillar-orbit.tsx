@@ -139,6 +139,10 @@ export function PillarOrbit() {
   const current = visionPillars[active] ?? visionPillars[0];
   const frame = frameMetrics();
 
+  if (!current) {
+    return null;
+  }
+
   return (
     <div
       className="relative mx-auto aspect-[4/5] w-full min-h-[28rem] sm:aspect-[16/10] sm:min-h-[32rem]"
@@ -174,7 +178,7 @@ export function PillarOrbit() {
             key={pillar.slug}
             type="button"
             aria-pressed={selected}
-            className={`absolute z-10 max-w-[7.5rem] -translate-x-1/2 -translate-y-1/2 rounded-md px-2 py-1.5 text-center text-[11px] leading-snug font-semibold tracking-[0.04em] uppercase sm:max-w-[11rem] sm:px-2.5 sm:text-sm ${
+            className={`absolute z-10 min-h-11 max-w-[7.25rem] -translate-x-1/2 -translate-y-1/2 rounded-md px-2 py-2 text-center text-[11px] leading-snug font-semibold tracking-[0.04em] uppercase sm:max-w-[11rem] sm:px-2.5 sm:text-sm ${
               selected
                 ? "bg-brand-red text-brand-white shadow-[0_1px_8px_rgb(0_0_0_/_0.45)]"
                 : "bg-transparent text-brand-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_0.9),_0_2px_10px_rgb(0_0_0_/_0.65)]"
@@ -190,21 +194,21 @@ export function PillarOrbit() {
           </button>
         );
       })}
-      <div className="absolute inset-0 z-20 flex items-center justify-center p-9 sm:p-14">
+      <div className="absolute inset-0 z-20 flex items-center justify-center p-7 sm:p-14">
         <div
-          className="flex w-full max-w-[17.5rem] flex-col items-center justify-center rounded-full bg-pillar-navy-deep/90 px-6 py-8 text-center shadow-[0_12px_48px_rgb(0_0_0_/_0.55)] ring-1 ring-brand-white/20 backdrop-blur-md sm:max-w-[26rem] sm:px-8 sm:py-11"
+          className="flex w-full max-w-[15.5rem] flex-col items-center justify-center rounded-full bg-pillar-navy-deep/90 px-5 py-6 text-center shadow-[0_12px_48px_rgb(0_0_0_/_0.55)] ring-1 ring-brand-white/20 backdrop-blur-md sm:max-w-[26rem] sm:px-8 sm:py-11"
           aria-live="polite"
         >
           <p className="text-xs font-bold tracking-[0.22em] text-brand-red uppercase">
             {String(active + 1).padStart(2, "0")}
           </p>
-          <h3 className="mt-2 font-serif text-2xl leading-tight font-bold text-brand-white sm:text-3xl">
-            {current}
+          <h3 className="mt-2 font-serif text-xl leading-tight font-bold text-brand-white sm:text-3xl">
+            {current.name}
           </h3>
-          <p className="mt-4 text-base leading-snug font-semibold text-balance text-brand-white sm:text-lg">
+          <p className="mt-3 text-sm leading-snug font-semibold text-balance text-brand-white sm:mt-4 sm:text-lg">
             {visionOrbitUnityLine}
           </p>
-          <p className="mt-2 text-base leading-snug font-bold text-balance text-brand-white sm:text-lg">
+          <p className="mt-2 text-sm leading-snug font-bold text-balance text-brand-white sm:text-lg">
             {visionOrbitProsperityLine}
           </p>
           <Button

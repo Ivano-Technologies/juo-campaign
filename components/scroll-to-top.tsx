@@ -7,11 +7,23 @@ export function ScrollToTop() {
 
   useEffect(() => {
     function onScroll() {
-      setVisible(window.scrollY > 480);
+      const scrolled = window.scrollY > 480;
+      if (window.innerWidth >= 768) {
+        setVisible(scrolled);
+        return;
+      }
+      const remaining =
+        document.documentElement.scrollHeight -
+        (window.scrollY + window.innerHeight);
+      setVisible(scrolled && remaining < 560);
     }
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   if (!visible) {

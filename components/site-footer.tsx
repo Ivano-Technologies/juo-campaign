@@ -59,7 +59,7 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="border-t border-white/10 px-6 py-4">
+      <div className="border-t border-white/10 px-6 py-4 pb-16 md:pb-4">
         <div className="mx-auto flex max-w-[1200px] flex-col gap-2 text-xs text-brand-white/55 sm:flex-row sm:items-center sm:justify-between">
           <p>© All rights reserved</p>
           <p>

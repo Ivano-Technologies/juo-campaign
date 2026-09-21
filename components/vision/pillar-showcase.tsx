@@ -6,7 +6,6 @@ import { useState } from "react";
 import { PillarDial } from "@/components/vision/pillar-dial";
 import { PillarFlatList } from "@/components/vision/pillar-flat-list";
 import { PillarOrbit } from "@/components/vision/pillar-orbit";
-import { PillarRoulette3d } from "@/components/vision/pillar-roulette-3d";
 import { pillarTreatmentTabs, type PillarTreatment } from "@/lib/vision";
 
 type VisionPillarShowcaseProps = {
@@ -55,7 +54,6 @@ export function VisionPillarShowcase({
       <div role="tabpanel">
         {treatment === "orbit" ? <PillarOrbit /> : null}
         {treatment === "dial" ? <PillarDial /> : null}
-        {treatment === "3d" ? <PillarRoulette3d /> : null}
       </div>
 
       <PillarFlatList />

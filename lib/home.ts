@@ -52,27 +52,45 @@ export const heroStats = [
 
 export const statsBackdrop = `${mediaBase}/814EA178-8DCD-4369-9FD7-D94EE6904D49_11zon.webp`;
 
-/** Three unique WP challenges — duplicates from the live site are not ported. */
+/**
+ * WP 2×2 challenge tiles. The live site duplicates the youth line in the
+ * fourth cell; Kezie asked to keep that 2×2 framing (not the concatenated
+ * “disconnected” copy bug).
+ */
 export const challenges = [
   {
+    id: "youth-1",
     title: "Youth opportunity",
     body: "For too long, young people have struggled to find opportunities.",
   },
   {
+    id: "trust",
     title: "Declining trust",
     body: "Public trust in governance has declined.",
   },
   {
+    id: "communities",
     title: "Disconnected communities",
     body: "Communities remain disconnected.",
+  },
+  {
+    id: "youth-2",
+    title: "Youth opportunity",
+    body: "For too long, young people have struggled to find opportunities.",
   },
 ] as const;
 
 export const challengesCutout = placeholderById("challenges-cutout");
 
 export const togetherCompare = {
-  before: placeholderById("together-collage-1"),
-  after: placeholderById("together-collage-2"),
+  before: {
+    src: "/media/together/destination-cross-river-monument-day.webp",
+    alt: "Daytime Destination Cross River monument — The Nation’s Paradise, lawn and tiled walkway",
+  },
+  after: {
+    src: "/media/together/destination-cross-river-monument-night.webp",
+    alt: "Night vision of the Destination Cross River monument with buses, drones, and a prosperous-future board",
+  },
 } as const;
 
 export const opportunityCards = [
@@ -135,21 +153,21 @@ export const homePillars = [
     title: "Infrastructure & Connectivity",
     lead: "Roads, markets, and digital links that connect farms and families.",
     body: "From Calabar to Obudu, every local government deserves a path to market.",
-    tone: "navy",
+    tone: "navyDeep",
   },
   {
     number: "05",
     title: "Healthcare & Social Protection",
     lead: "Accessible healthcare and stronger support systems.",
     body: "Clinics, care, and protection for families and vulnerable communities.",
-    tone: "blue",
+    tone: "blueDeep",
   },
   {
     number: "06",
     title: "Governance Reform",
     lead: "Open budgets. Transparent contracts. Citizen participation.",
     body: "Accountable government that Cross Riverians can see and measure.",
-    tone: "red",
+    tone: "maroon",
   },
 ] as const;
 

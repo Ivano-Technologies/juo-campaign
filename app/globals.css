@@ -12,6 +12,12 @@
   --cyan: #3ecfff;
   --mint: #7dffc2;
   --pillar-blue: #1e56c8;
+  /* WP bottom-row pillars: same hue family, one shade deeper than 01–03. */
+  --pillar-navy-deep: #031830;
+  --pillar-blue-deep: #1a487c;
+  --pillar-maroon: #a73233;
+  --change-blue: #0591f9;
+  --that-navy: #042d5b;
 
   --ink: #1c1915;
   --muted: #5c574e;
@@ -35,6 +41,11 @@
   --color-cyan: var(--cyan);
   --color-mint: var(--mint);
   --color-pillar-blue: var(--pillar-blue);
+  --color-pillar-navy-deep: var(--pillar-navy-deep);
+  --color-pillar-blue-deep: var(--pillar-blue-deep);
+  --color-pillar-maroon: var(--pillar-maroon);
+  --color-change-blue: var(--change-blue);
+  --color-that-navy: var(--that-navy);
   --color-forest: var(--forest);
   --color-forest-deep: var(--forest-deep);
   --color-gold: var(--gold);
@@ -139,6 +150,12 @@ h6 {
   color: transparent;
   -webkit-text-stroke: 1.5px #ffffff;
   text-stroke: 1.5px #ffffff;
+}
+
+.challenges-word-change,
+.challenges-word-that {
+  -webkit-text-stroke: 0.055em #ffffff;
+  paint-order: stroke fill;
 }
 
 @media (prefers-reduced-motion: reduce) {

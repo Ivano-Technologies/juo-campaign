@@ -4,6 +4,9 @@ const toneClass: Record<(typeof homePillars)[number]["tone"], string> = {
   navy: "bg-navy",
   blue: "bg-pillar-blue",
   red: "bg-brand-red",
+  navyDeep: "bg-pillar-navy-deep",
+  blueDeep: "bg-pillar-blue-deep",
+  maroon: "bg-pillar-maroon",
 };
 
 export function HomePillars() {

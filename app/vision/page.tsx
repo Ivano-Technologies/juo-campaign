@@ -63,6 +63,8 @@ export default function VisionPage() {
         </div>
       </section>
 
+      <VisionPillarShowcase />
+
       <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
         <h2 className="font-serif text-3xl text-ink">Why this vision</h2>
         <p className="mt-4 text-[1.05rem] leading-7 text-muted">
@@ -77,10 +79,9 @@ export default function VisionPage() {
           <h2 className="font-serif text-3xl text-ink">{site.agenda}</h2>
           <p className="mt-4 max-w-3xl text-[1.05rem] leading-7 text-muted">
             {site.agenda} names the work of a Fresh Start for one people and
-            one Cross River. The pillars below are listed by name. Full
+            one Cross River. The ten pillars are listed by name. Full
             commitment text will be published with the campaign manifesto.
           </p>
-          <VisionPillarShowcase />
         </div>
       </section>
 

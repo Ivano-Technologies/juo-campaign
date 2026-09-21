@@ -15,6 +15,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "profile",
+    locale: "en_NG",
+    siteName: site.name,
     url: profileSeo.canonical,
     title: profileSeo.title,
     description: profileSeo.description,

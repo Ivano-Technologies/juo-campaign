@@ -1,40 +1,71 @@
-import { PlaceholderMedia } from "@/components/placeholder-media";
+"use client";
+
+import Image from "next/image";
+import { useState } from "react";
 import { opportunityCards } from "@/lib/home";
 
 export function HomeVision() {
+  const [active, setActive] = useState(0);
+  const card = opportunityCards[active] ?? opportunityCards[0];
+
   return (
-    <section className="bg-brand-white">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-24">
-        <p className="text-xs uppercase tracking-[0.28em] text-brand-red">
-          The vision
-        </p>
-        <h2 className="mt-3 max-w-3xl font-serif text-4xl leading-tight sm:text-5xl">
-          From potential to prosperity
-        </h2>
-        <p className="mt-4 max-w-2xl text-muted">
-          Cross River has all the ingredients for success. What has been missing
-          is leadership capable of connecting these opportunities into a clear
-          development strategy. Our vision is a state where every community
-          shares in growth and prosperity.
-        </p>
-        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {opportunityCards.map((card) => (
-            <li
-              key={card.title}
-              className="overflow-hidden rounded-2xl border border-line bg-brand-white"
-            >
-              <PlaceholderMedia
-                id={card.image.id}
-                className="aspect-[16/10]"
-                sizes="(min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw"
+    <section id="the-vision" className="bg-navy py-10 text-brand-white sm:py-14">
+      <div className="relative mx-auto max-w-[1280px] overflow-hidden border border-white/15 px-4 py-10 sm:px-8 lg:px-12 lg:py-14">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.7fr_1fr_1.1fr]">
+          <ul className="grid gap-5" role="tablist" aria-label="Ingredients for success">
+            {opportunityCards.map((item, index) => {
+              const isActive = index === active;
+              return (
+                <li key={item.title}>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    className={`flex w-full items-center gap-3 text-left text-sm font-semibold tracking-[0.16em] uppercase transition ${
+                      isActive ? "text-brand-red" : "text-brand-white/80 hover:text-brand-white"
+                    }`}
+                    onClick={() => setActive(index)}
+                  >
+                    <span>{item.title}</span>
+                    {isActive ? <span aria-hidden="true">▶</span> : null}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+
+          <div>
+            <div className="mb-6 h-px w-24 bg-brand-white/70" />
+            <h2 className="font-serif text-3xl font-extrabold tracking-tight uppercase">
+              {card.title}
+            </h2>
+            <p className="mt-4 max-w-sm text-sm leading-7 text-brand-white/80">
+              {card.body}
+            </p>
+          </div>
+
+          <div className="relative mx-auto aspect-[16/9] w-full max-w-[34rem] overflow-hidden [clip-path:ellipse(92%_100%_at_50%_100%)]">
+            {opportunityCards.map((item, index) => (
+              <Image
+                key={item.title}
+                src={item.image.src}
+                alt={item.image.alt}
+                fill
+                sizes="(min-width: 1024px) 34rem, 90vw"
+                className={`object-cover transition-opacity duration-700 ${
+                  index === active ? "opacity-100" : "opacity-0"
+                }`}
               />
-              <div className="p-5">
-                <h3 className="font-serif text-2xl uppercase">{card.title}</h3>
-                <p className="mt-2 text-sm text-muted">{card.body}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
+            ))}
+          </div>
+        </div>
+        <div
+          className="pointer-events-none absolute inset-x-0 -bottom-px h-24 bg-navy"
+          style={{
+            clipPath: "ellipse(80% 100% at 50% 100%)",
+          }}
+          aria-hidden="true"
+        />
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
+import { ScrollToTop } from "@/components/scroll-to-top";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/lib/site";
@@ -7,14 +8,14 @@ import "./globals.css";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["700"],
+  weight: ["600", "700", "800", "900"],
   variable: "--font-montserrat",
   display: "swap",
 });
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-poppins",
   display: "swap",
 });
@@ -60,7 +61,7 @@ export default function RootLayout({
       lang="en-NG"
       className={`${montserrat.variable} ${poppins.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-brand-white text-ink">
+      <body className="flex min-h-full flex-col overflow-x-hidden bg-brand-white text-ink">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-brand-white focus:px-4 focus:py-2 focus:text-brand-blue"
@@ -72,6 +73,7 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        <ScrollToTop />
       </body>
     </html>
   );

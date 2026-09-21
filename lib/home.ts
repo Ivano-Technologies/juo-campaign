@@ -1,14 +1,58 @@
 import { education, site } from "@/lib/site";
-import { placeholderById } from "@/lib/placeholders";
+import { mediaBase, placeholderById } from "@/lib/placeholders";
 
 export const campaignHashtag = "#OurTimeOurState";
 
-export const heroStats = [
-  { value: 5, suffix: "M+", label: "Citizens" },
-  { value: 18, suffix: "", label: "Local Government Areas" },
-  { value: 20, suffix: "", label: "Median Age" },
+export const circularMark = `${mediaBase}/Frame-1171274791.png`;
+export const voteBadge = `${mediaBase}/vote2-removebg-preview.png`;
+
+export const heroSlides = [
+  {
+    src: `${mediaBase}/Group-1171274746.png`,
+    alt: "John Upan Odey with clergy, community leaders and supporters at a Cross River gathering",
+    kicker: "JOHN UPAN ODEY",
+    title: "BUILDING OPPORTUNITIES FOR EVERY CROSS RIVERIAN",
+    lede: "",
+  },
+  {
+    src: `${mediaBase}/F6FA4786-A1FE-415C-9980-199A9F25ACEF_11zon.webp`,
+    alt: "John Upan Odey Jnr walking with supporters at a Cross River campaign gathering",
+    kicker: "JOHN UPAN ODEY",
+    title: "CROSS RIVERIAN",
+    lede: "",
+  },
+  {
+    src: `${mediaBase}/JUO-IMAGES_11zon-1.webp`,
+    alt: "John Upan Odey Jnr greeting delegates at an NDC gathering",
+    kicker: "CROSS RIVER",
+    title: "CAN DO BETTER",
+    lede: "…through jobs, innovation and opportunity for every young person.",
+  },
+  {
+    src: `${mediaBase}/AFA4FC12-2414-4B4E-A96D-62B98BD104D2_11zon.webp`,
+    alt: "Crowd forming the words A NEW CRS at Cross River National Park",
+    kicker: "THE NEXT CHAPTER",
+    title: "NOT JUST A BETTER CROSS RIVER — A GREATER ONE",
+    lede: "",
+  },
+  {
+    src: `${mediaBase}/FB_IMG_1782401363465.jpg`,
+    alt: "John Upan Odey with community members in a Cross River village",
+    kicker: "JOHN UPAN ODEY",
+    title: campaignHashtag,
+    lede: "",
+  },
 ] as const;
 
+export const heroStats = [
+  { value: 5, suffix: "M+", label: "Citizens", icon: "people" },
+  { value: 18, suffix: "", label: "Local Government Areas", icon: "briefcase" },
+  { value: 20, suffix: "", label: "Median Age", icon: "leaf" },
+] as const;
+
+export const statsBackdrop = `${mediaBase}/814EA178-8DCD-4369-9FD7-D94EE6904D49_11zon.webp`;
+
+/** Three unique WP challenges — duplicates from the live site are not ported. */
 export const challenges = [
   {
     title: "Youth opportunity",
@@ -23,6 +67,13 @@ export const challenges = [
     body: "Communities remain disconnected.",
   },
 ] as const;
+
+export const challengesCutout = placeholderById("challenges-cutout");
+
+export const togetherCompare = {
+  before: placeholderById("together-collage-1"),
+  after: placeholderById("together-collage-2"),
+} as const;
 
 export const opportunityCards = [
   {
@@ -61,66 +112,98 @@ export const homePillars = [
   {
     number: "01",
     title: "Economic Transformation",
-    body: "Jobs, skills, entrepreneurship and innovation. Creating opportunities for young people through startup funding, technology hubs, creative industries and tourism development.",
+    lead: "Jobs, skills, entrepreneurship and innovation.",
+    body: "Creating opportunities for young people through startup funding, technology hubs, creative industries and tourism development.",
+    tone: "navy",
   },
   {
     number: "02",
     title: "Agriculture Revolution",
-    body: "Turning agriculture into a modern engine for prosperity. Supporting farmers, agro-processing and rural enterprise across all districts.",
+    lead: "Turning agriculture into a modern engine for prosperity.",
+    body: "Supporting farmers, agro-processing and rural enterprise across all districts.",
+    tone: "blue",
   },
   {
     number: "03",
     title: "Education For The Future",
-    body: "Preparing students for the economy of tomorrow. Smart schools, technical education and digital learning.",
+    lead: "Preparing students for the economy of tomorrow.",
+    body: "Smart schools, technical education and digital learning.",
+    tone: "red",
   },
   {
     number: "04",
     title: "Infrastructure & Connectivity",
-    body: "Roads, markets, and digital links that connect farms and families in every local government — from Calabar to Obudu.",
+    lead: "Roads, markets, and digital links that connect farms and families.",
+    body: "From Calabar to Obudu, every local government deserves a path to market.",
+    tone: "navy",
   },
   {
     number: "05",
     title: "Healthcare & Social Protection",
-    body: "Accessible healthcare and stronger support systems for families and vulnerable communities.",
+    lead: "Accessible healthcare and stronger support systems.",
+    body: "Clinics, care, and protection for families and vulnerable communities.",
+    tone: "blue",
   },
   {
     number: "06",
     title: "Governance Reform",
-    body: "Open budgets. Transparent contracts. Citizen participation. Accountable government.",
+    lead: "Open budgets. Transparent contracts. Citizen participation.",
+    body: "Accountable government that Cross Riverians can see and measure.",
+    tone: "red",
   },
 ] as const;
 
-export const futureStats = [
-  { value: "10,000+", label: "New jobs" },
-  { value: "500+", label: "Startups" },
-  { value: "FOR US", label: "A future built" },
-] as const;
+export const futureBackdrop = `${mediaBase}/5F0EB210-D0AB-4146-8029-EBEF2AC63C00_11zon.webp`;
 
 export const futureHighlights = [
-  "Every ward has functional healthcare",
   "Schools are digitally connected",
   "Roads connect communities and markets",
   "Government spending is transparent",
+  "10,000+ new jobs have been created",
+  "Every ward has functional healthcare",
+  "Young founders can build here",
 ] as const;
+
+/** Campaign words only — never the WP “DEVELOPER” demo remnant. */
+export const futureCyclerWords = ["SECURE", "AWESOME", "FOR US"] as const;
 
 export const futureInitiatives = [
   {
     title: "Youth Skills & Startup Fund",
     body: "Training, funding and mentorship for the next generation of entrepreneurs.",
+    kind: "text",
   },
   {
     title: "Tourism 2.0",
     body: "Unlocking the economic potential of Obudu, Ikom, Boki, Calabar and beyond.",
+    kind: "photo",
+    image: placeholderById("vision-tourism"),
+  },
+  {
+    title: "Tourism 2.0",
+    body: "Unlocking the economic potential of Obudu, Ikom, Boki, Calabar and beyond.",
+    kind: "text",
   },
   {
     title: "Smart Schools Initiative",
     body: "Digital classrooms and future-ready education for Cross Riverians.",
+    kind: "photo",
+    image: placeholderById("vision-youth-talent"),
+  },
+  {
+    title: "Featured Initiatives",
+    body: "Smart schools, technical education and a public dashboard Cross Riverians can actually use.",
+    kind: "label",
   },
   {
     title: "Citizens Dashboard",
     body: "Track projects, monitor budgets and hold government accountable.",
+    kind: "photo",
+    image: placeholderById("vision-technology"),
   },
 ] as const;
+
+export const meetPortrait = placeholderById("meet-cutout-3");
 
 export const meetCutouts = [
   placeholderById("meet-cutout-1"),
@@ -133,7 +216,13 @@ export const meetEducationLine = education
   .join(" · ");
 
 export const meetBio = [
-  `${site.name} is a professional with more than 25 years across finance, fintech, infrastructure finance, public-sector transformation, and digital innovation.`,
-  "He believes governance should be driven by competence, transparency, and measurable results — a practical Fresh Start, not politics as usual.",
-  "Our state has the talent. What we need are the systems, leadership, and opportunities that allow our people to thrive.",
+  `A professional with over 25 years of experience across Finance, Fintech, Infrastructure Finance, Public Sector Transformation, and Digital Innovation.`,
+  `${site.name} believes governance should be driven by competence, transparency and measurable results.`,
+  "Rather than politics as usual, he offers a practical vision for a New Cross River.",
 ] as const;
+
+export const meetQuote =
+  "Our state has the talent. What we need are the systems, leadership and opportunities that allow our people to thrive.";
+
+export const footerBlurb =
+  "Cross River stands at a defining moment. Together, we can unlock our state’s immense potential, create opportunities for every citizen, and build a future rooted in prosperity, accountability, and shared progress.";

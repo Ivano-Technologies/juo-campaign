@@ -1,55 +1,103 @@
-import { futureHighlights, futureInitiatives, futureStats } from "@/lib/home";
-import { site } from "@/lib/site";
+"use client";
+
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { DiamondRule } from "@/components/icons";
+import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
+import {
+  futureBackdrop,
+  futureCyclerWords,
+  futureHighlights,
+} from "@/lib/home";
 
 export function HomeFuture() {
+  const reduced = usePrefersReducedMotion();
+  const [wordIndex, setWordIndex] = useState(0);
+  const [start, setStart] = useState(0);
+
+  useEffect(() => {
+    if (reduced) {
+      return;
+    }
+    const timer = window.setInterval(() => {
+      setWordIndex((current) => (current + 1) % futureCyclerWords.length);
+    }, 2200);
+    return () => window.clearInterval(timer);
+  }, [reduced]);
+
+  const visible = [
+    ...futureHighlights.slice(start),
+    ...futureHighlights.slice(0, start),
+  ].slice(0, 4);
+
+  const shift = (direction: number) => {
+    setStart((current) => {
+      const total = futureHighlights.length;
+      return (current + direction + total) % total;
+    });
+  };
+
+  const word = futureCyclerWords[wordIndex] ?? futureCyclerWords[0];
+
   return (
-    <section className="bg-brand-blue text-brand-white">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-24">
-        <p className="text-xs uppercase tracking-[0.28em] text-brand-red">
-          Cross River 2029 · {site.agenda}
+    <section className="relative isolate min-h-[36rem] overflow-hidden text-brand-white">
+      <Image
+        src={futureBackdrop}
+        alt="Winding highland road through Cross River hills"
+        fill
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-navy/35" />
+
+      <div className="relative mx-auto flex min-h-[36rem] max-w-[1280px] flex-col justify-center px-6 py-16 sm:px-10">
+        <p className="text-xs font-semibold tracking-[0.42em] text-brand-white/90 uppercase">
+          Cross River 2029
         </p>
-        <h2 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">
+        <h2 className="mt-3 font-serif text-4xl font-extrabold tracking-tight text-brand-white uppercase sm:text-5xl lg:text-6xl">
           The future we are building
         </h2>
-        <p className="mt-4 max-w-2xl text-brand-white/80">
-          Imagine a Cross River where work, schools, clinics, and open books
-          belong to every ward. A Fresh Start is how we get there.
+        <DiamondRule />
+        <p className="mt-5 text-lg text-brand-white/90">
+          Imagine a Cross River where:
         </p>
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
-          {futureStats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-2xl border border-brand-white/15 bg-brand-blue/50 px-5 py-6"
-            >
-              <p className="font-serif text-3xl text-brand-red sm:text-4xl">
-                {stat.value}
-              </p>
-              <p className="mt-2 text-xs uppercase tracking-[0.2em] text-brand-white/75">
-                {stat.label}
-              </p>
-            </div>
-          ))}
+
+        <div className="relative mt-8">
+          <button
+            type="button"
+            className="absolute top-1/2 -left-2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/25 text-xl backdrop-blur-sm sm:-left-4"
+            aria-label="Previous future card"
+            onClick={() => shift(-1)}
+          >
+            ‹
+          </button>
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {visible.map((item) => (
+              <li
+                key={item}
+                className="flex min-h-[8.5rem] items-center border border-white/20 bg-white/12 px-5 py-6 text-sm leading-6 text-brand-white backdrop-blur-md"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+          <button
+            type="button"
+            className="absolute top-1/2 -right-2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/25 text-xl backdrop-blur-sm sm:-right-4"
+            aria-label="Next future card"
+            onClick={() => shift(1)}
+          >
+            ›
+          </button>
         </div>
-        <ul className="mt-8 grid gap-2 text-sm text-brand-white/80 sm:grid-cols-2">
-          {futureHighlights.map((item) => (
-            <li key={item}>· {item}</li>
-          ))}
-        </ul>
-        <p className="mt-12 text-xs uppercase tracking-[0.28em] text-brand-red">
-          Featured initiatives
-        </p>
-        <ul className="mt-5 grid gap-5 md:grid-cols-2">
-          {futureInitiatives.map((item) => (
-            <li
-              key={item.title}
-              className="rounded-2xl border border-brand-white/15 bg-brand-white/5 p-6"
-            >
-              <h3 className="font-serif text-2xl">{item.title}</h3>
-              <p className="mt-3 text-sm text-brand-white/80">{item.body}</p>
-            </li>
-          ))}
-        </ul>
       </div>
+
+      <p className="relative z-[1] pb-6 text-center font-serif text-2xl font-extrabold tracking-tight uppercase sm:text-3xl">
+        A future built{" "}
+        <span key={word} className="text-brand-red">
+          {word}
+        </span>
+      </p>
     </section>
   );
 }

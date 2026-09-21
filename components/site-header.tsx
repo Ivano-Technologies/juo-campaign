@@ -77,7 +77,7 @@ export function SiteHeader() {
         <div className="ml-auto hidden items-center gap-3 lg:flex">
           <Link
             href="/join"
-            className="bg-brand-red px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white transition duration-200 hover:bg-brand-red/90"
+            className="border border-brand-white bg-transparent px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white transition-[color,background-color,border-color,transform] duration-200 hover:bg-brand-white hover:text-navy active:bg-brand-white active:text-navy motion-safe:active:scale-[0.98]"
           >
             Join the Movement
           </Link>
@@ -125,7 +125,7 @@ export function SiteHeader() {
         </ul>
         <Link
           href="/join"
-          className="mt-4 inline-flex min-h-11 items-center bg-brand-red px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white"
+          className="mt-4 inline-flex min-h-11 items-center border border-brand-white bg-transparent px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white transition-[color,background-color,border-color,transform] duration-200 hover:bg-brand-white hover:text-navy active:bg-brand-white active:text-navy motion-safe:active:scale-[0.98]"
           onClick={() => setOpen(false)}
         >
           Join the Movement

@@ -209,9 +209,9 @@ export function PillarOrbit() {
           </p>
           <Button
             href="/manifesto"
-            variant="white"
+            variant="ghost"
             size="sm"
-            className="mt-5 max-w-full whitespace-normal px-5 text-center leading-snug shadow-[0_2px_16px_rgb(0_0_0_/_0.35)]"
+            className="mt-5 max-w-full whitespace-normal px-5 text-center leading-snug"
           >
             {visionManifestoCta}
           </Button>

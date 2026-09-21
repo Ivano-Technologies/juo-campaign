@@ -22,6 +22,7 @@ export const canonicalOrigin = `https://www.${site.domain}` as const;
 export const wpNavItems = [
   { href: "/", label: "Home" },
   { href: "/vision", label: "The Vision" },
+  { href: "/manifesto", label: "Manifesto" },
   { href: "/meet-your-reps", label: "Meet Your Reps" },
   { href: "/diaspora-connect", label: "Diaspora Connect" },
   { href: "/donate", label: "Donate" },

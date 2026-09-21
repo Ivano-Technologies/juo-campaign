@@ -3,15 +3,17 @@ import Link from "next/link";
 
 export type ButtonVariant = "primary" | "secondary" | "white" | "ghost";
 
+/** Dark-surface pills: ghost default, solid white on hover/press. */
+const ghostPill =
+  "border-brand-white bg-transparent text-brand-white hover:bg-brand-white hover:text-navy active:bg-brand-white active:text-navy motion-safe:active:scale-[0.98]";
+
 const variants: Record<ButtonVariant, string> = {
   primary:
     "bg-brand-red text-brand-white hover:bg-brand-red/90 border-transparent",
   secondary:
     "bg-brand-blue text-brand-white hover:bg-brand-blue/90 border-transparent",
-  white:
-    "bg-brand-white text-brand-blue hover:bg-brand-white/90 border-transparent",
-  ghost:
-    "bg-transparent text-brand-white border-brand-white/40 hover:border-brand-white hover:bg-brand-white/10",
+  white: ghostPill,
+  ghost: ghostPill,
 };
 
 const sizes = {
@@ -40,7 +42,7 @@ export function Button({
   disabled = false,
   onClick,
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center rounded-full border font-semibold tracking-wide transition ${sizes[size]} ${variants[variant]} disabled:cursor-not-allowed disabled:opacity-60 ${className}`;
+  const classes = `inline-flex items-center justify-center rounded-full border font-semibold tracking-wide transition-[color,background-color,border-color,transform] duration-200 ${sizes[size]} ${variants[variant]} disabled:cursor-not-allowed disabled:opacity-60 ${className}`;
 
   if (href) {
     return (

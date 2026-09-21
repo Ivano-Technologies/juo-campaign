@@ -175,6 +175,8 @@ h6 {
   line-height: 0.84;
   letter-spacing: -0.045em;
   white-space: nowrap;
+  -webkit-text-stroke: 0.055em #ffffff;
+  paint-order: stroke fill;
 }
 
 .challenges-word + .challenges-word {
@@ -185,12 +187,6 @@ h6 {
   /* Cropped cutout is ~0.44 aspect — width tracks pane height so the
      figure fills the white pane instead of sitting in a letterboxed box. */
   width: min(72%, calc(100cqh * 0.48));
-}
-
-.challenges-word-change,
-.challenges-word-that {
-  -webkit-text-stroke: 0.055em #ffffff;
-  paint-order: stroke fill;
 }
 
 @media (min-width: 640px) {

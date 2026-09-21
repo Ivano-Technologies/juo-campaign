@@ -58,7 +58,10 @@ export function VisionPillarShowcase({
         {treatment === "3d" ? <PillarRoulette3d /> : null}
       </div>
 
-      <PillarFlatList />
+      <h3 className="mt-10 text-xs font-semibold tracking-[0.18em] text-brand-red uppercase">
+        All ten pillars
+      </h3>
+      <PillarFlatList visible className="mt-4 sm:grid-cols-2" />
     </div>
   );
 }

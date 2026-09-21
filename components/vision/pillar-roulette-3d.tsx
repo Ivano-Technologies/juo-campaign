@@ -1,7 +1,6 @@
 "use client";
 
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
-import { PillarFlatList } from "@/components/vision/pillar-flat-list";
 import { usePillarRotation } from "@/components/vision/use-pillar-rotation";
 import { visionPillars } from "@/lib/vision";
 
@@ -16,14 +15,9 @@ export function PillarRoulette3d() {
 
   if (reduced) {
     return (
-      <div className="mx-auto w-full max-w-xl">
-        <p className="mb-4 text-center text-xs tracking-[0.18em] text-brand-red uppercase">
-          Reduced motion — list view
-        </p>
-        <div aria-hidden="true">
-          <PillarFlatList visible />
-        </div>
-      </div>
+      <p className="text-center text-xs tracking-[0.18em] text-brand-red uppercase">
+        Reduced motion — all ten names stay listed below
+      </p>
     );
   }
 

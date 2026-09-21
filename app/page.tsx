@@ -8,17 +8,51 @@ import { HomePillars } from "@/components/home/pillars";
 import { HomeStatsBar } from "@/components/home/stats-bar";
 import { HomeTogetherBanner } from "@/components/home/together-banner";
 import { HomeVision } from "@/components/home/vision";
-import { campaignHashtag } from "@/lib/home";
+import { JsonLd } from "@/components/json-ld";
+import {
+  homeOrganizationJsonLd,
+  homeSeo,
+  homeWebsiteJsonLd,
+} from "@/lib/home-seo";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Building a New Generation Cross River",
-  description: `${site.name} — NDC governorship candidate for Cross River State, 2027. ${site.unityLine}. ${campaignHashtag}`,
+  title: {
+    absolute: homeSeo.title,
+  },
+  description: homeSeo.description,
+  alternates: {
+    canonical: homeSeo.canonical,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_NG",
+    siteName: site.name,
+    url: homeSeo.ogUrl,
+    title: homeSeo.title,
+    description: homeSeo.description,
+    images: [
+      {
+        url: homeSeo.ogImage.url,
+        width: homeSeo.ogImage.width,
+        height: homeSeo.ogImage.height,
+        alt: homeSeo.ogImage.alt,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: homeSeo.title,
+    description: homeSeo.description,
+    images: [homeSeo.ogImage.url],
+  },
 };
 
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={homeOrganizationJsonLd()} />
+      <JsonLd data={homeWebsiteJsonLd()} />
       <HomeHero />
       <HomeStatsBar />
       <HomeChallenges />

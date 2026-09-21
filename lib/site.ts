@@ -21,7 +21,7 @@ export const canonicalOrigin = `https://www.${site.domain}` as const;
 /** Kezie-locked WP homepage chrome (IVA-35). */
 export const wpNavItems = [
   { href: "/", label: "Home" },
-  { href: "/#the-vision", label: "The Vision" },
+  { href: "/vision", label: "The Vision" },
   { href: "/meet-your-reps", label: "Meet Your Reps" },
   { href: "/diaspora-connect", label: "Diaspora Connect" },
   { href: "/donate", label: "Donate" },
@@ -41,7 +41,7 @@ export const navItems = [
 
 export const footerQuickLinks = [
   { href: "/", label: "Home" },
-  { href: "/#the-vision", label: "The Vision" },
+  { href: "/vision", label: "The Vision" },
   { href: "/meet-your-reps", label: "Meet Your Reps" },
   { href: "/diaspora-connect", label: "Diaspora Connect" },
   { href: "/donate", label: "Donate" },

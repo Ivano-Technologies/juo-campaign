@@ -19,8 +19,10 @@ const sizes = {
   sm: "px-4 py-2 text-sm",
 } as const;
 
+type ButtonHref = Route | `${string}#${string}`;
+
 type ButtonProps = {
-  href?: Route;
+  href?: ButtonHref;
   children: React.ReactNode;
   variant?: ButtonVariant;
   size?: keyof typeof sizes;
@@ -43,8 +45,16 @@ export function Button({
   const classes = `inline-flex items-center justify-center rounded-full border font-semibold tracking-wide transition ${sizes[size]} ${variants[variant]} disabled:cursor-not-allowed disabled:opacity-60 ${className}`;
 
   if (href) {
+    if (href.includes("#")) {
+      return (
+        <a href={href} className={classes} onClick={onClick}>
+          {children}
+        </a>
+      );
+    }
+
     return (
-      <Link href={href} className={classes} onClick={onClick}>
+      <Link href={href as Route} className={classes} onClick={onClick}>
         {children}
       </Link>
     );

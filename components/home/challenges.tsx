@@ -38,7 +38,7 @@ export function HomeChallenges() {
       <div className="grid min-h-[38rem] lg:grid-cols-2">
         <div className="flex flex-col justify-center bg-navy px-5 py-14 text-brand-white sm:px-12 sm:py-16 lg:px-16 lg:py-20">
           <h2 className="font-serif text-[2.5rem] leading-[0.95] font-extrabold tracking-tight text-brand-white uppercase sm:text-6xl lg:text-7xl">
-            Challenges
+            Challenges{" "}
             <br />
             We Face
           </h2>

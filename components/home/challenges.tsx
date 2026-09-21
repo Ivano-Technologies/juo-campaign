@@ -60,7 +60,7 @@ export function HomeChallenges() {
 
         <div className="relative min-h-[36rem] overflow-hidden bg-brand-white lg:min-h-[46rem]">
           <p
-            className="pointer-events-none absolute top-[22%] left-[2%] z-[1] font-serif text-[4.6rem] leading-[0.85] font-black tracking-tight text-navy uppercase select-none sm:left-[4%] sm:text-[7rem] lg:text-[7.5rem]"
+            className="pointer-events-none absolute top-[30%] left-[0%] z-[1] font-serif text-[4.4rem] leading-[0.82] font-black tracking-tight text-navy uppercase select-none sm:left-[2%] sm:text-[6.6rem] lg:top-[32%] lg:text-[7.2rem]"
             aria-hidden="true"
           >
             Let&apos;s
@@ -70,17 +70,17 @@ export function HomeChallenges() {
             alt={challengesCutout.alt}
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
-            className="relative z-[2] object-contain object-[center_82%]"
+            className="relative z-[2] object-contain object-[center_78%]"
           />
           <p
-            className="challenges-word-change pointer-events-none absolute top-[44%] left-[4%] z-[3] font-serif text-[4.4rem] leading-none font-black tracking-tight text-change-blue uppercase select-none sm:left-[7%] sm:text-[6.6rem] lg:text-[7.2rem]"
+            className="challenges-word-change pointer-events-none absolute top-[50%] left-[3%] z-[3] font-serif text-[4.2rem] leading-none font-black tracking-tight text-change-blue uppercase select-none sm:left-[6%] sm:text-[6.4rem] lg:top-[52%] lg:text-[7rem]"
             style={{ transform: `translate3d(0, ${offset}px, 0)` }}
             aria-hidden="true"
           >
             Change
           </p>
           <p
-            className="challenges-word-that pointer-events-none absolute right-[8%] bottom-[12%] z-[3] font-serif text-5xl font-black tracking-tight text-that-navy uppercase select-none sm:right-[12%] sm:bottom-[14%] sm:text-6xl lg:text-7xl"
+            className="challenges-word-that pointer-events-none absolute right-[6%] bottom-[10%] z-[3] font-serif text-5xl font-black tracking-tight text-that-navy uppercase select-none sm:right-[10%] sm:bottom-[11%] sm:text-6xl lg:text-7xl"
             aria-hidden="true"
           >
             That

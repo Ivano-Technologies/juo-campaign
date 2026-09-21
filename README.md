@@ -51,6 +51,7 @@ Node 20+. Package manager is pnpm (`packageManager` field in `package.json`).
 
 - `NEXT_PUBLIC_SUPABASE_URL` — `https://xxljlhgjjirewkovuzif.supabase.co` (project **JUO**, `eu-west-1`)
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY` — publishable/anon key (do **not** commit)
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID` — optional GA4 Measurement ID (`G-XXXXXXXX`). Set on Vercel Production. When unset, no gtag scripts load.
 
 Helpers live in `lib/supabase/`. They return `null` when env is missing so local/CI builds stay green without secrets. Form routes insert with the anon key (RLS is insert-only; no select):
 

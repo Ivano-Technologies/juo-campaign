@@ -112,7 +112,7 @@ export function HomeHero() {
           >
             {slide.kicker}
           </p>
-          <h1 className="mt-2 font-serif text-4xl leading-[0.95] font-extrabold tracking-tight whitespace-pre-line text-brand-white uppercase sm:text-5xl lg:text-[4.35rem]">
+          <h1 className="mt-2 font-serif text-4xl leading-[0.95] font-extrabold tracking-tight whitespace-pre-line text-brand-white uppercase sm:text-5xl lg:text-[4.35rem] lg:whitespace-pre">
             {slide.title}
           </h1>
           {slide.lede !== "" ? (

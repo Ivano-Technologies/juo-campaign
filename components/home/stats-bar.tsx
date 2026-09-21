@@ -13,7 +13,8 @@ import {
 } from "@/lib/home";
 
 function useCountUp(target: number, active: boolean, reduced: boolean): number {
-  const [value, setValue] = useState(0);
+  // Publish the verified number in the first HTML so crawlers never see 0.
+  const [value, setValue] = useState(target);
 
   useEffect(() => {
     if (!active || reduced) {

@@ -30,8 +30,8 @@ export function DonateForm() {
       <div>
         <h2 className="font-serif text-3xl text-ink">Give in naira</h2>
         <p className="mt-2 text-muted">
-          Choose an amount. Card and international options stay closed until
-          counsel and banking sign off. This is not a demo GiveWP form.
+          Choose an amount. Online donations — coming soon. Card and
+          international options stay closed until counsel and banking sign off.
         </p>
       </div>
 

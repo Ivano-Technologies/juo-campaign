@@ -125,18 +125,6 @@ export const currentRoles = [
   "Independent Director",
 ] as const;
 
-export const policyPillars = [
-  "Power",
-  "Agriculture",
-  "Jobs",
-  "Education",
-  "Healthcare",
-  "Infrastructure",
-  "Tourism",
-  "Governance",
-  "Local Prosperity",
-] as const;
-
 export const crossRiverLgas = [
   "Abi",
   "Akamkpa",

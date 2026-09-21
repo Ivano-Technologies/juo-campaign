@@ -19,8 +19,10 @@ const sizes = {
   sm: "px-4 py-2 text-sm",
 } as const;
 
+type ButtonHref = Route | `${string}#${string}`;
+
 type ButtonProps = {
-  href?: Route;
+  href?: ButtonHref;
   children: React.ReactNode;
   variant?: ButtonVariant;
   size?: keyof typeof sizes;

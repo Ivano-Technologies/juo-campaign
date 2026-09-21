@@ -1,17 +1,44 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/button";
+import { JsonLd } from "@/components/json-ld";
 import { CtaRow, PageHero } from "@/components/page-hero";
+import { profilePersonJsonLd, profileSeo } from "@/lib/profile-seo";
 import { currentRoles, education, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Who is John Upan Odey",
-  description:
-    "Meet John Upan Odey Jnr — banker from Obudu, NDC candidate for Cross River governor 2027. A Fresh Start: One People, One Cross River.",
+  title: {
+    absolute: profileSeo.title,
+  },
+  description: profileSeo.description,
+  alternates: {
+    canonical: profileSeo.canonical,
+  },
+  openGraph: {
+    type: "profile",
+    url: profileSeo.canonical,
+    title: profileSeo.title,
+    description: profileSeo.description,
+    images: [
+      {
+        url: profileSeo.ogImage.url,
+        width: profileSeo.ogImage.width,
+        height: profileSeo.ogImage.height,
+        alt: profileSeo.ogImage.alt,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: profileSeo.title,
+    description: profileSeo.description,
+    images: [profileSeo.ogImage.url],
+  },
 };
 
 export default function WhoIsJuoPage() {
   return (
     <>
+      <JsonLd data={profilePersonJsonLd()} />
       <PageHero
         kicker="John Upan Odey Jnr"
         title="Who is John Upan Odey"

@@ -94,7 +94,7 @@ export const statsBackdrop = `${mediaBase}/814EA178-8DCD-4369-9FD7-D94EE6904D49_
 
 /**
  * WP 2×2 challenge tiles. The live site duplicates the youth line in the
- * fourth cell; Kezie asked to keep that 2×2 framing (not the concatenated
+ * fourth cell; keep that 2×2 framing (not the concatenated
  * “disconnected” copy bug).
  */
 export const challenges = [

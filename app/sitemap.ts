@@ -13,6 +13,7 @@ const publicPaths = [
   "/meet-your-reps",
   "/diaspora-connect",
   "/news",
+  "/policies",
   "/privacy",
 ] as const;
 

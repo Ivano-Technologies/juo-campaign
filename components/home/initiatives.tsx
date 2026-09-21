@@ -50,7 +50,7 @@ export function HomeInitiatives() {
             id="featured-initiatives-heading"
             className="font-serif text-4xl font-extrabold tracking-tight text-navy uppercase"
           >
-            Featured
+            Featured{" "}
             <br />
             Initiatives
           </h2>

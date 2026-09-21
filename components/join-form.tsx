@@ -116,7 +116,7 @@ export function JoinForm() {
           ))}
         </select>
       </label>
-      <label className="grid gap-1 text-sm">
+      <label id="diaspora" className="grid scroll-mt-28 gap-1 text-sm">
         How do you want to help?
         <select
           required

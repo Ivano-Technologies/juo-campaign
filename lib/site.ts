@@ -22,6 +22,7 @@ export const canonicalOrigin = `https://www.${site.domain}` as const;
 export const wpNavItems = [
   { href: "/", label: "Home" },
   { href: "/vision", label: "The Vision" },
+  { href: "/manifesto", label: "Manifesto" },
   { href: "/meet-your-reps", label: "Meet Your Reps" },
   { href: "/diaspora-connect", label: "Diaspora Connect" },
   { href: "/donate", label: "Donate" },
@@ -123,18 +124,6 @@ export const currentRoles = [
   "Executive Director, General Services — FirstTrust Mortgage Bank Plc",
   "Former Chief Executive Officer — Hyers Capital Ltd",
   "Independent Director",
-] as const;
-
-export const policyPillars = [
-  "Power",
-  "Agriculture",
-  "Jobs",
-  "Education",
-  "Healthcare",
-  "Infrastructure",
-  "Tourism",
-  "Governance",
-  "Local Prosperity",
 ] as const;
 
 export const crossRiverLgas = [

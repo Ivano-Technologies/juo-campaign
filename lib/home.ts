@@ -87,6 +87,7 @@ export const heroSlides = [
 /**
  * Homepage glance counters. Only ship stats with a verified volume.
  * WP's empty Citizens (0M+) placeholder is omitted — do not invent a replacement.
+ * Published values must appear in the first HTML (crawl-safe), not only after JS.
  */
 export const heroStats = [
   { value: 18, suffix: "", label: "Local Government Areas", icon: "briefcase" },

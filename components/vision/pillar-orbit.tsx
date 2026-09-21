@@ -5,7 +5,8 @@ import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced
 import { usePillarRotation } from "@/components/vision/use-pillar-rotation";
 import {
   visionManifestoCta,
-  visionPillarSpineLine,
+  visionOrbitProsperityLine,
+  visionOrbitUnityLine,
   visionPillars,
 } from "@/lib/vision";
 
@@ -170,7 +171,7 @@ export function PillarOrbit() {
         const point = pointOnFrame((index - active) / visionPillars.length);
         return (
           <button
-            key={pillar}
+            key={pillar.slug}
             type="button"
             aria-pressed={selected}
             className={`absolute z-10 max-w-[7.5rem] -translate-x-1/2 -translate-y-1/2 rounded-md px-2 py-1.5 text-center text-[11px] leading-snug font-semibold tracking-[0.04em] uppercase sm:max-w-[11rem] sm:px-2.5 sm:text-sm ${
@@ -185,29 +186,32 @@ export function PillarOrbit() {
             }}
             onClick={() => setActive(index)}
           >
-            {pillar}
+            {pillar.name}
           </button>
         );
       })}
-      <div className="absolute inset-0 z-20 flex items-center justify-center p-10 sm:p-16">
+      <div className="absolute inset-0 z-20 flex items-center justify-center p-9 sm:p-14">
         <div
-          className="w-full max-w-[16rem] px-2 text-center sm:max-w-[20rem]"
+          className="flex w-full max-w-[17.5rem] flex-col items-center justify-center rounded-full bg-pillar-navy-deep/90 px-6 py-8 text-center shadow-[0_12px_48px_rgb(0_0_0_/_0.55)] ring-1 ring-brand-white/20 backdrop-blur-md sm:max-w-[26rem] sm:px-8 sm:py-11"
           aria-live="polite"
         >
-          <p className="text-[11px] tracking-[0.2em] text-brand-red uppercase [text-shadow:_0_1px_8px_rgb(0_0_0_/_0.75)]">
+          <p className="text-xs font-bold tracking-[0.22em] text-brand-red uppercase">
             {String(active + 1).padStart(2, "0")}
           </p>
-          <h3 className="mt-2 font-serif text-xl leading-tight text-brand-white sm:text-2xl [text-shadow:_0_1px_2px_rgb(0_0_0_/_0.9),_0_4px_18px_rgb(0_0_0_/_0.7)]">
+          <h3 className="mt-2 font-serif text-2xl leading-tight font-bold text-brand-white sm:text-3xl">
             {current}
           </h3>
-          <p className="mt-3 text-sm leading-6 text-brand-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_0.9),_0_3px_14px_rgb(0_0_0_/_0.65)]">
-            {visionPillarSpineLine}
+          <p className="mt-4 text-base leading-snug font-semibold text-balance text-brand-white sm:text-lg">
+            {visionOrbitUnityLine}
+          </p>
+          <p className="mt-2 text-base leading-snug font-bold text-balance text-brand-white sm:text-lg">
+            {visionOrbitProsperityLine}
           </p>
           <Button
             href="/manifesto"
-            variant="white"
+            variant="ghost"
             size="sm"
-            className="mt-4 shadow-[0_2px_16px_rgb(0_0_0_/_0.45)]"
+            className="mt-5 max-w-full whitespace-normal px-5 text-center leading-snug"
           >
             {visionManifestoCta}
           </Button>

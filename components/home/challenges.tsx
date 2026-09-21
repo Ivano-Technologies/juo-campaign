@@ -60,7 +60,7 @@ export function HomeChallenges() {
 
         <div className="relative min-h-[42rem] overflow-hidden bg-brand-white lg:min-h-[46rem]">
           <p
-            className="pointer-events-none absolute top-[28%] left-[-12%] z-[1] font-serif text-[4.4rem] leading-[0.82] font-black tracking-tight text-navy uppercase select-none sm:left-[-6%] sm:text-[6.6rem] lg:top-[30%] lg:left-[-4%] lg:text-[7.2rem]"
+            className="pointer-events-none absolute top-[28%] left-[-6%] z-[1] font-serif text-[4.4rem] leading-[0.82] font-black tracking-tight text-navy uppercase select-none sm:left-[-6%] sm:text-[6.6rem] lg:top-[30%] lg:left-[-4%] lg:text-[7.2rem]"
             aria-hidden="true"
           >
             Let&apos;s

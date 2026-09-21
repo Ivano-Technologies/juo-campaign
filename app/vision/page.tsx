@@ -48,7 +48,7 @@ export default function VisionPage() {
             </p>
             <h1 className="mt-3 max-w-4xl font-serif text-4xl leading-[1.15] sm:text-5xl">
               <span className="block">{visionHeadlineLead}</span>
-              <span className="mt-1 block text-brand-red">
+              <span className="mt-1 block text-brand-white">
                 {visionHeadlineLockup}
               </span>
             </h1>

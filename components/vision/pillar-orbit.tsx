@@ -161,8 +161,8 @@ export function PillarOrbit() {
           ry={frame.cr}
           fill="none"
           stroke="#FFFFFF"
-          strokeOpacity="0.42"
-          strokeWidth="0.35"
+          strokeOpacity="0.7"
+          strokeWidth="0.4"
         />
       </svg>
       {visionPillars.map((pillar, index) => {
@@ -173,10 +173,10 @@ export function PillarOrbit() {
             key={pillar}
             type="button"
             aria-pressed={selected}
-            className={`absolute z-10 max-w-[7.5rem] -translate-x-1/2 -translate-y-1/2 rounded-md px-2 py-1.5 text-center text-[11px] leading-snug font-semibold tracking-[0.04em] uppercase shadow-[0_1px_8px_rgb(64_68_155_/_0.45)] backdrop-blur-sm sm:max-w-[11rem] sm:px-2.5 sm:text-sm ${
+            className={`absolute z-10 max-w-[7.5rem] -translate-x-1/2 -translate-y-1/2 rounded-md px-2 py-1.5 text-center text-[11px] leading-snug font-semibold tracking-[0.04em] uppercase sm:max-w-[11rem] sm:px-2.5 sm:text-sm ${
               selected
-                ? "bg-brand-red text-brand-white"
-                : "bg-brand-blue/80 text-brand-white"
+                ? "bg-brand-red text-brand-white shadow-[0_1px_8px_rgb(0_0_0_/_0.45)]"
+                : "bg-transparent text-brand-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_0.9),_0_2px_10px_rgb(0_0_0_/_0.65)]"
             }`}
             style={{
               left: point.left,
@@ -191,23 +191,23 @@ export function PillarOrbit() {
       })}
       <div className="absolute inset-0 z-20 flex items-center justify-center p-10 sm:p-16">
         <div
-          className="w-full max-w-[16rem] rounded-2xl border border-brand-white/35 bg-brand-blue/80 px-4 py-5 text-center shadow-[0_8px_32px_rgb(64_68_155_/_0.35)] backdrop-blur-md sm:max-w-[20rem] sm:px-5 sm:py-6"
+          className="w-full max-w-[16rem] px-2 text-center sm:max-w-[20rem]"
           aria-live="polite"
         >
-          <p className="text-[11px] tracking-[0.2em] text-brand-red uppercase">
+          <p className="text-[11px] tracking-[0.2em] text-brand-red uppercase [text-shadow:_0_1px_8px_rgb(0_0_0_/_0.75)]">
             {String(active + 1).padStart(2, "0")}
           </p>
-          <h3 className="mt-2 font-serif text-xl leading-tight text-brand-white sm:text-2xl">
+          <h3 className="mt-2 font-serif text-xl leading-tight text-brand-white sm:text-2xl [text-shadow:_0_1px_2px_rgb(0_0_0_/_0.9),_0_4px_18px_rgb(0_0_0_/_0.7)]">
             {current}
           </h3>
-          <p className="mt-3 text-sm leading-6 text-brand-white">
+          <p className="mt-3 text-sm leading-6 text-brand-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_0.9),_0_3px_14px_rgb(0_0_0_/_0.65)]">
             {visionPillarSpineLine}
           </p>
           <Button
             href="/manifesto"
             variant="white"
             size="sm"
-            className="mt-4"
+            className="mt-4 shadow-[0_2px_16px_rgb(0_0_0_/_0.45)]"
           >
             {visionManifestoCta}
           </Button>

@@ -22,7 +22,7 @@ export function PillarFlatList({
           key={pillar}
           className={
             visible
-              ? "border border-brand-white px-4 py-3 text-brand-white"
+              ? "border border-brand-white/80 px-4 py-3 text-brand-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_0.85),_0_2px_10px_rgb(0_0_0_/_0.55)]"
               : undefined
           }
         >

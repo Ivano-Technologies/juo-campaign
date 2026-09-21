@@ -83,7 +83,7 @@ export function HomeHero() {
 
       <button
         type="button"
-        className="absolute right-[4.25rem] bottom-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/25 text-2xl text-white backdrop-blur-sm transition hover:bg-black/45 md:top-1/2 md:bottom-auto md:left-4 md:right-auto md:-translate-y-1/2"
+        className="absolute left-3 bottom-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/25 text-2xl text-white backdrop-blur-sm transition hover:bg-black/45 md:top-1/2 md:bottom-auto md:left-4 md:right-auto md:-translate-y-1/2"
         aria-label="Previous slide"
         onClick={() => go(index - 1)}
       >
@@ -103,16 +103,16 @@ export function HomeHero() {
       >
         <div
           key={slide.src + slide.title}
-          className={`w-max max-w-[min(58rem,calc(100vw-3.5rem))] ${reduced ? "" : "caption-enter"} ${
+          className={`w-full max-w-[min(58rem,calc(100vw-3rem))] ${reduced ? "" : "caption-enter"} ${
             slide.align === "left" ? "lg:max-w-[38rem]" : ""
           }`}
         >
           <p
-            className={`font-serif text-xl font-extrabold tracking-[0.08em] uppercase sm:text-2xl lg:text-3xl ${slide.kickerClass}`}
+            className={`font-serif text-base font-extrabold tracking-[0.08em] uppercase sm:text-2xl lg:text-3xl ${slide.kickerClass}`}
           >
             {slide.kicker}
           </p>
-          <h1 className="mt-2 font-serif text-4xl leading-[0.95] font-extrabold tracking-[-0.03em] whitespace-pre-line text-brand-white uppercase sm:text-5xl lg:text-[3.85rem] lg:whitespace-pre xl:text-[4.15rem]">
+          <h1 className="mt-2 font-serif text-[1.85rem] leading-[0.98] font-extrabold tracking-[-0.03em] whitespace-pre-line text-brand-white uppercase sm:text-5xl sm:leading-[0.95] lg:text-[3.85rem] lg:whitespace-pre xl:text-[4.15rem]">
             {slide.title}
           </h1>
           {slide.lede !== "" ? (

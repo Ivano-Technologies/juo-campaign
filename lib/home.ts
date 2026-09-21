@@ -43,7 +43,7 @@ export const heroSlides = [
       src: `${mediaBase}/9C79A72F-DCCC-4AEB-9F19-428670710578-Background-Removed.png`,
       alt: "John Upan Odey Jnr smiling in a striped campaign shirt",
       wrapClass:
-        "absolute bottom-0 left-[-4%] z-[1] h-[92%] w-[52%] sm:left-0 sm:w-[44%]",
+        "absolute bottom-0 left-0 z-[1] h-[88%] w-[48%] sm:w-[44%]",
     },
   },
   {
@@ -77,7 +77,7 @@ export const heroSlides = [
       src: `${mediaBase}/79769D2E-4947-401C-A754-2487319076F8_11zon-Background-Removed.png`,
       alt: "John Upan Odey Jnr standing with arms crossed",
       wrapClass:
-        "absolute right-[-2%] bottom-0 z-[1] h-[92%] w-[50%] sm:right-[4%] sm:w-[38%]",
+        "absolute right-0 bottom-0 z-[1] h-[88%] w-[46%] sm:right-[4%] sm:w-[38%]",
     },
     vote: true,
     signature: "John Upan Odey",

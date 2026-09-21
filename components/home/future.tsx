@@ -65,7 +65,7 @@ export function HomeFuture() {
         <div className="relative mt-8">
           <button
             type="button"
-            className="absolute top-1/2 -left-2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/25 text-xl backdrop-blur-sm sm:-left-4"
+            className="absolute top-1/2 left-1 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/25 text-xl backdrop-blur-sm sm:left-0"
             aria-label="Previous future card"
             onClick={() => shift(-1)}
           >
@@ -83,7 +83,7 @@ export function HomeFuture() {
           </ul>
           <button
             type="button"
-            className="absolute top-1/2 -right-2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/25 text-xl backdrop-blur-sm sm:-right-4"
+            className="absolute top-1/2 right-1 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/25 text-xl backdrop-blur-sm sm:right-0"
             aria-label="Next future card"
             onClick={() => shift(1)}
           >

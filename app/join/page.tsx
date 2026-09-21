@@ -3,11 +3,17 @@ import { BrandMarks } from "@/components/brand-marks";
 import { Button } from "@/components/button";
 import { JoinForm } from "@/components/join-form";
 import { PageHero } from "@/components/page-hero";
+import { pageShareTags } from "@/lib/page-seo";
+import { pageTitle } from "@/lib/site";
+
+const joinTitle = pageTitle("Join the Movement");
+const joinDescription =
+  "Volunteer with the John Upan Odey Jnr campaign. Join the Movement for a Fresh Start in Cross River.";
 
 export const metadata: Metadata = {
   title: "Join the Movement",
-  description:
-    "Volunteer with the John Upan Odey Jnr campaign. Join the Movement for a Fresh Start in Cross River.",
+  description: joinDescription,
+  ...pageShareTags(joinTitle, joinDescription),
 };
 
 export default function JoinPage() {

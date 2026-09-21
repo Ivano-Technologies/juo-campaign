@@ -59,7 +59,7 @@ export function HomeTogetherBanner() {
       <div className="px-6 pb-8 text-center">
         <h2
           id={labelId}
-          className="font-serif text-3xl font-extrabold tracking-tight text-navy uppercase sm:text-5xl"
+          className="font-serif text-[1.65rem] font-extrabold tracking-tight text-navy uppercase sm:text-5xl"
         >
           Together a new CRS is possible
         </h2>

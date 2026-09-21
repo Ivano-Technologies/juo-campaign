@@ -22,8 +22,8 @@ const variants: Record<ButtonVariant, string> = {
 };
 
 const sizes = {
-  md: "px-5 py-2.5 text-sm",
-  sm: "px-4 py-2 text-sm",
+  md: "min-h-11 px-5 py-2.5 text-sm",
+  sm: "min-h-11 px-4 py-2 text-sm",
 } as const;
 
 type ButtonHref = Route | `${string}#${string}`;
@@ -53,7 +53,7 @@ export function Button({
   const selected = Boolean(href && isNavActive(pathname, href));
   const usesGhostPill = variant === "ghost" || variant === "white";
   const tone = usesGhostPill && selected ? ghostPillOn : variants[variant];
-  const classes = `inline-flex items-center justify-center rounded-full border font-semibold tracking-wide transition-[color,background-color,border-color,transform] duration-200 ${sizes[size]} ${tone} disabled:cursor-not-allowed disabled:opacity-60 ${className}`;
+  const classes = `inline-flex items-center justify-center rounded-full border text-center font-semibold tracking-wide whitespace-normal transition-[color,background-color,border-color,transform] duration-200 ${sizes[size]} ${tone} ${usesGhostPill ? "ghost-pill" : ""} disabled:cursor-not-allowed disabled:opacity-60 ${className}`;
 
   if (href) {
     if (href.includes("#")) {

@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import { Button } from "@/components/button";
 import { CandidateMark } from "@/components/socials";
 import { site } from "@/lib/site";
+import { VisionPillarShowcase } from "@/components/vision/pillar-showcase";
 import {
+  parsePillarTreatment,
   visionHeadlineLead,
   visionHeadlineLockup,
   visionJsonLd,
   visionPageDescription,
   visionPageTitle,
   visionPageUrl,
-  visionPillars,
 } from "@/lib/vision";
 
 export const metadata: Metadata = {
@@ -33,7 +34,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function VisionPage() {
+export default async function VisionPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ pillars?: string | string[] }>;
+}) {
+  const params = await searchParams;
+  const treatment = parsePillarTreatment(params.pillars);
   return (
     <>
       <script
@@ -80,19 +87,10 @@ export default function VisionPage() {
             one Cross River. The pillars below are listed by name. Full
             commitment text will be published with the campaign manifesto.
           </p>
-          <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {visionPillars.map((pillar, index) => (
-              <li
-                key={pillar}
-                className="rounded-2xl border border-line bg-brand-white p-6"
-              >
-                <p className="text-xs uppercase tracking-[0.2em] text-brand-red">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mt-2 font-serif text-2xl text-ink">{pillar}</h3>
-              </li>
-            ))}
-          </ol>
+          <VisionPillarShowcase
+            key={treatment}
+            initialTreatment={treatment}
+          />
         </div>
       </section>
 

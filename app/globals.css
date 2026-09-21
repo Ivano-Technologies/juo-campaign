@@ -158,6 +158,39 @@ h6 {
   paint-order: stroke fill;
 }
 
+.vision-radar-sweep {
+  pointer-events: none;
+  animation: vision-radar-sweep 4.5s linear infinite;
+}
+
+.vision-roulette-stage {
+  --vision-z: 9rem;
+  perspective: 1100px;
+  perspective-origin: 50% 45%;
+  transform-style: preserve-3d;
+}
+
+.vision-roulette-wheel {
+  transform-style: preserve-3d;
+  transition: transform 700ms ease;
+}
+
+.vision-roulette-face {
+  backface-visibility: hidden;
+}
+
+@media (min-width: 640px) {
+  .vision-roulette-stage {
+    --vision-z: 12.5rem;
+  }
+}
+
+@keyframes vision-radar-sweep {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -166,7 +199,10 @@ h6 {
   .caption-enter,
   .vote-spin,
   .future-built-word,
-  .glass-marquee-track {
+  .glass-marquee-track,
+  .vision-radar-sweep,
+  .vision-roulette-wheel {
     animation: none !important;
+    transition: none !important;
   }
 }

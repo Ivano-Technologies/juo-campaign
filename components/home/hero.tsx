@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
-import { heroSlides } from "@/lib/home";
+import { heroSlides, voteBadge } from "@/lib/home";
 
 const INTERVAL_MS = 6000;
 
@@ -28,6 +28,12 @@ export function HomeHero() {
   }, [paused, reduced]);
 
   const slide = heroSlides[index] ?? heroSlides[0];
+  const captionBox =
+    slide.align === "left"
+      ? "justify-start text-left"
+      : "justify-end text-right";
+  const captionY =
+    slide.captionY === "center" ? "items-center" : "items-end pb-16 sm:pb-20";
 
   return (
     <section
@@ -51,12 +57,29 @@ export function HomeHero() {
             fill
             priority={slideIndex === 0}
             sizes="100vw"
-            className="object-cover object-[center_30%]"
+            className={`object-cover ${item.objectClass}`}
           />
+          {"overlay" in item && item.overlay ? (
+            <div className={item.overlay.wrapClass}>
+              <Image
+                src={item.overlay.src}
+                alt={item.overlay.alt}
+                fill
+                sizes="(min-width: 640px) 40vw, 70vw"
+                className="object-contain object-bottom"
+              />
+            </div>
+          ) : null}
         </div>
       ))}
 
-      <div className="absolute inset-0 bg-gradient-to-t from-navy/55 via-navy/10 to-transparent" />
+      <div
+        className={`pointer-events-none absolute inset-0 z-[1] ${
+          slide.align === "right"
+            ? "bg-gradient-to-l from-navy/35 via-transparent to-transparent"
+            : "bg-gradient-to-r from-navy/25 via-transparent to-transparent"
+        }`}
+      />
 
       <button
         type="button"
@@ -75,19 +98,47 @@ export function HomeHero() {
         ›
       </button>
 
-      <div className="relative z-[2] flex h-full items-end justify-end px-8 pb-16 sm:px-16 lg:px-24">
+      <div
+        className={`relative z-[2] flex h-full px-8 sm:px-16 lg:px-24 ${captionBox} ${captionY}`}
+      >
         <div
           key={slide.src + slide.title}
-          className={`max-w-3xl text-right ${reduced ? "" : "caption-enter"}`}
+          className={`max-w-3xl ${reduced ? "" : "caption-enter"} ${
+            slide.align === "left" ? "lg:max-w-xl" : ""
+          }`}
         >
-          <p className="font-serif text-2xl font-extrabold tracking-[0.08em] text-cyan uppercase sm:text-3xl lg:text-4xl">
+          <p
+            className={`font-serif text-xl font-extrabold tracking-[0.08em] uppercase sm:text-2xl lg:text-3xl ${slide.kickerClass}`}
+          >
             {slide.kicker}
           </p>
-          <h1 className="mt-2 font-serif text-4xl leading-[0.95] font-extrabold tracking-tight text-brand-white uppercase sm:text-5xl lg:text-[4.4rem]">
+          <h1 className="mt-2 font-serif text-4xl leading-[0.95] font-extrabold tracking-tight whitespace-pre-line text-brand-white uppercase sm:text-5xl lg:text-[4.35rem]">
             {slide.title}
           </h1>
           {slide.lede !== "" ? (
-            <p className="mt-4 text-lg text-brand-white/90">{slide.lede}</p>
+            <p
+              className={`mt-4 text-lg text-brand-white/90 ${
+                slide.lede.startsWith("#")
+                  ? "font-serif text-2xl font-extrabold tracking-[0.04em] uppercase sm:text-3xl"
+                  : ""
+              }`}
+            >
+              {slide.lede}
+            </p>
+          ) : null}
+          {"vote" in slide && slide.vote ? (
+            <div className="mt-6 flex items-center gap-3">
+              <Image
+                src={voteBadge}
+                alt=""
+                width={88}
+                height={88}
+                className="h-16 w-16 sm:h-20 sm:w-20"
+              />
+              <p className="font-serif text-xl font-semibold text-brand-white italic sm:text-2xl">
+                {slide.signature}
+              </p>
+            </div>
           ) : null}
         </div>
       </div>

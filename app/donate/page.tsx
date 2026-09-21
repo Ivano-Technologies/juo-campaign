@@ -29,8 +29,12 @@ export const metadata: Metadata = {
 export default function DonatePage() {
   return (
     <>
-      <PageHero title="Donate" lede={donateSupportBody[0]}>
-        <Button href="/join" variant="primary">
+      <PageHero
+        kicker="Support the work"
+        title="Donate"
+        lede="Stand up a naira-first gift for a Fresh Start in Cross River. Checkout stays gated until the campaign processor is connected — amounts and this page are ready now."
+      >
+        <Button href="/join" variant="ghost">
           Join the Movement
         </Button>
         <Button href="/news" variant="white">

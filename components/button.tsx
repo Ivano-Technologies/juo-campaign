@@ -1,17 +1,24 @@
+"use client";
+
 import type { Route } from "next";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { isNavActive } from "@/lib/site";
 
 export type ButtonVariant = "primary" | "secondary" | "white" | "ghost";
+
+/** Dark-surface pills: ghost default, solid white on hover/press/selected. */
+export const ghostPillIdle =
+  "border-brand-white bg-transparent text-brand-white hover:bg-brand-white hover:text-navy active:bg-brand-white active:text-navy motion-safe:active:scale-[0.98]";
+export const ghostPillOn = "border-brand-white bg-brand-white text-navy";
 
 const variants: Record<ButtonVariant, string> = {
   primary:
     "bg-brand-red text-brand-white hover:bg-brand-red/90 border-transparent",
   secondary:
     "bg-brand-blue text-brand-white hover:bg-brand-blue/90 border-transparent",
-  white:
-    "bg-brand-white text-brand-blue hover:bg-brand-white/90 border-transparent",
-  ghost:
-    "bg-transparent text-brand-white border-brand-white/40 hover:border-brand-white hover:bg-brand-white/10",
+  white: ghostPillIdle,
+  ghost: ghostPillIdle,
 };
 
 const sizes = {
@@ -42,7 +49,11 @@ export function Button({
   disabled = false,
   onClick,
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center rounded-full border font-semibold tracking-wide transition ${sizes[size]} ${variants[variant]} disabled:cursor-not-allowed disabled:opacity-60 ${className}`;
+  const pathname = usePathname();
+  const selected = Boolean(href && isNavActive(pathname, href));
+  const usesGhostPill = variant === "ghost" || variant === "white";
+  const tone = usesGhostPill && selected ? ghostPillOn : variants[variant];
+  const classes = `inline-flex items-center justify-center rounded-full border font-semibold tracking-wide transition-[color,background-color,border-color,transform] duration-200 ${sizes[size]} ${tone} disabled:cursor-not-allowed disabled:opacity-60 ${className}`;
 
   if (href) {
     if (href.includes("#")) {
@@ -54,7 +65,12 @@ export function Button({
     }
 
     return (
-      <Link href={href as Route} className={classes} onClick={onClick}>
+      <Link
+        href={href}
+        className={classes}
+        aria-current={selected ? "page" : undefined}
+        onClick={onClick}
+      >
         {children}
       </Link>
     );

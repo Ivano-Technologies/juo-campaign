@@ -2,8 +2,8 @@ import { Button, type ButtonVariant } from "@/components/button";
 import { primaryCtas, type PrimaryCtaHref } from "@/lib/site";
 
 const ctaVariants: Record<PrimaryCtaHref, ButtonVariant> = {
-  "/join": "primary",
-  "/donate": "white",
+  "/join": "ghost",
+  "/donate": "ghost",
   "/manifesto": "ghost",
   "/contact": "ghost",
 };

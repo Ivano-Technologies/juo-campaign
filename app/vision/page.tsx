@@ -147,29 +147,20 @@ export default function VisionPage() {
       </section>
 
       <section className="bg-brand-blue text-brand-white">
-        <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-          <h2 className="font-serif text-3xl">{visionWalkTitle}</h2>
-          <p className="mt-4 text-[1.05rem] leading-7 text-brand-white/85">
-            {visionWalkBody}
-          </p>
-          <nav
-            aria-label="Walk with the movement"
-            className="mt-8 flex flex-wrap gap-3"
-          >
-            {visionWalkCtas.map((cta) => (
-              <Button
-                key={cta.href}
-                href={cta.href}
-                variant={cta.href === "/join" ? "primary" : "white"}
-              >
-                {cta.label}
-              </Button>
-            ))}
-          </nav>
-          <p className="mt-10 text-sm tracking-[0.04em] text-brand-white/70">
-            {visionShareHashtags.join(" ")}
-          </p>
-        </div>
+        <nav
+          aria-label="Campaign actions"
+          className="mx-auto flex max-w-6xl flex-wrap gap-3 px-4 py-12 sm:px-6"
+        >
+          <Button href="/manifesto" variant="ghost">
+            Manifesto
+          </Button>
+          <Button href="/join" variant="ghost">
+            Join the Movement
+          </Button>
+          <Button href="/john-upan-odey" variant="ghost">
+            Who is JUO
+          </Button>
+        </nav>
       </section>
     </>
   );

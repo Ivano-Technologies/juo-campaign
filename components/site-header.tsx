@@ -4,6 +4,7 @@ import type { Route } from "next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
+import { Button } from "@/components/button";
 import { CandidateMark, SocialRow } from "@/components/socials";
 import { isNavActive, site, wpNavItems } from "@/lib/site";
 
@@ -127,13 +128,15 @@ export function SiteHeader() {
             );
           })}
         </ul>
-        <Link
+        <Button
           href="/join"
-          className="mt-4 inline-flex min-h-11 items-center bg-brand-red px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white"
+          variant="ghost"
+          size="sm"
+          className="mt-4 min-h-11 text-[12px] font-bold uppercase tracking-[0.12em]"
           onClick={() => setOpen(false)}
         >
           Join the Movement
-        </Link>
+        </Button>
         <SocialRow className="mt-4" />
       </nav>
     </header>

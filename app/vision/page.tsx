@@ -4,7 +4,6 @@ import { CandidateMark } from "@/components/socials";
 import { site } from "@/lib/site";
 import { VisionPillarShowcase } from "@/components/vision/pillar-showcase";
 import {
-  parsePillarTreatment,
   visionHeadlineLead,
   visionHeadlineLockup,
   visionJsonLd,
@@ -34,13 +33,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function VisionPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ pillars?: string | string[] }>;
-}) {
-  const params = await searchParams;
-  const treatment = parsePillarTreatment(params.pillars);
+export default function VisionPage() {
   return (
     <>
       <script
@@ -87,10 +80,7 @@ export default async function VisionPage({
             one Cross River. The pillars below are listed by name. Full
             commitment text will be published with the campaign manifesto.
           </p>
-          <VisionPillarShowcase
-            key={treatment}
-            initialTreatment={treatment}
-          />
+          <VisionPillarShowcase />
         </div>
       </section>
 

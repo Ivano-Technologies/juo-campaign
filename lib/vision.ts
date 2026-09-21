@@ -15,28 +15,13 @@ export const visionHeadlineLockup = "One People, One Cross River";
 export const visionHeadline =
   `${visionHeadlineLead} ${visionHeadlineLockup}` as const;
 
-export const pillarTreatments = ["orbit", "dial", "3d"] as const;
-export type PillarTreatment = (typeof pillarTreatments)[number];
-export const defaultPillarTreatment: PillarTreatment = "orbit";
+export const visionOrbitBackdrop = "/vision/destination-cross-river.webp";
+export const visionOrbitAccent = "/vision/a-new-crs.webp";
 
-export function parsePillarTreatment(
-  value: string | string[] | undefined,
-): PillarTreatment {
-  const raw = Array.isArray(value) ? value[0] : value;
-  if (raw === "orbit" || raw === "dial" || raw === "3d") {
-    return raw;
-  }
-  return defaultPillarTreatment;
-}
-
-export const pillarTreatmentTabs: ReadonlyArray<{
-  id: PillarTreatment;
-  label: string;
-}> = [
-  { id: "orbit", label: "Orbit" },
-  { id: "dial", label: "Dial" },
-  { id: "3d", label: "3D roulette" },
-];
+/** Brand spine only — no invented pillar policy (IVA-17). */
+export const visionPillarSpineLine =
+  `${site.tagline}. ${site.unityLine}. ${site.prosperityLine}` as const;
+export const visionManifestoCta = "Full commitments in the Manifesto";
 
 /** Brand-audit pillar names only — no body until the manifesto (IVA-17). */
 export const visionPillars = [

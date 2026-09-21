@@ -192,7 +192,7 @@ export function PillarOrbit() {
       })}
       <div className="absolute inset-0 z-20 flex items-center justify-center p-9 sm:p-14">
         <div
-          className="flex w-full max-w-[17.5rem] flex-col items-center justify-center rounded-full bg-pillar-navy-deep/90 px-6 py-8 text-center shadow-[0_12px_48px_rgb(0_0_0_/_0.55)] ring-1 ring-brand-white/20 backdrop-blur-md sm:max-w-[23rem] sm:px-9 sm:py-11"
+          className="flex w-full max-w-[17.5rem] flex-col items-center justify-center rounded-full bg-pillar-navy-deep/90 px-6 py-8 text-center shadow-[0_12px_48px_rgb(0_0_0_/_0.55)] ring-1 ring-brand-white/20 backdrop-blur-md sm:max-w-[24rem] sm:px-9 sm:py-11"
           aria-live="polite"
         >
           <p className="text-xs font-bold tracking-[0.22em] text-brand-red uppercase">
@@ -201,10 +201,10 @@ export function PillarOrbit() {
           <h3 className="mt-2 font-serif text-2xl leading-tight font-bold text-brand-white sm:text-3xl">
             {current}
           </h3>
-          <p className="mt-4 text-base leading-snug font-semibold text-brand-white sm:text-lg">
+          <p className="mt-4 text-base leading-snug font-semibold text-balance text-brand-white sm:text-lg">
             {visionOrbitUnityLine}
           </p>
-          <p className="mt-2 text-base leading-snug font-bold tracking-wide text-brand-white sm:text-lg">
+          <p className="mt-2 text-base leading-snug font-bold text-brand-white sm:text-lg">
             {visionOrbitProsperityLine}
           </p>
           <Button

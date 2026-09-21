@@ -53,7 +53,7 @@ export function Button({
   const selected = Boolean(href && isNavActive(pathname, href));
   const usesGhostPill = variant === "ghost" || variant === "white";
   const tone = usesGhostPill && selected ? ghostPillOn : variants[variant];
-  const classes = `inline-flex items-center justify-center rounded-full border text-center font-semibold tracking-wide whitespace-normal transition-[color,background-color,border-color,transform] duration-200 ${sizes[size]} ${tone} disabled:cursor-not-allowed disabled:opacity-60 ${className}`;
+  const classes = `inline-flex items-center justify-center rounded-full border text-center font-semibold tracking-wide whitespace-normal transition-[color,background-color,border-color,transform] duration-200 ${sizes[size]} ${tone} ${usesGhostPill ? "ghost-pill" : ""} disabled:cursor-not-allowed disabled:opacity-60 ${className}`;
 
   if (href) {
     if (href.includes("#")) {

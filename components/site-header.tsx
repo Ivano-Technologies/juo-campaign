@@ -84,7 +84,7 @@ export function SiteHeader() {
               href="/join"
               variant="ghost"
               size="sm"
-              className="min-h-11 text-[12px] font-bold uppercase tracking-[0.12em]"
+              className="ghost-pill min-h-11 text-[12px] font-bold uppercase tracking-[0.12em]"
             >
               Join the Movement
             </Button>
@@ -134,7 +134,7 @@ export function SiteHeader() {
           href="/join"
           variant="ghost"
           size="sm"
-          className="mt-4 min-h-11 text-[12px] font-bold uppercase tracking-[0.12em]"
+          className="ghost-pill mt-4 min-h-11 text-[12px] font-bold uppercase tracking-[0.12em]"
           onClick={() => setOpen(false)}
         >
           Join the Movement

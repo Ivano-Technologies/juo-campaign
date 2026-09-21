@@ -152,6 +152,24 @@ h6 {
   text-stroke: 1.5px #ffffff;
 }
 
+/* Dark-surface pills: ghost idle, solid white on hover/active/selected. */
+a.ghost-pill,
+button.ghost-pill {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+a.ghost-pill:hover,
+a.ghost-pill:active,
+a.ghost-pill[aria-current="page"],
+button.ghost-pill:hover,
+button.ghost-pill:active {
+  background-color: #ffffff;
+  color: #0b2342;
+  border-color: #ffffff;
+}
+
 .challenges-pane {
   container-type: size;
   display: flex;

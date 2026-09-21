@@ -84,11 +84,20 @@ export const heroSlides = [
   },
 ] as const;
 
+/**
+ * Homepage glance counters. Only ship stats with a verified volume.
+ * WP's empty Citizens (0M+) placeholder is omitted — do not invent a replacement.
+ */
 export const heroStats = [
-  { value: 5, suffix: "M+", label: "Citizens", icon: "people" },
   { value: 18, suffix: "", label: "Local Government Areas", icon: "briefcase" },
   { value: 20, suffix: "", label: "Median Age", icon: "leaf" },
 ] as const;
+
+export type HeroStat = (typeof heroStats)[number];
+
+export function isPublishedHeroStat(stat: { value: number }): boolean {
+  return Number.isFinite(stat.value) && stat.value > 0;
+}
 
 export const statsBackdrop = `${mediaBase}/814EA178-8DCD-4369-9FD7-D94EE6904D49_11zon.webp`;
 

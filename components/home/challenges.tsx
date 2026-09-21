@@ -58,7 +58,7 @@ export function HomeChallenges() {
           </ul>
         </div>
 
-        <div className="grid items-end gap-2 bg-brand-white px-4 py-10 sm:grid-cols-[minmax(0,1.15fr)_minmax(11rem,0.9fr)] sm:items-center sm:gap-4 sm:px-6 lg:min-h-[46rem] lg:px-8">
+        <div className="grid items-end gap-2 overflow-hidden bg-brand-white px-4 py-10 sm:grid-cols-[minmax(0,1fr)_16.5rem] sm:items-center sm:gap-3 sm:px-6 lg:min-h-[46rem] lg:grid-cols-[minmax(0,1fr)_20rem] lg:px-10">
           <div className="relative mx-auto h-[22rem] w-full max-w-md sm:mx-0 sm:h-[28rem] lg:h-[38rem] lg:max-w-none">
             <Image
               src={challengesCutout.src}
@@ -68,17 +68,17 @@ export function HomeChallenges() {
               className="object-contain object-bottom"
             />
           </div>
-          <div className="flex flex-col justify-center pb-4 sm:pb-0">
-            <p className="font-serif text-5xl leading-[0.82] font-black tracking-tight text-navy uppercase sm:text-6xl lg:text-7xl">
+          <div className="flex min-w-0 flex-col justify-center pb-4 sm:pb-0">
+            <p className="font-serif text-5xl leading-[0.82] font-black tracking-tight text-navy uppercase sm:text-6xl lg:text-[3.9rem]">
               Let&apos;s
             </p>
             <p
-              className="challenges-word-change font-serif text-5xl leading-[0.82] font-black tracking-tight text-change-blue uppercase sm:text-6xl lg:text-7xl"
+              className="challenges-word-change font-serif text-5xl leading-[0.82] font-black tracking-tight text-change-blue uppercase sm:text-6xl lg:text-[3.9rem]"
               style={{ transform: `translate3d(0, ${offset}px, 0)` }}
             >
               Change
             </p>
-            <p className="challenges-word-that font-serif text-5xl leading-[0.82] font-black tracking-tight text-that-navy uppercase sm:text-6xl lg:text-7xl">
+            <p className="challenges-word-that font-serif text-5xl leading-[0.82] font-black tracking-tight text-that-navy uppercase sm:text-6xl lg:text-[3.9rem]">
               That
             </p>
           </div>

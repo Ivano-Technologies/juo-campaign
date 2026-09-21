@@ -18,7 +18,10 @@ export const site = {
 /** www-primary canonical origin. Apex redirects to www. */
 export const canonicalOrigin = `https://www.${site.domain}` as const;
 
-/** WP homepage chrome (IVA-35). */
+/**
+ * Locked SiteHeader chrome — text links, never pills.
+ * HOME · THE VISION · MANIFESTO · MEET YOUR REPS · DIASPORA CONNECT · DONATE
+ */
 export const wpNavItems = [
   { href: "/", label: "Home" },
   { href: "/vision", label: "The Vision" },

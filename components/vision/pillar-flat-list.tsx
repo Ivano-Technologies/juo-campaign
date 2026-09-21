@@ -19,7 +19,7 @@ export function PillarFlatList({
     >
       {visionPillars.map((pillar, index) => (
         <li
-          key={pillar}
+          key={pillar.slug}
           className={
             visible
               ? "border border-brand-white/80 px-4 py-3 text-brand-white [text-shadow:_0_1px_2px_rgb(0_0_0_/_0.85),_0_2px_10px_rgb(0_0_0_/_0.55)]"
@@ -31,10 +31,12 @@ export function PillarFlatList({
               <span className="mr-3 text-xs tracking-[0.18em] text-brand-red">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <span className="font-serif text-lg">{pillar}</span>
+              <a href={`#${pillar.slug}`} className="font-serif text-lg hover:underline">
+                {pillar.name}
+              </a>
             </>
           ) : (
-            pillar
+            pillar.name
           )}
         </li>
       ))}

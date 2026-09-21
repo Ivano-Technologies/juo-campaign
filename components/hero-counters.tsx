@@ -6,7 +6,8 @@ import { isPublishedHeroStat, type HeroStat } from "@/lib/home";
 type Stat = HeroStat;
 
 function useCountUp(target: number, active: boolean): number {
-  const [value, setValue] = useState(0);
+  // First HTML paint carries the published figure — not a zero placeholder.
+  const [value, setValue] = useState(target);
 
   useEffect(() => {
     if (!active) {

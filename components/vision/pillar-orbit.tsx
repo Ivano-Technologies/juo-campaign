@@ -171,7 +171,7 @@ export function PillarOrbit() {
         const point = pointOnFrame((index - active) / visionPillars.length);
         return (
           <button
-            key={pillar}
+            key={pillar.slug}
             type="button"
             aria-pressed={selected}
             className={`absolute z-10 max-w-[7.5rem] -translate-x-1/2 -translate-y-1/2 rounded-md px-2 py-1.5 text-center text-[11px] leading-snug font-semibold tracking-[0.04em] uppercase sm:max-w-[11rem] sm:px-2.5 sm:text-sm ${
@@ -186,7 +186,7 @@ export function PillarOrbit() {
             }}
             onClick={() => setActive(index)}
           >
-            {pillar}
+            {pillar.name}
           </button>
         );
       })}

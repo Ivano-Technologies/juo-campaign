@@ -152,10 +152,65 @@ h6 {
   text-stroke: 1.5px #ffffff;
 }
 
+.challenges-pane {
+  container-type: size;
+  display: flex;
+  align-items: flex-end;
+  /* Explicit box so the cutout + lockup share one height (and cqh works). */
+  height: 20rem;
+}
+
+.challenges-lockup {
+  width: min(56%, 22rem);
+  max-width: calc(100% - 7.25rem);
+}
+
+.challenges-word {
+  margin: 0;
+  /*
+   * Track portrait/pane height, but never outgrow the pane width —
+   * CHANGE is the widest line and must stay fully visible.
+   */
+  font-size: clamp(1.4rem, min(18.5cqh, 13.8cqi), 5.75rem);
+  line-height: 0.88;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+}
+
+.challenges-word + .challenges-word {
+  margin-top: 0.16em;
+}
+
+.challenges-portrait {
+  width: min(66%, 30rem);
+}
+
 .challenges-word-change,
 .challenges-word-that {
   -webkit-text-stroke: 0.055em #ffffff;
   paint-order: stroke fill;
+}
+
+@media (min-width: 640px) {
+  .challenges-pane {
+    height: 28rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .challenges-pane {
+    height: 100%;
+    min-height: 38rem;
+  }
+
+  .challenges-lockup {
+    width: min(46%, 24rem);
+    max-width: none;
+  }
+
+  .challenges-portrait {
+    width: min(60%, 34rem);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

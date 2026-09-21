@@ -2,11 +2,15 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 import { opportunityCards } from "@/lib/home";
 
 export function HomeVision() {
   const [active, setActive] = useState(0);
-  const card = opportunityCards[active] ?? opportunityCards[0];
+  const reduced = usePrefersReducedMotion();
+  const fade = reduced
+    ? "duration-0"
+    : "duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]";
 
   return (
     <section
@@ -43,29 +47,55 @@ export function HomeVision() {
             })}
           </ul>
 
-          <div>
-            <div className="mb-6 h-px w-24 bg-brand-white/70" />
-            <h2 className="font-serif text-3xl font-extrabold tracking-tight uppercase">
-              {card.title}
-            </h2>
-            <p className="mt-4 max-w-sm text-sm leading-7 text-brand-white/80">
-              {card.body}
-            </p>
+          <div className="relative min-h-[10.5rem]">
+            {opportunityCards.map((item, index) => {
+              const isActive = index === active;
+              return (
+                <div
+                  key={item.title}
+                  className={`${
+                    isActive ? "relative" : "pointer-events-none absolute inset-0"
+                  } ${fade} transition-[opacity,transform] ${
+                    isActive
+                      ? "translate-y-0 opacity-100"
+                      : reduced
+                        ? "opacity-0"
+                        : "translate-y-4 opacity-0"
+                  }`}
+                  aria-hidden={!isActive}
+                >
+                  <div className="mb-6 h-px w-24 bg-brand-white/70" />
+                  <h2 className="font-serif text-3xl font-extrabold tracking-tight uppercase">
+                    {item.title}
+                  </h2>
+                  <p className="mt-4 max-w-sm text-sm leading-7 text-brand-white/80">
+                    {item.body}
+                  </p>
+                </div>
+              );
+            })}
           </div>
 
-          <div className="relative mx-auto aspect-[2/1] w-full min-h-[14rem] overflow-hidden [clip-path:ellipse(58%_100%_at_50%_100%)] lg:min-h-[18rem]">
-            {opportunityCards.map((item, index) => (
-              <Image
-                key={item.title}
-                src={item.image.src}
-                alt={item.image.alt}
-                fill
-                sizes="(min-width: 1024px) 36rem, 90vw"
-                className={`object-cover transition-opacity duration-700 ${
-                  index === active ? "opacity-100" : "opacity-0"
-                }`}
-              />
-            ))}
+          <div className="relative mx-auto aspect-[16/10] w-full min-h-[14rem] overflow-hidden rounded-md lg:min-h-[18rem]">
+            {opportunityCards.map((item, index) => {
+              const isActive = index === active;
+              return (
+                <Image
+                  key={item.title}
+                  src={item.image.src}
+                  alt={item.image.alt}
+                  fill
+                  sizes="(min-width: 1024px) 36rem, 90vw"
+                  className={`object-cover transition-[opacity,transform] ${fade} ${
+                    isActive
+                      ? "scale-100 opacity-100"
+                      : reduced
+                        ? "opacity-0"
+                        : "scale-105 opacity-0"
+                  }`}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

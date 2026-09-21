@@ -25,7 +25,7 @@ export function HomeChallenges() {
       const rect = node.getBoundingClientRect();
       const view = window.innerHeight || 1;
       const progress = (view / 2 - (rect.top + rect.height / 2)) / view;
-      setOffset(Math.max(-36, Math.min(36, progress * 70)));
+      setOffset(Math.max(-28, Math.min(28, progress * 56)));
     };
 
     onScroll();
@@ -37,20 +37,20 @@ export function HomeChallenges() {
     <section ref={sectionRef} className="bg-brand-white">
       <div className="grid min-h-[38rem] lg:grid-cols-2">
         <div className="flex flex-col justify-center bg-navy px-8 py-16 text-brand-white sm:px-12 lg:px-16 lg:py-20">
-          <h2 className="font-serif text-4xl font-extrabold tracking-tight text-brand-white uppercase sm:text-5xl">
+          <h2 className="font-serif text-5xl font-extrabold tracking-tight text-brand-white uppercase sm:text-6xl">
             Challenges
             <br />
             We Face
           </h2>
           <DiamondRule count={5} />
-          <ul className="mt-14 grid max-w-md grid-cols-2 gap-x-8 gap-y-12">
+          <ul className="mt-14 grid max-w-lg grid-cols-2 gap-x-10 gap-y-14">
             {challenges.map((item) => (
               <li
                 key={item.id}
-                className="flex max-w-[12.5rem] flex-col items-center text-center"
+                className="flex max-w-[18rem] flex-col items-center text-center"
               >
                 <ProhibitIcon />
-                <p className="mt-3 text-sm leading-6 text-brand-white/90">
+                <p className="mt-4 text-base leading-7 text-brand-white sm:text-lg">
                   {item.body}
                 </p>
               </li>
@@ -58,33 +58,30 @@ export function HomeChallenges() {
           </ul>
         </div>
 
-        <div className="relative min-h-[42rem] overflow-hidden bg-brand-white lg:min-h-[46rem]">
-          <p
-            className="pointer-events-none absolute top-[28%] left-[-6%] z-[1] font-serif text-[4.4rem] leading-[0.82] font-black tracking-tight text-navy uppercase select-none sm:left-[-6%] sm:text-[6.6rem] lg:top-[30%] lg:left-[-4%] lg:text-[7.2rem]"
-            aria-hidden="true"
-          >
-            Let&apos;s
-          </p>
-          <Image
-            src={challengesCutout.src}
-            alt={challengesCutout.alt}
-            fill
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="relative z-[2] object-contain object-[center_78%]"
-          />
-          <p
-            className="challenges-word-change pointer-events-none absolute top-[48%] left-[1%] z-[3] font-serif text-[4.2rem] leading-none font-black tracking-tight text-change-blue uppercase select-none sm:left-[4%] sm:text-[6.4rem] lg:top-[50%] lg:text-[7rem]"
-            style={{ transform: `translate3d(0, ${offset}px, 0)` }}
-            aria-hidden="true"
-          >
-            Change
-          </p>
-          <p
-            className="challenges-word-that pointer-events-none absolute right-[6%] bottom-[14%] z-[3] font-serif text-6xl font-black tracking-tight text-that-navy uppercase select-none sm:right-[8%] sm:bottom-[16%] sm:text-7xl lg:text-[5.25rem]"
-            aria-hidden="true"
-          >
-            That
-          </p>
+        <div className="grid items-end gap-2 bg-brand-white px-4 py-10 sm:grid-cols-[minmax(0,1.15fr)_minmax(11rem,0.9fr)] sm:items-center sm:gap-4 sm:px-6 lg:min-h-[46rem] lg:px-8">
+          <div className="relative mx-auto h-[22rem] w-full max-w-md sm:mx-0 sm:h-[28rem] lg:h-[38rem] lg:max-w-none">
+            <Image
+              src={challengesCutout.src}
+              alt={challengesCutout.alt}
+              fill
+              sizes="(min-width: 1024px) 28vw, 90vw"
+              className="object-contain object-bottom"
+            />
+          </div>
+          <div className="flex flex-col justify-center pb-4 sm:pb-0">
+            <p className="font-serif text-5xl leading-[0.82] font-black tracking-tight text-navy uppercase sm:text-6xl lg:text-7xl">
+              Let&apos;s
+            </p>
+            <p
+              className="challenges-word-change font-serif text-5xl leading-[0.82] font-black tracking-tight text-change-blue uppercase sm:text-6xl lg:text-7xl"
+              style={{ transform: `translate3d(0, ${offset}px, 0)` }}
+            >
+              Change
+            </p>
+            <p className="challenges-word-that font-serif text-5xl leading-[0.82] font-black tracking-tight text-that-navy uppercase sm:text-6xl lg:text-7xl">
+              That
+            </p>
+          </div>
         </div>
       </div>
     </section>

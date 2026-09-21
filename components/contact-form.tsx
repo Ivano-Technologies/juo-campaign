@@ -58,7 +58,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-4 rounded-2xl border border-line bg-brand-white p-6 shadow-sm">
+    <form onSubmit={onSubmit} className="grid min-w-0 gap-4 rounded-2xl border border-line bg-brand-white p-6 shadow-sm">
       <label className="grid gap-1 text-sm">
         Full name
         <input

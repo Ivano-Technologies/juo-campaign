@@ -29,7 +29,7 @@ export default function DonatePage() {
       </PageHero>
       <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
         <DonateForm />
-        <div className="space-y-4 text-muted">
+        <div className="min-w-0 space-y-4 text-muted">
           <h2 className="pr-14 font-serif text-3xl text-ink md:pr-0">How giving will work</h2>
           <p>
             Approved amounts, receipt language, and the processor widget will

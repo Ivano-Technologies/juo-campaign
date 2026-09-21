@@ -83,7 +83,7 @@ export function HomeHero() {
 
       <button
         type="button"
-        className="absolute bottom-5 left-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/25 text-2xl text-white backdrop-blur-sm transition hover:bg-black/45 md:top-1/2 md:bottom-auto md:left-4 md:-translate-y-1/2"
+        className="absolute right-[4.25rem] bottom-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/25 text-2xl text-white backdrop-blur-sm transition hover:bg-black/45 md:top-1/2 md:bottom-auto md:left-4 md:right-auto md:-translate-y-1/2"
         aria-label="Previous slide"
         onClick={() => go(index - 1)}
       >
@@ -91,7 +91,7 @@ export function HomeHero() {
       </button>
       <button
         type="button"
-        className="absolute bottom-5 right-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/25 text-2xl text-white backdrop-blur-sm transition hover:bg-black/45 md:top-1/2 md:bottom-auto md:right-4 md:-translate-y-1/2"
+        className="absolute right-5 bottom-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/25 text-2xl text-white backdrop-blur-sm transition hover:bg-black/45 md:top-1/2 md:bottom-auto md:right-4 md:-translate-y-1/2"
         aria-label="Next slide"
         onClick={() => go(index + 1)}
       >

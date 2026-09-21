@@ -21,7 +21,7 @@ export function DonateForm() {
 
   return (
     <form
-      className="grid gap-6 rounded-2xl border border-line bg-brand-white p-8 shadow-sm"
+      className="grid min-w-0 gap-6 rounded-2xl border border-line bg-brand-white p-8 shadow-sm"
       onSubmit={(event) => {
         event.preventDefault();
         onGive();

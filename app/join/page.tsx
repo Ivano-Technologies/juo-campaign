@@ -30,7 +30,7 @@ export default function JoinPage() {
         </Button>
       </PageHero>
       <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2">
-        <div className="space-y-4 text-muted">
+        <div className="min-w-0 space-y-4 text-muted">
           <h2 className="font-serif text-3xl text-ink">What happens next</h2>
           <p>
             A volunteer coordinator will follow up on the interest you select —

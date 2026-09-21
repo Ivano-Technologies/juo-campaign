@@ -156,33 +156,35 @@ h6 {
   container-type: size;
   display: flex;
   align-items: flex-end;
-  /* Explicit box so the cutout + lockup share one height (and cqh works). */
-  height: 20rem;
+  /* Shared box: cutout fills this height; lockup type tracks cqh/cqi. */
+  height: 24rem;
 }
 
 .challenges-lockup {
-  width: min(56%, 22rem);
-  max-width: calc(100% - 7.25rem);
+  width: min(58%, 20rem);
+  max-width: calc(100% - 6.25rem);
 }
 
 .challenges-word {
   margin: 0;
   /*
-   * Track portrait/pane height, but never outgrow the pane width —
-   * CHANGE is the widest line and must stay fully visible.
+   * Size to the larger cutout. CHANGE is the widest line — cap by pane
+   * width so all three lines stay fully visible.
    */
-  font-size: clamp(1.4rem, min(18.5cqh, 13.8cqi), 5.75rem);
-  line-height: 0.88;
-  letter-spacing: -0.035em;
+  font-size: clamp(1.7rem, min(24cqh, 20cqi), 7.75rem);
+  line-height: 0.84;
+  letter-spacing: -0.045em;
   white-space: nowrap;
 }
 
 .challenges-word + .challenges-word {
-  margin-top: 0.16em;
+  margin-top: 0.12em;
 }
 
 .challenges-portrait {
-  width: min(66%, 30rem);
+  /* Cropped cutout is ~0.44 aspect — width tracks pane height so the
+     figure fills the white pane instead of sitting in a letterboxed box. */
+  width: min(72%, calc(100cqh * 0.48));
 }
 
 .challenges-word-change,
@@ -193,23 +195,27 @@ h6 {
 
 @media (min-width: 640px) {
   .challenges-pane {
-    height: 28rem;
+    height: 34rem;
   }
 }
 
 @media (min-width: 1024px) {
   .challenges-pane {
     height: 100%;
-    min-height: 38rem;
+    min-height: 48rem;
   }
 
   .challenges-lockup {
-    width: min(46%, 24rem);
+    width: min(50%, 28rem);
     max-width: none;
   }
 
   .challenges-portrait {
-    width: min(60%, 34rem);
+    width: min(70%, calc(100cqh * 0.5));
+  }
+
+  .challenges-word {
+    font-size: clamp(2.5rem, min(22cqh, 18.5cqi), 8.25rem);
   }
 }
 

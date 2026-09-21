@@ -35,7 +35,7 @@ export function HomeChallenges() {
 
   return (
     <section ref={sectionRef} className="bg-brand-white">
-      <div className="grid min-h-[38rem] lg:grid-cols-2">
+      <div className="grid min-h-[38rem] lg:min-h-[48rem] lg:grid-cols-2">
         <div className="flex flex-col justify-center bg-navy px-5 py-14 text-brand-white sm:px-12 sm:py-16 lg:px-16 lg:py-20">
           <h2 className="font-serif text-[2.5rem] leading-[0.95] font-extrabold tracking-tight text-brand-white uppercase sm:text-6xl lg:text-7xl">
             Challenges
@@ -58,8 +58,8 @@ export function HomeChallenges() {
           </ul>
         </div>
 
-        <div className="challenges-pane relative w-full self-stretch overflow-visible bg-brand-white px-3 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-0">
-          <div className="challenges-lockup relative z-10 flex h-full flex-col justify-end pb-1 sm:pb-8 lg:pb-14">
+        <div className="challenges-pane relative w-full self-stretch overflow-visible bg-brand-white px-2 py-0 sm:px-3 lg:px-4">
+          <div className="challenges-lockup relative z-10 flex h-full flex-col justify-end pb-2 sm:pb-3 lg:pb-5">
             <p className="challenges-word font-serif font-black tracking-tight text-navy uppercase">
               Let&apos;s
             </p>
@@ -78,7 +78,7 @@ export function HomeChallenges() {
               src={challengesCutout.src}
               alt={challengesCutout.alt}
               fill
-              sizes="(min-width: 1024px) 30vw, 58vw"
+              sizes="(min-width: 1024px) 36vw, 70vw"
               className="object-contain object-right-bottom"
             />
           </div>

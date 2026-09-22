@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     absolute: diasporaPageTitle,
   },
   description: diasporaPageDescription,
-  ...pageShareTags(diasporaPageTitle, diasporaPageDescription),
+  ...pageShareTags(diasporaPageTitle, diasporaPageDescription, "/diaspora-connect"),
 };
 
 export default function DiasporaConnectPage() {

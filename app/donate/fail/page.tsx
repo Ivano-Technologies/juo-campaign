@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/button";
 import { PageHero } from "@/components/page-hero";
+import { pageShareTags } from "@/lib/page-seo";
+import { pageTitle } from "@/lib/site";
+
+const failTitle = pageTitle("Donation unsuccessful");
+const failDescription =
+  "The donation did not complete. You can retry when the campaign processor is live.";
 
 export const metadata: Metadata = {
   title: "Donation unsuccessful",
-  description:
-    "The donation did not complete. You can retry when the campaign processor is live.",
+  description: failDescription,
+  ...pageShareTags(failTitle, failDescription, "/donate/fail"),
 };
 
 export default function DonateFailPage() {

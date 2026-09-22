@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     absolute: newsPageTitle,
   },
   description: newsPageDescription,
-  ...pageShareTags(newsPageTitle, newsPageDescription),
+  ...pageShareTags(newsPageTitle, newsPageDescription, "/news"),
 };
 
 export default function NewsPage() {
@@ -57,7 +57,10 @@ export default function NewsPage() {
           <ul className="mt-4 grid gap-3">
             {newsReadyLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="font-semibold text-brand-blue underline">
+                <a
+                  href={link.href}
+                  className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
+                >
                   {link.label}
                 </a>
               </li>

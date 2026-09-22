@@ -13,7 +13,7 @@ const joinDescription =
 export const metadata: Metadata = {
   title: "Join the Movement",
   description: joinDescription,
-  ...pageShareTags(joinTitle, joinDescription),
+  ...pageShareTags(joinTitle, joinDescription, "/join"),
 };
 
 export default function JoinPage() {

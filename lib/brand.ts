@@ -18,15 +18,15 @@ export const brand = {
   },
   /**
    * Kezie/CoS lock: Challenges / I COME TO SERVE uses only
-   * 02_john_upan_odey_portrait_front_white_bg. Do not use 01 gradient,
-   * earlier 01 front jpg, BA page-1 crop, 04 profile, or 07 close.
+   * 01_john_upan_odey_portrait_front_gradient. Do not use white-bg 02,
+   * BA page-1 crop, 04 profile, or 07 close.
    */
   portraits: {
     official: {
-      src: "/brand/juo-come-to-serve-portrait-front.png",
+      src: "/brand/juo-come-to-serve-portrait-front.jpg",
       alt: "John Upan Odey Jnr in traditional attire, facing camera",
-      width: 1632,
-      height: 2176,
+      width: 838,
+      height: 1131,
     },
   },
   /** Official files on disk that must not proliferate on live routes. */

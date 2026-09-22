@@ -26,7 +26,11 @@ export default function PrivacyPage() {
           <h2 className="font-serif text-2xl text-ink">Who we are</h2>
           <p className="mt-3">
             This site is the official campaign website for {site.name},{" "}
-            {site.office}. Contact: {site.email}.
+            {site.office}. Use the{" "}
+            <a href="/contact" className="text-brand-blue underline">
+              contact form
+            </a>{" "}
+            to reach the campaign desk.
           </p>
         </section>
         <section>
@@ -63,9 +67,13 @@ export default function PrivacyPage() {
         <section>
           <h2 className="font-serif text-2xl text-ink">Your choices</h2>
           <p className="mt-3">
-            Email {site.email} to ask what we hold, to correct it, or to ask us
-            to stop contacting you. This notice will be updated if Donate or
-            other channels start collecting more data.
+            Use the{" "}
+            <a href="/contact" className="text-brand-blue underline">
+              contact form
+            </a>{" "}
+            to ask what we hold, to correct it, or to ask us to stop contacting
+            you. This notice will be updated if Donate or other channels start
+            collecting more data.
           </p>
         </section>
       </article>

@@ -85,4 +85,4 @@ Strict Royal Blue palette. Black / navy surfaces are white or royal blue. Red is
 
 Former WP navy (`#0b2342`), cyan, mint, maroon, and pink aliases remap to the three tokens above in `app/globals.css`. Do not introduce new hexes.
 
-Typography: **Montserrat Bold** (headlines), **Poppins** (body), **Arial** (fallback) via `next/font`. Marks live in `public/brand/` (NDC logo + candidate marks). Larger poster PDFs (Blue / White / 4 / 5) stay in the brand kit / Asana for now. Campaign phone is unpublished until an approved number is unlocked.
+Typography: **Montserrat Bold** (headlines), **Poppins** (body), **Arial** (fallback) via `next/font`. Marks live in `public/brand/` (NDC logo + candidate marks). Larger poster PDFs (Blue / White / 4 / 5) stay in the brand kit / Asana for now. Campaign phone and email are unpublished until approved channels are unlocked.

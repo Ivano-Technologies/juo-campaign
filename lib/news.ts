@@ -11,10 +11,6 @@ export const newsroomBody = [
   "Demo or template posts from older site shells are not carried across.",
 ] as const;
 
-export const newsEmptyTitle = "No stories yet";
-export const newsEmptyBody =
-  "When the first campaign-approved item is ready, it will appear in this feed. There is no placeholder article on this site.";
-
 export const newsReadyTitle = "Stay ready";
 export const newsReadyLinks = [
   { href: "/join", label: "Join the Movement for alerts" },

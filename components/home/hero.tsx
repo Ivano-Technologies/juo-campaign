@@ -1,27 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDocumentHidden } from "@/components/motion/use-document-hidden";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 import { heroSlides } from "@/lib/home";
 
 /** Total slide dwell, including caption fade in/out. */
 const INTERVAL_MS = 6000;
-/** Keep in sync with `.hero-caption` animation-duration in globals.css. */
-const FADE_MS = 550;
-
-type CaptionPhase = "in" | "hold" | "out";
-
-function phaseAt(elapsedMs: number): CaptionPhase {
-  if (elapsedMs >= INTERVAL_MS - FADE_MS) {
-    return "out";
-  }
-  if (elapsedMs >= FADE_MS) {
-    return "hold";
-  }
-  return "in";
-}
+/** Keep in sync with `.hero-caption` transition-duration in globals.css. */
+const FADE_MS = 650;
 
 export function HomeHero() {
   const reduced = usePrefersReducedMotion();
@@ -29,45 +17,46 @@ export function HomeHero() {
   const [index, setIndex] = useState(0);
   const [hoverPaused, setHoverPaused] = useState(false);
   const [focusPaused, setFocusPaused] = useState(false);
-  const [phase, setPhase] = useState<CaptionPhase>(reduced ? "hold" : "in");
-  const elapsedRef = useRef(0);
+  const [captionOn, setCaptionOn] = useState(true);
   const paused = hoverPaused || focusPaused || tabHidden;
 
   const go = useCallback(
     (next: number) => {
       const total = heroSlides.length;
-      elapsedRef.current = 0;
-      setPhase(reduced ? "hold" : "in");
+      setCaptionOn(reduced);
       setIndex((next + total) % total);
     },
     [reduced],
   );
 
   useEffect(() => {
+    if (reduced) {
+      return;
+    }
+
+    const fadeInId = window.setTimeout(() => {
+      setCaptionOn(true);
+    }, 40);
+
+    return () => window.clearTimeout(fadeInId);
+  }, [index, reduced]);
+
+  useEffect(() => {
     if (reduced || paused) {
       return;
     }
 
-    let frame = 0;
-    const startedAt = performance.now();
-    const base = elapsedRef.current;
+    const fadeOutId = window.setTimeout(() => {
+      setCaptionOn(false);
+    }, INTERVAL_MS - FADE_MS);
+    const advanceId = window.setTimeout(() => {
+      setIndex((current) => (current + 1) % heroSlides.length);
+    }, INTERVAL_MS);
 
-    const tick = (now: number) => {
-      const elapsed = base + (now - startedAt);
-      if (elapsed >= INTERVAL_MS) {
-        elapsedRef.current = 0;
-        setPhase("in");
-        setIndex((current) => (current + 1) % heroSlides.length);
-        return;
-      }
-      elapsedRef.current = elapsed;
-      const nextPhase = phaseAt(elapsed);
-      setPhase((current) => (current === nextPhase ? current : nextPhase));
-      frame = window.requestAnimationFrame(tick);
+    return () => {
+      window.clearTimeout(fadeOutId);
+      window.clearTimeout(advanceId);
     };
-
-    frame = window.requestAnimationFrame(tick);
-    return () => window.cancelAnimationFrame(frame);
   }, [index, paused, reduced]);
 
   const slide = heroSlides[index] ?? heroSlides[0];
@@ -77,14 +66,23 @@ export function HomeHero() {
       : "justify-end text-right";
   const captionY =
     slide.captionY === "center" ? "items-center" : "items-end";
-  const frozen = paused && !reduced;
 
   return (
     <section
       className="relative isolate h-[min(92vh,920px)] min-h-[32rem] overflow-hidden bg-brand-blue text-brand-white"
-      onMouseEnter={() => setHoverPaused(true)}
+      onMouseEnter={() => {
+        setHoverPaused(true);
+        if (!reduced) {
+          setCaptionOn(true);
+        }
+      }}
       onMouseLeave={() => setHoverPaused(false)}
-      onFocus={() => setFocusPaused(true)}
+      onFocus={() => {
+        setFocusPaused(true);
+        if (!reduced) {
+          setCaptionOn(true);
+        }
+      }}
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) {
           setFocusPaused(false);
@@ -141,12 +139,9 @@ export function HomeHero() {
         className={`relative z-[2] flex h-full px-6 pb-24 sm:px-16 md:pb-16 lg:px-24 ${captionBox} ${captionY}`}
       >
         <div
-          key={slide.src}
-          data-state={reduced ? "hold" : phase}
           className={`hero-caption w-full max-w-[min(58rem,calc(100vw-3rem))] ${
-            slide.align === "left" ? "lg:max-w-[38rem]" : ""
-          }`}
-          style={{ animationPlayState: frozen ? "paused" : "running" }}
+            !captionOn && !reduced ? "is-off" : ""
+          } ${slide.align === "left" ? "lg:max-w-[38rem]" : ""}`}
         >
           <p
             className={`font-serif text-base font-extrabold tracking-[0.08em] uppercase sm:text-2xl lg:text-3xl ${slide.kickerClass}`}

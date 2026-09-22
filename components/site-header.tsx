@@ -54,7 +54,7 @@ export function SiteHeader() {
         </Link>
 
         <nav
-          className="hidden min-w-0 flex-1 items-center justify-center gap-7 lg:flex"
+          className="hidden min-w-0 flex-1 items-center justify-center gap-2.5 lg:flex xl:gap-5"
           aria-label="Primary"
         >
           {wpNavItems.map((item) => {
@@ -64,7 +64,7 @@ export function SiteHeader() {
                 key={item.label}
                 href={item.href as Route}
                 aria-current={active ? "page" : undefined}
-                className={`text-[13px] font-semibold uppercase tracking-[0.18em] transition duration-200 hover:text-brand-red ${
+                className={`whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.1em] transition duration-200 hover:text-brand-red xl:text-[12px] xl:tracking-[0.12em] ${
                   active ? "text-brand-white" : "text-brand-white/90"
                 }`}
               >
@@ -74,10 +74,10 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="ml-auto hidden items-center gap-3 lg:flex">
+        <div className="ml-auto hidden shrink-0 items-center gap-3 lg:flex">
           <Link
             href="/join"
-            className="bg-brand-red px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white transition duration-200 hover:bg-brand-red/90"
+            className="whitespace-nowrap bg-brand-red px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white transition duration-200 hover:bg-brand-red/90"
           >
             Join the Movement
           </Link>

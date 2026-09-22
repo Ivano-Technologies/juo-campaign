@@ -28,7 +28,7 @@ export default function PoliciesPage() {
     <>
       <PageHero title="Policies" lede={policiesHubBody[0]}>
         <Button href="/manifesto" variant="white">
-          {`Read the full Manifesto when published`}
+          {`Read the full Manifesto`}
         </Button>
         <Button href="/vision" variant="ghost">
           The Vision
@@ -84,7 +84,7 @@ export default function PoliciesPage() {
                     href="/manifesto"
                     className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
                   >
-                    Read the full Manifesto when published
+                    Read the full Manifesto
                   </a>
                 </p>
               </li>

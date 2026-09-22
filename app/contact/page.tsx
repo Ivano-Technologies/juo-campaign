@@ -12,7 +12,7 @@ const contactDescription =
 export const metadata: Metadata = {
   title: "Contact",
   description: contactDescription,
-  ...pageShareTags(contactTitle, contactDescription),
+  ...pageShareTags(contactTitle, contactDescription, "/contact"),
 };
 
 export default function ContactPage() {

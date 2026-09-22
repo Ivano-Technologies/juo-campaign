@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     absolute: repsPageTitle,
   },
   description: repsPageDescription,
-  ...pageShareTags(repsPageTitle, repsPageDescription),
+  ...pageShareTags(repsPageTitle, repsPageDescription, "/meet-your-reps"),
 };
 
 export default function MeetYourRepsPage() {
@@ -75,7 +75,7 @@ export default function MeetYourRepsPage() {
               <select
                 name="lga"
                 disabled
-                className="min-h-11 rounded-lg border border-line bg-paper px-3 py-2 text-muted"
+                className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-paper px-3 py-2 text-muted"
                 defaultValue=""
               >
                 <option value="">All LGAs</option>
@@ -91,7 +91,7 @@ export default function MeetYourRepsPage() {
               <select
                 name="role"
                 disabled
-                className="min-h-11 rounded-lg border border-line bg-paper px-3 py-2 text-muted"
+                className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-paper px-3 py-2 text-muted"
                 defaultValue={repsFilterRoles[0]}
               >
                 {repsFilterRoles.map((role) => (

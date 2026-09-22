@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/button";
 import { PageHero } from "@/components/page-hero";
+import { pageShareTags } from "@/lib/page-seo";
+import { pageTitle } from "@/lib/site";
+
+const confirmTitle = pageTitle("Donation received");
+const confirmDescription =
+  "Thank you for supporting the John Upan Odey Jnr campaign.";
 
 export const metadata: Metadata = {
   title: "Donation received",
-  description: "Thank you for supporting the John Upan Odey Jnr campaign.",
+  description: confirmDescription,
+  ...pageShareTags(confirmTitle, confirmDescription, "/donate/confirm"),
 };
 
 export default function DonateConfirmPage() {

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     absolute: policiesPageTitle,
   },
   description: policiesPageDescription,
-  ...pageShareTags(policiesPageTitle, policiesPageDescription),
+  ...pageShareTags(policiesPageTitle, policiesPageDescription, "/policies"),
 };
 
 export default function PoliciesPage() {
@@ -76,11 +76,14 @@ export default function PoliciesPage() {
                 <p className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">
                   <a
                     href={`/vision#${pillar.slug}`}
-                    className="font-semibold text-brand-blue underline"
+                    className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
                   >
                     Theme on The Vision
                   </a>
-                  <a href="/manifesto" className="font-semibold text-brand-blue underline">
+                  <a
+                    href="/manifesto"
+                    className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
+                  >
                     Read the full Manifesto when published
                   </a>
                 </p>

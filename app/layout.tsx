@@ -4,6 +4,7 @@ import { GoogleAnalytics } from "@/components/google-analytics";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { homeSeo } from "@/lib/home-seo";
 import { canonicalOrigin, site } from "@/lib/site";
 import "./globals.css";
 
@@ -50,6 +51,21 @@ export const metadata: Metadata = {
     title: `${site.name} | ${site.tagline}`,
     description:
       "NDC governorship candidate for Cross River State, 2027. One People, One Cross River.",
+    images: [
+      {
+        url: homeSeo.ogImage.url,
+        width: homeSeo.ogImage.width,
+        height: homeSeo.ogImage.height,
+        alt: homeSeo.ogImage.alt,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} | ${site.tagline}`,
+    description:
+      "NDC governorship candidate for Cross River State, 2027. One People, One Cross River.",
+    images: [homeSeo.ogImage.url],
   },
 };
 

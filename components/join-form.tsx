@@ -72,7 +72,7 @@ export function JoinForm() {
           name="name"
           value={values.name}
           onChange={(event) => setValues({ ...values, name: event.target.value })}
-          className="min-h-11 rounded-lg border border-line bg-brand-white px-3 py-2"
+          className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-brand-white px-3 py-2"
         />
       </label>
       <label className="grid gap-1 text-sm">
@@ -84,7 +84,7 @@ export function JoinForm() {
           name="email"
           value={values.email}
           onChange={(event) => setValues({ ...values, email: event.target.value })}
-          className="min-h-11 rounded-lg border border-line bg-brand-white px-3 py-2"
+          className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-brand-white px-3 py-2"
         />
       </label>
       <label className="grid gap-1 text-sm">
@@ -96,7 +96,7 @@ export function JoinForm() {
           name="phone"
           value={values.phone}
           onChange={(event) => setValues({ ...values, phone: event.target.value })}
-          className="min-h-11 rounded-lg border border-line bg-brand-white px-3 py-2"
+          className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-brand-white px-3 py-2"
         />
       </label>
       <label className="grid gap-1 text-sm">
@@ -106,7 +106,7 @@ export function JoinForm() {
           name="lga"
           value={values.lga}
           onChange={(event) => setValues({ ...values, lga: event.target.value })}
-          className="min-h-11 rounded-lg border border-line bg-brand-white px-3 py-2"
+          className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-brand-white px-3 py-2"
         >
           <option value="">Select</option>
           {crossRiverLgas.map((lga) => (
@@ -123,7 +123,7 @@ export function JoinForm() {
           name="interest"
           value={values.interest}
           onChange={(event) => setValues({ ...values, interest: event.target.value })}
-          className="min-h-11 rounded-lg border border-line bg-brand-white px-3 py-2"
+          className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-brand-white px-3 py-2"
         >
           <option value="">Select</option>
           {joinInterests.map((interest) => (

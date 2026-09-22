@@ -31,7 +31,10 @@ export function PillarFlatList({
               <span className="mr-3 text-xs tracking-[0.18em] text-brand-red">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <a href={`#${pillar.slug}`} className="font-serif text-lg hover:underline">
+              <a
+                href={`#${pillar.slug}`}
+                className="inline-flex min-h-11 items-center font-serif text-lg hover:underline"
+              >
                 {pillar.name}
               </a>
             </>

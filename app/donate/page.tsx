@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     absolute: donatePageTitle,
   },
   description: donatePageDescription,
-  ...pageShareTags(donatePageTitle, donatePageDescription),
+  ...pageShareTags(donatePageTitle, donatePageDescription, "/donate"),
 };
 
 export default function DonatePage() {
@@ -70,7 +70,10 @@ export default function DonatePage() {
             <ul className="mt-4 grid gap-3">
               {donateStayLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="font-semibold text-brand-blue underline">
+                  <a
+                    href={link.href}
+                    className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
+                  >
                     {link.label}
                   </a>
                 </li>

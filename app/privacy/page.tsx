@@ -10,7 +10,7 @@ const privacyDescription =
 export const metadata: Metadata = {
   title: "Privacy",
   description: privacyDescription,
-  ...pageShareTags(privacyTitle, privacyDescription),
+  ...pageShareTags(privacyTitle, privacyDescription, "/privacy"),
 };
 
 export default function PrivacyPage() {

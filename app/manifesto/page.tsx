@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     absolute: manifestoPageTitle,
   },
   description: manifestoPageDescription,
-  ...pageShareTags(manifestoPageTitle, manifestoPageDescription),
+  ...pageShareTags(manifestoPageTitle, manifestoPageDescription, "/manifesto"),
 };
 
 export default function ManifestoPage() {

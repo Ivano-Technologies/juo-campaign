@@ -6,20 +6,20 @@ export const visionLegacyPath = "/the-vision" as const;
 export const visionPageUrl = `${canonicalOrigin}${visionPath}` as const;
 
 export const visionPageTitle =
-  "The Vision | A Fresh Start — One People, One Cross River";
+  "The Vision | A Fresh Start: One People, One Cross River";
 
 export const visionPageDescription =
   "John Upan Odey Jnr’s vision for Cross River 2027: A Fresh Start. One People, One Cross River. We produce. We process. We prosper.";
 
-export const visionHeadlineLead = "A Fresh Start —";
+export const visionHeadlineLead = "A Fresh Start";
 export const visionHeadlineLockup = "One People, One Cross River";
 export const visionHeadline =
-  `${visionHeadlineLead} ${visionHeadlineLockup}` as const;
+  `${visionHeadlineLead}: ${visionHeadlineLockup}` as const;
 
 export const visionHeroEyebrow = "The Vision";
 export const visionHeroSubhead = site.prosperityLine;
 export const visionHeroBody =
-  "Cross River deserves a fresh start — one people, one state, building a productive future together. John Upan Odey Jnr offers a clear direction for Cross River 2027 under the NDC: unity first, prosperity through production and processing, and governance that serves every community from Obudu to Calabar and beyond.";
+  "Cross River deserves a fresh start: one people, one state, building a productive future together. John Upan Odey Jnr offers a clear direction for Cross River 2027 under the NDC: unity first, prosperity through production and processing, and governance that serves every community from Obudu to Calabar and beyond.";
 
 export const visionHeroCtas = [
   { href: "/manifesto", label: "Read the Manifesto" },
@@ -27,10 +27,17 @@ export const visionHeroCtas = [
   { href: "/john-upan-odey", label: "Who is John Upan Odey Jnr" },
 ] as const;
 
+export const visionOfficialTitle = "Official Vision and Mission";
+export const visionOfficialPending =
+  "Brand copy pending. Official Vision and Mission statements are not in the published narrative lock. Until Brand releases those statements, this page carries only the campaign slogan.";
+export const visionOfficialSlogan = brand.slogan;
+export const visionOfficialNote =
+  "Do not treat the slogan as a substitute Vision or Mission. Approved text will replace this gate.";
+
 export const visionWhyTitle = "Why this vision";
 export const visionWhyBody = [
-  "Cross River is one people. Division does not build roads, power homes, or create lasting jobs. A Fresh Start means choosing unity of purpose across LGAs, generations, and communities — so the state’s real strengths in people, land, culture, and location can work for everyone.",
-  "This page carries the Brand spine for the campaign. Detailed commitments belong in the approved manifesto. Until that PDF is published, what follows frames the Prosperity Agenda and the ten Brand pillars as themes — not invented policies.",
+  "Cross River is one people. Division does not build roads, power homes, or create lasting jobs. A Fresh Start means choosing unity of purpose across LGAs, generations, and communities so the state’s real strengths in people, land, culture, and location can work for everyone.",
+  "This page carries the Brand spine for the campaign. Detailed commitments belong in the approved manifesto. Until that PDF is published, what follows frames the Prosperity Agenda and the ten Brand pillars as themes, not invented policies.",
 ] as const;
 
 export const visionAgendaTitle = site.agenda;
@@ -78,7 +85,7 @@ export const visionPillars = [
     name: "Power First",
     slug: "power-first",
     blurb:
-      "Reliable energy is the foundation of a productive Cross River — for homes, farms, clinics, schools, and enterprise. A Fresh Start treats power as a first-order condition for growth.",
+      "Reliable energy is the foundation of a productive Cross River: for homes, farms, clinics, schools, and enterprise. A Fresh Start treats power as a first-order condition for growth.",
   },
   {
     name: "Wealth Through Agriculture",
@@ -96,7 +103,7 @@ export const visionPillars = [
     name: "Modern Education & Skills",
     slug: "modern-education-skills",
     blurb:
-      "Education and skills prepare young people — and workers already in the economy — for useful work in a changing Cross River. This pillar frames learning as a productive-state investment.",
+      "Education and skills prepare young people, and workers already in the economy, for useful work in a changing Cross River. This pillar frames learning as a productive-state investment.",
   },
   {
     name: "Quality Healthcare",
@@ -126,7 +133,7 @@ export const visionPillars = [
     name: "Local Prosperity",
     slug: "local-prosperity",
     blurb:
-      "Prosperity should be felt in wards and LGAs — not only in headlines. This pillar frames local economic life as central to One People, One Cross River.",
+      "Prosperity should be felt in wards and LGAs, not only in headlines. This pillar frames local economic life as central to One People, One Cross River.",
   },
   {
     name: "Inclusive Governance",

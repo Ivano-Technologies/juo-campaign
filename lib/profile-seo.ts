@@ -6,7 +6,7 @@ export const profilePath = "/john-upan-odey" as const;
 export const profileSeo = {
   title: "Who is John Upan Odey Jnr | NDC Candidate, Cross River 2027",
   description:
-    "Meet John Upan Odey Jnr — banker from Obudu, NDC governorship candidate for Cross River 2027. Education, career, and why he serves.",
+    "Meet John Upan Odey Jnr, banker from Obudu, NDC governorship candidate for Cross River 2027. Education, career, and why he serves.",
   canonical: `${canonicalOrigin}${profilePath}`,
   jobTitle: "NDC Governorship Candidate for Cross River State 2027",
   birthPlace: "Obudu (Cross River)",

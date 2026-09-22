@@ -1,15 +1,15 @@
 export const donatePageTitle =
-  "Donate | Support John Upan Odey Jnr — Cross River 2027";
+  "Donate | Support John Upan Odey Jnr, Cross River 2027";
 
 export const donatePageDescription =
   "Support John Upan Odey Jnr’s Cross River 2027 campaign. Transfer in naira to the official campaign account published on this page. Online checkout for card and international giving is coming soon.";
 
 export const donateHeroLede =
-  "Stand up a naira-first gift for a Fresh Start in Cross River. Transfer to the official campaign account on this page. Online checkout — coming soon for card and international giving.";
+  "Stand up a naira-first gift for a Fresh Start in Cross River. Transfer to the official campaign account on this page. Online checkout: coming soon for card and international giving.";
 
 export const donateSupportTitle = "Support a Fresh Start";
 export const donateSupportBody = [
-  "Campaign resources help organise, communicate, and reach Cross Riverians with a clear message: One People, One Cross River — We produce. We process. We prosper.",
+  "Campaign resources help organise, communicate, and reach Cross Riverians with a clear message: One People, One Cross River. We produce. We process. We prosper.",
   "Naira bank transfer is open through the official campaign account published on this page. Online checkout is coming soon for card and international giving.",
 ] as const;
 
@@ -25,7 +25,7 @@ export const donateBankNote =
   "These are the only bank details published by the campaign. Do not send funds through unofficial accounts, social DMs, or individuals claiming to “collect for the campaign.”";
 
 export const donateStatusTitle = "Giving status";
-export const donateStatusLead = "Online donations — coming soon.";
+export const donateStatusLead = "Online donations: coming soon.";
 export const donateStatusBody =
   "Card and international options stay closed until counsel and banking sign off. For naira giving now, use the official bank transfer details on this page.";
 

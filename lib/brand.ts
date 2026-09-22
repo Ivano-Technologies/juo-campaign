@@ -12,13 +12,15 @@ export const brand = {
     officialPoster: "/brand/official-poster-1.png",
   },
   /**
-   * Community-first rule (Chris / IVA-43): one official candidate portrait
-   * sitewide. Extra John photos stay in `public/brand/` unused.
+   * CoS lock (IVA-45): `juo-official-1.jpg` / JUO OFFICIAL 1 is THE one
+   * sitewide official portrait (Challenges / I COME TO SERVE pane).
+   * Brand should confirm 1 vs 2 vs 3 on the preview before cutover.
+   * Extra John photos stay in `public/brand/` unused — do not proliferate.
    */
   portraits: {
     official: {
       src: "/brand/juo-official-1.jpg",
-      alt: "Official portrait of John Upan Odey Jnr",
+      alt: "Official portrait of John Upan Odey Jnr — JUO OFFICIAL 1",
       width: 912,
       height: 1280,
     },

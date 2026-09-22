@@ -6,7 +6,7 @@
 export const officialAssetsWired = [
   {
     path: "/brand/juo-official-1.jpg",
-    role: "The one official candidate portrait (Home Challenges)",
+    role: "CoS lock — THE one official portrait (Challenges / I COME TO SERVE). Brand to confirm 1 vs 2 vs 3 on preview.",
   },
   {
     path: "/brand/candidate-mark-1.png",

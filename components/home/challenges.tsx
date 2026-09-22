@@ -35,7 +35,7 @@ export function HomeChallenges() {
   }, [reduced]);
 
   return (
-    <section ref={sectionRef} className="bg-brand-white">
+    <section id="challenges" ref={sectionRef} className="scroll-mt-[4.75rem] bg-brand-white">
       <div className="grid min-h-[38rem] lg:min-h-[48rem] lg:grid-cols-2">
         <div className="flex flex-col justify-center border-b border-line bg-brand-white px-5 py-14 text-brand-blue sm:px-12 sm:py-16 lg:border-r lg:border-b-0 lg:px-16 lg:py-20">
           <h2 className="font-serif text-[2.5rem] leading-[0.95] font-extrabold tracking-tight text-brand-blue uppercase sm:text-6xl lg:text-7xl">

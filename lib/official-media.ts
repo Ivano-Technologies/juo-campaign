@@ -5,8 +5,8 @@
 
 export const officialAssetsWired = [
   {
-    path: "/brand/juo-official-1.jpg",
-    role: "CoS lock — THE one official portrait (Challenges / I COME TO SERVE). Brand to confirm 1 vs 2 vs 3 on preview.",
+    path: "/brand/juo-official-3.jpg",
+    role: "Brand 22 Sep preferred official portrait: traditional attire, facing camera (Challenges / I COME TO SERVE).",
   },
   {
     path: "/brand/candidate-mark-1.png",
@@ -28,12 +28,12 @@ export const officialAssetsWired = [
 
 export const officialAssetsReserved = [
   {
-    path: "/brand/juo-official-2.jpg",
-    reason: "Extra John photo — not wired (one-portrait rule)",
+    path: "/brand/juo-official-1.jpg",
+    reason: "Western-suit portrait — reserved after Brand preferred trad facing camera",
   },
   {
-    path: "/brand/juo-official-3.jpg",
-    reason: "Extra John photo — not wired (one-portrait rule)",
+    path: "/brand/juo-official-2.jpg",
+    reason: "Traditional attire looking aside — not the facing-camera preference",
   },
   {
     path: "/brand/madam-deputy-1.jpg",

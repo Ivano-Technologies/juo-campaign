@@ -79,9 +79,14 @@ export default function WhoIsJuoPage() {
               Until then, the policy page lists the approved manifesto pillars,
               not invented slogans.
             </p>
-            <Button href="/manifesto" variant="secondary" className="mt-5">
-              Manifesto
-            </Button>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Button href="/manifesto" variant="secondary">
+                Manifesto
+              </Button>
+              <Button href="/odey-archibong" variant="secondary">
+                Odey Archibong
+              </Button>
+            </div>
           </section>
         </article>
 

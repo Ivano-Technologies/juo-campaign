@@ -11,10 +11,10 @@ export const profileSeo = {
   jobTitle: "NDC Governorship Candidate for Cross River State 2027",
   birthPlace: "Obudu (Cross River)",
   ogImage: {
-    path: "/brand/juo-official-1.jpg",
-    url: `${canonicalOrigin}/brand/juo-official-1.jpg`,
-    width: 912,
-    height: 1280,
+    path: "/brand/juo-official-3.jpg",
+    url: `${canonicalOrigin}/brand/juo-official-3.jpg`,
+    width: 480,
+    height: 640,
     alt: "Official portrait of John Upan Odey Jnr",
   },
 } as const;

@@ -118,53 +118,11 @@ export const opportunityCards = [
 ] as const;
 
 /**
- * IVA-46 Kezie lock: numbered strip stays blue + white type.
- * 01–03 primary Royal Blue; 04–06 same hue, one shade deeper.
+ * IVA-46 Kezie / BA lock: five Brand pillars only (not policy sectors).
+ * Numbered strip stays blue + white type.
+ * 01–03 primary Royal Blue; 04–05 same hue, one shade deeper.
  */
-export const homePillars = [
-  {
-    number: "01",
-    title: "Economic Transformation",
-    lead: "Jobs, skills, entrepreneurship and innovation.",
-    body: "Creating opportunities for young people through startup funding, technology hubs, creative industries and tourism development.",
-    tone: "primary",
-  },
-  {
-    number: "02",
-    title: "Agriculture Revolution",
-    lead: "Turning agriculture into a modern engine for prosperity.",
-    body: "Supporting farmers, agro-processing and rural enterprise across all districts.",
-    tone: "primary",
-  },
-  {
-    number: "03",
-    title: "Education For The Future",
-    lead: "Preparing students for the economy of tomorrow.",
-    body: "Smart schools, technical education and digital learning.",
-    tone: "primary",
-  },
-  {
-    number: "04",
-    title: "Infrastructure & Connectivity",
-    lead: "Roads, markets, and digital links that connect farms and families.",
-    body: "From Calabar to Obudu, every local government deserves a path to market.",
-    tone: "deep",
-  },
-  {
-    number: "05",
-    title: "Healthcare & Social Protection",
-    lead: "Accessible healthcare and stronger support systems.",
-    body: "Clinics, care, and protection for families and vulnerable communities.",
-    tone: "deep",
-  },
-  {
-    number: "06",
-    title: "Governance Reform",
-    lead: "Open budgets. Transparent contracts. Citizen participation.",
-    body: "Accountable government that Cross Riverians can see and measure.",
-    tone: "deep",
-  },
-] as const;
+export { brandPillars as homePillars } from "@/lib/brand-pillars";
 
 export const futureHighlights = [
   "Schools are digitally connected",

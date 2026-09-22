@@ -8,7 +8,36 @@ export const postersPageTitle =
 export const postersPageDescription =
   "Official John Upan Odey Jnr campaign posters. Approved Brand designs only. No stock, AI, or unapproved imagery.";
 
+const baPosterSize = {
+  width: 1241,
+  height: 1754,
+} as const;
+
 export const officialPosters = [
+  {
+    id: "ba-poster-cross-river-rising",
+    src: "/brand/ba-poster-cross-river-rising.png",
+    width: baPosterSize.width,
+    height: baPosterSize.height,
+    title: "Cross River Rising",
+    alt: "Official campaign poster: Cross River Rising, a New Cross River is Possible. John Upan Odey Jnr for Governor, Cross River State 2027.",
+  },
+  {
+    id: "ba-poster-one-people-one-cross-river",
+    src: "/brand/ba-poster-one-people-one-cross-river.png",
+    width: baPosterSize.width,
+    height: baPosterSize.height,
+    title: "One People, One Cross River",
+    alt: "Official campaign poster: One People One Cross River, every community matters. John Upan Odey Jnr for Governor, Cross River State 2027.",
+  },
+  {
+    id: "ba-poster-a-fresh-start",
+    src: "/brand/ba-poster-a-fresh-start.png",
+    width: baPosterSize.width,
+    height: baPosterSize.height,
+    title: "A Fresh Start",
+    alt: "Official campaign poster: A Fresh Start, building opportunities in every community. John Upan Odey Jnr for Governor, Cross River State 2027.",
+  },
   {
     id: "official-poster-1",
     src: brand.marks.officialPoster,

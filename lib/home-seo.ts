@@ -34,7 +34,6 @@ export type HomeOrganizationJsonLd = {
   logo: SchemaImageObject;
   image: string;
   description: string;
-  email: string;
   sameAs: string[];
 };
 
@@ -65,7 +64,6 @@ export function homeOrganizationJsonLd(): HomeOrganizationJsonLd {
     },
     image: homeSeo.ogImage.url,
     description: homeSeo.description,
-    email: site.email,
     sameAs: socialLinks.map((link) => link.href),
   };
 }

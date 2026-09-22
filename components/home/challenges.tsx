@@ -87,7 +87,7 @@ export function HomeChallenges() {
               alt={officialPortrait.alt}
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover object-center"
+              className="object-cover object-top"
             />
             <JoMarkCompact className="absolute right-3 bottom-4 h-10 w-auto bg-brand-white/90 px-2 py-1 sm:right-5 sm:bottom-6 sm:h-12" />
           </div>

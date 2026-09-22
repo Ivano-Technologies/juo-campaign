@@ -17,16 +17,16 @@ export const brand = {
     officialPoster: "/brand/official-poster-1.png",
   },
   /**
-   * CoS lock (22 Sep): Challenges / I COME TO SERVE uses a head-and-shoulders
-   * crop from BA poster page-1 (Cross River Rising). Do not invent a photo
-   * and do not fall back to juo-official-1 on that pane.
+   * Kezie lock (22 Sep): Challenges / I COME TO SERVE uses only
+   * 01_john_upan_odey_portrait_front from the kezie-serve-pick pack.
+   * Do not use 04 profile, 07 close, or the BA page-1 poster crop.
    */
   portraits: {
     official: {
-      src: "/brand/juo-come-to-serve-from-ba-page-1.png",
-      alt: "John Upan Odey Jnr in traditional attire, cropped from the official Cross River Rising poster",
-      width: 650,
-      height: 792,
+      src: "/brand/juo-come-to-serve-portrait-front.jpg",
+      alt: "John Upan Odey Jnr in traditional attire, facing camera",
+      width: 838,
+      height: 1131,
     },
   },
   /** Official files on disk that must not proliferate on live routes. */

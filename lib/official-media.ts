@@ -5,8 +5,8 @@
 
 export const officialAssetsWired = [
   {
-    path: "/brand/juo-come-to-serve-from-ba-page-1.png",
-    role: "CoS lock — Challenges / I COME TO SERVE portrait, cropped from BA page-1 (Cross River Rising)",
+    path: "/brand/juo-come-to-serve-portrait-front.jpg",
+    role: "Kezie lock — Challenges / I COME TO SERVE portrait (01 front from kezie-serve-pick). Not 04 profile or 07 close.",
   },
   {
     path: "/brand/juo-official-3.jpg",
@@ -43,6 +43,10 @@ export const officialAssetsWired = [
 ] as const;
 
 export const officialAssetsReserved = [
+  {
+    path: "/brand/juo-come-to-serve-from-ba-page-1.png",
+    reason: "Previous Challenges crop from BA page-1 — replaced by juo-come-to-serve-portrait-front.jpg",
+  },
   {
     path: "/brand/juo-official-1.jpg",
     reason: "Western-suit portrait — reserved after Brand preferred trad facing camera",

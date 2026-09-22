@@ -59,7 +59,7 @@ export function HomeTogetherBanner() {
       <div className="px-6 pb-8 text-center">
         <h2
           id={labelId}
-          className="font-serif text-[1.65rem] font-extrabold tracking-tight text-navy uppercase sm:text-5xl"
+          className="font-serif text-[1.65rem] font-extrabold tracking-tight text-brand-blue uppercase sm:text-5xl"
         >
           Together a new CRS is possible
         </h2>
@@ -106,15 +106,15 @@ export function HomeTogetherBanner() {
             className="absolute inset-y-0 z-10 w-0.5 bg-brand-white"
             style={{ left: `${position}%` }}
           >
-            <div className="absolute top-1/2 left-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-brand-white text-navy shadow">
+            <div className="absolute top-1/2 left-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-brand-white text-brand-blue shadow">
               ‹ ›
             </div>
           </div>
 
-          <span className="pointer-events-none absolute top-1/2 left-5 z-20 -translate-y-1/2 rounded bg-brand-white/90 px-3 py-1 text-xs font-semibold tracking-wide text-navy uppercase">
+          <span className="pointer-events-none absolute top-1/2 left-5 z-20 -translate-y-1/2 rounded bg-brand-white/90 px-3 py-1 text-xs font-semibold tracking-wide text-brand-blue uppercase">
             Before
           </span>
-          <span className="pointer-events-none absolute top-1/2 right-5 z-20 -translate-y-1/2 rounded bg-brand-white/90 px-3 py-1 text-xs font-semibold tracking-wide text-navy uppercase">
+          <span className="pointer-events-none absolute top-1/2 right-5 z-20 -translate-y-1/2 rounded bg-brand-white/90 px-3 py-1 text-xs font-semibold tracking-wide text-brand-blue uppercase">
             After
           </span>
         </div>

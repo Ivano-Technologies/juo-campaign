@@ -1,27 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  /* IVA-33 — Chris Brand Manual color system. Exact hexes only. */
+  /*
+   * IVA-44 — Strict Royal Blue palette (provisional hex pending Brand lock).
+   * --brand-blue #40449B is the existing Brand Manual royal / Persian blue
+   * from IVA-33. Former WP navy/black (#0b2342, #031830, #042d5b) and
+   * unauthorised cyan / mint / maroon / pink map onto these three tokens.
+   */
   --brand-blue: #40449B;
   --brand-white: #FFFFFF;
   --brand-red: #EF2B35;
 
-  /* WP recording navy / cyan — used where the live site is deeper than brand-blue. */
-  --navy: #0b2342;
-  --navy-mid: #123056;
-  --cyan: #3ecfff;
-  --mint: #7dffc2;
-  --pillar-blue: #1e56c8;
-  /* WP bottom-row pillars: same hue family, one shade deeper than 01–03. */
-  --pillar-navy-deep: #031830;
-  --pillar-blue-deep: #1a487c;
-  --pillar-maroon: #a73233;
-  --change-blue: #0591f9;
-  --that-navy: #042d5b;
+  /* Legacy class names — aliases only; do not introduce new hexes here. */
+  --navy: var(--brand-blue);
+  --navy-mid: var(--brand-blue);
+  --cyan: var(--brand-white);
+  --mint: var(--brand-white);
+  --pillar-blue: var(--brand-blue);
+  --pillar-navy-deep: var(--brand-blue);
+  --pillar-blue-deep: var(--brand-blue);
+  --pillar-maroon: var(--brand-red);
+  --change-blue: var(--brand-blue);
+  --that-navy: var(--brand-blue);
 
-  --ink: #1c1915;
-  --muted: #5c574e;
-  --line: #d9d0c0;
+  --ink: var(--brand-blue);
+  --muted: color-mix(in srgb, var(--brand-blue) 68%, white);
+  --line: color-mix(in srgb, var(--brand-blue) 18%, white);
 
   --forest: var(--brand-blue);
   --forest-deep: var(--brand-blue);
@@ -165,9 +169,9 @@ a.ghost-pill:active,
 a.ghost-pill[aria-current="page"],
 button.ghost-pill:hover,
 button.ghost-pill:active {
-  background-color: #ffffff;
-  color: #0b2342;
-  border-color: #ffffff;
+  background-color: var(--brand-white);
+  color: var(--brand-blue);
+  border-color: var(--brand-white);
 }
 
 .challenges-pane {

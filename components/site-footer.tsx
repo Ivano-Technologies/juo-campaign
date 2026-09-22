@@ -6,7 +6,7 @@ import { footerAboutLinks, footerQuickLinks } from "@/lib/site";
 
 export function SiteFooter() {
   return (
-    <footer className="relative bg-navy text-brand-white">
+    <footer className="relative bg-brand-blue text-brand-white">
       <div className="mx-auto grid max-w-[1200px] gap-12 px-6 py-16 md:grid-cols-[1.4fr_0.8fr_0.8fr]">
         <div>
           <div className="flex flex-wrap items-center gap-5">
@@ -14,7 +14,7 @@ export function SiteFooter() {
             <p className="font-serif text-[1.65rem] leading-[1.15] font-extrabold uppercase">
               <span className="block text-brand-white">A New</span>
               <span className="block text-brand-white">Cross River</span>
-              <span className="block bg-gradient-to-r from-[#e14cff] to-[#ff4d8d] bg-clip-text text-transparent">
+              <span className="block text-brand-red">
                 Is Possible
               </span>
             </p>

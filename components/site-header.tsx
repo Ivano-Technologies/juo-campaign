@@ -42,7 +42,7 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 bg-navy text-brand-white">
+    <header className="sticky top-0 z-50 bg-brand-blue text-brand-white">
       <div className="mx-auto flex h-[4.75rem] max-w-[1400px] items-center gap-4 px-4 sm:px-6">
         <Link
           href="/"
@@ -102,7 +102,7 @@ export function SiteHeader() {
 
       <nav
         id={menuId}
-        className={`border-t border-brand-white/10 bg-navy px-4 py-4 lg:hidden ${open ? "block" : "hidden"}`}
+        className={`border-t border-brand-white/10 bg-brand-blue px-4 py-4 lg:hidden ${open ? "block" : "hidden"}`}
         aria-label="Mobile"
         hidden={!open}
       >

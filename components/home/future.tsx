@@ -22,7 +22,7 @@ function FutureShiftButton({
   return (
     <button
       type="button"
-      className={`flex h-11 w-11 items-center justify-center rounded-full bg-black/25 text-xl backdrop-blur-sm ${className}`.trim()}
+      className={`flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue/40 text-xl backdrop-blur-sm ${className}`.trim()}
       aria-label={direction < 0 ? "Previous future card" : "Next future card"}
       onClick={onClick}
     >
@@ -69,7 +69,7 @@ export function HomeFuture() {
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-navy/35" />
+      <div className="absolute inset-0 bg-brand-blue/35" />
 
       <div className="relative mx-auto flex min-h-[36rem] max-w-[1280px] flex-col justify-center px-6 py-16 sm:px-10">
         <p className="text-xs font-semibold tracking-[0.42em] text-brand-white/90 uppercase">

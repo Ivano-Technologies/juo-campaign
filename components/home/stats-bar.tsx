@@ -79,7 +79,7 @@ export function HomeStatsBar() {
   const reduced = usePrefersReducedMotion();
 
   return (
-    <section ref={ref} className="relative isolate overflow-hidden bg-navy py-20 text-brand-white sm:py-24">
+    <section ref={ref} className="relative isolate overflow-hidden bg-brand-blue py-20 text-brand-white sm:py-24">
       <Image
         src={statsBackdrop}
         alt=""
@@ -87,7 +87,7 @@ export function HomeStatsBar() {
         sizes="100vw"
         className="object-cover opacity-35"
       />
-      <div className="absolute inset-0 bg-navy/80" />
+      <div className="absolute inset-0 bg-brand-blue/80" />
       <div className="relative mx-auto grid max-w-[1280px] items-center gap-10 px-6 sm:grid-cols-3">
         {heroStats.filter(isPublishedHeroStat).map((stat) => (
           <StatCell
@@ -98,7 +98,7 @@ export function HomeStatsBar() {
           />
         ))}
         <div className="text-center lg:text-left">
-          <p className="font-serif text-4xl font-extrabold tracking-[0.06em] text-mint uppercase sm:text-5xl">
+          <p className="font-serif text-4xl font-extrabold tracking-[0.06em] text-brand-white uppercase sm:text-5xl">
             Unlimited
           </p>
           <p className="potential-outline font-serif text-4xl font-extrabold tracking-[0.08em] uppercase sm:text-5xl">

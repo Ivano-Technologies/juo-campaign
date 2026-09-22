@@ -10,7 +10,7 @@ export function HomeInitiatives() {
     <section aria-labelledby="featured-initiatives-heading">
       <div className="grid md:grid-cols-3">
         <article className="flex min-h-[18rem] flex-col justify-center bg-brand-white px-6 py-14 text-center sm:px-10">
-          <h3 className="font-serif text-2xl font-bold tracking-[0.08em] text-navy uppercase">
+          <h3 className="font-serif text-2xl font-bold tracking-[0.08em] text-brand-blue uppercase">
             Youth Skills &amp; Startup Fund
           </h3>
           <p className="mx-auto mt-5 max-w-xs text-sm leading-7 text-muted">
@@ -28,7 +28,7 @@ export function HomeInitiatives() {
           />
         </figure>
         <article className="flex min-h-[18rem] flex-col justify-center bg-brand-white px-6 py-14 text-center sm:px-10">
-          <h3 className="font-serif text-2xl font-bold tracking-[0.08em] text-navy uppercase">
+          <h3 className="font-serif text-2xl font-bold tracking-[0.08em] text-brand-blue uppercase">
             Tourism 2.0
           </h3>
           <p className="mx-auto mt-5 max-w-xs text-sm leading-7 text-muted">
@@ -48,7 +48,7 @@ export function HomeInitiatives() {
         <article className="flex min-h-[18rem] flex-col justify-center bg-brand-white px-8 py-12 text-center">
           <h2
             id="featured-initiatives-heading"
-            className="font-serif text-4xl font-extrabold tracking-tight text-navy uppercase"
+            className="font-serif text-4xl font-extrabold tracking-tight text-brand-blue uppercase"
           >
             Featured{" "}
             <br />

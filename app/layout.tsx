@@ -8,6 +8,7 @@ import { homeSeo } from "@/lib/home-seo";
 import { canonicalOrigin, site } from "@/lib/site";
 import "./globals.css";
 
+/** IVA-44 — Montserrat Bold for headings, Poppins for body (next/font). */
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["600", "700", "800", "900"],

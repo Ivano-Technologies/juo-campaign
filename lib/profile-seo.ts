@@ -39,13 +39,8 @@ export type ProfilePersonJsonLd = {
   alumniOf: SchemaCollege[];
   jobTitle: string;
   email: string;
-  telephone: string;
   sameAs: string[];
 };
-
-function telephoneFromSite(): string {
-  return site.phoneHref.replace(/^tel:/, "");
-}
 
 export function profilePersonJsonLd(): ProfilePersonJsonLd {
   return {
@@ -64,7 +59,6 @@ export function profilePersonJsonLd(): ProfilePersonJsonLd {
     })),
     jobTitle: profileSeo.jobTitle,
     email: site.email,
-    telephone: telephoneFromSite(),
     sameAs: socialLinks.map((link) => link.href),
   };
 }

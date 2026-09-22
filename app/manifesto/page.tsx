@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BrandMarks } from "@/components/brand-marks";
 import { Button } from "@/components/button";
 import { ManifestoPlayer } from "@/components/manifesto-player";
 import { PageHero } from "@/components/page-hero";
@@ -31,6 +32,7 @@ export default function ManifestoPage() {
       <PageHero
         title="Manifesto"
         lede="The campaign manifesto for John Upan Odey Jnr — A Fresh Start for Cross River. Prosperity Agenda 2027–2031. PDF and full readout when published."
+        aside={<BrandMarks variant="manifesto" />}
       >
         <Button href="/vision" variant="white">
           Read The Vision

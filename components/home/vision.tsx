@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 import { opportunityCards } from "@/lib/home";
@@ -18,7 +17,7 @@ export function HomeVision() {
       className="scroll-mt-[4.75rem] bg-brand-white px-4 py-12 text-brand-blue sm:px-8 sm:py-16"
     >
       <div className="relative mx-auto max-w-[1280px] overflow-hidden border border-brand-blue/20 px-6 py-12 sm:px-10 lg:px-14 lg:py-16">
-        <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1fr_1.25fr]">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <ul
             className="grid gap-6"
             role="tablist"
@@ -68,32 +67,10 @@ export function HomeVision() {
                   <h2 className="font-serif text-3xl font-extrabold tracking-tight uppercase">
                     {item.title}
                   </h2>
-                  <p className="mt-4 max-w-sm text-sm leading-7 text-brand-blue/80">
+                  <p className="mt-4 max-w-lg text-sm leading-7 text-brand-blue/80">
                     {item.body}
                   </p>
                 </div>
-              );
-            })}
-          </div>
-
-          <div className="relative mx-auto aspect-[16/10] w-full min-h-[14rem] overflow-hidden rounded-md lg:min-h-[18rem]">
-            {opportunityCards.map((item, index) => {
-              const isActive = index === active;
-              return (
-                <Image
-                  key={item.title}
-                  src={item.image.src}
-                  alt={item.image.alt}
-                  fill
-                  sizes="(min-width: 1024px) 36rem, 90vw"
-                  className={`object-cover transition-[opacity,transform] ${fade} ${
-                    isActive
-                      ? "scale-100 opacity-100"
-                      : reduced
-                        ? "opacity-0"
-                        : "scale-105 opacity-0"
-                  }`}
-                />
               );
             })}
           </div>

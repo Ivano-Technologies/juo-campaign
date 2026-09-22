@@ -1,14 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { DiamondRule } from "@/components/icons";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
-import {
-  futureBackdrop,
-  futureCyclerWords,
-  futureHighlights,
-} from "@/lib/home";
+import { futureCyclerWords, futureHighlights } from "@/lib/home";
 
 function FutureShiftButton({
   direction,
@@ -61,16 +56,7 @@ export function HomeFuture() {
   const word = futureCyclerWords[wordIndex] ?? futureCyclerWords[0];
 
   return (
-    <section className="relative isolate min-h-[36rem] overflow-hidden text-brand-white">
-      <Image
-        src={futureBackdrop}
-        alt="Winding highland road through Cross River hills"
-        fill
-        sizes="100vw"
-        className="object-cover"
-      />
-      <div className="absolute inset-0 bg-brand-blue/35" />
-
+    <section className="relative isolate min-h-[36rem] overflow-hidden bg-brand-blue text-brand-white">
       <div className="relative mx-auto flex min-h-[36rem] max-w-[1280px] flex-col justify-center px-6 py-16 sm:px-10">
         <p className="text-xs font-semibold tracking-[0.42em] text-brand-white/90 uppercase">
           Cross River 2029

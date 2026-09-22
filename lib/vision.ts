@@ -33,7 +33,11 @@ export const visionOfficialVisionLabel = "VISION";
 export const visionOfficialVision =
   "To build One Cross River- united in purpose, inclusive in opportunity, and resilient in prosperity; a state where every citizen, every community, and every generation has the opportunity to thrive, contribute, and fulfil its potential.";
 export const visionOfficialMissionLabel = "MISSION";
-/** Brand em dash normalised to a comma. Meaning unchanged. */
+/**
+ * Brand paste used an em dash after "natural resources".
+ * Scrub (Brand AI-dash lock): `resources — ensuring` → `resources, ensuring`.
+ * Meaning unchanged. Flagged in the PR body.
+ */
 export const visionOfficialMission =
   "To usher in A Fresh Start through transparent, accountable, and people-centred governance that creates an enabling environment for enterprise, expands economic opportunity, stimulates job creation, strengthens communities, and unlocks the productive potential of our human and natural resources, ensuring that prosperity is shared and no community or citizen is left behind.";
 
@@ -43,11 +47,9 @@ export const visionWhyBody = [
   "This page carries the Brand spine for the campaign. Detailed commitments belong in the approved manifesto. Until that PDF is published, what follows frames the Prosperity Agenda and the ten Brand pillars as themes, not invented policies.",
 ] as const;
 
-export const visionAgendaTitle = site.agenda;
-export const visionAgendaBody = [
-  "The Prosperity Agenda 2027–2031 is the campaign’s productive-state frame: we produce, we process, we prosper. It points Cross River toward an economy that adds value at home, opens fair opportunity, and treats public trust as non-negotiable.",
-  "The full Agenda and the ten Commitments will appear in the official manifesto when Brand publishes it. This page does not invent that list.",
-] as const;
+export const visionAgendaTitle = "Approved manifesto excerpts";
+export const visionAgendaNote =
+  "Brand excerpts until the manifesto PDF is published. Full commitments wait on that file.";
 
 export const visionPillarsTitle = "Ten Brand pillars";
 export const visionPillarsIntro =

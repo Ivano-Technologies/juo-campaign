@@ -4,13 +4,12 @@ export const archibongPath = "/odey-archibong" as const;
 export const archibongPageUrl = `${canonicalOrigin}${archibongPath}` as const;
 
 export const archibongPageTitle =
-  "Odey Archibong | Two Journeys. One Purpose. One Cross River.";
+  "TWO JOURNEYS. ONE PURPOSE. ONE CROSS RIVER.";
 
 export const archibongPageDescription =
   "John Upan Odey and Apostle Dr. Stella Charles Archibong bring together decades of professional experience, public leadership and community service, united by a shared commitment to the people of Cross River.";
 
-export const archibongKicker = "Odey Archibong 2027";
-export const archibongTitle = "Two Journeys. One Purpose. One Cross River.";
+export const archibongTitle = "TWO JOURNEYS. ONE PURPOSE. ONE CROSS RIVER.";
 export const archibongLede = archibongPageDescription;
 
 export const archibongBody = [

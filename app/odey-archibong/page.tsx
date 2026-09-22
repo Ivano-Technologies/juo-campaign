@@ -6,7 +6,6 @@ import {
   archibongCloseLead,
   archibongCloseLockup,
   archibongHashtags,
-  archibongKicker,
   archibongLede,
   archibongPageDescription,
   archibongPageTitle,
@@ -26,11 +25,7 @@ export const metadata: Metadata = {
 export default function OdeyArchibongPage() {
   return (
     <>
-      <PageHero
-        kicker={archibongKicker}
-        title={archibongTitle}
-        lede={archibongLede}
-      >
+      <PageHero title={archibongTitle} lede={archibongLede}>
         <Button href="/vision" variant="white">
           The Vision
         </Button>

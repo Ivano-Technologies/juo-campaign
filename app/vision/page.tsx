@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/button";
 import { ManifestoCta } from "@/components/manifesto-cta";
+import { ManifestoExcerpts } from "@/components/manifesto-excerpts";
 import { JoMarkLockup } from "@/components/socials";
 import { VisionPillarShowcase } from "@/components/vision/pillar-showcase";
 import {
-  visionAgendaBody,
+  visionAgendaNote,
   visionAgendaTitle,
   visionHeadlineLead,
   visionHeadlineLockup,
@@ -135,12 +136,10 @@ export default function VisionPage() {
 
       <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-          <h2 className="font-serif text-3xl text-ink">{visionAgendaTitle}</h2>
-          {visionAgendaBody.map((paragraph) => (
-            <p key={paragraph} className="mt-4 text-[1.05rem] leading-7 text-muted">
-              {paragraph}
-            </p>
-          ))}
+          <ManifestoExcerpts heading={visionAgendaTitle} />
+          <p className="mt-6 text-[1.05rem] leading-7 text-muted">
+            {visionAgendaNote}
+          </p>
           <div className="mt-8">
             <ManifestoCta />
           </div>

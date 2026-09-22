@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import { BrandMarks } from "@/components/brand-marks";
 import { Button } from "@/components/button";
+import { ManifestoExcerpts } from "@/components/manifesto-excerpts";
 import { ManifestoPlayer } from "@/components/manifesto-player";
 import { PageHero } from "@/components/page-hero";
 import {
   manifestoComingBody,
   manifestoComingTitle,
   manifestoDownloadTitle,
-  manifestoExcerpts,
-  manifestoExcerptsIntro,
   manifestoExcerptsTitle,
   manifestoHeroLede,
   manifestoMeanwhileLinks,
@@ -51,29 +50,7 @@ export default function ManifestoPage() {
           ))}
         </div>
 
-        <div>
-          <h2 className="font-serif text-3xl text-ink">{manifestoExcerptsTitle}</h2>
-          <p className="mt-4 text-[1.05rem] leading-7 text-muted">
-            {manifestoExcerptsIntro}
-          </p>
-          <div className="mt-10 grid gap-12">
-            {manifestoExcerpts.map((excerpt) => (
-              <article key={excerpt.title}>
-                <h3 className="font-serif text-2xl tracking-tight text-ink uppercase">
-                  {excerpt.title}
-                </h3>
-                {excerpt.paragraphs.map((paragraph) => (
-                  <p
-                    key={paragraph}
-                    className="mt-4 text-[1.05rem] leading-7 text-ink"
-                  >
-                    {paragraph}
-                  </p>
-                ))}
-              </article>
-            ))}
-          </div>
-        </div>
+        <ManifestoExcerpts heading={manifestoExcerptsTitle} />
 
         <div>
           <h2 className="font-serif text-3xl text-ink">{manifestoDownloadTitle}</h2>

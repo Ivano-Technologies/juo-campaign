@@ -19,12 +19,10 @@ export const manifestoComingBody = [
 ] as const;
 
 export const manifestoExcerptsTitle = "Approved excerpts";
-export const manifestoExcerptsIntro =
-  "Brand released these three excerpts for use until the manifesto PDF is ready.";
 
 export const manifestoExcerpts = [
   {
-    title: "ONE PEOPLE- ONE CROSS RIVER",
+    title: "ONE PEOPLE- ONE CROSS RIVER:",
     paragraphs: [
       "Cross River is more than North, Central or South. It is one people, with one shared future.",
       "From Calabar to Ogoja, from Ikom to Bakassi, the challenges may look different, but the aspirations are deeply connected: better roads, meaningful opportunities, stronger communities and an economy that allows people to build dignified lives.",
@@ -32,16 +30,16 @@ export const manifestoExcerpts = [
     ],
   },
   {
-    title: "FROM WHAT WE HAVE TO WHAT WE CAN BECOME",
+    title: "FROM WHAT WE HAVE TO WHAT WE CAN BECOME:",
     paragraphs: [
-      "Cross River already has what it needs to create a stronger economy: fertile land, extraordinary tourism assets, deep cultural heritage and hardworking people. The challenge is turning these resources into sustained economic opportunity.",
+      "Cross River already has what it needs to create a stronger economy: fertile land, extraordinary tourism assets, deep cultural heritage and hardworking people.The challenge is turning these resources into sustained economic opportunity.",
       "A Fresh Start places emphasis on unlocking the productive capacity of the state, connecting farmers to markets, developing tourism, creating pathways for enterprise and equipping young people with opportunities in technology, agriculture, business and the wider economy.",
       "The vision is simple: To build a Cross River where the wealth of the land and the talent of its people translate into opportunity, dignity and prosperity.",
       "We will produce. We will process. We will prosper.",
     ],
   },
   {
-    title: "THE CROSS RIVER WE LEAVE FOR TOMORROW",
+    title: "THE CROSS RIVER WE LEAVE FOR TOMORROW:",
     paragraphs: [
       "Every generation deserves more than promises about tomorrow. It deserves the opportunity to shape tomorrow.",
       "For young Cross Riverians, the aspiration is not simply to participate in political conversations, but to participate in building the economy and institutions that will shape their future.",

@@ -38,7 +38,6 @@ export type ProfilePersonJsonLd = {
   birthPlace: SchemaPlace;
   alumniOf: SchemaCollege[];
   jobTitle: string;
-  email: string;
   sameAs: string[];
 };
 
@@ -58,7 +57,6 @@ export function profilePersonJsonLd(): ProfilePersonJsonLd {
       name: item.school,
     })),
     jobTitle: profileSeo.jobTitle,
-    email: site.email,
     sameAs: socialLinks.map((link) => link.href),
   };
 }

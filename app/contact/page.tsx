@@ -7,7 +7,7 @@ import { pageTitle, site } from "@/lib/site";
 
 const contactTitle = pageTitle("Contact");
 const contactDescription =
-  "Official contact for the John Upan Odey Jnr campaign: email and a message form.";
+  "Official contact for the John Upan Odey Jnr campaign: a message form.";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -38,12 +38,7 @@ export default function ContactPage() {
           <div className="rounded-2xl border border-line bg-brand-white p-6">
             <h2 className="font-serif text-2xl">Campaign desk</h2>
             <ul className="mt-4 grid gap-2 text-muted">
-              <li>
-                Email:{" "}
-                <a href={`mailto:${site.email}`} className="text-brand-blue underline">
-                  {site.email}
-                </a>
-              </li>
+              <li>Email: Coming soon</li>
               <li>Web: {site.domain}</li>
             </ul>
           </div>

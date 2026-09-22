@@ -74,7 +74,7 @@ export function DonateForm() {
             setCustom(event.target.value);
             setStatus(null);
           }}
-          className="min-h-11 rounded-lg border border-line bg-brand-white px-3 py-2"
+          className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-brand-white px-3 py-2"
         />
       </label>
 

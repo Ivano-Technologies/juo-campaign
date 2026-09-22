@@ -10,6 +10,27 @@ import {
   futureHighlights,
 } from "@/lib/home";
 
+function FutureShiftButton({
+  direction,
+  onClick,
+  className = "",
+}: {
+  direction: -1 | 1;
+  onClick: () => void;
+  className?: string;
+}) {
+  return (
+    <button
+      type="button"
+      className={`flex h-11 w-11 items-center justify-center rounded-full bg-black/25 text-xl backdrop-blur-sm ${className}`.trim()}
+      aria-label={direction < 0 ? "Previous future card" : "Next future card"}
+      onClick={onClick}
+    >
+      {direction < 0 ? "‹" : "›"}
+    </button>
+  );
+}
+
 export function HomeFuture() {
   const reduced = usePrefersReducedMotion();
   const [wordIndex, setWordIndex] = useState(0);
@@ -63,15 +84,11 @@ export function HomeFuture() {
         </p>
 
         <div className="relative mt-8">
-          <button
-            type="button"
-            className="absolute top-1/2 left-1 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/25 text-xl backdrop-blur-sm sm:left-0"
-            aria-label="Previous future card"
-            onClick={() => shift(-1)}
-          >
-            ‹
-          </button>
-          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mb-4 flex justify-end gap-2 sm:hidden">
+            <FutureShiftButton direction={-1} onClick={() => shift(-1)} />
+            <FutureShiftButton direction={1} onClick={() => shift(1)} />
+          </div>
+          <ul className="grid gap-4 sm:grid-cols-2 sm:px-14 lg:grid-cols-4">
             {visible.map((item) => (
               <li
                 key={item}
@@ -81,14 +98,16 @@ export function HomeFuture() {
               </li>
             ))}
           </ul>
-          <button
-            type="button"
-            className="absolute top-1/2 right-1 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/25 text-xl backdrop-blur-sm sm:right-0"
-            aria-label="Next future card"
+          <FutureShiftButton
+            direction={-1}
+            onClick={() => shift(-1)}
+            className="absolute top-1/2 left-0 z-10 hidden -translate-y-1/2 sm:flex"
+          />
+          <FutureShiftButton
+            direction={1}
             onClick={() => shift(1)}
-          >
-            ›
-          </button>
+            className="absolute top-1/2 right-0 z-10 hidden -translate-y-1/2 sm:flex"
+          />
         </div>
       </div>
 

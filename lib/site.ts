@@ -1,3 +1,5 @@
+import { pageSeoTitle } from "@/lib/brand-seo";
+
 export const site = {
   name: "John Upan Odey Jnr",
   shortName: "JUO",
@@ -48,6 +50,7 @@ export const footerQuickLinks = [
   { href: "/diaspora-connect", label: "Diaspora Connect" },
   { href: "/donate", label: "Donate" },
   { href: "/join", label: "Join the Movement" },
+  { href: "/news", label: "Community" },
   { href: "/posters", label: "Official posters" },
 ] as const;
 
@@ -162,5 +165,5 @@ export const joinInterests = [
 ] as const;
 
 export function pageTitle(title: string): string {
-  return `${title} | ${site.name}`;
+  return pageSeoTitle(title);
 }

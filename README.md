@@ -18,7 +18,7 @@ Stack: **Next.js App Router + TypeScript + Tailwind CSS v4 + pnpm**. Join/contac
 | `/donate` | Donate (naira bank transfer live; online checkout coming soon) |
 | `/donate/confirm` | Donation confirmation |
 | `/donate/fail` | Donation unsuccessful |
-| `/news` | News stub |
+| `/news` | News + Brand community posts |
 | `/contact` | Contact |
 | `/privacy` | Privacy notice |
 | `/posters` | Official poster gallery |
@@ -90,4 +90,4 @@ Former WP navy (`#0b2342`), cyan, mint, maroon, and pink aliases remap to the th
 
 Typography: **Montserrat Bold** (headlines), **Poppins** (body), **Arial** (fallback) via `next/font`.
 
-Official imagery (IVA-45 / Brand 22 Sep): one candidate portrait (`juo-official-3.jpg`, traditional attire facing camera) on Home Challenges, with the JO mark on that portrait. Compact JO mark (`candidate-mark-1.png`) in the nav; horizontal lock-up (`candidate-mark-2.png`) in the footer, Vision, and Meet. **NDC logo only on Manifesto and Join.** Homepage hero is **exactly 3 slides**. Poster gallery is `/posters` (raster poster 1 live; Blue / White / 4 / 5 await PDF rasterize). Campaign phone is unpublished until an approved number is unlocked. Campaign email is unpublished — Coming soon until CoS clears.
+Official imagery (IVA-45 / Brand 22 Sep): one candidate portrait (`juo-official-3.jpg`, traditional attire facing camera) on Home Challenges, with the JO mark on that portrait. Compact JO mark (`candidate-mark-1.png`) in the nav; horizontal lock-up (`candidate-mark-2.png`) in the footer, Vision, and Meet. **NDC logo only on Manifesto and Join.** Homepage hero is **exactly 3 slides**. Homepage Campaign gallery is community-first: the four Brand community posts (`public/brand/community/`) with locked titles and bodies, then the BA poster set. Poster gallery is `/posters` (BA rasters + kit poster 1 live; Blue / White / 4 / 5 await PDF rasterize). Campaign phone is unpublished until an approved number is unlocked. Campaign email is unpublished — Coming soon until CoS clears.

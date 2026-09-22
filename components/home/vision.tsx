@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Reveal } from "@/components/motion/reveal";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 import { opportunityCards } from "@/lib/home";
 
@@ -27,20 +28,22 @@ export function HomeVision() {
               const isActive = index === active;
               return (
                 <li key={item.title}>
-                  <button
-                    type="button"
-                    role="tab"
-                    aria-selected={isActive}
-                    className={`flex min-h-11 w-full items-center gap-3 py-2.5 text-left text-sm font-semibold tracking-[0.16em] uppercase transition ${
-                      isActive
-                        ? "text-brand-red"
-                        : "text-brand-blue/70 hover:text-brand-blue"
-                    }`}
-                    onClick={() => setActive(index)}
-                  >
-                    <span>{item.title}</span>
-                    {isActive ? <span aria-hidden="true">▶</span> : null}
-                  </button>
+                  <Reveal delayMs={index * 70}>
+                    <button
+                      type="button"
+                      role="tab"
+                      aria-selected={isActive}
+                      className={`flex min-h-11 w-full items-center gap-3 py-2.5 text-left text-sm font-semibold tracking-[0.16em] uppercase transition-[color,transform] duration-200 ease-out ${
+                        isActive
+                          ? "text-brand-red"
+                          : "text-brand-blue/70 hover:text-brand-blue motion-safe:hover:translate-x-1"
+                      }`}
+                      onClick={() => setActive(index)}
+                    >
+                      <span>{item.title}</span>
+                      {isActive ? <span aria-hidden="true">▶</span> : null}
+                    </button>
+                  </Reveal>
                 </li>
               );
             })}

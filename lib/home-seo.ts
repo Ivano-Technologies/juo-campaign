@@ -1,10 +1,13 @@
+import { brandSeoDescription, brandSeoTitle } from "@/lib/brand-seo";
 import { canonicalOrigin, site, socialLinks } from "@/lib/site";
 
-/** IVA-20 Brand-locked home SEO. Visible homepage copy stays WP-parity. */
+/**
+ * IVA-48 Brand Architect SEO lock (Chris via Kezie).
+ * Visible homepage copy stays WP-parity. Title/meta/OG/Twitter use Brand strings.
+ */
 export const homeSeo = {
-  title: "John Upan Odey Jnr | A Fresh Start for Cross River 2027",
-  description:
-    "NDC governorship candidate John Upan Odey Jnr. One People, One Cross River. We produce. We process. We prosper. Join the movement.",
+  title: brandSeoTitle,
+  description: brandSeoDescription,
   canonical: canonicalOrigin,
   ogUrl: `${canonicalOrigin}/`,
   ogImage: {

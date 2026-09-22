@@ -1,5 +1,6 @@
-export const donatePageTitle =
-  "Donate | Support John Upan Odey Jnr, Cross River 2027";
+import { pageSeoTitle } from "@/lib/brand-seo";
+
+export const donatePageTitle = pageSeoTitle("Donate");
 
 export const donatePageDescription =
   "Support John Upan Odey Jnr’s Cross River 2027 campaign. Transfer in naira to the official campaign account published on this page. Online checkout for card and international giving is coming soon.";

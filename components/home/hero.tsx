@@ -2,30 +2,62 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import { useDocumentHidden } from "@/components/motion/use-document-hidden";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 import { heroSlides } from "@/lib/home";
 
+/** Total slide dwell, including caption fade in/out. */
 const INTERVAL_MS = 6000;
+/** Keep in sync with `.hero-caption` transition-duration in globals.css. */
+const FADE_MS = 650;
 
 export function HomeHero() {
   const reduced = usePrefersReducedMotion();
+  const tabHidden = useDocumentHidden();
   const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
+  const [hoverPaused, setHoverPaused] = useState(false);
+  const [focusPaused, setFocusPaused] = useState(false);
+  const [captionOn, setCaptionOn] = useState(true);
+  const paused = hoverPaused || focusPaused || tabHidden;
 
-  const go = useCallback((next: number) => {
-    const total = heroSlides.length;
-    setIndex((next + total) % total);
-  }, []);
+  const go = useCallback(
+    (next: number) => {
+      const total = heroSlides.length;
+      setCaptionOn(reduced);
+      setIndex((next + total) % total);
+    },
+    [reduced],
+  );
+
+  useEffect(() => {
+    if (reduced) {
+      return;
+    }
+
+    const fadeInId = window.setTimeout(() => {
+      setCaptionOn(true);
+    }, 40);
+
+    return () => window.clearTimeout(fadeInId);
+  }, [index, reduced]);
 
   useEffect(() => {
     if (reduced || paused) {
       return;
     }
-    const timer = window.setInterval(() => {
+
+    const fadeOutId = window.setTimeout(() => {
+      setCaptionOn(false);
+    }, INTERVAL_MS - FADE_MS);
+    const advanceId = window.setTimeout(() => {
       setIndex((current) => (current + 1) % heroSlides.length);
     }, INTERVAL_MS);
-    return () => window.clearInterval(timer);
-  }, [paused, reduced]);
+
+    return () => {
+      window.clearTimeout(fadeOutId);
+      window.clearTimeout(advanceId);
+    };
+  }, [index, paused, reduced]);
 
   const slide = heroSlides[index] ?? heroSlides[0];
   const captionBox =
@@ -38,8 +70,24 @@ export function HomeHero() {
   return (
     <section
       className="relative isolate h-[min(92vh,920px)] min-h-[32rem] overflow-hidden bg-brand-blue text-brand-white"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      onMouseEnter={() => {
+        setHoverPaused(true);
+        if (!reduced) {
+          setCaptionOn(true);
+        }
+      }}
+      onMouseLeave={() => setHoverPaused(false)}
+      onFocus={() => {
+        setFocusPaused(true);
+        if (!reduced) {
+          setCaptionOn(true);
+        }
+      }}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) {
+          setFocusPaused(false);
+        }
+      }}
       aria-roledescription="carousel"
       aria-label="Campaign photographs"
     >
@@ -72,7 +120,7 @@ export function HomeHero() {
 
       <button
         type="button"
-        className="absolute left-3 bottom-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue/40 text-2xl text-brand-white backdrop-blur-sm transition hover:bg-brand-blue/70 md:top-1/2 md:bottom-auto md:left-4 md:right-auto md:-translate-y-1/2"
+        className="absolute left-3 bottom-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue/40 text-2xl text-brand-white backdrop-blur-sm transition-[background-color,transform,box-shadow] duration-200 ease-out hover:bg-brand-blue/70 motion-safe:hover:-translate-y-0.5"
         aria-label="Previous slide"
         onClick={() => go(index - 1)}
       >
@@ -80,7 +128,7 @@ export function HomeHero() {
       </button>
       <button
         type="button"
-        className="absolute right-5 bottom-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue/40 text-2xl text-brand-white backdrop-blur-sm transition hover:bg-brand-blue/70 md:top-1/2 md:bottom-auto md:right-4 md:-translate-y-1/2"
+        className="absolute right-5 bottom-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue/40 text-2xl text-brand-white backdrop-blur-sm transition-[background-color,transform,box-shadow] duration-200 ease-out hover:bg-brand-blue/70 motion-safe:hover:-translate-y-0.5"
         aria-label="Next slide"
         onClick={() => go(index + 1)}
       >
@@ -91,10 +139,9 @@ export function HomeHero() {
         className={`relative z-[2] flex h-full px-6 pb-24 sm:px-16 md:pb-16 lg:px-24 ${captionBox} ${captionY}`}
       >
         <div
-          key={slide.src + slide.title}
-          className={`w-full max-w-[min(58rem,calc(100vw-3rem))] ${reduced ? "" : "caption-enter"} ${
-            slide.align === "left" ? "lg:max-w-[38rem]" : ""
-          }`}
+          className={`hero-caption w-full max-w-[min(58rem,calc(100vw-3rem))] ${
+            !captionOn && !reduced ? "is-off" : ""
+          } ${slide.align === "left" ? "lg:max-w-[38rem]" : ""}`}
         >
           <p
             className={`font-serif text-base font-extrabold tracking-[0.08em] uppercase sm:text-2xl lg:text-3xl ${slide.kickerClass}`}

@@ -1,5 +1,6 @@
-export const repsPageTitle =
-  "Meet Your Reps | John Upan Odey Jnr, Cross River 2027";
+import { pageSeoTitle } from "@/lib/brand-seo";
+
+export const repsPageTitle = pageSeoTitle("Meet Your Reps");
 
 export const repsPageDescription =
   "Campaign representatives and coordinators for John Upan Odey Jnr across Cross River. Slate and LGA contacts will be announced with official campaign updates.";

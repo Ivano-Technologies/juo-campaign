@@ -196,7 +196,7 @@ export function PillarOrbit() {
       })}
       <div className="absolute inset-0 z-20 flex items-center justify-center p-7 sm:p-14">
         <div
-          className="flex w-full max-w-[15.5rem] flex-col items-center justify-center rounded-full bg-pillar-navy-deep/90 px-5 py-6 text-center shadow-[0_12px_48px_rgb(0_0_0_/_0.55)] ring-1 ring-brand-white/20 backdrop-blur-md sm:max-w-[26rem] sm:px-8 sm:py-11"
+          className="flex w-full max-w-[15.5rem] flex-col items-center justify-center rounded-full bg-brand-blue/90 px-5 py-6 text-center shadow-[0_12px_48px_rgb(64_68_155_/_0.35)] ring-1 ring-brand-white/20 backdrop-blur-md sm:max-w-[26rem] sm:px-8 sm:py-11"
           aria-live="polite"
         >
           <p className="text-xs font-bold tracking-[0.22em] text-brand-red uppercase">

@@ -9,8 +9,8 @@ export type ButtonVariant = "primary" | "secondary" | "white" | "ghost";
 
 /** Dark-surface pills: ghost default, solid white on hover/press/selected. */
 export const ghostPillIdle =
-  "border-brand-white bg-transparent text-brand-white hover:bg-brand-white hover:text-navy active:bg-brand-white active:text-navy motion-safe:active:scale-[0.98]";
-export const ghostPillOn = "border-brand-white bg-brand-white text-navy";
+  "border-brand-white bg-transparent text-brand-white hover:bg-brand-white hover:text-brand-blue active:bg-brand-white active:text-brand-blue motion-safe:active:scale-[0.98]";
+export const ghostPillOn = "border-brand-white bg-brand-white text-brand-blue";
 
 const variants: Record<ButtonVariant, string> = {
   primary:

@@ -11,10 +11,10 @@ export function HomeMeet() {
           <p className="text-xs font-semibold tracking-[0.28em] text-brand-red uppercase">
             Meet {site.name}
           </p>
-          <h2 className="mt-3 font-serif text-4xl font-extrabold text-navy sm:text-5xl">
+          <h2 className="mt-3 font-serif text-4xl font-extrabold text-brand-blue sm:text-5xl">
             {site.name}
           </h2>
-          <p className="mt-2 text-sm tracking-[0.16em] text-navy/70 uppercase">
+          <p className="mt-2 text-sm tracking-[0.16em] text-brand-blue/70 uppercase">
             Gubernatorial Candidate
           </p>
           <div className="mt-8 space-y-4 text-[1.05rem] leading-7 text-ink">
@@ -22,7 +22,7 @@ export function HomeMeet() {
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <blockquote className="mt-8 border-l-4 border-brand-red pl-5 text-lg leading-8 text-navy/90 italic">
+          <blockquote className="mt-8 border-l-4 border-brand-red pl-5 text-lg leading-8 text-brand-blue/90 italic">
             “{meetQuote}”
           </blockquote>
           <Button href="/john-upan-odey" variant="secondary" className="mt-8 rounded-none">

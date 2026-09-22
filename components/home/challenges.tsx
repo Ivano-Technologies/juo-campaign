@@ -36,8 +36,8 @@ export function HomeChallenges() {
   return (
     <section ref={sectionRef} className="bg-brand-white">
       <div className="grid min-h-[38rem] lg:min-h-[48rem] lg:grid-cols-2">
-        <div className="flex flex-col justify-center bg-navy px-5 py-14 text-brand-white sm:px-12 sm:py-16 lg:px-16 lg:py-20">
-          <h2 className="font-serif text-[2.5rem] leading-[0.95] font-extrabold tracking-tight text-brand-white uppercase sm:text-6xl lg:text-7xl">
+        <div className="flex flex-col justify-center border-b border-line bg-brand-white px-5 py-14 text-brand-blue sm:px-12 sm:py-16 lg:border-r lg:border-b-0 lg:px-16 lg:py-20">
+          <h2 className="font-serif text-[2.5rem] leading-[0.95] font-extrabold tracking-tight text-brand-blue uppercase sm:text-6xl lg:text-7xl">
             Challenges{" "}
             <br />
             We Face
@@ -50,7 +50,7 @@ export function HomeChallenges() {
                 className="flex max-w-[22rem] flex-col items-center text-center"
               >
                 <ProhibitIcon />
-                <p className="mt-5 text-lg leading-8 text-brand-white sm:text-xl sm:leading-9 lg:text-2xl lg:leading-10">
+                <p className="mt-5 text-lg leading-8 text-brand-blue sm:text-xl sm:leading-9 lg:text-2xl lg:leading-10">
                   {item.body}
                 </p>
               </li>
@@ -60,16 +60,16 @@ export function HomeChallenges() {
 
         <div className="challenges-pane relative w-full self-stretch overflow-hidden bg-brand-white px-2 py-0 sm:overflow-visible sm:px-3 lg:px-4">
           <div className="challenges-lockup relative z-10 flex h-full flex-col justify-end pb-2 sm:pb-3 lg:pb-5">
-            <p className="challenges-word font-serif font-black tracking-tight text-navy uppercase">
+            <p className="challenges-word font-serif font-black tracking-tight text-brand-blue uppercase">
               Let&apos;s
             </p>
             <p
-              className="challenges-word challenges-word-change font-serif font-black tracking-tight text-change-blue uppercase"
+              className="challenges-word challenges-word-change font-serif font-black tracking-tight text-brand-red uppercase"
               style={{ transform: `translate3d(0, ${offset}px, 0)` }}
             >
               Change
             </p>
-            <p className="challenges-word challenges-word-that font-serif font-black tracking-tight text-that-navy uppercase">
+            <p className="challenges-word challenges-word-that font-serif font-black tracking-tight text-brand-blue uppercase">
               That
             </p>
           </div>

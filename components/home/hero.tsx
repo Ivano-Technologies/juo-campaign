@@ -37,7 +37,7 @@ export function HomeHero() {
 
   return (
     <section
-      className="relative isolate h-[min(92vh,920px)] min-h-[32rem] overflow-hidden bg-navy text-brand-white"
+      className="relative isolate h-[min(92vh,920px)] min-h-[32rem] overflow-hidden bg-brand-blue text-brand-white"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"
@@ -76,14 +76,14 @@ export function HomeHero() {
       <div
         className={`pointer-events-none absolute inset-0 z-[1] ${
           slide.align === "right"
-            ? "bg-gradient-to-l from-navy/35 via-transparent to-transparent"
-            : "bg-gradient-to-r from-navy/25 via-transparent to-transparent"
+            ? "bg-gradient-to-l from-brand-blue/35 via-transparent to-transparent"
+            : "bg-gradient-to-r from-brand-blue/25 via-transparent to-transparent"
         }`}
       />
 
       <button
         type="button"
-        className="absolute left-3 bottom-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/25 text-2xl text-white backdrop-blur-sm transition hover:bg-black/45 md:top-1/2 md:bottom-auto md:left-4 md:right-auto md:-translate-y-1/2"
+        className="absolute left-3 bottom-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue/40 text-2xl text-brand-white backdrop-blur-sm transition hover:bg-brand-blue/70 md:top-1/2 md:bottom-auto md:left-4 md:right-auto md:-translate-y-1/2"
         aria-label="Previous slide"
         onClick={() => go(index - 1)}
       >
@@ -91,7 +91,7 @@ export function HomeHero() {
       </button>
       <button
         type="button"
-        className="absolute right-5 bottom-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black/25 text-2xl text-white backdrop-blur-sm transition hover:bg-black/45 md:top-1/2 md:bottom-auto md:right-4 md:-translate-y-1/2"
+        className="absolute right-5 bottom-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue/40 text-2xl text-brand-white backdrop-blur-sm transition hover:bg-brand-blue/70 md:top-1/2 md:bottom-auto md:right-4 md:-translate-y-1/2"
         aria-label="Next slide"
         onClick={() => go(index + 1)}
       >

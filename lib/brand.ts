@@ -1,5 +1,6 @@
 export const brand = {
   colors: {
+    /** Provisional Royal Blue — Brand Manual IVA-33; hex pending Brand lock. */
     blue: "#40449B",
     white: "#FFFFFF",
     red: "#EF2B35",

@@ -10,8 +10,6 @@ export const site = {
   origin: "Obudu, Cross River State",
   age: 48,
   email: "upanodey@yahoo.com",
-  phoneDisplay: "+234 813 799 5391",
-  phoneHref: "tel:+2348137995391",
   domain: "votejohnupanodey.com",
 } as const;
 

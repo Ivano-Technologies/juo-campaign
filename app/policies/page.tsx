@@ -11,9 +11,9 @@ import {
   policiesPageDescription,
   policiesPageTitle,
   policiesTenTitle,
+  policySectors,
 } from "@/lib/policies";
 import { pageShareTags } from "@/lib/page-seo";
-import { visionPillars } from "@/lib/vision";
 
 export const metadata: Metadata = {
   title: {
@@ -60,25 +60,25 @@ export default function PoliciesPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <h2 className="font-serif text-3xl text-ink">{policiesTenTitle}</h2>
           <ol className="mt-8 grid gap-4 sm:grid-cols-2">
-            {visionPillars.map((pillar, index) => (
+            {policySectors.map((sector, index) => (
               <li
-                key={pillar.slug}
-                id={pillar.slug}
+                key={sector.slug}
+                id={sector.slug}
                 className="scroll-mt-28 rounded-2xl border border-line bg-brand-white p-6"
               >
                 <p className="text-xs uppercase tracking-[0.2em] text-brand-red">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <h3 className="mt-2 font-serif text-2xl text-ink">{pillar.name}</h3>
+                <h3 className="mt-2 font-serif text-2xl text-ink">{sector.name}</h3>
                 <p className="mt-3 text-[1.05rem] leading-7 text-muted">
-                  {pillar.blurb}
+                  {sector.blurb}
                 </p>
                 <p className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">
                   <a
-                    href={`/vision#${pillar.slug}`}
+                    href="/vision#brand-pillars"
                     className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
                   >
-                    Theme on The Vision
+                    Brand pillars on The Vision
                   </a>
                   <a
                     href="/manifesto"

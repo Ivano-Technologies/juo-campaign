@@ -3,12 +3,7 @@
 import { Button } from "@/components/button";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 import { usePillarRotation } from "@/components/vision/use-pillar-rotation";
-import {
-  visionManifestoCta,
-  visionOrbitProsperityLine,
-  visionOrbitUnityLine,
-  visionPillars,
-} from "@/lib/vision";
+import { visionManifestoCta, visionPillars } from "@/lib/vision";
 
 /** Inset rounded-rect that follows the landscape photo frame. */
 const FRAME_INSET_X = 8;
@@ -202,14 +197,11 @@ export function PillarOrbit() {
           <p className="text-xs font-bold tracking-[0.22em] text-brand-red uppercase">
             {String(active + 1).padStart(2, "0")}
           </p>
-          <h3 className="mt-2 font-serif text-xl leading-tight font-bold text-brand-white sm:text-3xl">
+          <h3 className="mt-2 font-serif text-xl leading-tight font-bold text-brand-white uppercase sm:text-3xl">
             {current.name}
           </h3>
           <p className="mt-3 text-sm leading-snug font-semibold text-balance text-brand-white sm:mt-4 sm:text-lg">
-            {visionOrbitUnityLine}
-          </p>
-          <p className="mt-2 text-sm leading-snug font-bold text-balance text-brand-white sm:text-lg">
-            {visionOrbitProsperityLine}
+            {current.lead}
           </p>
           <Button
             href="/manifesto"

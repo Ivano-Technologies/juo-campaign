@@ -152,17 +152,20 @@ export default function VisionPage() {
           {visionPillarsIntro}
         </p>
         <ol className="mt-10 grid gap-10">
-          {visionPillars.map((pillar, index) => (
+          {visionPillars.map((pillar) => (
             <li key={pillar.slug} id={pillar.slug} className="scroll-mt-28">
-              <h3 className="font-serif text-2xl text-ink">
-                {index + 1}. {pillar.name}
-              </h3>
-              <p className="mt-3 text-[1.05rem] leading-7 text-muted">
-                {pillar.blurb}
+              <p className="text-xs font-semibold tracking-[0.22em] text-brand-red uppercase">
+                {pillar.number}
               </p>
-              <div className="mt-4">
-                <ManifestoCta />
-              </div>
+              <h3 className="mt-2 font-serif text-2xl text-ink uppercase">
+                {pillar.name}
+              </h3>
+              <p className="mt-3 text-[1.05rem] leading-7 text-ink">
+                {pillar.lead}
+              </p>
+              <p className="mt-3 text-[1.05rem] leading-7 text-muted">
+                {pillar.body}
+              </p>
             </li>
           ))}
         </ol>

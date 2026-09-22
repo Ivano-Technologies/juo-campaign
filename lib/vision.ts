@@ -1,4 +1,5 @@
 import { brand } from "@/lib/brand";
+import { brandPillars } from "@/lib/brand-pillars";
 import { canonicalOrigin, site } from "@/lib/site";
 
 export const visionPath = "/vision" as const;
@@ -44,16 +45,20 @@ export const visionOfficialMission =
 export const visionWhyTitle = "Why this vision";
 export const visionWhyBody = [
   "Cross River is one people. Division does not build roads, power homes, or create lasting jobs. A Fresh Start means choosing unity of purpose across LGAs, generations, and communities so the state’s real strengths in people, land, culture, and location can work for everyone.",
-  "This page carries the Brand spine for the campaign. Detailed commitments belong in the approved manifesto. Until that PDF is published, what follows frames the Prosperity Agenda and the ten Brand pillars as themes, not invented policies.",
+  "This page carries the Brand spine for the campaign. The five Brand pillars say who John stands for as a leader. Detailed policy commitments belong in the approved manifesto; they are not these Brand pillars.",
 ] as const;
 
 export const visionAgendaTitle = "Approved manifesto excerpts";
 export const visionAgendaNote =
   "Brand excerpts until the manifesto PDF is published. Full commitments wait on that file.";
 
-export const visionPillarsTitle = "Ten Brand pillars";
-export const visionPillarsIntro =
-  "Each pillar below is theme framing only. Commitment text waits on the manifesto.";
+export {
+  brandPillarsIntro as visionPillarsIntro,
+  brandPillarsTitle as visionPillarsTitle,
+} from "@/lib/brand-pillars";
+
+export const visionPillars = brandPillars;
+export type VisionPillar = (typeof visionPillars)[number];
 
 export const visionWalkTitle = "Walk with the movement";
 export const visionWalkBody =
@@ -84,71 +89,6 @@ export const visionOrbitProsperityLine = site.prosperityLine;
 export const visionPillarSpineLine =
   `${site.tagline}. ${site.unityLine}. ${site.prosperityLine}` as const;
 export const visionManifestoCta = "Read the full Manifesto";
-
-export const visionPillars = [
-  {
-    name: "Power First",
-    slug: "power-first",
-    blurb:
-      "Reliable energy is the foundation of a productive Cross River: for homes, farms, clinics, schools, and enterprise. A Fresh Start treats power as a first-order condition for growth.",
-  },
-  {
-    name: "Wealth Through Agriculture",
-    slug: "wealth-through-agriculture",
-    blurb:
-      "Cross River’s land and farmers can anchor shared wealth when production is valued and connected to markets. This pillar frames agriculture as a path to prosperity for communities across the state.",
-  },
-  {
-    name: "Jobs Through Enterprise",
-    slug: "jobs-through-enterprise",
-    blurb:
-      "Jobs grow when enterprise can start, scale, and stay in Cross River. This pillar frames a climate where skills, small business, and local industry have room to create work.",
-  },
-  {
-    name: "Modern Education & Skills",
-    slug: "modern-education-skills",
-    blurb:
-      "Education and skills prepare young people, and workers already in the economy, for useful work in a changing Cross River. This pillar frames learning as a productive-state investment.",
-  },
-  {
-    name: "Quality Healthcare",
-    slug: "quality-healthcare",
-    blurb:
-      "Health underpins dignity and productivity. This pillar frames access to quality care as essential for families in Calabar, Obudu, and every LGA.",
-  },
-  {
-    name: "Infrastructure for Growth",
-    slug: "infrastructure-for-growth",
-    blurb:
-      "Roads, connectivity, and enabling works unlock farms, tourism, trade, and daily life. This pillar frames infrastructure as the backbone of growth, not spectacle.",
-  },
-  {
-    name: "Tourism Beyond Carnival",
-    slug: "tourism-beyond-carnival",
-    blurb:
-      "Cross River’s hospitality and natural assets can sustain year-round opportunity beyond a single season. This pillar frames tourism as a broader productive story for the state.",
-  },
-  {
-    name: "Transparent Government",
-    slug: "transparent-government",
-    blurb:
-      "Public trust grows when government is open, accountable, and clear about how resources are used. This pillar frames transparency as a standard of Fresh Start governance.",
-  },
-  {
-    name: "Local Prosperity",
-    slug: "local-prosperity",
-    blurb:
-      "Prosperity should be felt in wards and LGAs, not only in headlines. This pillar frames local economic life as central to One People, One Cross River.",
-  },
-  {
-    name: "Inclusive Governance",
-    slug: "inclusive-governance",
-    blurb:
-      "Every community deserves a voice in how Cross River is led. This pillar frames inclusive governance as unity in practice across the state.",
-  },
-] as const;
-
-export type VisionPillar = (typeof visionPillars)[number];
 
 export const visionJsonLd = {
   "@context": "https://schema.org",

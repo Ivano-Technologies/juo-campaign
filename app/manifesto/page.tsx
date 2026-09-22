@@ -4,13 +4,13 @@ import { Button } from "@/components/button";
 import { ManifestoPlayer } from "@/components/manifesto-player";
 import { PageHero } from "@/components/page-hero";
 import {
-  manifestoCarryClose,
-  manifestoCarryIntro,
-  manifestoCarryItems,
-  manifestoCarryTitle,
   manifestoComingBody,
   manifestoComingTitle,
   manifestoDownloadTitle,
+  manifestoExcerpts,
+  manifestoExcerptsIntro,
+  manifestoExcerptsTitle,
+  manifestoHeroLede,
   manifestoMeanwhileLinks,
   manifestoMeanwhileTitle,
   manifestoPageDescription,
@@ -31,7 +31,7 @@ export default function ManifestoPage() {
     <>
       <PageHero
         title="Manifesto"
-        lede="The campaign manifesto for John Upan Odey Jnr: A Fresh Start for Cross River. Prosperity Agenda 2027–2031. PDF and full readout when published."
+        lede={manifestoHeroLede}
         aside={<BrandMarks variant="manifesto" />}
       >
         <Button href="/vision" variant="white">
@@ -52,23 +52,27 @@ export default function ManifestoPage() {
         </div>
 
         <div>
-          <h2 className="font-serif text-3xl text-ink">{manifestoCarryTitle}</h2>
+          <h2 className="font-serif text-3xl text-ink">{manifestoExcerptsTitle}</h2>
           <p className="mt-4 text-[1.05rem] leading-7 text-muted">
-            {manifestoCarryIntro}
+            {manifestoExcerptsIntro}
           </p>
-          <ul className="mt-6 grid gap-3">
-            {manifestoCarryItems.map((item) => (
-              <li
-                key={item}
-                className="rounded-2xl border border-line bg-brand-white px-5 py-4 font-serif text-xl text-ink"
-              >
-                {item}
-              </li>
+          <div className="mt-10 grid gap-12">
+            {manifestoExcerpts.map((excerpt) => (
+              <article key={excerpt.title}>
+                <h3 className="font-serif text-2xl tracking-tight text-ink uppercase">
+                  {excerpt.title}
+                </h3>
+                {excerpt.paragraphs.map((paragraph) => (
+                  <p
+                    key={paragraph}
+                    className="mt-4 text-[1.05rem] leading-7 text-ink"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </article>
             ))}
-          </ul>
-          <p className="mt-6 text-[1.05rem] leading-7 text-muted">
-            {manifestoCarryClose}
-          </p>
+          </div>
         </div>
 
         <div>

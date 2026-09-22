@@ -9,7 +9,7 @@ export const visionPageTitle =
   "The Vision | A Fresh Start: One People, One Cross River";
 
 export const visionPageDescription =
-  "John Upan Odey Jnr’s vision for Cross River 2027: A Fresh Start. One People, One Cross River. We produce. We process. We prosper.";
+  "To build One Cross River- united in purpose, inclusive in opportunity, and resilient in prosperity; a state where every citizen, every community, and every generation has the opportunity to thrive, contribute, and fulfil its potential.";
 
 export const visionHeadlineLead = "A Fresh Start";
 export const visionHeadlineLockup = "One People, One Cross River";
@@ -19,20 +19,23 @@ export const visionHeadline =
 export const visionHeroEyebrow = "The Vision";
 export const visionHeroSubhead = site.prosperityLine;
 export const visionHeroBody =
-  "Cross River deserves a fresh start: one people, one state, building a productive future together. John Upan Odey Jnr offers a clear direction for Cross River 2027 under the NDC: unity first, prosperity through production and processing, and governance that serves every community from Obudu to Calabar and beyond.";
+  "To build One Cross River- united in purpose, inclusive in opportunity, and resilient in prosperity; a state where every citizen, every community, and every generation has the opportunity to thrive, contribute, and fulfil its potential.";
 
 export const visionHeroCtas = [
   { href: "/manifesto", label: "Read the Manifesto" },
+  { href: "/odey-archibong", label: "Odey Archibong" },
   { href: "/join", label: "Join the Movement" },
   { href: "/john-upan-odey", label: "Who is John Upan Odey Jnr" },
 ] as const;
 
 export const visionOfficialTitle = "Official Vision and Mission";
-export const visionOfficialPending =
-  "Brand copy pending. Official Vision and Mission statements are not in the published narrative lock. Until Brand releases those statements, this page carries only the campaign slogan.";
-export const visionOfficialSlogan = brand.slogan;
-export const visionOfficialNote =
-  "Do not treat the slogan as a substitute Vision or Mission. Approved text will replace this gate.";
+export const visionOfficialVisionLabel = "VISION";
+export const visionOfficialVision =
+  "To build One Cross River- united in purpose, inclusive in opportunity, and resilient in prosperity; a state where every citizen, every community, and every generation has the opportunity to thrive, contribute, and fulfil its potential.";
+export const visionOfficialMissionLabel = "MISSION";
+/** Brand em dash normalised to a comma. Meaning unchanged. */
+export const visionOfficialMission =
+  "To usher in A Fresh Start through transparent, accountable, and people-centred governance that creates an enabling environment for enterprise, expands economic opportunity, stimulates job creation, strengthens communities, and unlocks the productive potential of our human and natural resources, ensuring that prosperity is shared and no community or citizen is left behind.";
 
 export const visionWhyTitle = "Why this vision";
 export const visionWhyBody = [

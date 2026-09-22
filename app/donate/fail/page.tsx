@@ -6,7 +6,7 @@ import { pageTitle } from "@/lib/site";
 
 const failTitle = pageTitle("Donation unsuccessful");
 const failDescription =
-  "The donation did not complete. You can retry when the campaign processor is live.";
+  "The donation did not complete. Online checkout is coming soon. Use the official bank transfer on Donate for naira giving now.";
 
 export const metadata: Metadata = {
   title: "Donation unsuccessful",
@@ -20,7 +20,7 @@ export default function DonateFailPage() {
       <PageHero
         kicker="Let’s try again"
         title="Donation unsuccessful"
-        lede="The payment did not complete. No charge should have gone through. Retry from the donate page when the processor is connected, or contact the campaign if you were billed in error."
+        lede="The payment did not complete. No charge should have gone through. Online checkout is coming soon. For naira giving now, use the official bank transfer details on Donate, or contact the campaign if you were billed in error."
       >
         <Button href="/donate" variant="white">
           Return to Donate

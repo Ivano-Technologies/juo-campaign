@@ -19,7 +19,7 @@ export default function PrivacyPage() {
       <PageHero
         kicker="Before any form"
         title="Privacy notice"
-        lede="This notice covers Join the Movement, Contact, and future Donate forms — including people who join from outside Cross River through Diaspora Connect."
+        lede="This notice covers Join the Movement, Contact, and Donate — including people who join from outside Cross River through Diaspora Connect."
       />
       <article className="mx-auto max-w-3xl space-y-8 px-4 py-16 text-muted sm:px-6">
         <section>
@@ -35,8 +35,10 @@ export default function PrivacyPage() {
             When you use Join the Movement we store the details you send: name,
             email, phone, local government or location (including “Diaspora /
             outside Cross River”), and how you want to help. Contact stores
-            name, email, and your message. Donate data will be limited to what
-            the payment processor and Nigerian law require when donations open.
+            name, email, and your message. Bank transfer on Donate uses the
+            published account details and does not collect extra form data on
+            this site. When online checkout opens, donate data will be limited
+            to what the payment processor and Nigerian law require.
           </p>
         </section>
         <section>

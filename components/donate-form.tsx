@@ -15,13 +15,13 @@ export function DonateForm() {
 
   function onGive() {
     setStatus(
-      `NGN checkout is gated until the campaign processor is connected. ${formatNgn(selected)} is ready to send when giving opens. Confirmation and failure screens are already at /donate/confirm and /donate/fail.`,
+      `Online checkout is coming soon. For naira giving now, use the official bank transfer details on this page. ${formatNgn(selected)} can be transferred to that account.`,
     );
   }
 
   return (
     <form
-      className="grid min-w-0 gap-6 rounded-2xl border border-line bg-brand-white p-8 shadow-sm"
+      className="grid min-w-0 gap-6 rounded-2xl border border-line bg-brand-white p-5 shadow-sm sm:p-8"
       onSubmit={(event) => {
         event.preventDefault();
         onGive();
@@ -30,8 +30,13 @@ export function DonateForm() {
       <div>
         <h2 className="font-serif text-3xl text-ink">Give in naira</h2>
         <p className="mt-2 text-muted">
-          Choose an amount. Online donations — coming soon. Card and
-          international options stay closed until counsel and banking sign off.
+          Choose an amount. Online donations — coming soon. For naira giving
+          now, use the{" "}
+          <a href="#bank-transfer" className="font-semibold text-brand-blue underline">
+            official bank transfer
+          </a>{" "}
+          details on this page. Card and international options stay closed
+          until counsel and banking sign off.
         </p>
       </div>
 
@@ -88,8 +93,8 @@ export function DonateForm() {
         <a href="/privacy" className="text-brand-blue underline">
           privacy
         </a>{" "}
-        for how donor data will be handled when donations open. Volunteer or
-        write the desk on{" "}
+        for how donor data will be handled when online checkout opens. Volunteer
+        or write the desk on{" "}
         <a href="/join" className="text-brand-blue underline">
           Join the Movement
         </a>{" "}

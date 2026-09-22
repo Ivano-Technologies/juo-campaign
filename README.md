@@ -13,7 +13,7 @@ Stack: **Next.js App Router + TypeScript + Tailwind CSS v4 + pnpm**. Join/contac
 | `/policies` | Policy pillars stub |
 | `/manifesto` | Manifesto stub (PDF pending IVA-17) |
 | `/join` | Join the Movement |
-| `/donate` | Donate (NGN-first, processor later) |
+| `/donate` | Donate (naira bank transfer live; online checkout coming soon) |
 | `/donate/confirm` | Donation confirmation |
 | `/donate/fail` | Donation unsuccessful |
 | `/news` | News stub |
@@ -22,7 +22,7 @@ Stack: **Next.js App Router + TypeScript + Tailwind CSS v4 + pnpm**. Join/contac
 
 Nav: Home / Who is JUO / Policies / Manifesto / Join / Donate / News / Contact.
 
-Primary CTAs: Join the Movement, Donate, Manifesto, Contact — red / white / ghost on brand blue (`#EF2B35` / `#FFFFFF` / `#40449B`). The sticky header is IA only (desktop from `lg`, accessible mobile menu below). Donate is NGN-gated until a processor is wired; there is no fake checkout.
+Primary CTAs: Join the Movement, Donate, Manifesto, Contact — red / white / ghost on brand blue (`#EF2B35` / `#FFFFFF` / `#40449B`). The sticky header is IA only (desktop from `lg`, accessible mobile menu below). Donate publishes official naira bank-transfer details. Online checkout stays coming soon until a processor is wired; there is no fake checkout.
 
 Lawyer / attorney / TheGem / practice demo content is not on this site.
 

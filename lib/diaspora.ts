@@ -6,7 +6,7 @@ export const diasporaPageDescription =
 
 export const diasporaIncludeTitle = "A Fresh Start includes Cross Riverians abroad";
 export const diasporaIncludeBody = [
-  "One People, One Cross River does not stop at the state line. Cross Riverians in the diaspora are part of A Fresh Start — through organising, skills, media, and community support. When donations open under campaign rules, naira and compliant giving paths will be announced on the Donate page.",
+  "One People, One Cross River does not stop at the state line. Cross Riverians in the diaspora are part of A Fresh Start — through organising, skills, media, and community support. Naira bank transfer is published on the Donate page. Online checkout for card and international giving is coming soon.",
   "This page explains purpose, who it is for, and how contact data is handled. It does not invent a formal “programme catalogue” or chapter network that Brand has not published.",
 ] as const;
 
@@ -17,7 +17,7 @@ export const diasporaPurposeItems = [
   "Register interest in volunteering or organising with the campaign",
   "Offer skills or media support aligned with official campaign asks",
   "Receive legitimate updates about manifesto release, events, and ways to help",
-  "Find the correct path to Donate when the processor is live",
+  "Find the official path to Donate",
 ] as const;
 
 export const diasporaWhoTitle = "Who it is for (eligibility framing)";

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { BankTransferDetails } from "@/components/bank-transfer";
 import { Button } from "@/components/button";
 import { DonateForm } from "@/components/donate-form";
 import { PageHero } from "@/components/page-hero";
 import {
+  donateHeroLede,
   donatePageDescription,
   donatePageTitle,
   donateStatusBody,
@@ -32,18 +34,20 @@ export default function DonatePage() {
       <PageHero
         kicker="Support the work"
         title="Donate"
-        lede="Stand up a naira-first gift for a Fresh Start in Cross River. Checkout stays gated until the campaign processor is connected — amounts and this page are ready now."
+        lede={donateHeroLede}
       >
+        <Button href="/donate#bank-transfer" variant="white">
+          Bank transfer
+        </Button>
         <Button href="/join" variant="ghost">
           Join the Movement
-        </Button>
-        <Button href="/news" variant="white">
-          News
         </Button>
         <Button href="/contact" variant="ghost">
           Contact
         </Button>
       </PageHero>
+
+      <BankTransferDetails />
 
       <section className="mx-auto max-w-3xl space-y-10 px-4 py-16 sm:px-6">
         <div>

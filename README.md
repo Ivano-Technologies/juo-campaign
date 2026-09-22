@@ -19,6 +19,7 @@ Stack: **Next.js App Router + TypeScript + Tailwind CSS v4 + pnpm**. Join/contac
 | `/news` | News stub |
 | `/contact` | Contact |
 | `/privacy` | Privacy notice |
+| `/posters` | Official poster gallery |
 
 Nav: Home / Who is JUO / Policies / Manifesto / Join / Donate / News / Contact.
 
@@ -85,4 +86,6 @@ Strict Royal Blue palette. Black / navy surfaces are white or royal blue. Red is
 
 Former WP navy (`#0b2342`), cyan, mint, maroon, and pink aliases remap to the three tokens above in `app/globals.css`. Do not introduce new hexes.
 
-Typography: **Montserrat Bold** (headlines), **Poppins** (body), **Arial** (fallback) via `next/font`. Marks live in `public/brand/` (NDC logo + candidate marks). Larger poster PDFs (Blue / White / 4 / 5) stay in the brand kit / Asana for now. Campaign phone is unpublished until an approved number is unlocked.
+Typography: **Montserrat Bold** (headlines), **Poppins** (body), **Arial** (fallback) via `next/font`.
+
+Official imagery (IVA-45): one candidate portrait (`juo-official-1.jpg`) on Home Challenges, with the JO mark on that portrait. Compact JO mark (`candidate-mark-1.png`) in the nav; horizontal lock-up (`candidate-mark-2.png`) in the footer, Vision, and Meet. **NDC logo only on Manifesto and Join.** Homepage hero is **exactly 3 slides**. Poster gallery is `/posters` (raster poster 1 live; Blue / White / 4 / 5 await PDF rasterize). Campaign phone is unpublished until an approved number is unlocked.

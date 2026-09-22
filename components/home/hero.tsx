@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
-import { heroSlides, voteBadge } from "@/lib/home";
+import { heroSlides } from "@/lib/home";
 
 const INTERVAL_MS = 6000;
 
@@ -59,17 +59,6 @@ export function HomeHero() {
             sizes="100vw"
             className={`object-cover ${item.objectClass}`}
           />
-          {"overlay" in item && item.overlay ? (
-            <div className={item.overlay.wrapClass}>
-              <Image
-                src={item.overlay.src}
-                alt={item.overlay.alt}
-                fill
-                sizes="(min-width: 640px) 40vw, 70vw"
-                className="object-contain object-bottom"
-              />
-            </div>
-          ) : null}
         </div>
       ))}
 
@@ -126,19 +115,10 @@ export function HomeHero() {
               {slide.lede}
             </p>
           ) : null}
-          {"vote" in slide && slide.vote ? (
-            <div className="mt-6 flex items-center gap-3">
-              <Image
-                src={voteBadge}
-                alt=""
-                width={88}
-                height={88}
-                className="vote-spin h-16 w-16 sm:h-20 sm:w-20"
-              />
-              <p className="font-serif text-xl font-semibold text-brand-white italic sm:text-2xl">
-                {slide.signature}
-              </p>
-            </div>
+          {"signature" in slide && slide.signature ? (
+            <p className="mt-6 font-serif text-xl font-semibold text-brand-white italic sm:text-2xl">
+              {slide.signature}
+            </p>
           ) : null}
         </div>
       </div>

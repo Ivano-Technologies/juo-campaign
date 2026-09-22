@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { Button } from "@/components/button";
-import { meetBio, meetPortrait, meetQuote, voteBadge } from "@/lib/home";
+import { JoMarkLockup } from "@/components/socials";
+import { meetBio, meetQuote } from "@/lib/home";
 import { site } from "@/lib/site";
 
 export function HomeMeet() {
@@ -30,21 +30,8 @@ export function HomeMeet() {
           </Button>
         </div>
 
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-[28rem]">
-          <Image
-            src={meetPortrait.src}
-            alt={meetPortrait.alt}
-            fill
-            sizes="(min-width: 1024px) 28rem, 90vw"
-            className="object-contain object-bottom"
-          />
-          <Image
-            src={voteBadge}
-            alt=""
-            width={220}
-            height={220}
-            className="vote-spin absolute top-6 right-2 h-28 w-28 sm:top-4 sm:right-0 sm:h-32 sm:w-32"
-          />
+        <div className="flex min-h-[16rem] items-center justify-center border border-brand-blue/15 bg-brand-white px-6 py-10">
+          <JoMarkLockup className="h-20 w-auto sm:h-28" />
         </div>
       </div>
     </section>

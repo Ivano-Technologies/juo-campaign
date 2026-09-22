@@ -1,6 +1,6 @@
 import type { Route } from "next";
 import Link from "next/link";
-import { CandidateMark, SocialRow } from "@/components/socials";
+import { JoMarkLockup, SocialRow } from "@/components/socials";
 import { campaignHashtag, footerBlurb } from "@/lib/home";
 import { footerAboutLinks, footerQuickLinks } from "@/lib/site";
 
@@ -10,7 +10,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-[1200px] gap-12 px-6 py-16 md:grid-cols-[1.4fr_0.8fr_0.8fr]">
         <div>
           <div className="flex flex-wrap items-center gap-5">
-            <CandidateMark className="h-[6.5rem] w-[6.5rem]" />
+            <JoMarkLockup className="h-16 w-auto bg-brand-white px-3 py-2 sm:h-20" />
             <p className="font-serif text-[1.65rem] leading-[1.15] font-extrabold uppercase">
               <span className="block text-brand-white">A New</span>
               <span className="block text-brand-white">Cross River</span>

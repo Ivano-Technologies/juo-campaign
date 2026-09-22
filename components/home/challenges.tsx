@@ -3,8 +3,9 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { DiamondRule, ProhibitIcon } from "@/components/icons";
+import { JoMarkCompact } from "@/components/socials";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
-import { challenges, challengesCutout } from "@/lib/home";
+import { challenges, officialPortrait } from "@/lib/home";
 
 export function HomeChallenges() {
   const reduced = usePrefersReducedMotion();
@@ -75,12 +76,13 @@ export function HomeChallenges() {
           </div>
           <div className="challenges-portrait pointer-events-none absolute inset-y-0 right-0 z-0">
             <Image
-              src={challengesCutout.src}
-              alt={challengesCutout.alt}
+              src={officialPortrait.src}
+              alt={officialPortrait.alt}
               fill
               sizes="(min-width: 1024px) 36vw, 70vw"
               className="object-contain object-right-bottom"
             />
+            <JoMarkCompact className="absolute right-3 bottom-4 h-10 w-auto bg-brand-white/90 px-2 py-1 sm:right-5 sm:bottom-6 sm:h-12" />
           </div>
         </div>
       </div>

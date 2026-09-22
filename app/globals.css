@@ -206,9 +206,8 @@ button.ghost-pill:active {
 }
 
 .challenges-portrait {
-  /* Cropped cutout is ~0.44 aspect — width tracks pane height so the
-     figure fills the white pane instead of sitting in a letterboxed box. */
-  width: min(72%, calc(100cqh * 0.48));
+  /* Official portrait is ~0.71 aspect — width tracks pane height. */
+  width: min(78%, calc(100cqh * 0.72));
 }
 
 @media (min-width: 640px) {
@@ -233,7 +232,7 @@ button.ghost-pill:active {
   }
 
   .challenges-portrait {
-    width: min(70%, calc(100cqh * 0.5));
+    width: min(72%, calc(100cqh * 0.72));
   }
 
   .challenges-word {

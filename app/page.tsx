@@ -5,6 +5,7 @@ import { HomeHero } from "@/components/home/hero";
 import { HomeInitiatives } from "@/components/home/initiatives";
 import { HomeMeet } from "@/components/home/meet";
 import { HomePillars } from "@/components/home/pillars";
+import { HomePosters } from "@/components/home/posters";
 import { HomeStatsBar } from "@/components/home/stats-bar";
 import { HomeTogetherBanner } from "@/components/home/together-banner";
 import { HomeVision } from "@/components/home/vision";
@@ -61,6 +62,7 @@ export default function HomePage() {
       <HomePillars />
       <HomeFuture />
       <HomeInitiatives />
+      <HomePosters />
       <HomeMeet />
     </>
   );

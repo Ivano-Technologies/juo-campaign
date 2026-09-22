@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { brand } from "@/lib/brand";
 import { socialLinks } from "@/lib/site";
 import { SocialGlyph } from "@/components/icons";
 
@@ -30,8 +31,9 @@ export function SocialRow({
   );
 }
 
-export function CandidateMark({
-  className = "h-16 w-16",
+/** Compact JO monogram — nav and small chrome. Never circular. */
+export function JoMarkCompact({
+  className = "h-10 w-auto",
   priority = false,
 }: {
   className?: string;
@@ -39,12 +41,32 @@ export function CandidateMark({
 }) {
   return (
     <Image
-      src="/media/2026/Frame-1171274791.png"
-      alt="John Upan Odey — A New CRS is Possible"
-      width={320}
-      height={320}
+      src={brand.marks.candidateMark1}
+      alt="John Upan Odey"
+      width={1536}
+      height={1024}
       priority={priority}
-      className={`rounded-full object-cover ${className}`}
+      className={`object-contain ${className}`}
+    />
+  );
+}
+
+/** Horizontal JO lock-up — footer, section heroes, Meet. Never circular. */
+export function JoMarkLockup({
+  className = "h-14 w-auto",
+  priority = false,
+}: {
+  className?: string;
+  priority?: boolean;
+}) {
+  return (
+    <Image
+      src={brand.marks.candidateMark2}
+      alt="John Upan Odey for Governor, Cross River State"
+      width={2172}
+      height={724}
+      priority={priority}
+      className={`object-contain ${className}`}
     />
   );
 }

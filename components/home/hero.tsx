@@ -10,6 +10,8 @@ import { heroSlides } from "@/lib/home";
 const INTERVAL_MS = 6000;
 /** Keep in sync with `.hero-caption` transition-duration in globals.css. */
 const FADE_MS = 650;
+/** Hold the caption fully hidden so the fade finishes before the photo advances. */
+const HIDDEN_GAP_MS = 200;
 
 export function HomeHero() {
   const reduced = usePrefersReducedMotion();
@@ -48,7 +50,7 @@ export function HomeHero() {
 
     const fadeOutId = window.setTimeout(() => {
       setCaptionOn(false);
-    }, INTERVAL_MS - FADE_MS);
+    }, INTERVAL_MS - FADE_MS - HIDDEN_GAP_MS);
     const advanceId = window.setTimeout(() => {
       setIndex((current) => (current + 1) % heroSlides.length);
     }, INTERVAL_MS);

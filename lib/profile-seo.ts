@@ -1,11 +1,10 @@
-import { pageSeoTitle } from "@/lib/brand-seo";
 import { canonicalOrigin, education, site, socialLinks } from "@/lib/site";
 
-/** IVA-20 profile SEO. Title appends the IVA-48 Brand base. Body stays WP-parity. */
+/** IVA-20 profile SEO. Title uses Brand name + office; body stays WP-parity. */
 export const profilePath = "/john-upan-odey" as const;
 
 export const profileSeo = {
-  title: pageSeoTitle("Who is John Upan Odey"),
+  title: "Who is John Upan Odey | NDC Governorship Candidate for Cross River State.",
   description:
     "Meet John Upan Odey, banker from Obudu, NDC governorship candidate for Cross River. Education, career, and why he serves.",
   canonical: `${canonicalOrigin}${profilePath}`,

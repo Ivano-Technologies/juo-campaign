@@ -5,8 +5,12 @@
 
 export const officialAssetsWired = [
   {
+    path: "/brand/juo-come-to-serve-from-ba-page-1.png",
+    role: "CoS lock — Challenges / I COME TO SERVE portrait, cropped from BA page-1 (Cross River Rising)",
+  },
+  {
     path: "/brand/juo-official-3.jpg",
-    role: "Brand 22 Sep preferred official portrait: traditional attire, facing camera (Challenges / I COME TO SERVE).",
+    role: "Brand 22 Sep preferred official portrait: traditional attire, facing camera (Who is JUO / profile OG).",
   },
   {
     path: "/brand/candidate-mark-1.png",
@@ -17,8 +21,20 @@ export const officialAssetsWired = [
     role: "Horizontal JO lock-up — footer, Vision hero, Meet, Manifesto/Join",
   },
   {
+    path: "/brand/ba-poster-cross-river-rising.png",
+    role: "BA poster — Home gallery and /posters (Cross River Rising)",
+  },
+  {
+    path: "/brand/ba-poster-one-people-one-cross-river.png",
+    role: "BA poster — Home gallery and /posters (One People, One Cross River)",
+  },
+  {
+    path: "/brand/ba-poster-a-fresh-start.png",
+    role: "BA poster — Home gallery and /posters (A Fresh Start)",
+  },
+  {
     path: "/brand/official-poster-1.png",
-    role: "Official poster — Home gallery, /posters, OG image",
+    role: "Kit poster — Home gallery, /posters, OG image",
   },
   {
     path: "/brand/ndc-logo.jpg",

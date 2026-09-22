@@ -36,7 +36,7 @@ export default function PostersPage() {
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <ul className="grid gap-10 md:grid-cols-2">
-          {officialPosters.map((poster) => (
+          {officialPosters.map((poster, index) => (
             <li key={poster.id}>
               <figure>
                 <Image
@@ -46,7 +46,7 @@ export default function PostersPage() {
                   height={poster.height}
                   sizes="(min-width: 768px) 50vw, 100vw"
                   className="h-auto w-full border border-brand-blue/15"
-                  priority
+                  priority={index < 2}
                 />
                 <figcaption className="mt-4 font-serif text-xl text-ink">
                   {poster.title}

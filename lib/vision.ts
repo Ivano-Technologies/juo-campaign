@@ -73,7 +73,7 @@ export const visionOrbitUnityLine =
 export const visionOrbitProsperityLine = site.prosperityLine;
 export const visionPillarSpineLine =
   `${site.tagline}. ${site.unityLine}. ${site.prosperityLine}` as const;
-export const visionManifestoCta = "Read the full Manifesto when published";
+export const visionManifestoCta = "Read the full Manifesto";
 
 export const visionPillars = [
   {

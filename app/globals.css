@@ -10,7 +10,7 @@
   --brand-blue: #40449B;
   /*
    * IVA-46 pillar-strip exception: same Royal hue, one shade deeper.
-   * Used only for numbered pillars 04–06. Never a page/section canvas.
+   * Used only for numbered Brand pillars 04–05. Never a page/section canvas.
    */
   --brand-blue-deep: #2C2F70;
   --brand-white: #FFFFFF;
@@ -287,8 +287,7 @@ button.ghost-pill:active {
 }
 
 .challenges-portrait {
-  /* BA page-1 crop is ~0.82 aspect — width tracks pane height. */
-  width: min(78%, calc(100cqh * 0.82));
+  width: 100%;
 }
 
 @media (min-width: 640px) {
@@ -310,10 +309,6 @@ button.ghost-pill:active {
   .challenges-lockup {
     width: min(50%, 28rem);
     max-width: none;
-  }
-
-  .challenges-portrait {
-    width: min(72%, calc(100cqh * 0.82));
   }
 
   .challenges-word {

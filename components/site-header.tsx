@@ -54,7 +54,7 @@ export function SiteHeader() {
         </Link>
 
         <nav
-          className="hidden min-w-0 flex-1 items-center justify-center gap-7 lg:flex"
+          className="hidden min-w-0 flex-1 items-center justify-center gap-2.5 lg:flex xl:gap-5"
           aria-label="Primary"
         >
           {wpNavItems.map((item) => {
@@ -64,7 +64,7 @@ export function SiteHeader() {
                 key={item.label}
                 href={item.href as Route}
                 aria-current={active ? "page" : undefined}
-                className={`text-[13px] font-semibold uppercase tracking-[0.18em] transition-[color,transform] duration-200 ease-out hover:text-brand-red motion-safe:hover:-translate-y-px ${
+                className={`whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.1em] transition-[color,transform] duration-200 ease-out hover:text-brand-red motion-safe:hover:-translate-y-px xl:text-[12px] xl:tracking-[0.12em] ${
                   active ? "text-brand-white" : "text-brand-white/90"
                 }`}
               >
@@ -74,10 +74,10 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="ml-auto hidden items-center gap-3 lg:flex">
+        <div className="ml-auto hidden shrink-0 items-center gap-3 lg:flex">
           <Link
             href="/join"
-            className="bg-brand-red px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white transition-[background-color,transform,box-shadow] duration-200 ease-out hover:bg-brand-red/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_10px_22px_-12px_color-mix(in_srgb,var(--brand-red)_55%,transparent)]"
+            className="whitespace-nowrap bg-brand-red px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white transition-[background-color,transform,box-shadow] duration-200 ease-out hover:bg-brand-red/90 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_10px_22px_-12px_color-mix(in_srgb,var(--brand-red)_55%,transparent)]"
           >
             Join the Movement
           </Link>

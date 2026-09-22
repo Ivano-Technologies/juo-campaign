@@ -3,11 +3,14 @@ import { PillarOrbit } from "@/components/vision/pillar-orbit";
 
 export function VisionPillarShowcase() {
   return (
-    <section className="relative isolate overflow-hidden bg-brand-blue text-brand-white">
+    <section
+      id="brand-pillars"
+      className="relative isolate overflow-hidden bg-brand-blue text-brand-white"
+    >
       <div className="relative z-10 mx-auto max-w-7xl px-3 py-8 sm:px-6 sm:py-12">
         <PillarOrbit />
         <h3 className="mt-10 text-xs font-semibold tracking-[0.18em] text-brand-red uppercase">
-          All ten pillars
+          All five Brand pillars
         </h3>
         <PillarFlatList visible className="mt-4 sm:grid-cols-2" />
       </div>

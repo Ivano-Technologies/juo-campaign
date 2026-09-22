@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { DiamondRule } from "@/components/icons";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 import { futureCyclerWords, futureHighlights } from "@/lib/home";
@@ -8,16 +8,16 @@ import { futureCyclerWords, futureHighlights } from "@/lib/home";
 function FutureShiftButton({
   direction,
   onClick,
-  className = "",
+  className,
 }: {
   direction: -1 | 1;
   onClick: () => void;
-  className?: string;
+  className: string;
 }) {
   return (
     <button
       type="button"
-      className={`flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue/40 text-xl backdrop-blur-sm ${className}`.trim()}
+      className={`h-11 w-11 items-center justify-center rounded-full bg-brand-blue/40 text-xl backdrop-blur-sm ${className}`.trim()}
       aria-label={direction < 0 ? "Previous future card" : "Next future card"}
       onClick={onClick}
     >
@@ -26,10 +26,48 @@ function FutureShiftButton({
   );
 }
 
+function cardStep(scroller: HTMLElement): number {
+  const card = scroller.querySelector("li");
+  if (!(card instanceof HTMLElement)) {
+    return Math.max(scroller.clientWidth, 1);
+  }
+  const gap = Number.parseFloat(window.getComputedStyle(scroller).columnGap) || 0;
+  return card.getBoundingClientRect().width + gap;
+}
+
+function scrollFutureCards(
+  scroller: HTMLElement | null,
+  direction: -1 | 1,
+  instant: boolean,
+): void {
+  if (!scroller) {
+    return;
+  }
+
+  const step = cardStep(scroller);
+  const maxScroll = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
+  const atStart = scroller.scrollLeft <= 2;
+  const atEnd = scroller.scrollLeft >= maxScroll - 2;
+
+  let left = scroller.scrollLeft + direction * step;
+  if (direction > 0 && atEnd) {
+    left = 0;
+  } else if (direction < 0 && atStart) {
+    left = maxScroll;
+  } else {
+    left = Math.min(maxScroll, Math.max(0, left));
+  }
+
+  scroller.scrollTo({
+    left,
+    behavior: instant ? "auto" : "smooth",
+  });
+}
+
 export function HomeFuture() {
   const reduced = usePrefersReducedMotion();
+  const scrollerRef = useRef<HTMLUListElement>(null);
   const [wordIndex, setWordIndex] = useState(0);
-  const [start, setStart] = useState(0);
 
   useEffect(() => {
     if (reduced) {
@@ -41,16 +79,8 @@ export function HomeFuture() {
     return () => window.clearInterval(timer);
   }, [reduced]);
 
-  const visible = [
-    ...futureHighlights.slice(start),
-    ...futureHighlights.slice(0, start),
-  ].slice(0, 4);
-
-  const shift = (direction: number) => {
-    setStart((current) => {
-      const total = futureHighlights.length;
-      return (current + direction + total) % total;
-    });
+  const shift = (direction: -1 | 1) => {
+    scrollFutureCards(scrollerRef.current, direction, reduced);
   };
 
   const word = futureCyclerWords[wordIndex] ?? futureCyclerWords[0];
@@ -69,30 +99,49 @@ export function HomeFuture() {
           Imagine a Cross River where:
         </p>
 
-        <div className="relative mt-8">
+        <div
+          className="relative mt-8"
+          aria-roledescription="carousel"
+          aria-label="Imagine a Cross River highlights"
+        >
           <div className="mb-4 flex justify-end gap-2 sm:hidden">
-            <FutureShiftButton direction={-1} onClick={() => shift(-1)} />
-            <FutureShiftButton direction={1} onClick={() => shift(1)} />
+            <FutureShiftButton
+              direction={-1}
+              onClick={() => shift(-1)}
+              className="flex"
+            />
+            <FutureShiftButton
+              direction={1}
+              onClick={() => shift(1)}
+              className="flex"
+            />
           </div>
-          <ul className="grid gap-4 sm:grid-cols-2 sm:px-14 lg:grid-cols-4">
-            {visible.map((item) => (
-              <li
-                key={item}
-                className="flex min-h-[8.5rem] items-center border border-white/20 bg-white/12 px-5 py-6 text-sm leading-6 text-brand-white backdrop-blur-md"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
+          <div className="sm:px-14">
+            <ul
+              ref={scrollerRef}
+              className={`flex gap-4 overflow-x-auto overscroll-x-contain snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden ${
+                reduced ? "" : "scroll-smooth"
+              }`}
+            >
+              {futureHighlights.map((item) => (
+                <li
+                  key={item}
+                  className="pointer-events-none flex min-h-[8.5rem] w-full shrink-0 snap-start items-center border border-white/20 bg-white/12 px-5 py-6 text-sm leading-6 text-brand-white backdrop-blur-md sm:w-[calc(50%-0.5rem)] lg:w-[calc(25%-0.75rem)]"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
           <FutureShiftButton
             direction={-1}
             onClick={() => shift(-1)}
-            className="absolute top-1/2 left-0 z-10 hidden -translate-y-1/2 sm:flex"
+            className="pointer-events-auto absolute top-1/2 left-0 z-20 hidden -translate-y-1/2 sm:flex"
           />
           <FutureShiftButton
             direction={1}
             onClick={() => shift(1)}
-            className="absolute top-1/2 right-0 z-10 hidden -translate-y-1/2 sm:flex"
+            className="pointer-events-auto absolute top-1/2 right-0 z-20 hidden -translate-y-1/2 sm:flex"
           />
         </div>
       </div>

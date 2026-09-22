@@ -20,7 +20,7 @@ export function HomeInitiatives() {
           className="motion-card flex min-h-[18rem] items-center justify-center bg-brand-blue px-6 py-14 text-center"
         >
           <p className="font-serif text-2xl font-extrabold tracking-tight text-brand-white uppercase">
-            Tourism 2.0
+            Healthcare &amp; Social Protection
           </p>
         </Reveal>
         <Reveal

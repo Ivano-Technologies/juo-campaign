@@ -65,8 +65,8 @@ export function HomeChallenges() {
           </ul>
         </div>
 
-        <div className="challenges-pane relative w-full self-stretch overflow-hidden bg-brand-white px-2 py-0 sm:overflow-visible sm:px-3 lg:px-4">
-          <div className="challenges-lockup relative z-10 flex h-full flex-col justify-end pb-2 sm:pb-3 lg:pb-5">
+        <div className="challenges-pane relative w-full self-stretch overflow-hidden bg-brand-white">
+          <div className="challenges-lockup relative z-10 flex h-full flex-col justify-end px-3 pb-2 sm:px-4 sm:pb-3 lg:px-5 lg:pb-5">
             <p className="sr-only">{brand.serveLine}</p>
             {challengesLockup.map((line) => (
               <p
@@ -86,13 +86,13 @@ export function HomeChallenges() {
               </p>
             ))}
           </div>
-          <div className="challenges-portrait pointer-events-none absolute inset-y-0 right-0 z-0">
+          <div className="challenges-portrait pointer-events-none absolute inset-0 z-0">
             <Image
               src={officialPortrait.src}
               alt={officialPortrait.alt}
               fill
-              sizes="(min-width: 1024px) 36vw, 70vw"
-              className="object-contain object-right-bottom"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover object-top"
             />
             <JoMarkCompact className="absolute right-3 bottom-4 h-10 w-auto bg-brand-white/90 px-2 py-1 sm:right-5 sm:bottom-6 sm:h-12" />
           </div>

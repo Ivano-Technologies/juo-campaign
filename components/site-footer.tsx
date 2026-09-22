@@ -32,7 +32,7 @@ export function SiteFooter() {
               <li key={item.label}>
                 <Link
                   href={item.href as Route}
-                  className="inline-flex min-h-11 items-center transition hover:text-brand-white"
+                  className="inline-flex min-h-11 items-center transition-[color,transform] duration-200 ease-out hover:text-brand-white motion-safe:hover:translate-x-0.5"
                 >
                   {item.label}
                 </Link>
@@ -48,7 +48,7 @@ export function SiteFooter() {
           <ul className="mt-5 grid gap-2.5 text-sm text-brand-white/70">
             {footerAboutLinks.map((item) => (
               <li key={item.href}>
-                <Link href={item.href as Route} className="inline-flex min-h-11 items-center transition hover:text-brand-white">
+                <Link href={item.href as Route} className="inline-flex min-h-11 items-center transition-[color,transform] duration-200 ease-out hover:text-brand-white motion-safe:hover:translate-x-0.5">
                   {item.label}
                 </Link>
               </li>

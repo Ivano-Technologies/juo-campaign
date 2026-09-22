@@ -53,7 +53,7 @@ export function Button({
   const selected = Boolean(href && isNavActive(pathname, href));
   const usesGhostPill = variant === "ghost" || variant === "white";
   const tone = usesGhostPill && selected ? ghostPillOn : variants[variant];
-  const classes = `inline-flex items-center justify-center rounded-full border text-center font-semibold tracking-wide whitespace-normal transition-[color,background-color,border-color,transform] duration-200 ${sizes[size]} ${tone} ${usesGhostPill ? "ghost-pill" : ""} disabled:cursor-not-allowed disabled:opacity-60 ${className}`;
+  const classes = `inline-flex items-center justify-center rounded-full border text-center font-semibold tracking-wide whitespace-normal transition-[color,background-color,border-color,transform,box-shadow] duration-200 ease-out motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_10px_22px_-12px_color-mix(in_srgb,var(--brand-red)_55%,transparent)] ${sizes[size]} ${tone} ${usesGhostPill ? "ghost-pill" : ""} disabled:cursor-not-allowed disabled:opacity-60 ${className}`;
 
   if (href) {
     if (href.includes("#")) {

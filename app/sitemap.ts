@@ -10,6 +10,7 @@ const publicPaths = [
   "/manifesto",
   "/vision",
   "/john-upan-odey",
+  "/odey-archibong",
   "/meet-your-reps",
   "/diaspora-connect",
   "/news",

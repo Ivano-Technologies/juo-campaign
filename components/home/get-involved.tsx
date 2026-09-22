@@ -11,7 +11,7 @@ export function HomeGetInvolved() {
         <div className="flex flex-col gap-8 sm:flex-row sm:items-center">
           <Image
             src={brand.marks.officialPoster}
-            alt="Official campaign poster: A Fresh Start — One People, One Cross River"
+            alt="Official campaign poster: A Fresh Start, One People, One Cross River"
             width={2174}
             height={2892}
             className="h-48 w-auto rounded-lg border border-brand-white/20 sm:h-56"

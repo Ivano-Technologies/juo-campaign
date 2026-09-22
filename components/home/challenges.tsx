@@ -5,7 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import { DiamondRule, ProhibitIcon } from "@/components/icons";
 import { JoMarkCompact } from "@/components/socials";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
-import { challenges, officialPortrait } from "@/lib/home";
+import { brand } from "@/lib/brand";
+import { challenges, challengesLockup, officialPortrait } from "@/lib/home";
 
 export function HomeChallenges() {
   const reduced = usePrefersReducedMotion();
@@ -61,18 +62,24 @@ export function HomeChallenges() {
 
         <div className="challenges-pane relative w-full self-stretch overflow-hidden bg-brand-white px-2 py-0 sm:overflow-visible sm:px-3 lg:px-4">
           <div className="challenges-lockup relative z-10 flex h-full flex-col justify-end pb-2 sm:pb-3 lg:pb-5">
-            <p className="challenges-word font-serif font-black tracking-tight text-brand-blue uppercase">
-              Let&apos;s
-            </p>
-            <p
-              className="challenges-word challenges-word-change font-serif font-black tracking-tight text-brand-red uppercase"
-              style={{ transform: `translate3d(0, ${offset}px, 0)` }}
-            >
-              Change
-            </p>
-            <p className="challenges-word challenges-word-that font-serif font-black tracking-tight text-brand-blue uppercase">
-              That
-            </p>
+            <p className="sr-only">{brand.serveLine}</p>
+            {challengesLockup.map((line) => (
+              <p
+                key={line.word}
+                className={`challenges-word font-serif font-black tracking-tight uppercase ${
+                  line.emphasis
+                    ? "challenges-word-serve text-brand-red"
+                    : "text-brand-blue"
+                }`}
+                style={
+                  line.emphasis
+                    ? { transform: `translate3d(0, ${offset}px, 0)` }
+                    : undefined
+                }
+              >
+                {line.word}
+              </p>
+            ))}
           </div>
           <div className="challenges-portrait pointer-events-none absolute inset-y-0 right-0 z-0">
             <Image

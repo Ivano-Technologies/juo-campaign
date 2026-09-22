@@ -13,6 +13,10 @@ import {
   visionHeroEyebrow,
   visionHeroSubhead,
   visionJsonLd,
+  visionOfficialNote,
+  visionOfficialPending,
+  visionOfficialSlogan,
+  visionOfficialTitle,
   visionOgImage,
   visionPageDescription,
   visionPageTitle,
@@ -92,6 +96,22 @@ export default function VisionPage() {
             className="h-16 w-auto shrink-0 self-start bg-brand-white px-4 py-3 sm:h-20 sm:self-auto lg:h-24"
             priority
           />
+        </div>
+      </section>
+
+      <section className="bg-brand-white">
+        <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+          <p className="text-xs font-semibold tracking-[0.28em] text-brand-red uppercase">
+            Brand gated
+          </p>
+          <h2 className="mt-3 font-serif text-3xl text-ink">{visionOfficialTitle}</h2>
+          <p className="mt-4 text-[1.05rem] leading-7 text-muted">
+            {visionOfficialPending}
+          </p>
+          <p className="mt-6 font-serif text-xl font-extrabold tracking-tight text-brand-blue uppercase">
+            {visionOfficialSlogan}
+          </p>
+          <p className="mt-4 text-sm leading-6 text-muted">{visionOfficialNote}</p>
         </div>
       </section>
 

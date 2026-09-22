@@ -4,12 +4,12 @@ import { site } from "@/lib/site";
 export const manifestoPdfHref: string | null = null;
 
 export const manifestoPageTitle =
-  "Manifesto | John Upan Odey Jnr — Cross River 2027";
+  "Manifesto | John Upan Odey Jnr, Cross River 2027";
 
 export const manifestoPageDescription =
-  "The campaign manifesto for John Upan Odey Jnr — A Fresh Start for Cross River. Prosperity Agenda 2027–2031. PDF and full readout when published.";
+  "The campaign manifesto for John Upan Odey Jnr: A Fresh Start for Cross River. Prosperity Agenda 2027–2031. PDF and full readout when published.";
 
-export const manifestoDownloadLabel = "Manifesto PDF — coming when published";
+export const manifestoDownloadLabel = "Manifesto PDF: coming when published";
 
 export const manifestoComingTitle = "Coming with the approved PDF";
 export const manifestoComingBody = [
@@ -24,7 +24,7 @@ export const manifestoCarryItems = [
   site.tagline,
   site.unityLine,
   site.prosperityLine,
-  "Ten Commitments — in the approved PDF only",
+  "Ten Commitments: in the approved PDF only",
   site.agenda,
 ] as const;
 export const manifestoCarryClose =
@@ -32,7 +32,7 @@ export const manifestoCarryClose =
 
 export const manifestoDownloadTitle = "Download status";
 export const manifestoDownloadStatus =
-  "PDF download: Gated — awaiting approved manifesto file.";
+  "PDF download: Gated, awaiting approved manifesto file.";
 
 export const manifestoMeanwhileTitle = "Meanwhile";
 export const manifestoMeanwhileLinks = [

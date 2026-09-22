@@ -2,6 +2,11 @@ export const brand = {
   colors: {
     /** Royal Blue — Brand Manual (IVA-31 / IVA-44). */
     blue: "#40449B",
+    /**
+     * IVA-46 pillar-strip exception only: same Royal hue, one shade deeper
+     * than #40449B for 04–06. Not a page background. Not near-black.
+     */
+    blueDeep: "#2C2F70",
     white: "#FFFFFF",
     red: "#EF2B35",
   },
@@ -20,7 +25,7 @@ export const brand = {
   portraits: {
     official: {
       src: "/brand/juo-official-1.jpg",
-      alt: "Official portrait of John Upan Odey Jnr — JUO OFFICIAL 1",
+      alt: "Official portrait of John Upan Odey Jnr, JUO OFFICIAL 1",
       width: 912,
       height: 1280,
     },
@@ -33,6 +38,9 @@ export const brand = {
     ],
     deputy: ["/brand/madam-deputy-1.jpg", "/brand/madam-deputy-2.jpg"],
   },
+  serveLine: "I COME TO SERVE",
+  sloganLead: "A FRESH START…",
+  sloganLockup: "ONE PEOPLE, ONE CROSS RIVER",
   slogan: "A FRESH START… ONE PEOPLE, ONE CROSS RIVER",
   hashtags: [
     "#OdeyArchibong2027",

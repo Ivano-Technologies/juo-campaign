@@ -10,17 +10,17 @@ export const heroSlides = [
   {
     src: "/media/2026/787657CB-F514-46F6-8681-CD05DA7AEF84-1_11zon.webp",
     alt: "Winding highland road through green Cross River hills",
-    kicker: "OUR TIME, OUR STATE",
+    kicker: brand.sloganLead,
     kickerClass: "text-brand-white",
-    title: "CROSS RIVER\nCAN DO BETTER",
-    lede: "…through jobs, innovation and opportunity for every young person.",
+    title: "ONE PEOPLE,\nONE CROSS RIVER",
+    lede: "",
     align: "right",
     captionY: "center",
     objectClass: "object-center",
   },
   {
     src: "/media/2026/E9BA618D-2E0A-4F15-A893-E86858069DA0-1_11zon.webp",
-    alt: "Welcome to Cross River — The Nation’s Paradise monument against a blue sky",
+    alt: "Welcome to Cross River: The Nation’s Paradise monument against a blue sky",
     kicker: "THE NEXT CHAPTER",
     kickerClass: "text-brand-white",
     title: "NOT JUST A BETTER\nCROSS RIVER\nA GREATER ONE",
@@ -117,48 +117,52 @@ export const opportunityCards = [
   },
 ] as const;
 
+/**
+ * IVA-46 Kezie lock: numbered strip stays blue + white type.
+ * 01–03 primary Royal Blue; 04–06 same hue, one shade deeper.
+ */
 export const homePillars = [
   {
     number: "01",
     title: "Economic Transformation",
     lead: "Jobs, skills, entrepreneurship and innovation.",
     body: "Creating opportunities for young people through startup funding, technology hubs, creative industries and tourism development.",
-    tone: "navy",
+    tone: "primary",
   },
   {
     number: "02",
     title: "Agriculture Revolution",
     lead: "Turning agriculture into a modern engine for prosperity.",
     body: "Supporting farmers, agro-processing and rural enterprise across all districts.",
-    tone: "blue",
+    tone: "primary",
   },
   {
     number: "03",
     title: "Education For The Future",
     lead: "Preparing students for the economy of tomorrow.",
     body: "Smart schools, technical education and digital learning.",
-    tone: "red",
+    tone: "primary",
   },
   {
     number: "04",
     title: "Infrastructure & Connectivity",
     lead: "Roads, markets, and digital links that connect farms and families.",
     body: "From Calabar to Obudu, every local government deserves a path to market.",
-    tone: "navyDeep",
+    tone: "deep",
   },
   {
     number: "05",
     title: "Healthcare & Social Protection",
     lead: "Accessible healthcare and stronger support systems.",
     body: "Clinics, care, and protection for families and vulnerable communities.",
-    tone: "blueDeep",
+    tone: "deep",
   },
   {
     number: "06",
     title: "Governance Reform",
     lead: "Open budgets. Transparent contracts. Citizen participation.",
     body: "Accountable government that Cross Riverians can see and measure.",
-    tone: "maroon",
+    tone: "deep",
   },
 ] as const;
 
@@ -187,5 +191,15 @@ export const meetBio = [
 export const meetQuote =
   "Our state has the talent. What we need are the systems, leadership and opportunities that allow our people to thrive.";
 
+export const challengesLockup = [
+  { word: "I", emphasis: false },
+  { word: "Come", emphasis: false },
+  { word: "To", emphasis: false },
+  { word: "Serve", emphasis: true },
+] as const;
+
+export const togetherHeadline = "A Fresh Start";
+export const togetherSubhead = "One People, One Cross River";
+
 export const footerBlurb =
-  "Cross River stands at a defining moment. Together, we can unlock our state’s immense potential, create opportunities for every citizen, and build a future rooted in prosperity, accountability, and shared progress.";
+  "A Fresh Start for Cross River: one people, one Cross River, putting service to the people at the centre of governance, together.";

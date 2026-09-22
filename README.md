@@ -10,8 +10,10 @@ Stack: **Next.js App Router + TypeScript + Tailwind CSS v4 + pnpm**. Join/contac
 |---|---|
 | `/` | Home — A Fresh Start |
 | `/john-upan-odey` | Who is JUO |
+| `/odey-archibong` | Odey Archibong story |
+| `/vision` | Official Vision and Mission |
 | `/policies` | Policy pillars stub |
-| `/manifesto` | Manifesto stub (PDF pending IVA-17) |
+| `/manifesto` | Manifesto excerpts (PDF pending IVA-17) |
 | `/join` | Join the Movement |
 | `/donate` | Donate (naira bank transfer live; online checkout coming soon) |
 | `/donate/confirm` | Donation confirmation |
@@ -88,4 +90,4 @@ Former WP navy (`#0b2342`), cyan, mint, maroon, and pink aliases remap to the th
 
 Typography: **Montserrat Bold** (headlines), **Poppins** (body), **Arial** (fallback) via `next/font`.
 
-Official imagery (IVA-45): one candidate portrait (`juo-official-1.jpg`) on Home Challenges, with the JO mark on that portrait. Compact JO mark (`candidate-mark-1.png`) in the nav; horizontal lock-up (`candidate-mark-2.png`) in the footer, Vision, and Meet. **NDC logo only on Manifesto and Join.** Homepage hero is **exactly 3 slides**. Poster gallery is `/posters` (raster poster 1 live; Blue / White / 4 / 5 await PDF rasterize). Campaign phone is unpublished until an approved number is unlocked. Campaign email is unpublished — Coming soon until CoS clears.
+Official imagery (IVA-45 / Brand 22 Sep): one candidate portrait (`juo-official-3.jpg`, traditional attire facing camera) on Home Challenges, with the JO mark on that portrait. Compact JO mark (`candidate-mark-1.png`) in the nav; horizontal lock-up (`candidate-mark-2.png`) in the footer, Vision, and Meet. **NDC logo only on Manifesto and Join.** Homepage hero is **exactly 3 slides**. Poster gallery is `/posters` (raster poster 1 live; Blue / White / 4 / 5 await PDF rasterize). Campaign phone is unpublished until an approved number is unlocked. Campaign email is unpublished — Coming soon until CoS clears.

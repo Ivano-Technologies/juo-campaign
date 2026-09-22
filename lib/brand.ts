@@ -17,24 +17,22 @@ export const brand = {
     officialPoster: "/brand/official-poster-1.png",
   },
   /**
-   * CoS lock (IVA-45): `juo-official-1.jpg` / JUO OFFICIAL 1 is THE one
-   * sitewide official portrait (Challenges / I COME TO SERVE pane).
-   * Brand should confirm 1 vs 2 vs 3 on the preview before cutover.
-   * Extra John photos stay in `public/brand/` unused — do not proliferate.
+   * Brand 22 Sep: prefer the traditional-attire individual facing camera.
+   * That file is `juo-official-3.jpg`. Extra John photos stay unused.
    */
   portraits: {
     official: {
-      src: "/brand/juo-official-1.jpg",
-      alt: "Official portrait of John Upan Odey Jnr, JUO OFFICIAL 1",
-      width: 912,
-      height: 1280,
+      src: "/brand/juo-official-3.jpg",
+      alt: "Official portrait of John Upan Odey Jnr in traditional attire, facing camera",
+      width: 480,
+      height: 640,
     },
   },
   /** Official files on disk that must not proliferate on live routes. */
   reserved: {
     extraPortraits: [
+      "/brand/juo-official-1.jpg",
       "/brand/juo-official-2.jpg",
-      "/brand/juo-official-3.jpg",
     ],
     deputy: ["/brand/madam-deputy-1.jpg", "/brand/madam-deputy-2.jpg"],
   },

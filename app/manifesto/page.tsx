@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
 import { BrandMarks } from "@/components/brand-marks";
 import { Button } from "@/components/button";
+import { ManifestoExcerpts } from "@/components/manifesto-excerpts";
 import { ManifestoPlayer } from "@/components/manifesto-player";
 import { PageHero } from "@/components/page-hero";
 import {
-  manifestoCarryClose,
-  manifestoCarryIntro,
-  manifestoCarryItems,
-  manifestoCarryTitle,
   manifestoComingBody,
   manifestoComingTitle,
   manifestoDownloadTitle,
+  manifestoExcerptsTitle,
+  manifestoHeroLede,
   manifestoMeanwhileLinks,
   manifestoMeanwhileTitle,
   manifestoPageDescription,
@@ -31,7 +30,7 @@ export default function ManifestoPage() {
     <>
       <PageHero
         title="Manifesto"
-        lede="The campaign manifesto for John Upan Odey Jnr: A Fresh Start for Cross River. Prosperity Agenda 2027–2031. PDF and full readout when published."
+        lede={manifestoHeroLede}
         aside={<BrandMarks variant="manifesto" />}
       >
         <Button href="/vision" variant="white">
@@ -51,25 +50,7 @@ export default function ManifestoPage() {
           ))}
         </div>
 
-        <div>
-          <h2 className="font-serif text-3xl text-ink">{manifestoCarryTitle}</h2>
-          <p className="mt-4 text-[1.05rem] leading-7 text-muted">
-            {manifestoCarryIntro}
-          </p>
-          <ul className="mt-6 grid gap-3">
-            {manifestoCarryItems.map((item) => (
-              <li
-                key={item}
-                className="rounded-2xl border border-line bg-brand-white px-5 py-4 font-serif text-xl text-ink"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-6 text-[1.05rem] leading-7 text-muted">
-            {manifestoCarryClose}
-          </p>
-        </div>
+        <ManifestoExcerpts heading={manifestoExcerptsTitle} />
 
         <div>
           <h2 className="font-serif text-3xl text-ink">{manifestoDownloadTitle}</h2>

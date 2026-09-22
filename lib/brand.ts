@@ -28,12 +28,20 @@ export const brand = {
       width: 838,
       height: 1131,
     },
+    /** Kezie suit portrait — Who is John / Meet John / profile OG only. */
+    whoIsJohn: {
+      src: "/brand/juo-branded-4.jpg",
+      alt: "Official branded portrait of John Upan Odey Jnr in a dark suit, glasses, and a red and navy striped tie",
+      width: 1058,
+      height: 1486,
+    },
   },
   /** Official files on disk that must not proliferate on live routes. */
   reserved: {
     extraPortraits: [
       "/brand/juo-official-1.jpg",
       "/brand/juo-official-2.jpg",
+      "/brand/juo-official-3.jpg",
     ],
     deputy: ["/brand/madam-deputy-1.jpg", "/brand/madam-deputy-2.jpg"],
   },

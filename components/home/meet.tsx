@@ -1,6 +1,7 @@
+import Image from "next/image";
 import { Button } from "@/components/button";
 import { Reveal } from "@/components/motion/reveal";
-import { JoMarkLockup } from "@/components/socials";
+import { brand } from "@/lib/brand";
 import { meetBio, meetQuote } from "@/lib/home";
 import { site } from "@/lib/site";
 
@@ -32,9 +33,20 @@ export function HomeMeet() {
         </Reveal>
 
         <Reveal delayMs={140}>
-          <div className="meet-figure flex min-h-[16rem] items-center justify-center border border-brand-blue/15 bg-brand-white px-6 py-10">
-            <JoMarkLockup className="h-20 w-auto sm:h-28" />
-          </div>
+          <figure className="meet-figure border border-brand-blue/15 bg-brand-white">
+            <Image
+              src={brand.portraits.whoIsJohn.src}
+              alt={brand.portraits.whoIsJohn.alt}
+              width={brand.portraits.whoIsJohn.width}
+              height={brand.portraits.whoIsJohn.height}
+              sizes="(min-width: 1024px) 28rem, 90vw"
+              className="h-auto w-full"
+              priority
+            />
+            <figcaption className="px-4 py-3 text-sm text-muted">
+              Official branded portrait
+            </figcaption>
+          </figure>
         </Reveal>
       </div>
     </section>

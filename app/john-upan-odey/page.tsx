@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Button } from "@/components/button";
 import { JsonLd } from "@/components/json-ld";
 import { CtaRow, PageHero } from "@/components/page-hero";
+import { brand } from "@/lib/brand";
 import { profilePersonJsonLd, profileSeo } from "@/lib/profile-seo";
 import { currentRoles, education, site } from "@/lib/site";
 
@@ -91,6 +93,20 @@ export default function WhoIsJuoPage() {
         </article>
 
         <aside className="space-y-6">
+          <figure className="overflow-hidden rounded-2xl border border-line bg-brand-white">
+            <Image
+              src={brand.portraits.whoIsJohn.src}
+              alt={brand.portraits.whoIsJohn.alt}
+              width={brand.portraits.whoIsJohn.width}
+              height={brand.portraits.whoIsJohn.height}
+              sizes="(min-width: 1024px) 24rem, 90vw"
+              className="h-auto w-full"
+              priority
+            />
+            <figcaption className="px-6 py-4 text-sm text-muted">
+              Official branded portrait
+            </figcaption>
+          </figure>
           <div className="rounded-2xl border border-line bg-brand-white p-6">
             <h2 className="font-serif text-2xl">Education</h2>
             <ul className="mt-4 grid gap-4">

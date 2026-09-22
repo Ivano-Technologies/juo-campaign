@@ -17,8 +17,20 @@ export const officialAssetsWired = [
     role: "Horizontal JO lock-up — footer, Vision hero, Meet, Manifesto/Join",
   },
   {
+    path: "/brand/ba-poster-cross-river-rising.png",
+    role: "BA poster — Home gallery and /posters (Cross River Rising)",
+  },
+  {
+    path: "/brand/ba-poster-one-people-one-cross-river.png",
+    role: "BA poster — Home gallery and /posters (One People, One Cross River)",
+  },
+  {
+    path: "/brand/ba-poster-a-fresh-start.png",
+    role: "BA poster — Home gallery and /posters (A Fresh Start)",
+  },
+  {
     path: "/brand/official-poster-1.png",
-    role: "Official poster — Home gallery, /posters, OG image",
+    role: "Kit poster — Home gallery, /posters, OG image",
   },
   {
     path: "/brand/ndc-logo.jpg",

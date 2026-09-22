@@ -5,8 +5,12 @@
 
 export const officialAssetsWired = [
   {
+    path: "/brand/juo-come-to-serve-from-ba-page-1.png",
+    role: "CoS lock — Challenges / I COME TO SERVE portrait, cropped from BA page-1 (Cross River Rising)",
+  },
+  {
     path: "/brand/juo-official-1.jpg",
-    role: "CoS lock — THE one official portrait (Challenges / I COME TO SERVE). Brand to confirm 1 vs 2 vs 3 on preview.",
+    role: "Reserved studio portrait — Who is JUO / profile OG only; not Challenges",
   },
   {
     path: "/brand/candidate-mark-1.png",

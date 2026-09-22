@@ -17,17 +17,16 @@ export const brand = {
     officialPoster: "/brand/official-poster-1.png",
   },
   /**
-   * CoS lock (IVA-45): `juo-official-1.jpg` / JUO OFFICIAL 1 is THE one
-   * sitewide official portrait (Challenges / I COME TO SERVE pane).
-   * Brand should confirm 1 vs 2 vs 3 on the preview before cutover.
-   * Extra John photos stay in `public/brand/` unused — do not proliferate.
+   * CoS lock (22 Sep): Challenges / I COME TO SERVE uses a head-and-shoulders
+   * crop from BA poster page-1 (Cross River Rising). Do not invent a photo
+   * and do not fall back to juo-official-1 on that pane.
    */
   portraits: {
     official: {
-      src: "/brand/juo-official-1.jpg",
-      alt: "Official portrait of John Upan Odey Jnr, JUO OFFICIAL 1",
-      width: 912,
-      height: 1280,
+      src: "/brand/juo-come-to-serve-from-ba-page-1.png",
+      alt: "John Upan Odey Jnr in traditional attire, cropped from the official Cross River Rising poster",
+      width: 650,
+      height: 792,
     },
   },
   /** Official files on disk that must not proliferate on live routes. */

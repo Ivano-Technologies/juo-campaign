@@ -4,7 +4,6 @@ import type { Route } from "next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
-import { Button } from "@/components/button";
 import { CandidateMark, SocialRow } from "@/components/socials";
 import { isNavActive, site, wpNavItems } from "@/lib/site";
 
@@ -43,22 +42,19 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 overflow-visible bg-navy text-brand-white">
-      <div className="mx-auto flex h-[4.75rem] max-w-[1400px] items-center gap-3 px-4 sm:px-6 lg:gap-4">
-        <button
-          ref={menuButtonRef}
-          type="button"
-          className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center border border-brand-white/30 px-3 text-sm uppercase tracking-[0.14em] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-white lg:hidden"
-          aria-expanded={open}
-          aria-controls={menuId}
-          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-          onClick={() => setOpen((value) => !value)}
+    <header className="sticky top-0 z-50 bg-navy text-brand-white">
+      <div className="mx-auto flex h-[4.75rem] max-w-[1400px] items-center gap-4 px-4 sm:px-6">
+        <Link
+          href="/"
+          className="flex shrink-0 items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-white"
+          onClick={() => setOpen(false)}
         >
-          {open ? "Close" : "Menu"}
-        </button>
+          <CandidateMark className="h-[3.35rem] w-[3.35rem]" priority />
+          <span className="sr-only">{site.name}</span>
+        </Link>
 
         <nav
-          className="hidden min-w-0 flex-1 items-center justify-center gap-3 xl:gap-7 lg:flex"
+          className="hidden min-w-0 flex-1 items-center justify-center gap-7 lg:flex"
           aria-label="Primary"
         >
           {wpNavItems.map((item) => {
@@ -68,7 +64,7 @@ export function SiteHeader() {
                 key={item.label}
                 href={item.href as Route}
                 aria-current={active ? "page" : undefined}
-                className={`inline-flex min-h-11 items-center text-[12px] font-semibold uppercase tracking-[0.12em] transition duration-200 hover:text-brand-red xl:text-[13px] xl:tracking-[0.18em] ${
+                className={`text-[13px] font-semibold uppercase tracking-[0.18em] transition duration-200 hover:text-brand-red ${
                   active ? "text-brand-white" : "text-brand-white/90"
                 }`}
               >
@@ -78,33 +74,30 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
-          <div className="hidden items-center gap-3 lg:flex">
-            <Button
-              href="/join"
-              variant="ghost"
-              size="sm"
-              className="ghost-pill min-h-11 text-[12px] font-bold uppercase tracking-[0.12em]"
-            >
-              Join the Movement
-            </Button>
-            <SocialRow
-              className="hidden gap-1.5 xl:flex"
-              iconClassName="flex h-11 w-11 items-center justify-center text-white/90 transition duration-200 hover:text-brand-red"
-            />
-          </div>
+        <div className="ml-auto hidden items-center gap-3 lg:flex">
           <Link
-            href="/"
-            className="flex h-11 w-11 shrink-0 items-center justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-white sm:h-[3.75rem] sm:w-[3.75rem]"
-            onClick={() => setOpen(false)}
+            href="/join"
+            className="bg-brand-red px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white transition duration-200 hover:bg-brand-red/90"
           >
-            <CandidateMark
-              className="h-11 w-11 sm:h-[3.75rem] sm:w-[3.75rem]"
-              priority
-            />
-            <span className="sr-only">{site.name}</span>
+            Join the Movement
           </Link>
+          <SocialRow
+            className="gap-1.5"
+            iconClassName="flex h-7 w-7 items-center justify-center text-white/90 transition duration-200 hover:text-brand-red"
+          />
         </div>
+
+        <button
+          ref={menuButtonRef}
+          type="button"
+          className="ml-auto inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center border border-brand-white/30 px-3 text-sm uppercase tracking-[0.14em] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-white lg:hidden"
+          aria-expanded={open}
+          aria-controls={menuId}
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          onClick={() => setOpen((value) => !value)}
+        >
+          {open ? "Close" : "Menu"}
+        </button>
       </div>
 
       <nav
@@ -130,15 +123,13 @@ export function SiteHeader() {
             );
           })}
         </ul>
-        <Button
+        <Link
           href="/join"
-          variant="ghost"
-          size="sm"
-          className="ghost-pill mt-4 min-h-11 text-[12px] font-bold uppercase tracking-[0.12em]"
+          className="mt-4 inline-flex min-h-11 items-center bg-brand-red px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.12em] text-brand-white transition duration-200 hover:bg-brand-red/90"
           onClick={() => setOpen(false)}
         >
           Join the Movement
-        </Button>
+        </Link>
         <SocialRow className="mt-4" />
       </nav>
     </header>

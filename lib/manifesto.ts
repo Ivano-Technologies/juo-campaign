@@ -1,8 +1,9 @@
+import { pageSeoTitle } from "@/lib/brand-seo";
+
 /** Null until the approved manifesto PDF is delivered. */
 export const manifestoPdfHref: string | null = null;
 
-export const manifestoPageTitle =
-  "Manifesto | John Upan Odey Jnr, Cross River 2027";
+export const manifestoPageTitle = pageSeoTitle("Manifesto");
 
 export const manifestoPageDescription =
   "Approved Brand excerpts for the John Upan Odey Jnr manifesto. A Fresh Start for Cross River. PDF when published.";

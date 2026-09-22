@@ -1,5 +1,6 @@
-export const policiesPageTitle =
-  "Policies | Prosperity Agenda pillars, John Upan Odey Jnr";
+import { pageSeoTitle } from "@/lib/brand-seo";
+
+export const policiesPageTitle = pageSeoTitle("Policies");
 
 export const policiesPageDescription =
   "Ten Brand pillars for Cross River 2027 under John Upan Odey Jnr: power, agriculture, jobs, education, healthcare, infrastructure, tourism, transparency, local prosperity, and inclusive governance.";

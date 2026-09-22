@@ -1,12 +1,12 @@
 import { canonicalOrigin, education, site, socialLinks } from "@/lib/site";
 
-/** IVA-20 — Brand-locked profile SEO. Home title/meta/body stay WP-parity. */
+/** IVA-20 profile SEO. Title uses Brand name + office; body stays WP-parity. */
 export const profilePath = "/john-upan-odey" as const;
 
 export const profileSeo = {
-  title: "Who is John Upan Odey Jnr | NDC Candidate, Cross River 2027",
+  title: "Who is John Upan Odey | NDC Governorship Candidate for Cross River State.",
   description:
-    "Meet John Upan Odey Jnr, banker from Obudu, NDC governorship candidate for Cross River 2027. Education, career, and why he serves.",
+    "Meet John Upan Odey, banker from Obudu, NDC governorship candidate for Cross River. Education, career, and why he serves.",
   canonical: `${canonicalOrigin}${profilePath}`,
   jobTitle: "NDC Governorship Candidate for Cross River State 2027",
   birthPlace: "Obudu (Cross River)",

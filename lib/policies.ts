@@ -1,10 +1,11 @@
+import { pageSeoTitle } from "@/lib/brand-seo";
+
 /**
  * Prosperity Agenda policy themes. These are manifesto policy sectors,
  * not Brand pillars. Do not rename them to Service / Competence / Integrity /
  * Opportunity / Unity, and do not invent Ten Commandments copy here.
  */
-export const policiesPageTitle =
-  "Policies | Prosperity Agenda themes, John Upan Odey Jnr";
+export const policiesPageTitle = pageSeoTitle("Policies");
 
 export const policiesPageDescription =
   "Prosperity Agenda policy themes for Cross River 2027 under John Upan Odey Jnr: power, agriculture, jobs, education, healthcare, infrastructure, tourism, transparency, local prosperity, and inclusive governance.";

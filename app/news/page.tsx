@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/button";
+import { CommunityPostList } from "@/components/community-posts";
 import { PageHero } from "@/components/page-hero";
 import {
-  newsEmptyBody,
-  newsEmptyTitle,
   newsPageDescription,
   newsPageTitle,
   newsReadyLinks,
@@ -39,7 +38,10 @@ export default function NewsPage() {
         </Button>
       </PageHero>
 
-      <section className="mx-auto max-w-3xl space-y-14 px-4 py-16 sm:px-6">
+      <section
+        id="community"
+        className="mx-auto max-w-3xl space-y-14 px-4 py-16 sm:px-6"
+      >
         <div>
           <h2 className="font-serif text-3xl text-ink">{newsroomTitle}</h2>
           {newsroomBody.map((paragraph) => (
@@ -49,11 +51,10 @@ export default function NewsPage() {
           ))}
         </div>
 
-        <div className="rounded-2xl border border-dashed border-line bg-brand-white p-8">
-          <h2 className="font-serif text-2xl text-ink">{newsEmptyTitle}</h2>
-          <p className="mt-3 text-[1.05rem] leading-7 text-muted">{newsEmptyBody}</p>
+        <CommunityPostList layout="stack" />
 
-          <h3 className="mt-8 font-serif text-xl text-ink">{newsReadyTitle}</h3>
+        <div>
+          <h3 className="font-serif text-xl text-ink">{newsReadyTitle}</h3>
           <ul className="mt-4 grid gap-3">
             {newsReadyLinks.map((link) => (
               <li key={link.href}>

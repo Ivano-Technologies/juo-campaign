@@ -212,8 +212,7 @@ button.ghost-pill:active {
 }
 
 .challenges-portrait {
-  /* BA page-1 crop is ~0.82 aspect — width tracks pane height. */
-  width: min(78%, calc(100cqh * 0.82));
+  width: 100%;
 }
 
 @media (min-width: 640px) {
@@ -235,10 +234,6 @@ button.ghost-pill:active {
   .challenges-lockup {
     width: min(50%, 28rem);
     max-width: none;
-  }
-
-  .challenges-portrait {
-    width: min(72%, calc(100cqh * 0.82));
   }
 
   .challenges-word {

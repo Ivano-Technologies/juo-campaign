@@ -26,14 +26,14 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL(canonicalOrigin),
   title: {
-    default: `${site.name} | ${site.tagline} for Cross River`,
-    template: `%s | ${site.name}`,
+    default: homeSeo.title,
+    template: `%s | ${homeSeo.title}`,
   },
-  description:
-    "John Upan Odey Jnr, NDC governorship candidate for Cross River State, 2027. One People, One Cross River. A Fresh Start.",
+  description: homeSeo.description,
   applicationName: "JUO Campaign",
   authors: [{ name: site.name }],
   keywords: [
+    "John Upan Odey",
     "John Upan Odey Jnr",
     "Cross River",
     "NDC",
@@ -49,9 +49,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NG",
     siteName: site.name,
-    title: `${site.name} | ${site.tagline}`,
-    description:
-      "NDC governorship candidate for Cross River State, 2027. One People, One Cross River.",
+    title: homeSeo.title,
+    description: homeSeo.description,
     images: [
       {
         url: homeSeo.ogImage.url,
@@ -63,9 +62,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} | ${site.tagline}`,
-    description:
-      "NDC governorship candidate for Cross River State, 2027. One People, One Cross River.",
+    title: homeSeo.title,
+    description: homeSeo.description,
     images: [homeSeo.ogImage.url],
   },
 };

@@ -13,7 +13,7 @@ export function HomeInitiatives() {
         </article>
         <div className="flex min-h-[18rem] items-center justify-center bg-brand-blue px-6 py-14 text-center">
           <p className="font-serif text-2xl font-extrabold tracking-tight text-brand-white uppercase">
-            Tourism 2.0
+            Healthcare &amp; Social Protection
           </p>
         </div>
         <article className="flex min-h-[18rem] flex-col justify-center bg-brand-white px-6 py-14 text-center sm:px-10">

@@ -35,7 +35,6 @@ export type HomeOrganizationJsonLd = {
   image: string;
   description: string;
   email: string;
-  telephone: string;
   sameAs: string[];
 };
 
@@ -53,10 +52,6 @@ export type HomeWebsiteJsonLd = {
   };
 };
 
-function telephoneFromSite(): string {
-  return site.phoneHref.replace(/^tel:/, "");
-}
-
 export function homeOrganizationJsonLd(): HomeOrganizationJsonLd {
   return {
     "@context": "https://schema.org",
@@ -71,7 +66,6 @@ export function homeOrganizationJsonLd(): HomeOrganizationJsonLd {
     image: homeSeo.ogImage.url,
     description: homeSeo.description,
     email: site.email,
-    telephone: telephoneFromSite(),
     sameAs: socialLinks.map((link) => link.href),
   };
 }

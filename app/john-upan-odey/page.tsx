@@ -108,8 +108,6 @@ export default function WhoIsJuoPage() {
           <div className="rounded-2xl border border-line bg-brand-white p-6">
             <h2 className="font-serif text-2xl">Connect</h2>
             <p className="mt-3 text-sm text-muted">
-              {site.phoneDisplay}
-              <br />
               {site.email}
               <br />
               {site.domain}

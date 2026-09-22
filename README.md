@@ -71,16 +71,18 @@ Schema for those tables is documented in `supabase/migrations/` (already applied
 
 This scaffold ships with `robots: noindex` so the Vercel preview does not compete with the live WordPress domain before cutover. Remove noindex when the custom domain goes live.
 
-## Brand lock (IVA-24 + IVA-33)
+## Brand lock (IVA-24 + IVA-33 + IVA-44)
 
 Display name: **John Upan Odey Jnr**. Education: University of Uyo (bachelor’s) + University of Ilorin (MBA) + Harvard Kennedy School certificate. Age 48, born Obudu. Current roles (FirstTrust / Hyers / Independent Director) are listed as Brand-confirmed.
 
-Exact color tokens from Chris Brand Manual (do not approximate):
+Strict Royal Blue palette. Black / navy surfaces are white or royal blue. Red is highlight only. Provisional hex pending Brand confirmation:
 
 | Token | Hex | Role |
 |---|---|---|
-| `--brand-blue` | `#40449B` | 70% — backgrounds, headers, banners, structure (Royal / Persian Blue) |
-| `--brand-white` | `#FFFFFF` | 20% — content areas, text on dark |
-| `--brand-red` | `#EF2B35` | 10% — CTAs, accents, highlights |
+| `--brand-blue` | `#40449B` | Provisional Royal Blue — headers, banners, structure, body ink |
+| `--brand-white` | `#FFFFFF` | Canvas and principal accent; replaces former black backgrounds |
+| `--brand-red` | `#EF2B35` | Highlight only — CTAs, kickers, selected states |
 
-Typography: **Montserrat Bold** (headlines), **Poppins** (body), **Arial** (fallback). Marks live in `public/brand/` (NDC logo + candidate marks). Larger poster PDFs (Blue / White / 4 / 5) stay in the brand kit / Asana for now.
+Former WP navy (`#0b2342`), cyan, mint, maroon, and pink aliases remap to the three tokens above in `app/globals.css`. Do not introduce new hexes.
+
+Typography: **Montserrat Bold** (headlines), **Poppins** (body), **Arial** (fallback) via `next/font`. Marks live in `public/brand/` (NDC logo + candidate marks). Larger poster PDFs (Blue / White / 4 / 5) stay in the brand kit / Asana for now. Campaign phone is unpublished until an approved number is unlocked.

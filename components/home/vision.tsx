@@ -15,9 +15,9 @@ export function HomeVision() {
   return (
     <section
       id="the-vision"
-      className="scroll-mt-[4.75rem] bg-navy px-4 py-12 text-brand-white sm:px-8 sm:py-16"
+      className="scroll-mt-[4.75rem] bg-brand-white px-4 py-12 text-brand-blue sm:px-8 sm:py-16"
     >
-      <div className="relative mx-auto max-w-[1280px] overflow-hidden border border-white/15 px-6 py-12 sm:px-10 lg:px-14 lg:py-16">
+      <div className="relative mx-auto max-w-[1280px] overflow-hidden border border-brand-blue/20 px-6 py-12 sm:px-10 lg:px-14 lg:py-16">
         <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1fr_1.25fr]">
           <ul
             className="grid gap-6"
@@ -35,7 +35,7 @@ export function HomeVision() {
                     className={`flex min-h-11 w-full items-center gap-3 py-2.5 text-left text-sm font-semibold tracking-[0.16em] uppercase transition ${
                       isActive
                         ? "text-brand-red"
-                        : "text-brand-white/80 hover:text-brand-white"
+                        : "text-brand-blue/70 hover:text-brand-blue"
                     }`}
                     onClick={() => setActive(index)}
                   >
@@ -64,11 +64,11 @@ export function HomeVision() {
                   }`}
                   aria-hidden={!isActive}
                 >
-                  <div className="mb-6 h-px w-24 bg-brand-white/70" />
+                  <div className="mb-6 h-px w-24 bg-brand-blue/70" />
                   <h2 className="font-serif text-3xl font-extrabold tracking-tight uppercase">
                     {item.title}
                   </h2>
-                  <p className="mt-4 max-w-sm text-sm leading-7 text-brand-white/80">
+                  <p className="mt-4 max-w-sm text-sm leading-7 text-brand-blue/80">
                     {item.body}
                   </p>
                 </div>

@@ -26,7 +26,7 @@ export default function PrivacyPage() {
           <h2 className="font-serif text-2xl text-ink">Who we are</h2>
           <p className="mt-3">
             This site is the official campaign website for {site.name},{" "}
-            {site.office}. Contact: {site.email} · {site.phoneDisplay}.
+            {site.office}. Contact: {site.email}.
           </p>
         </section>
         <section>

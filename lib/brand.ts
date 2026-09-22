@@ -17,16 +17,16 @@ export const brand = {
     officialPoster: "/brand/official-poster-1.png",
   },
   /**
-   * Kezie lock (22 Sep): Challenges / I COME TO SERVE uses only
-   * 01_john_upan_odey_portrait_front from the kezie-serve-pick pack.
-   * Do not use 04 profile, 07 close, or the BA page-1 poster crop.
+   * Kezie/CoS lock: Challenges / I COME TO SERVE uses only
+   * 02_john_upan_odey_portrait_front_white_bg. Do not use 01 gradient,
+   * earlier 01 front jpg, BA page-1 crop, 04 profile, or 07 close.
    */
   portraits: {
     official: {
-      src: "/brand/juo-come-to-serve-portrait-front.jpg",
+      src: "/brand/juo-come-to-serve-portrait-front.png",
       alt: "John Upan Odey Jnr in traditional attire, facing camera",
-      width: 838,
-      height: 1131,
+      width: 1632,
+      height: 2176,
     },
   },
   /** Official files on disk that must not proliferate on live routes. */

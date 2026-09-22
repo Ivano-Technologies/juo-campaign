@@ -9,7 +9,6 @@ export const site = {
   election: "2027",
   origin: "Obudu, Cross River State",
   age: 48,
-  email: "upanodey@yahoo.com",
   domain: "votejohnupanodey.com",
 } as const;
 

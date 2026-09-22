@@ -4,14 +4,14 @@ export const FORM_UNAVAILABLE = {
   ok: false,
   code: "FORM_UNAVAILABLE",
   message:
-    "Form submissions are temporarily unavailable. Please try again later, or email the campaign desk.",
+    "Form submissions are temporarily unavailable. Please try again later.",
 } as const;
 
 export const FORM_SUBMIT_FAILED = {
   ok: false,
   code: "SUBMIT_FAILED",
   message:
-    "We could not save your submission. Please try again later, or email the campaign desk.",
+    "We could not save your submission. Please try again later.",
 } as const;
 
 export const JOIN_SUCCESS = {

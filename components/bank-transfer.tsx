@@ -6,7 +6,7 @@ const fieldClass: Record<(typeof donateBankFields)[number]["key"], string> = {
     "break-words text-[1.15rem] font-semibold leading-snug text-brand-white sm:text-xl",
   bank: "break-words text-[1.35rem] font-semibold tracking-wide text-brand-white sm:text-2xl",
   accountNumber:
-    "break-all font-mono text-[1.65rem] font-bold leading-tight tracking-[0.08em] text-brand-white tabular-nums sm:text-3xl",
+    "break-all text-[1.65rem] font-bold leading-tight tracking-[0.12em] text-brand-white tabular-nums sm:text-3xl",
 };
 
 export function BankTransferDetails() {
@@ -26,7 +26,7 @@ export function BankTransferDetails() {
                 <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-white/70">
                   {field.label}
                 </dt>
-                <dd className={`mt-2 ${fieldClass[field.key]}`}>{donateBank[field.key]}</dd>
+                <dd className={`mt-2 select-all ${fieldClass[field.key]}`}>{donateBank[field.key]}</dd>
               </div>
             ))}
           </dl>

@@ -1,80 +1,41 @@
 import Image from "next/image";
 import { brand } from "@/lib/brand";
 
-type BrandMarksVariant = "header" | "hero" | "footer" | "join";
+type BrandMarksVariant = "join" | "manifesto";
 
 type BrandMarksProps = {
   variant: BrandMarksVariant;
 };
 
-const plates: Record<BrandMarksVariant, string> = {
-  header: "gap-1.5 rounded-md bg-brand-white px-1.5 py-0.5 sm:gap-2 sm:px-2 sm:py-1",
-  hero: "gap-3 rounded-lg bg-brand-white px-3 py-2",
-  footer: "gap-3 rounded-md bg-brand-white px-3 py-2",
-  join: "gap-5 rounded-2xl bg-brand-white px-5 py-4 sm:gap-6 sm:px-6 sm:py-5",
-};
-
+/**
+ * NDC logo is allowed only on Manifesto and Join (Kezie / IVA-45).
+ * Pair it with the horizontal JO lock-up — never a circular badge.
+ */
 export function BrandMarks({ variant }: BrandMarksProps) {
-  const ndcHeight =
-    variant === "join"
-      ? "h-[4.5rem] sm:h-20 lg:h-24"
-      : variant === "hero"
-        ? "h-10"
-        : variant === "header"
-          ? "h-7 sm:h-8"
-          : "h-8";
-  const markHeight =
-    variant === "join"
-      ? "h-20 sm:h-24 lg:h-28"
-      : variant === "hero"
-        ? "h-12"
-        : variant === "header"
-          ? "h-8 sm:h-9"
-          : "h-9";
-  const useJoMonogram = variant === "join" || variant === "footer";
+  const ndcHeight = variant === "join" ? "h-[4.5rem] sm:h-20 lg:h-24" : "h-16 sm:h-20";
+  const markHeight = variant === "join" ? "h-16 sm:h-20 lg:h-24" : "h-14 sm:h-16";
 
   return (
     <div
-      className={`inline-flex w-fit max-w-full flex-wrap items-center ${plates[variant]}`}
-      aria-label="NDC and John Upan Odey campaign marks"
+      className="inline-flex w-fit max-w-full flex-wrap items-center gap-5 rounded-2xl bg-brand-white px-5 py-4 sm:gap-6 sm:px-6 sm:py-5"
+      aria-label="Nigeria Democratic Congress and John Upan Odey campaign marks"
     >
       <Image
         src={brand.marks.ndcLogo}
         alt="Nigeria Democratic Congress"
         width={567}
         height={340}
-        priority={variant !== "footer"}
+        priority
         className={`${ndcHeight} w-auto`}
       />
-      {useJoMonogram ? (
-        <Image
-          src={brand.marks.candidateMark1}
-          alt="John Upan Odey candidate mark"
-          width={1536}
-          height={1024}
-          priority={variant === "join"}
-          className={`${markHeight} w-auto`}
-        />
-      ) : (
-        <>
-          <Image
-            src={brand.marks.candidateMark1}
-            alt="John Upan Odey candidate mark"
-            width={1536}
-            height={1024}
-            priority
-            className={`${markHeight} w-auto sm:hidden`}
-          />
-          <Image
-            src={brand.marks.candidateMark2}
-            alt="John Upan Odey for Governor, Cross River State"
-            width={2172}
-            height={724}
-            priority
-            className={`hidden ${markHeight} w-auto sm:block`}
-          />
-        </>
-      )}
+      <Image
+        src={brand.marks.candidateMark2}
+        alt="John Upan Odey for Governor, Cross River State"
+        width={2172}
+        height={724}
+        priority
+        className={`${markHeight} w-auto`}
+      />
     </div>
   );
 }

@@ -1,10 +1,3 @@
-import Image from "next/image";
-import { placeholderById } from "@/lib/placeholders";
-
-const workshop = placeholderById("vision-youth-talent");
-const waterfall = placeholderById("vision-tourism");
-const dashboard = placeholderById("vision-technology");
-
 export function HomeInitiatives() {
   return (
     <section aria-labelledby="featured-initiatives-heading">
@@ -18,15 +11,11 @@ export function HomeInitiatives() {
             entrepreneurs.
           </p>
         </article>
-        <figure className="relative min-h-[18rem]">
-          <Image
-            src={waterfall.src}
-            alt={waterfall.alt}
-            fill
-            sizes="(min-width: 768px) 33vw, 100vw"
-            className="object-cover"
-          />
-        </figure>
+        <div className="flex min-h-[18rem] items-center justify-center bg-brand-blue px-6 py-14 text-center">
+          <p className="font-serif text-2xl font-extrabold tracking-tight text-brand-white uppercase">
+            Tourism 2.0
+          </p>
+        </div>
         <article className="flex min-h-[18rem] flex-col justify-center bg-brand-white px-6 py-14 text-center sm:px-10">
           <h3 className="font-serif text-2xl font-bold tracking-[0.08em] text-brand-blue uppercase">
             Tourism 2.0
@@ -36,15 +25,11 @@ export function HomeInitiatives() {
             beyond.
           </p>
         </article>
-        <figure className="relative min-h-[18rem]">
-          <Image
-            src={workshop.src}
-            alt={workshop.alt}
-            fill
-            sizes="(min-width: 768px) 33vw, 100vw"
-            className="object-cover"
-          />
-        </figure>
+        <div className="flex min-h-[18rem] items-center justify-center bg-brand-red px-6 py-14 text-center">
+          <p className="font-serif text-2xl font-extrabold tracking-tight text-brand-white uppercase">
+            Smart Schools
+          </p>
+        </div>
         <article className="flex min-h-[18rem] flex-col justify-center bg-brand-white px-8 py-12 text-center">
           <h2
             id="featured-initiatives-heading"
@@ -59,15 +44,11 @@ export function HomeInitiatives() {
             education for Cross Riverians.
           </p>
         </article>
-        <figure className="relative min-h-[18rem]">
-          <Image
-            src={dashboard.src}
-            alt={dashboard.alt}
-            fill
-            sizes="(min-width: 768px) 33vw, 100vw"
-            className="object-cover"
-          />
-        </figure>
+        <div className="flex min-h-[18rem] items-center justify-center bg-brand-blue px-6 py-14 text-center">
+          <p className="font-serif text-2xl font-extrabold tracking-tight text-brand-white uppercase">
+            Citizens Dashboard
+          </p>
+        </div>
       </div>
     </section>
   );

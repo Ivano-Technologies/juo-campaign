@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { StatGlyph } from "@/components/icons";
 import { useInView } from "@/components/motion/use-in-view";
@@ -8,7 +7,6 @@ import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced
 import {
   heroStats,
   isPublishedHeroStat,
-  statsBackdrop,
   type HeroStat,
 } from "@/lib/home";
 
@@ -80,14 +78,6 @@ export function HomeStatsBar() {
 
   return (
     <section ref={ref} className="relative isolate overflow-hidden bg-brand-blue py-20 text-brand-white sm:py-24">
-      <Image
-        src={statsBackdrop}
-        alt=""
-        fill
-        sizes="100vw"
-        className="object-cover opacity-35"
-      />
-      <div className="absolute inset-0 bg-brand-blue/80" />
       <div className="relative mx-auto grid max-w-[1280px] items-center gap-10 px-6 sm:grid-cols-3">
         {heroStats.filter(isPublishedHeroStat).map((stat) => (
           <StatCell

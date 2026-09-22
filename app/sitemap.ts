@@ -15,6 +15,7 @@ const publicPaths = [
   "/news",
   "/policies",
   "/privacy",
+  "/posters",
 ] as const;
 
 function absoluteUrl(path: (typeof publicPaths)[number]): string {

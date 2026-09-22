@@ -48,6 +48,7 @@ export const footerQuickLinks = [
   { href: "/diaspora-connect", label: "Diaspora Connect" },
   { href: "/donate", label: "Donate" },
   { href: "/join", label: "Join the Movement" },
+  { href: "/posters", label: "Official posters" },
 ] as const;
 
 export const footerAboutLinks = [

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/button";
 import { ManifestoCta } from "@/components/manifesto-cta";
-import { CandidateMark } from "@/components/socials";
+import { JoMarkLockup } from "@/components/socials";
 import { VisionPillarShowcase } from "@/components/vision/pillar-showcase";
 import {
   visionAgendaBody,
@@ -88,8 +88,8 @@ export default function VisionPage() {
               ))}
             </nav>
           </div>
-          <CandidateMark
-            className="h-20 w-20 shrink-0 self-start sm:h-36 sm:w-36 sm:self-auto lg:h-44 lg:w-44"
+          <JoMarkLockup
+            className="h-16 w-auto shrink-0 self-start bg-brand-white px-4 py-3 sm:h-20 sm:self-auto lg:h-24"
             priority
           />
         </div>

@@ -82,9 +82,9 @@ export function SiteHeader() {
           <div className="hidden items-center gap-3 lg:flex">
             <Button
               href="/join"
-              variant="ghost"
+              variant="primary"
               size="sm"
-              className="ghost-pill min-h-11 text-[12px] font-bold uppercase tracking-[0.12em]"
+              className="min-h-11 text-[12px] font-bold uppercase tracking-[0.12em]"
             >
               Join the Movement
             </Button>
@@ -132,9 +132,9 @@ export function SiteHeader() {
         </ul>
         <Button
           href="/join"
-          variant="ghost"
+          variant="primary"
           size="sm"
-          className="ghost-pill mt-4 min-h-11 text-[12px] font-bold uppercase tracking-[0.12em]"
+          className="mt-4 min-h-11 text-[12px] font-bold uppercase tracking-[0.12em]"
           onClick={() => setOpen(false)}
         >
           Join the Movement

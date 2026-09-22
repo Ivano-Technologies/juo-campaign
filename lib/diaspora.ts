@@ -1,5 +1,6 @@
-export const diasporaPageTitle =
-  "Diaspora Connect | Cross Riverians Abroad, John Upan Odey Jnr";
+import { pageSeoTitle } from "@/lib/brand-seo";
+
+export const diasporaPageTitle = pageSeoTitle("Diaspora Connect");
 
 export const diasporaPageDescription =
   "Connect with John Upan Odey Jnr’s Cross River 2027 campaign from the diaspora. Purpose, how to take part, and how we handle your data. A Fresh Start includes Cross Riverians abroad.";

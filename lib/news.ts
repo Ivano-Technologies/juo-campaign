@@ -1,5 +1,6 @@
-export const newsPageTitle =
-  "News | John Upan Odey Jnr, Cross River 2027 Campaign";
+import { pageSeoTitle } from "@/lib/brand-seo";
+
+export const newsPageTitle = pageSeoTitle("News");
 
 export const newsPageDescription =
   "Official news and updates from John Upan Odey Jnr’s Cross River 2027 NDC campaign. Speeches, press notes, and gallery items appear here when campaign-approved.";

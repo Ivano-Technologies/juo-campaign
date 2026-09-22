@@ -1,3 +1,5 @@
+import { pageSeoTitle } from "@/lib/brand-seo";
+
 export const site = {
   name: "John Upan Odey Jnr",
   shortName: "JUO",
@@ -163,5 +165,5 @@ export const joinInterests = [
 ] as const;
 
 export function pageTitle(title: string): string {
-  return `${title} | ${site.name}`;
+  return pageSeoTitle(title);
 }

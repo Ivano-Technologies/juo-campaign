@@ -1,9 +1,9 @@
 import { brand } from "@/lib/brand";
+import { pageSeoTitle } from "@/lib/brand-seo";
 
 export const postersPath = "/posters" as const;
 
-export const postersPageTitle =
-  "Official Posters | John Upan Odey Jnr, Cross River 2027";
+export const postersPageTitle = pageSeoTitle("Official Posters");
 
 export const postersPageDescription =
   "Official John Upan Odey Jnr campaign posters. Approved Brand designs only. No stock, AI, or unapproved imagery.";

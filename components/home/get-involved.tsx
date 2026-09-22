@@ -25,7 +25,7 @@ export function HomeGetInvolved() {
             </h2>
             <p className="mt-3 max-w-xl text-brand-white/80">
               {site.unityLine}. Volunteer, organise, or support the work in naira
-              when donations open. {campaignHashtag}
+              on the Donate page. {campaignHashtag}
             </p>
             <p className="mt-3 text-sm font-semibold uppercase tracking-[0.12em] text-brand-white">
               {brand.slogan}

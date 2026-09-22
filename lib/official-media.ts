@@ -37,6 +37,22 @@ export const officialAssetsWired = [
     role: "Kit poster — Home gallery, /posters, OG image",
   },
   {
+    path: "/brand/community/connecting-with-cross-rivers-youth.png",
+    role: "Community post — Home Campaign gallery and /news (Connecting with Cross River’s Youth)",
+  },
+  {
+    path: "/brand/community/engagement-with-ward-leaders.png",
+    role: "Community post — Home Campaign gallery and /news (Engagement with Ward Leaders)",
+  },
+  {
+    path: "/brand/community/a-meeting-of-purpose.png",
+    role: "Community post — Home Campaign gallery and /news (A Meeting of Purpose)",
+  },
+  {
+    path: "/brand/community/ndc-cross-river-listening-tour.png",
+    role: "Community post — Home Campaign gallery and /news (NDC Cross River Listening Tour)",
+  },
+  {
     path: "/brand/ndc-logo.jpg",
     role: "NDC logo — Manifesto and Join only",
   },

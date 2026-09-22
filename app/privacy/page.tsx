@@ -19,7 +19,7 @@ export default function PrivacyPage() {
       <PageHero
         kicker="Before any form"
         title="Privacy notice"
-        lede="This notice covers Join the Movement, Contact, and Donate — including people who join from outside Cross River through Diaspora Connect."
+        lede="This notice covers Join the Movement, Contact, and Donate, including people who join from outside Cross River through Diaspora Connect."
       />
       <article className="mx-auto max-w-3xl space-y-8 px-4 py-16 text-muted sm:px-6">
         <section>
@@ -45,8 +45,8 @@ export default function PrivacyPage() {
           <h2 className="font-serif text-2xl text-ink">How we use it</h2>
           <p className="mt-3">
             Volunteer and diaspora details are used to follow up on the
-            interest you select — ward work, organising, professional skills,
-            media, donations, or Diaspora Connect — and to send campaign
+            interest you select (ward work, organising, professional skills,
+            media, donations, or Diaspora Connect) and to send campaign
             updates you asked for. Contact messages are used to reply from the
             campaign desk. We do not treat a join form as INEC voter
             registration.

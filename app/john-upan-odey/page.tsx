@@ -44,7 +44,7 @@ export default function WhoIsJuoPage() {
       <PageHero
         kicker="John Upan Odey Jnr"
         title="Who is John Upan Odey"
-        lede={`${site.name} — ${site.office}. Age ${site.age}, born ${site.origin}. A Fresh Start for a state that produces, processes, and prospers together.`}
+        lede={`${site.name}, ${site.office}. Age ${site.age}, born ${site.origin}. A Fresh Start for a state that produces, processes, and prospers together.`}
       >
         <CtaRow />
       </PageHero>
@@ -66,7 +66,7 @@ export default function WhoIsJuoPage() {
               The campaign’s public spine is simple: we are one people and one
               Cross River. Hunger does not know zoning. Roads, farms, clinics,
               and jobs belong to every local government. The work is to turn
-              the state’s soil, tourism, and talent into broad prosperity — not
+              the state’s soil, tourism, and talent into broad prosperity, not
               crumbs for the many and a harvest for a few.
             </p>
           </section>
@@ -76,7 +76,7 @@ export default function WhoIsJuoPage() {
               A Fresh Start. One People, One Cross River. We produce. We
               process. We prosper. Ten commitments and the {site.agenda} will
               be published in full when the campaign manifesto PDF is delivered.
-              Until then, the policy page lists the approved manifesto pillars —
+              Until then, the policy page lists the approved manifesto pillars,
               not invented slogans.
             </p>
             <Button href="/manifesto" variant="secondary" className="mt-5">

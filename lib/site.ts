@@ -54,6 +54,7 @@ export const footerQuickLinks = [
 
 export const footerAboutLinks = [
   { href: "/john-upan-odey", label: "Who is JUO" },
+  { href: "/odey-archibong", label: "Odey Archibong" },
   { href: "/contact", label: "Contact" },
   { href: "/news", label: "News" },
   { href: "/manifesto", label: "Manifesto" },
@@ -124,8 +125,8 @@ export const education = [
 ] as const;
 
 export const currentRoles = [
-  "Executive Director, General Services — FirstTrust Mortgage Bank Plc",
-  "Former Chief Executive Officer — Hyers Capital Ltd",
+  "Executive Director, General Services, FirstTrust Mortgage Bank Plc",
+  "Former Chief Executive Officer, Hyers Capital Ltd",
   "Independent Director",
 ] as const;
 

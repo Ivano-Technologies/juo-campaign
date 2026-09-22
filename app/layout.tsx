@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "John Upan Odey Jnr — NDC governorship candidate for Cross River State, 2027. One People, One Cross River. A Fresh Start.",
+    "John Upan Odey Jnr, NDC governorship candidate for Cross River State, 2027. One People, One Cross River. A Fresh Start.",
   applicationName: "JUO Campaign",
   authors: [{ name: site.name }],
   keywords: [

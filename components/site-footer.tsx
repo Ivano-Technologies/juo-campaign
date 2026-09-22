@@ -12,11 +12,9 @@ export function SiteFooter() {
           <div className="flex flex-wrap items-center gap-5">
             <JoMarkLockup className="h-16 w-auto bg-brand-white px-3 py-2 sm:h-20" />
             <p className="font-serif text-[1.65rem] leading-[1.15] font-extrabold uppercase">
-              <span className="block text-brand-white">A New</span>
-              <span className="block text-brand-white">Cross River</span>
-              <span className="block text-brand-red">
-                Is Possible
-              </span>
+              <span className="block text-brand-white">A Fresh Start</span>
+              <span className="block text-brand-white">One People,</span>
+              <span className="block text-brand-red">One Cross River</span>
             </p>
           </div>
           <p className="mt-6 max-w-md text-sm leading-7 text-brand-white/75">
@@ -50,7 +48,7 @@ export function SiteFooter() {
           <ul className="mt-5 grid gap-2.5 text-sm text-brand-white/70">
             {footerAboutLinks.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="inline-flex min-h-11 items-center transition hover:text-brand-white">
+                <Link href={item.href as Route} className="inline-flex min-h-11 items-center transition hover:text-brand-white">
                   {item.label}
                 </Link>
               </li>

@@ -4,7 +4,7 @@ import { canonicalOrigin, site, socialLinks } from "@/lib/site";
 export const homeSeo = {
   title: "John Upan Odey Jnr | A Fresh Start for Cross River 2027",
   description:
-    "NDC governorship candidate John Upan Odey Jnr. One People, One Cross River — We produce. We process. We prosper. Join the movement.",
+    "NDC governorship candidate John Upan Odey Jnr. One People, One Cross River. We produce. We process. We prosper. Join the movement.",
   canonical: canonicalOrigin,
   ogUrl: `${canonicalOrigin}/`,
   ogImage: {
@@ -12,7 +12,7 @@ export const homeSeo = {
     url: `${canonicalOrigin}/brand/official-poster-1.png`,
     width: 2174,
     height: 2892,
-    alt: "Official campaign poster — A Fresh Start, One People One Cross River",
+    alt: "Official campaign poster: A Fresh Start, One People One Cross River",
   },
   logo: {
     path: "/brand/candidate-mark-1.png",

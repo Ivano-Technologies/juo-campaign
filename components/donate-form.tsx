@@ -30,7 +30,7 @@ export function DonateForm() {
       <div>
         <h2 className="font-serif text-3xl text-ink">Give in naira</h2>
         <p className="mt-2 text-muted">
-          Choose an amount. Online donations — coming soon. For naira giving
+          Choose an amount. Online donations: coming soon. For naira giving
           now, use the{" "}
           <a href="#bank-transfer" className="font-semibold text-brand-blue underline">
             official bank transfer
@@ -86,7 +86,7 @@ export function DonateForm() {
       {status ? <FormStatusNote tone="info" message={status} /> : null}
 
       <Button type="submit" variant="primary">
-        Donate {formatNgn(selected)} — coming soon
+        Donate {formatNgn(selected)}: coming soon
       </Button>
       <p className="text-sm text-muted">
         See{" "}

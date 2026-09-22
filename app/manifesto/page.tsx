@@ -31,7 +31,7 @@ export default function ManifestoPage() {
     <>
       <PageHero
         title="Manifesto"
-        lede="The campaign manifesto for John Upan Odey Jnr — A Fresh Start for Cross River. Prosperity Agenda 2027–2031. PDF and full readout when published."
+        lede="The campaign manifesto for John Upan Odey Jnr: A Fresh Start for Cross River. Prosperity Agenda 2027–2031. PDF and full readout when published."
         aside={<BrandMarks variant="manifesto" />}
       >
         <Button href="/vision" variant="white">

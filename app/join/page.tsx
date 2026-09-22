@@ -22,7 +22,7 @@ export default function JoinPage() {
       <PageHero
         kicker="Get involved"
         title="Join the Movement"
-        lede="This campaign belongs to Cross Riverians who want competence, unity, and work — in every ward and from the diaspora. Tell us how you want to help."
+        lede="This campaign belongs to Cross Riverians who want competence, unity, and work in every ward and from the diaspora. Tell us how you want to help."
         aside={<BrandMarks variant="join" />}
       >
         <Button href="/donate" variant="white">
@@ -39,7 +39,7 @@ export default function JoinPage() {
         <div className="min-w-0 space-y-4 text-muted">
           <h2 className="font-serif text-3xl text-ink">What happens next</h2>
           <p>
-            A volunteer coordinator will follow up on the interest you select —
+            A volunteer coordinator will follow up on the interest you select:
             ward work, professional skills, media, donations, or Diaspora
             Connect if you are outside Cross River. We will not treat this as
             voter registration, and we will not share your details as a public

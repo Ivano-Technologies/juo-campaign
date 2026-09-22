@@ -40,7 +40,7 @@ export function HomeInitiatives() {
             Initiatives
           </h2>
           <p className="mx-auto mt-4 max-w-xs text-sm leading-6 text-muted">
-            Smart Schools Initiative — digital classrooms and future-ready
+            Smart Schools Initiative: digital classrooms and future-ready
             education for Cross Riverians.
           </p>
         </article>

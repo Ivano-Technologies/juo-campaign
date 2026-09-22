@@ -41,7 +41,7 @@ export default function DiasporaConnectPage() {
           Contact
         </Button>
         <Button href="/donate" variant="ghost">
-          Donate (when open)
+          Donate
         </Button>
       </PageHero>
 
@@ -95,7 +95,7 @@ export default function DiasporaConnectPage() {
               Contact
             </Button>
             <Button href="/donate" variant="secondary">
-              Donate (when open)
+              Donate
             </Button>
           </div>
         </div>

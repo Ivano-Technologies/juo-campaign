@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Button } from "@/components/button";
+import { OdeyArchibongColumns } from "@/components/odey-archibong-columns";
 import { PageHero } from "@/components/page-hero";
 import {
   archibongBody,
@@ -68,50 +69,12 @@ export default function OdeyArchibongPage() {
       </PageHero>
 
       <section className="mx-auto max-w-6xl bg-brand-white px-4 py-16 sm:px-6">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-14">
-          <div className="grid gap-6">
-            <figure className="overflow-hidden border border-line bg-brand-blue">
-              <Image
-                src={brand.portraits.official.src}
-                alt="John Upan Odey Jnr"
-                width={brand.portraits.official.width}
-                height={brand.portraits.official.height}
-                sizes="(min-width: 1024px) 28rem, 100vw"
-                className="aspect-[4/5] w-full object-cover object-top"
-              />
-            </figure>
-            <figure className="overflow-hidden border border-line bg-brand-blue">
-              <Image
-                src={brand.portraits.stellaOfficial.src}
-                alt="Apostle Dr. Stella Charles Archibong"
-                width={brand.portraits.stellaOfficial.width}
-                height={brand.portraits.stellaOfficial.height}
-                sizes="(min-width: 1024px) 28rem, 100vw"
-                className="aspect-[4/5] w-full object-cover object-top"
-              />
-            </figure>
-          </div>
-
-          <div className="space-y-8">
-            {archibongBody.map((paragraph) => (
-              <p key={paragraph} className="text-[1.05rem] leading-7 text-ink">
-                {paragraph}
-              </p>
-            ))}
-
-            <div className="border-t border-line pt-10">
-              <p className="font-serif text-2xl font-extrabold tracking-tight text-brand-blue uppercase">
-                {archibongCloseLead}
-              </p>
-              <p className="mt-2 font-serif text-2xl font-extrabold tracking-tight text-brand-blue uppercase">
-                {archibongCloseLockup}
-              </p>
-              <p className="mt-6 text-sm tracking-wide text-muted">
-                {archibongHashtags.join(" · ")}
-              </p>
-            </div>
-          </div>
-        </div>
+        <OdeyArchibongColumns
+          paragraphs={archibongBody}
+          closeLead={archibongCloseLead}
+          closeLockup={archibongCloseLockup}
+          hashtags={archibongHashtags}
+        />
       </section>
     </>
   );

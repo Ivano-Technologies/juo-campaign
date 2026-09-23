@@ -13,6 +13,7 @@ export const brand = {
   marks: {
     candidateMark1: "/brand/candidate-mark-1.png",
     candidateMark2: "/brand/candidate-mark-2.png",
+    joKeyline: "/images/brand/jo-keyline-transparent.png",
     ndcLogo: "/brand/ndc-logo.jpg",
     officialPoster: "/brand/official-poster-1.png",
     joWatermarkWhite: "/images/brand/jo-mark-watermark-white.png",
@@ -35,6 +36,12 @@ export const brand = {
       alt: "Official branded portrait of John Upan Odey Jnr in a dark suit, glasses, and a red and navy striped tie",
       width: 1058,
       height: 1486,
+    },
+    stellaOfficial: {
+      src: "/images/people/odey-archibong-stella-official.jpg",
+      alt: "Apostle Dr. Stella Charles Archibong",
+      width: 1079,
+      height: 1280,
     },
   },
   /** Official files on disk that must not proliferate on live routes. */

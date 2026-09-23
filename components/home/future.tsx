@@ -86,10 +86,10 @@ export function HomeFuture() {
   const word = futureCyclerWords[wordIndex] ?? futureCyclerWords[0];
 
   return (
-    <section className="relative isolate min-h-[36rem] overflow-hidden bg-brand-blue text-brand-white">
-      <div className="relative mx-auto flex min-h-[36rem] max-w-[1280px] flex-col justify-center px-6 py-16 sm:px-10">
+    <section className="relative isolate overflow-hidden bg-brand-blue text-brand-white">
+      <div className="relative mx-auto flex max-w-[1280px] flex-col px-6 py-12 sm:px-10 sm:py-14">
         <p className="text-xs font-semibold tracking-[0.42em] text-brand-white/90 uppercase">
-          Cross River 2029
+          Cross River 2027
         </p>
         <h2 className="mt-3 font-serif text-4xl font-extrabold tracking-tight text-brand-white uppercase sm:text-5xl lg:text-6xl">
           The future we are building

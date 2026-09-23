@@ -20,7 +20,12 @@ export function ManifestoPlayer() {
           Download PDF
         </a>
       ) : (
-        <Button type="button" variant="primary" className="mt-6" disabled>
+        <Button
+          type="button"
+          variant="primary"
+          className="mt-6 disabled:!opacity-100"
+          disabled
+        >
           {manifestoDownloadLabel}
         </Button>
       )}

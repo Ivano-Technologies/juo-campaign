@@ -5,13 +5,10 @@ import { ManifestoExcerpts } from "@/components/manifesto-excerpts";
 import { ManifestoPlayer } from "@/components/manifesto-player";
 import { PageHero } from "@/components/page-hero";
 import {
-  manifestoComingBody,
   manifestoComingTitle,
   manifestoDownloadTitle,
   manifestoExcerptsTitle,
   manifestoHeroLede,
-  manifestoMeanwhileLinks,
-  manifestoMeanwhileTitle,
   manifestoPageDescription,
   manifestoPageTitle,
 } from "@/lib/manifesto";
@@ -43,11 +40,6 @@ export default function ManifestoPage() {
       <section className="mx-auto max-w-3xl space-y-14 px-4 py-16 sm:px-6">
         <div>
           <h2 className="font-serif text-3xl text-ink">{manifestoComingTitle}</h2>
-          {manifestoComingBody.map((paragraph) => (
-            <p key={paragraph} className="mt-4 text-[1.05rem] leading-7 text-muted">
-              {paragraph}
-            </p>
-          ))}
         </div>
 
         <ManifestoExcerpts heading={manifestoExcerptsTitle} />
@@ -57,19 +49,6 @@ export default function ManifestoPage() {
           <div className="mt-6">
             <ManifestoPlayer />
           </div>
-        </div>
-
-        <div>
-          <h2 className="font-serif text-3xl text-ink">{manifestoMeanwhileTitle}</h2>
-          <ul className="mt-6 grid gap-3">
-            {manifestoMeanwhileLinks.map((link) => (
-              <li key={link.href}>
-                <Button href={link.href} variant="secondary">
-                  {link.label}
-                </Button>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
     </>

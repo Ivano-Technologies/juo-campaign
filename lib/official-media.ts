@@ -6,7 +6,15 @@
 export const officialAssetsWired = [
   {
     path: "/brand/juo-come-to-serve-portrait-front.jpg",
-    role: "Kezie/CoS lock — Challenges / I COME TO SERVE gradient front portrait (01). Not white-bg 02, BA page-1, 04 profile, or 07 close.",
+    role: "Kezie/CoS lock — Challenges / I COME TO SERVE gradient front portrait (01), plus /odey-archibong John portrait and hero watermark. Not white-bg 02, BA page-1, 04 profile, or 07 close.",
+  },
+  {
+    path: "/images/people/odey-archibong-stella-official.jpg",
+    role: "Official Stella Archibong portrait — /odey-archibong body photo and hero watermark (from MADAM_DEPUTY_OFFICIAL / madam-deputy-2).",
+  },
+  {
+    path: "/images/brand/jo-keyline-transparent.png",
+    role: "JO keyline mark — site header nav only. No white box.",
   },
   {
     path: "/brand/juo-branded-1.jpg",
@@ -25,12 +33,16 @@ export const officialAssetsWired = [
     role: "Kezie branded suit portrait — Who is John / Meet John / profile OG, plus Home official imagery and /posters.",
   },
   {
+    path: "/images/brand/jo-mark-watermark-white.png",
+    role: "White single-colour JO mark — /vision hero decorative watermark only",
+  },
+  {
     path: "/brand/candidate-mark-1.png",
-    role: "JO monogram — compact nav and Challenges mark",
+    role: "JO monogram — Challenges compact mark only (header now uses jo-keyline-transparent.png)",
   },
   {
     path: "/brand/candidate-mark-2.png",
-    role: "Horizontal JO lock-up — footer, Vision hero, Manifesto/Join",
+    role: "Horizontal JO lock-up — footer (Vision hero no longer uses this mark)",
   },
   {
     path: "/brand/ba-poster-cross-river-rising.png",

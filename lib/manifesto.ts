@@ -11,7 +11,7 @@ export const manifestoPageDescription =
 export const manifestoHeroLede =
   "Approved Brand excerpts until the manifesto PDF is published.";
 
-export const manifestoDownloadLabel = "Manifesto PDF: coming when published";
+export const manifestoDownloadLabel = "Click to Download Manifesto";
 
 export const manifestoComingTitle = "PDF still pending";
 export const manifestoComingBody = [

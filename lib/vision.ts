@@ -10,7 +10,7 @@ export const visionPageTitle =
   "The Vision | A Fresh Start: One People, One Cross River";
 
 export const visionPageDescription =
-  "To build One Cross River- united in purpose, inclusive in opportunity, and resilient in prosperity; a state where every citizen, every community, and every generation has the opportunity to thrive, contribute, and fulfil its potential.";
+  "To build One Cross River — united in purpose, inclusive in opportunity, and resilient in prosperity; a state where every citizen, every community, and every generation has the opportunity to thrive, contribute, and fulfil its potential.";
 
 export const visionHeadlineLead = "A Fresh Start";
 export const visionHeadlineLockup = "One People, One Cross River";
@@ -20,7 +20,7 @@ export const visionHeadline =
 export const visionHeroEyebrow = "The Vision";
 export const visionHeroSubhead = site.prosperityLine;
 export const visionHeroBody =
-  "To build One Cross River- united in purpose, inclusive in opportunity, and resilient in prosperity; a state where every citizen, every community, and every generation has the opportunity to thrive, contribute, and fulfil its potential.";
+  "To build One Cross River — united in purpose, inclusive in opportunity, and resilient in prosperity; a state where every citizen, every community, and every generation has the opportunity to thrive, contribute, and fulfil its potential.";
 
 export const visionHeroCtas = [
   { href: "/manifesto", label: "Read the Manifesto" },
@@ -32,7 +32,7 @@ export const visionHeroCtas = [
 export const visionOfficialTitle = "Official Vision and Mission";
 export const visionOfficialVisionLabel = "VISION";
 export const visionOfficialVision =
-  "To build One Cross River- united in purpose, inclusive in opportunity, and resilient in prosperity; a state where every citizen, every community, and every generation has the opportunity to thrive, contribute, and fulfil its potential.";
+  "To build One Cross River — united in purpose, inclusive in opportunity, and resilient in prosperity; a state where every citizen, every community, and every generation has the opportunity to thrive, contribute, and fulfil its potential.";
 export const visionOfficialMissionLabel = "MISSION";
 /**
  * Brand paste used an em dash after "natural resources".

@@ -36,26 +36,20 @@ export default function PostersPage() {
       </PageHero>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <h2 className="font-serif text-2xl text-ink sm:text-3xl">
-          Official branded portraits
-        </h2>
-        <ul className="mt-8 grid gap-10 sm:grid-cols-2">
+        <h2 className="sr-only">Portraits of John Upan Odey Jnr</h2>
+        <ul className="grid gap-10 sm:grid-cols-2">
           {officialBrandedPortraits.map((portrait, index) => (
             <li key={portrait.id}>
-              <figure>
+              <div className="relative aspect-[3/4] w-full overflow-hidden border border-brand-blue/15 bg-brand-white">
                 <Image
                   src={portrait.src}
                   alt={portrait.alt}
-                  width={portrait.width}
-                  height={portrait.height}
+                  fill
                   sizes="(min-width: 768px) 50vw, 100vw"
-                  className="h-auto w-full border border-brand-blue/15"
+                  className="object-cover object-top"
                   priority={index < 2}
                 />
-                <figcaption className="mt-4 font-serif text-xl text-ink">
-                  {portrait.title}
-                </figcaption>
-              </figure>
+              </div>
             </li>
           ))}
         </ul>
@@ -67,14 +61,15 @@ export default function PostersPage() {
           {officialPosters.map((poster) => (
             <li key={poster.id}>
               <figure>
-                <Image
-                  src={poster.src}
-                  alt={poster.alt}
-                  width={poster.width}
-                  height={poster.height}
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="h-auto w-full border border-brand-blue/15"
-                />
+                <div className="relative aspect-[1241/1754] w-full overflow-hidden border border-brand-blue/15 bg-brand-white">
+                  <Image
+                    src={poster.src}
+                    alt={poster.alt}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-contain"
+                  />
+                </div>
                 <figcaption className="mt-4 font-serif text-xl text-ink">
                   {poster.title}
                 </figcaption>

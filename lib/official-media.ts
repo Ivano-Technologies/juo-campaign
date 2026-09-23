@@ -6,19 +6,43 @@
 export const officialAssetsWired = [
   {
     path: "/brand/juo-come-to-serve-portrait-front.jpg",
-    role: "Kezie/CoS lock — Challenges / I COME TO SERVE gradient front portrait (01). Not white-bg 02, BA page-1, 04 profile, or 07 close.",
+    role: "Kezie/CoS lock — Challenges / I COME TO SERVE gradient front portrait (01), plus /odey-archibong John portrait and hero watermark. Not white-bg 02, BA page-1, 04 profile, or 07 close.",
   },
   {
-    path: "/brand/juo-official-3.jpg",
-    role: "Brand 22 Sep preferred official portrait: traditional attire, facing camera (Who is JUO / profile OG).",
+    path: "/images/people/odey-archibong-stella-official.jpg",
+    role: "Official Stella Archibong portrait — /odey-archibong body photo and hero watermark (from MADAM_DEPUTY_OFFICIAL / madam-deputy-2).",
+  },
+  {
+    path: "/images/brand/jo-keyline-transparent.png",
+    role: "JO keyline mark — site header nav only. No white box.",
+  },
+  {
+    path: "/brand/juo-branded-1.jpg",
+    role: "Kezie branded portrait — Home official imagery and /posters (patterned traditional, red cap, facing camera).",
+  },
+  {
+    path: "/brand/juo-branded-2.jpg",
+    role: "Kezie branded portrait — Home official imagery and /posters (white traditional, red cap, facing camera).",
+  },
+  {
+    path: "/brand/juo-branded-3.jpg",
+    role: "Kezie branded portrait — Home official imagery and /posters (traditional attire, glasses, looking up).",
+  },
+  {
+    path: "/brand/juo-branded-4.jpg",
+    role: "Kezie branded suit portrait — Who is John / Meet John / profile OG, plus Home official imagery and /posters.",
+  },
+  {
+    path: "/images/brand/jo-mark-watermark-white.png",
+    role: "White single-colour JO mark — /vision hero decorative watermark only",
   },
   {
     path: "/brand/candidate-mark-1.png",
-    role: "JO monogram — compact nav and Challenges mark",
+    role: "JO monogram — Challenges compact mark only (header now uses jo-keyline-transparent.png)",
   },
   {
     path: "/brand/candidate-mark-2.png",
-    role: "Horizontal JO lock-up — footer, Vision hero, Meet, Manifesto/Join",
+    role: "Horizontal JO lock-up — footer (Vision hero no longer uses this mark)",
   },
   {
     path: "/brand/ba-poster-cross-river-rising.png",
@@ -27,10 +51,6 @@ export const officialAssetsWired = [
   {
     path: "/brand/ba-poster-one-people-one-cross-river.png",
     role: "BA poster — Home gallery and /posters (One People, One Cross River)",
-  },
-  {
-    path: "/brand/ba-poster-a-fresh-start.png",
-    role: "BA poster — Home gallery and /posters (A Fresh Start)",
   },
   {
     path: "/brand/official-poster-1.png",
@@ -64,12 +84,20 @@ export const officialAssetsReserved = [
     reason: "Previous Challenges crop from BA page-1 — replaced by juo-come-to-serve-portrait-front.jpg",
   },
   {
+    path: "/brand/ba-poster-a-fresh-start.png",
+    reason: "BA A Fresh Start red-cap poster — removed from home + /posters per Kezie; other BA posters stay",
+  },
+  {
     path: "/brand/juo-official-1.jpg",
     reason: "Western-suit portrait — reserved after Brand preferred trad facing camera",
   },
   {
     path: "/brand/juo-official-2.jpg",
     reason: "Traditional attire looking aside — not the facing-camera preference",
+  },
+  {
+    path: "/brand/juo-official-3.jpg",
+    reason: "Previous Who is JUO / profile OG trad portrait — replaced by juo-branded-4.jpg",
   },
   {
     path: "/brand/madam-deputy-1.jpg",

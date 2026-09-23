@@ -1,77 +1,72 @@
 import { Reveal } from "@/components/motion/reveal";
 
+const cardClass =
+  "motion-card flex h-[18rem] min-w-0 items-center justify-center px-6 text-center sm:px-10";
+
+const headingClass =
+  "w-full font-serif text-2xl font-bold tracking-[0.08em] uppercase";
+
+const initiatives = [
+  {
+    title: "Youth Skills & Startup Fund",
+    tone: "white",
+    delayMs: 0,
+  },
+  {
+    title: "Healthcare & Social Protection",
+    tone: "blue",
+    delayMs: 80,
+  },
+  {
+    title: "Tourism 2.0",
+    tone: "white",
+    delayMs: 160,
+  },
+  {
+    title: "Smart Schools",
+    tone: "blue",
+    delayMs: 80,
+  },
+  // TODO: placeholder pending BA approval
+  {
+    title: "Modern Infrastructure",
+    tone: "white",
+    delayMs: 160,
+  },
+  {
+    title: "Citizens Dashboard",
+    tone: "blue",
+    delayMs: 240,
+  },
+] as const;
+
 export function HomeInitiatives() {
   return (
-    <section aria-labelledby="featured-initiatives-heading">
-      <div className="grid md:grid-cols-3">
-        <Reveal className="motion-card flex min-h-[18rem] flex-col justify-center bg-brand-white px-6 py-14 text-center sm:px-10">
-          <article>
-            <h3 className="font-serif text-2xl font-bold tracking-[0.08em] text-brand-blue uppercase">
-              Youth Skills &amp; Startup Fund
-            </h3>
-            <p className="mx-auto mt-5 max-w-xs text-sm leading-7 text-muted">
-              Training, funding and mentorship for the next generation of
-              entrepreneurs.
-            </p>
-          </article>
-        </Reveal>
-        <Reveal
-          delayMs={80}
-          className="motion-card flex min-h-[18rem] items-center justify-center bg-brand-blue px-6 py-14 text-center"
-        >
-          <p className="font-serif text-2xl font-extrabold tracking-tight text-brand-white uppercase">
-            Healthcare &amp; Social Protection
-          </p>
-        </Reveal>
-        <Reveal
-          delayMs={160}
-          className="motion-card flex min-h-[18rem] flex-col justify-center bg-brand-white px-6 py-14 text-center sm:px-10"
-        >
-          <article>
-            <h3 className="font-serif text-2xl font-bold tracking-[0.08em] text-brand-blue uppercase">
-              Tourism 2.0
-            </h3>
-            <p className="mx-auto mt-5 max-w-xs text-sm leading-7 text-muted">
-              Unlocking the economic potential of Obudu, Ikom, Boki, Calabar and
-              beyond.
-            </p>
-          </article>
-        </Reveal>
-        <Reveal
-          delayMs={80}
-          className="motion-card flex min-h-[18rem] items-center justify-center bg-brand-red px-6 py-14 text-center"
-        >
-          <p className="font-serif text-2xl font-extrabold tracking-tight text-brand-white uppercase">
-            Smart Schools
-          </p>
-        </Reveal>
-        <Reveal
-          delayMs={160}
-          className="motion-card flex min-h-[18rem] flex-col justify-center bg-brand-white px-8 py-12 text-center"
-        >
-          <article>
-            <h2
-              id="featured-initiatives-heading"
-              className="font-serif text-4xl font-extrabold tracking-tight text-brand-blue uppercase"
+    <section
+      className="relative"
+      aria-labelledby="featured-initiatives-heading"
+    >
+      <h2 id="featured-initiatives-heading" className="sr-only">
+        Featured Initiatives
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        {initiatives.map((item) => (
+          <Reveal
+            key={item.title}
+            delayMs={item.delayMs}
+            className={`${cardClass} ${
+              item.tone === "blue" ? "bg-brand-blue" : "bg-brand-white"
+            }`}
+          >
+            <h3
+              className={`${headingClass} ${
+                item.tone === "blue" ? "text-brand-white" : "text-brand-blue"
+              }`}
             >
-              Featured{" "}
-              <br />
-              Initiatives
-            </h2>
-            <p className="mx-auto mt-4 max-w-xs text-sm leading-6 text-muted">
-              Smart Schools Initiative: digital classrooms and future-ready
-              education for Cross Riverians.
-            </p>
-          </article>
-        </Reveal>
-        <Reveal
-          delayMs={240}
-          className="motion-card flex min-h-[18rem] items-center justify-center bg-brand-blue px-6 py-14 text-center"
-        >
-          <p className="font-serif text-2xl font-extrabold tracking-tight text-brand-white uppercase">
-            Citizens Dashboard
-          </p>
-        </Reveal>
+              {item.title}
+            </h3>
+          </Reveal>
+        ))}
       </div>
     </section>
   );

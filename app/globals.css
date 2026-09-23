@@ -278,8 +278,14 @@ button.ghost-pill:active {
 
 @media (min-width: 1024px) {
   .challenges-pane {
-    height: 100%;
-    min-height: 48rem;
+    /* Match the portrait file so cover does not slice the head or the baked JO mark. */
+    height: auto;
+    width: min(100%, calc((100dvh - 4.75rem) * 838 / 1131));
+    aspect-ratio: 838 / 1131;
+    min-height: 0;
+    align-self: center;
+    justify-self: center;
+    max-height: calc(100dvh - 4.75rem);
   }
 
   .challenges-lockup {
@@ -288,7 +294,8 @@ button.ghost-pill:active {
   }
 
   .challenges-word {
-    font-size: clamp(2.1rem, min(17cqh, 15cqi), 6.75rem);
+    /* Pane is the full portrait, so type stays in the lower third and off the face. */
+    font-size: clamp(1.15rem, min(5.25cqh, 8cqi), 2.75rem);
   }
 }
 

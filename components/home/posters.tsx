@@ -2,7 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { CommunityPostList } from "@/components/community-posts";
 import { communityPath } from "@/lib/community";
-import { officialPosters, pendingPosterRasterizations, postersPath } from "@/lib/posters";
+import {
+  officialBrandedPortraits,
+  officialPosters,
+  pendingPosterRasterizations,
+  postersPath,
+} from "@/lib/posters";
 
 export function HomePosters() {
   return (
@@ -37,20 +42,36 @@ export function HomePosters() {
 
         <div className="mt-16">
           <h3 className="font-serif text-2xl font-extrabold text-brand-blue sm:text-3xl">
-            Official posters
+            Official posters and imagery
           </h3>
+          <ul className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {officialBrandedPortraits.map((portrait) => (
+              <li key={portrait.id}>
+                <div className="relative aspect-[3/4] w-full overflow-hidden border border-brand-blue/15 bg-brand-white">
+                  <Image
+                    src={portrait.src}
+                    alt={portrait.alt}
+                    fill
+                    sizes="(min-width: 1024px) 16rem, (min-width: 640px) 45vw, 90vw"
+                    className="object-cover object-top"
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
           <ul className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {officialPosters.map((poster) => (
               <li key={poster.id}>
                 <figure>
-                  <Image
-                    src={poster.src}
-                    alt={poster.alt}
-                    width={poster.width}
-                    height={poster.height}
-                    sizes="(min-width: 1024px) 20rem, (min-width: 640px) 45vw, 90vw"
-                    className="h-auto w-full border border-brand-blue/15"
-                  />
+                  <div className="relative aspect-[1241/1754] w-full overflow-hidden border border-brand-blue/15 bg-brand-white">
+                    <Image
+                      src={poster.src}
+                      alt={poster.alt}
+                      fill
+                      sizes="(min-width: 1024px) 20rem, (min-width: 640px) 45vw, 90vw"
+                      className="object-contain"
+                    />
+                  </div>
                   <figcaption className="mt-4 text-sm text-muted">
                     {poster.title}
                   </figcaption>

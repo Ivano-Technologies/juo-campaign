@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import { DiamondRule, ProhibitIcon } from "@/components/icons";
 import { Reveal } from "@/components/motion/reveal";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
-import { JoMarkCompact } from "@/components/socials";
 import { brand } from "@/lib/brand";
 import { challenges, challengesLockup, officialPortrait } from "@/lib/home";
 
@@ -92,9 +91,15 @@ export function HomeChallenges() {
               alt={officialPortrait.alt}
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover object-top"
+              className="object-cover object-top lg:object-contain"
             />
-            <JoMarkCompact className="absolute right-3 bottom-4 h-10 w-auto bg-brand-white/90 px-2 py-1 sm:right-5 sm:bottom-6 sm:h-12" />
+            <Image
+              src="/images/brand/jo-candidate-mark.png"
+              alt="JO"
+              width={1375}
+              height={978}
+              className="absolute right-5 bottom-5 h-12 w-auto"
+            />
           </div>
         </div>
       </div>

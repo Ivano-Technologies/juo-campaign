@@ -13,8 +13,10 @@ export const brand = {
   marks: {
     candidateMark1: "/brand/candidate-mark-1.png",
     candidateMark2: "/brand/candidate-mark-2.png",
+    joKeyline: "/images/brand/jo-keyline-transparent.png",
     ndcLogo: "/brand/ndc-logo.jpg",
     officialPoster: "/brand/official-poster-1.png",
+    joWatermarkWhite: "/images/brand/jo-mark-watermark-white.png",
   },
   /**
    * Kezie/CoS lock: Challenges / I COME TO SERVE uses only
@@ -28,12 +30,26 @@ export const brand = {
       width: 838,
       height: 1131,
     },
+    /** Kezie suit portrait — Who is John / Meet John / profile OG only. */
+    whoIsJohn: {
+      src: "/brand/juo-branded-4.jpg",
+      alt: "John Upan Odey Jnr",
+      width: 1058,
+      height: 1486,
+    },
+    stellaOfficial: {
+      src: "/images/people/odey-archibong-stella-official.jpg",
+      alt: "Apostle Dr. Stella Charles Archibong",
+      width: 1079,
+      height: 1280,
+    },
   },
   /** Official files on disk that must not proliferate on live routes. */
   reserved: {
     extraPortraits: [
       "/brand/juo-official-1.jpg",
       "/brand/juo-official-2.jpg",
+      "/brand/juo-official-3.jpg",
     ],
     deputy: ["/brand/madam-deputy-1.jpg", "/brand/madam-deputy-2.jpg"],
   },

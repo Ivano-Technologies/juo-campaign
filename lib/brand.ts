@@ -37,10 +37,17 @@ export const brand = {
       width: 1058,
       height: 1486,
     },
+    /** Hero watermark only. The body portrait is the centered 4:5 file. */
     stellaOfficial: {
       src: "/images/people/odey-archibong-stella-official.jpg",
       alt: "Apostle Dr. Stella Charles Archibong",
       width: 1079,
+      height: 1280,
+    },
+    stellaOfficial4x5: {
+      src: "/images/people/odey-archibong-stella-official-4x5.jpg",
+      alt: "Apostle Dr. Stella Charles Archibong",
+      width: 1024,
       height: 1280,
     },
   },

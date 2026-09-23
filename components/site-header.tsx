@@ -4,7 +4,9 @@ import type { Route } from "next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
-import { JoMarkCompact, SocialRow } from "@/components/socials";
+import Image from "next/image";
+import { SocialRow } from "@/components/socials";
+import { brand } from "@/lib/brand";
 import { isNavActive, site, wpNavItems } from "@/lib/site";
 
 export function SiteHeader() {
@@ -49,7 +51,14 @@ export function SiteHeader() {
           className="flex shrink-0 items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-white"
           onClick={() => setOpen(false)}
         >
-          <JoMarkCompact className="h-10 w-auto bg-brand-white px-2 py-1 sm:h-12" priority />
+          <Image
+            src={brand.marks.joKeyline}
+            alt=""
+            width={1536}
+            height={1024}
+            priority
+            className="h-10 w-auto object-contain sm:h-12"
+          />
           <span className="sr-only">{site.name}</span>
         </Link>
 

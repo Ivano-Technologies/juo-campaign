@@ -6,10 +6,10 @@ export function HomePillars() {
     <section id="brand-pillars" aria-label="Brand pillars">
       <ol className="grid gap-px bg-brand-white sm:grid-cols-2 lg:grid-cols-5">
         {homePillars.map((pillar, index) => (
-          <li key={pillar.slug} className="bg-brand-red">
+          <li key={pillar.slug} className="flex bg-brand-red">
             <Reveal
               delayMs={index * 80}
-              className="motion-card h-full min-h-[20rem] bg-brand-red px-6 py-10 text-brand-white sm:min-h-[22rem] sm:px-8"
+              className="motion-card flex h-full min-h-[20rem] w-full flex-col bg-brand-red px-6 py-10 text-brand-white sm:min-h-[22rem] sm:px-8"
             >
               <p
                 aria-hidden="true"
@@ -23,12 +23,14 @@ export function HomePillars() {
               <p className="mt-4 max-w-sm text-lg leading-7 font-semibold text-brand-white">
                 {pillar.lead}
               </p>
-              <a
-                href={`/vision#${pillar.slug}`}
-                className="mt-6 inline-flex min-h-11 items-center text-sm font-semibold tracking-[0.08em] text-brand-white underline decoration-brand-white decoration-2 underline-offset-4 hover:decoration-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-white"
-              >
-                On The Vision
-              </a>
+              <div className="mt-6 sm:mt-auto sm:pt-6">
+                <a
+                  href={`/vision#${pillar.slug}`}
+                  className="inline-flex min-h-11 items-center text-sm font-semibold tracking-[0.08em] text-brand-white underline decoration-brand-white decoration-2 underline-offset-4 hover:decoration-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-white"
+                >
+                  On The Vision
+                </a>
+              </div>
             </Reveal>
           </li>
         ))}

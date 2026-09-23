@@ -25,12 +25,16 @@ export const officialAssetsWired = [
     role: "Kezie branded suit portrait — Who is John / Meet John / profile OG, plus Home official imagery and /posters.",
   },
   {
+    path: "/images/brand/jo-mark-watermark-white.png",
+    role: "White single-colour JO mark — /vision hero decorative watermark only",
+  },
+  {
     path: "/brand/candidate-mark-1.png",
     role: "JO monogram — compact nav and Challenges mark",
   },
   {
     path: "/brand/candidate-mark-2.png",
-    role: "Horizontal JO lock-up — footer, Vision hero, Manifesto/Join",
+    role: "Horizontal JO lock-up — footer (Vision hero no longer uses this mark)",
   },
   {
     path: "/brand/ba-poster-cross-river-rising.png",

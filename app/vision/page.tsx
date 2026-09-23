@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Button } from "@/components/button";
 import { ManifestoCta } from "@/components/manifesto-cta";
 import { ManifestoExcerpts } from "@/components/manifesto-excerpts";
-import { JoMarkLockup } from "@/components/socials";
 import { VisionPillarShowcase } from "@/components/vision/pillar-showcase";
+import { brand } from "@/lib/brand";
 import {
   visionAgendaNote,
   visionAgendaTitle,
@@ -60,9 +61,21 @@ export default function VisionPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(visionJsonLd) }}
       />
-      <section className="bg-brand-blue text-brand-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-14 sm:flex-row sm:items-center sm:justify-between sm:gap-10 sm:px-6 sm:py-20">
-          <div className="min-w-0 flex-1">
+      <section className="relative overflow-hidden bg-brand-blue text-brand-white">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 lg:block"
+        >
+          <Image
+            src={brand.marks.joWatermarkWhite}
+            alt=""
+            width={1375}
+            height={978}
+            className="absolute top-1/2 right-0 h-[100%] w-auto max-w-none -translate-y-1/2 translate-x-[8%] object-contain opacity-[0.08]"
+          />
+        </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20">
+          <div className="min-w-0 max-w-4xl">
             <p className="text-xs uppercase tracking-[0.28em] text-brand-red">
               {visionHeroEyebrow}
             </p>
@@ -94,10 +107,6 @@ export default function VisionPage() {
               ))}
             </nav>
           </div>
-          <JoMarkLockup
-            className="h-16 w-auto shrink-0 self-start bg-brand-white px-4 py-3 sm:h-20 sm:self-auto lg:h-24"
-            priority
-          />
         </div>
       </section>
 

@@ -141,7 +141,7 @@ export function HomeHero() {
         <div
           className={`hero-caption w-full max-w-[min(58rem,calc(100vw-3rem))] ${
             !captionOn && !reduced ? "is-off" : ""
-          } ${slide.align === "left" ? "lg:max-w-[38rem]" : ""}`}
+          } ${slide.align === "left" ? "lg:max-w-[46rem]" : ""}`}
         >
           <p
             className={`text-shimmer font-serif text-base font-extrabold tracking-[0.08em] uppercase sm:text-2xl lg:text-3xl ${slide.kickerClass}`}

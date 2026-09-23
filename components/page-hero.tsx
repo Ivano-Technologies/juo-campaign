@@ -7,6 +7,7 @@ type PageHeroProps = {
   lede: string;
   children?: ReactNode;
   aside?: ReactNode;
+  watermark?: ReactNode;
 };
 
 export function PageHero({
@@ -15,11 +16,13 @@ export function PageHero({
   lede,
   children,
   aside,
+  watermark,
 }: PageHeroProps) {
   return (
-    <section className="bg-brand-blue text-brand-white">
+    <section className="relative overflow-hidden bg-brand-blue text-brand-white">
+      {watermark}
       <div
-        className={`mx-auto flex max-w-7xl flex-col gap-10 px-4 py-16 sm:px-6 sm:py-20 ${
+        className={`relative z-10 mx-auto flex max-w-7xl flex-col gap-10 px-4 py-16 sm:px-6 sm:py-20 ${
           aside ? "lg:flex-row lg:items-center lg:justify-between" : ""
         }`}
       >

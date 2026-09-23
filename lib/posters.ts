@@ -18,39 +18,35 @@ const brandedPortraitSize = {
   height: 1448,
 } as const;
 
-/** Kezie branded portraits — honest caption only. Do not invent slogans. */
+/** Kezie branded portraits. No visible caption — alt text names the candidate. */
 export const officialBrandedPortraits = [
   {
     id: "juo-branded-1",
     src: "/brand/juo-branded-1.jpg",
     width: brandedPortraitSize.width,
     height: brandedPortraitSize.height,
-    title: "Official branded portrait",
-    alt: "Official branded portrait of John Upan Odey Jnr in patterned traditional attire and a red cap, facing camera.",
+    alt: "John Upan Odey Jnr in patterned traditional attire and a red cap, facing camera.",
   },
   {
     id: "juo-branded-2",
     src: "/brand/juo-branded-2.jpg",
     width: brandedPortraitSize.width,
     height: brandedPortraitSize.height,
-    title: "Official branded portrait",
-    alt: "Official branded portrait of John Upan Odey Jnr in white traditional attire and a red cap, facing camera.",
+    alt: "John Upan Odey Jnr in white traditional attire and a red cap, facing camera.",
   },
   {
     id: "juo-branded-3",
     src: "/brand/juo-branded-3.jpg",
     width: brandedPortraitSize.width,
     height: brandedPortraitSize.height,
-    title: "Official branded portrait",
-    alt: "Official branded portrait of John Upan Odey Jnr in traditional attire and glasses, looking up.",
+    alt: "John Upan Odey Jnr in traditional attire and glasses, looking up.",
   },
   {
     id: "juo-branded-4",
     src: "/brand/juo-branded-4.jpg",
     width: 1058,
     height: 1486,
-    title: "Official branded portrait",
-    alt: "Official branded portrait of John Upan Odey Jnr in a dark suit, glasses, and a red and navy striped tie.",
+    alt: "John Upan Odey Jnr in a dark suit, glasses, and a red and navy striped tie.",
   },
 ] as const;
 

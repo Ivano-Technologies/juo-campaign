@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Button } from "@/components/button";
 import { JsonLd } from "@/components/json-ld";
 import { CtaRow, PageHero } from "@/components/page-hero";
-import { brand } from "@/lib/brand";
+import { SuitPortrait } from "@/components/suit-portrait";
 import { profilePersonJsonLd, profileSeo } from "@/lib/profile-seo";
 import { currentRoles, education, site } from "@/lib/site";
 
@@ -51,8 +50,8 @@ export default function WhoIsJuoPage() {
         <CtaRow />
       </PageHero>
 
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <article className="space-y-6 text-[1.05rem] leading-7 text-ink">
+      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-16 sm:px-6 lg:grid lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+        <article className="order-2 space-y-6 text-[1.05rem] leading-7 text-ink lg:order-none">
           <section>
             <h2 className="font-serif text-3xl">In brief</h2>
             <p className="mt-3 text-muted">
@@ -92,21 +91,13 @@ export default function WhoIsJuoPage() {
           </section>
         </article>
 
-        <aside className="space-y-6">
-          <figure className="overflow-hidden rounded-2xl border border-line bg-brand-white">
-            <Image
-              src={brand.portraits.whoIsJohn.src}
-              alt={brand.portraits.whoIsJohn.alt}
-              width={brand.portraits.whoIsJohn.width}
-              height={brand.portraits.whoIsJohn.height}
-              sizes="(min-width: 1024px) 24rem, 90vw"
-              className="h-auto w-full"
-              priority
-            />
-            <figcaption className="px-6 py-4 text-sm text-muted">
-              Official branded portrait
-            </figcaption>
-          </figure>
+        <div className="contents lg:block lg:space-y-6">
+          <SuitPortrait
+            priority
+            sizes="(min-width: 1024px) 24rem, 100vw"
+            className="order-1 rounded-2xl lg:order-none"
+          />
+          <div className="order-3 space-y-6 lg:order-none">
           <div className="rounded-2xl border border-line bg-brand-white p-6">
             <h2 className="font-serif text-2xl">Education</h2>
             <ul className="mt-4 grid gap-4">
@@ -140,7 +131,8 @@ export default function WhoIsJuoPage() {
               </Button>
             </div>
           </div>
-        </aside>
+        </div>
+      </div>
       </div>
     </>
   );

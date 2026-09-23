@@ -7,7 +7,7 @@ export function VisionPillarShowcase() {
       id="brand-pillars"
       className="relative isolate overflow-hidden bg-brand-blue text-brand-white"
     >
-      <div className="relative z-10 mx-auto max-w-7xl px-3 py-8 sm:px-6 sm:py-12">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
         <PillarOrbit />
         <h3 className="mt-10 text-xs font-semibold tracking-[0.18em] text-brand-red uppercase">
           All five Brand pillars

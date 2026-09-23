@@ -14,7 +14,7 @@ export function HomeGetInvolved() {
             alt="Official campaign poster: A Fresh Start, One People, One Cross River"
             width={2174}
             height={2892}
-            className="h-48 w-auto rounded-lg border border-brand-white/20 sm:h-56"
+            className="h-48 w-auto max-w-full object-contain rounded-lg border border-brand-white/20 sm:h-56"
           />
           <div>
             <p className="text-xs uppercase tracking-[0.28em] text-brand-red">

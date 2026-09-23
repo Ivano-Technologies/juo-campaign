@@ -33,7 +33,7 @@ export const brand = {
     /** Kezie suit portrait — Who is John / Meet John / profile OG only. */
     whoIsJohn: {
       src: "/brand/juo-branded-4.jpg",
-      alt: "Official branded portrait of John Upan Odey Jnr in a dark suit, glasses, and a red and navy striped tie",
+      alt: "John Upan Odey Jnr",
       width: 1058,
       height: 1486,
     },

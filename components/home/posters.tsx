@@ -47,19 +47,15 @@ export function HomePosters() {
           <ul className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {officialBrandedPortraits.map((portrait) => (
               <li key={portrait.id}>
-                <figure>
+                <div className="relative aspect-[3/4] w-full overflow-hidden border border-brand-blue/15 bg-brand-white">
                   <Image
                     src={portrait.src}
                     alt={portrait.alt}
-                    width={portrait.width}
-                    height={portrait.height}
+                    fill
                     sizes="(min-width: 1024px) 16rem, (min-width: 640px) 45vw, 90vw"
-                    className="h-auto w-full border border-brand-blue/15"
+                    className="object-cover object-top"
                   />
-                  <figcaption className="mt-4 text-sm text-muted">
-                    {portrait.title}
-                  </figcaption>
-                </figure>
+                </div>
               </li>
             ))}
           </ul>
@@ -67,14 +63,15 @@ export function HomePosters() {
             {officialPosters.map((poster) => (
               <li key={poster.id}>
                 <figure>
-                  <Image
-                    src={poster.src}
-                    alt={poster.alt}
-                    width={poster.width}
-                    height={poster.height}
-                    sizes="(min-width: 1024px) 20rem, (min-width: 640px) 45vw, 90vw"
-                    className="h-auto w-full border border-brand-blue/15"
-                  />
+                  <div className="relative aspect-[1241/1754] w-full overflow-hidden border border-brand-blue/15 bg-brand-white">
+                    <Image
+                      src={poster.src}
+                      alt={poster.alt}
+                      fill
+                      sizes="(min-width: 1024px) 20rem, (min-width: 640px) 45vw, 90vw"
+                      className="object-contain"
+                    />
+                  </div>
                   <figcaption className="mt-4 text-sm text-muted">
                     {poster.title}
                   </figcaption>

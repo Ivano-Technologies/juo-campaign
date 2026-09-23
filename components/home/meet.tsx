@@ -1,15 +1,14 @@
-import Image from "next/image";
 import { Button } from "@/components/button";
 import { Reveal } from "@/components/motion/reveal";
-import { brand } from "@/lib/brand";
+import { SuitPortrait } from "@/components/suit-portrait";
 import { meetBio, meetQuote } from "@/lib/home";
 import { site } from "@/lib/site";
 
 export function HomeMeet() {
   return (
     <section className="bg-brand-white">
-      <div className="mx-auto grid max-w-[1200px] items-center gap-12 px-6 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
-        <Reveal>
+      <div className="mx-auto grid max-w-[1200px] items-center gap-12 px-6 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch lg:py-24">
+        <Reveal className="order-2 lg:order-none">
           <p className="text-xs font-semibold tracking-[0.28em] text-brand-red uppercase">
             Meet {site.name}
           </p>
@@ -32,21 +31,11 @@ export function HomeMeet() {
           </Button>
         </Reveal>
 
-        <Reveal delayMs={140}>
-          <figure className="meet-figure border border-brand-blue/15 bg-brand-white">
-            <Image
-              src={brand.portraits.whoIsJohn.src}
-              alt={brand.portraits.whoIsJohn.alt}
-              width={brand.portraits.whoIsJohn.width}
-              height={brand.portraits.whoIsJohn.height}
-              sizes="(min-width: 1024px) 28rem, 90vw"
-              className="h-auto w-full"
-              priority
-            />
-            <figcaption className="px-4 py-3 text-sm text-muted">
-              Official branded portrait
-            </figcaption>
-          </figure>
+        <Reveal
+          delayMs={140}
+          className="order-1 flex items-center justify-center lg:order-none lg:h-full"
+        >
+          <SuitPortrait priority matchColumn sizes="(min-width: 1024px) 32rem, 100vw" />
         </Reveal>
       </div>
     </section>

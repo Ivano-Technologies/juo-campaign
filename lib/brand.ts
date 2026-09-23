@@ -16,6 +16,7 @@ export const brand = {
     joKeyline: "/images/brand/jo-keyline-transparent.png",
     ndcLogo: "/brand/ndc-logo.jpg",
     officialPoster: "/brand/official-poster-1.png",
+    joWatermarkWhite: "/images/brand/jo-mark-watermark-white.png",
   },
   /**
    * Kezie/CoS lock: Challenges / I COME TO SERVE uses only

@@ -112,11 +112,11 @@ export function OdeyArchibongColumns({
         </figure>
         <figure className="relative aspect-[4/5] overflow-hidden border border-line bg-brand-blue">
           <Image
-            src={brand.portraits.stellaOfficial.src}
+            src={brand.portraits.stellaOfficial4x5.src}
             alt="Apostle Dr. Stella Charles Archibong"
             fill
             sizes="(min-width: 1024px) 28rem, 100vw"
-            className="origin-[72%_34%] scale-[1.5] object-cover object-[72%_34%]"
+            className="object-cover object-center"
           />
         </figure>
       </div>

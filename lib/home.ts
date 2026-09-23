@@ -19,7 +19,7 @@ export const heroSlides = [
     objectClass: "object-center",
   },
   {
-    src: "/media/2026/E9BA618D-2E0A-4F15-A893-E86858069DA0-1_11zon.webp",
+    src: "/media/2026/hero-nations-paradise.webp",
     alt: "Welcome to Cross River: The Nation’s Paradise monument against a blue sky",
     kicker: "THE NEXT CHAPTER",
     kickerClass: "text-brand-white",
@@ -27,7 +27,8 @@ export const heroSlides = [
     lede: "…built on opportunity, innovation and shared prosperity.",
     align: "left",
     captionY: "center",
-    objectClass: "object-center",
+    objectClass: "object-[center_12%] max-lg:object-[74%_12%]",
+    quality: 90,
   },
   {
     src: "/media/2026/AFA4FC12-2414-4B4E-A96D-62B98BD104D2-1_11zon.webp",

@@ -105,6 +105,7 @@ export function HomeHero() {
             fill
             priority={slideIndex === 0}
             sizes="100vw"
+            quality={"quality" in item ? item.quality : 75}
             className={`object-cover ${item.objectClass}`}
           />
         </div>

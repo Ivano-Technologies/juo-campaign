@@ -13,12 +13,6 @@ export const manifestoHeroLede =
 
 export const manifestoDownloadLabel = "Click to Download Manifesto";
 
-export const manifestoComingTitle = "PDF still pending";
-export const manifestoComingBody = [
-  "The official manifesto for John Upan Odey Jnr’s Cross River 2027 NDC campaign will be published here as an approved PDF with a clear web readout.",
-  "Until that file is delivered, the excerpts below are the Brand-approved messaging on this page. This route does not invent a full manifesto.",
-] as const;
-
 export const manifestoExcerptsTitle = "Approved excerpts";
 
 export const manifestoExcerpts = [
@@ -54,15 +48,6 @@ export const manifestoExcerpts = [
 export const manifestoDownloadTitle = "Download status";
 export const manifestoDownloadStatus =
   "PDF download: Gated, awaiting approved manifesto file.";
-
-export const manifestoMeanwhileTitle = "Meanwhile";
-export const manifestoMeanwhileLinks = [
-  { href: "/vision", label: "Read The Vision" },
-  { href: "/odey-archibong", label: "Odey Archibong" },
-  { href: "/policies", label: "Browse pillar themes" },
-  { href: "/john-upan-odey", label: "Meet the candidate" },
-  { href: "/join", label: "Join for release updates" },
-] as const;
 
 /** Spoken/readout text uses Brand excerpts only, not a fake PDF. */
 export const manifestoPlaceholderScript = [

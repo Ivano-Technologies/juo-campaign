@@ -1,3 +1,4 @@
+import { brand } from "@/lib/brand";
 import { canonicalOrigin, education, site, socialLinks } from "@/lib/site";
 
 /** IVA-20 profile SEO. Title uses Brand name + office; body stays WP-parity. */
@@ -11,11 +12,11 @@ export const profileSeo = {
   jobTitle: "NDC Governorship Candidate for Cross River State 2027",
   birthPlace: "Obudu (Cross River)",
   ogImage: {
-    path: "/brand/juo-official-3.jpg",
-    url: `${canonicalOrigin}/brand/juo-official-3.jpg`,
-    width: 480,
-    height: 640,
-    alt: "Official portrait of John Upan Odey Jnr",
+    path: brand.portraits.whoIsJohn.src,
+    url: `${canonicalOrigin}${brand.portraits.whoIsJohn.src}`,
+    width: brand.portraits.whoIsJohn.width,
+    height: brand.portraits.whoIsJohn.height,
+    alt: brand.portraits.whoIsJohn.alt,
   },
 } as const;
 

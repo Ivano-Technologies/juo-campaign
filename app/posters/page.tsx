@@ -4,6 +4,7 @@ import { Button } from "@/components/button";
 import { PageHero } from "@/components/page-hero";
 import { pageShareTags } from "@/lib/page-seo";
 import {
+  officialBrandedPortraits,
   officialPosters,
   pendingPosterRasterizations,
   postersPageDescription,
@@ -24,7 +25,7 @@ export default function PostersPage() {
       <PageHero
         kicker="Official campaign designs"
         title="Poster gallery"
-        lede="Approved Brand posters only. No stock, AI, or unapproved imagery."
+        lede="Approved Brand posters and branded portraits only. No stock, AI, or unapproved imagery."
       >
         <Button href="/join" variant="white">
           Join the Movement
@@ -35,8 +36,35 @@ export default function PostersPage() {
       </PageHero>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <ul className="grid gap-10 md:grid-cols-2">
-          {officialPosters.map((poster, index) => (
+        <h2 className="font-serif text-2xl text-ink sm:text-3xl">
+          Official branded portraits
+        </h2>
+        <ul className="mt-8 grid gap-10 sm:grid-cols-2">
+          {officialBrandedPortraits.map((portrait, index) => (
+            <li key={portrait.id}>
+              <figure>
+                <Image
+                  src={portrait.src}
+                  alt={portrait.alt}
+                  width={portrait.width}
+                  height={portrait.height}
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="h-auto w-full border border-brand-blue/15"
+                  priority={index < 2}
+                />
+                <figcaption className="mt-4 font-serif text-xl text-ink">
+                  {portrait.title}
+                </figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="mt-16 font-serif text-2xl text-ink sm:text-3xl">
+          Official posters
+        </h2>
+        <ul className="mt-8 grid gap-10 md:grid-cols-2">
+          {officialPosters.map((poster) => (
             <li key={poster.id}>
               <figure>
                 <Image
@@ -46,7 +74,6 @@ export default function PostersPage() {
                   height={poster.height}
                   sizes="(min-width: 768px) 50vw, 100vw"
                   className="h-auto w-full border border-brand-blue/15"
-                  priority={index < 2}
                 />
                 <figcaption className="mt-4 font-serif text-xl text-ink">
                   {poster.title}

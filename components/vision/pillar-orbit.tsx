@@ -6,8 +6,8 @@ import { usePillarRotation } from "@/components/vision/use-pillar-rotation";
 import { visionManifestoCta, visionPillars } from "@/lib/vision";
 
 /** Tighter rounded-rect so the orbit hugs the write-up instead of a wide empty track. */
-const FRAME_INSET_X = 16;
-const FRAME_INSET_Y = 18;
+const FRAME_INSET_X = 13;
+const FRAME_INSET_Y = 15;
 const FRAME_CORNER = 8;
 
 type FrameMetrics = {
@@ -189,9 +189,9 @@ export function PillarOrbit() {
           </button>
         );
       })}
-      <div className="absolute inset-0 z-20 flex items-center justify-center p-12 sm:p-20">
+      <div className="absolute inset-0 z-[5] flex items-center justify-center p-16 sm:p-24">
         <div
-          className="flex w-full max-w-[22rem] flex-col items-center justify-center rounded-[2.25rem] bg-brand-blue/90 px-6 py-8 text-center shadow-[0_12px_48px_rgb(64_68_155_/_0.35)] ring-1 ring-brand-white/25 backdrop-blur-md sm:max-w-[38rem] sm:px-12 sm:py-14"
+          className="flex w-full max-w-[20rem] flex-col items-center justify-center rounded-[2.25rem] bg-brand-blue/90 px-6 py-8 text-center shadow-[0_12px_48px_rgb(64_68_155_/_0.35)] ring-1 ring-brand-white/25 backdrop-blur-md sm:max-w-[32rem] sm:px-10 sm:py-12"
           aria-live="polite"
         >
           <p className="text-sm font-bold tracking-[0.28em] text-brand-red uppercase">

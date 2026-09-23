@@ -10,7 +10,7 @@ export const officialAssetsWired = [
   },
   {
     path: "/images/people/odey-archibong-stella-official.jpg",
-    role: "Official Stella Archibong portrait — /odey-archibong body photo and hero watermark (from MADAM_DEPUTY_OFFICIAL / madam-deputy-2).",
+    role: "Official Stella Archibong portrait — /odey-archibong body photo and hero watermark (MADAM_DEPUTY_OFFICIAL, yellow head wrap).",
   },
   {
     path: "/images/brand/jo-keyline-transparent.png",

@@ -20,7 +20,7 @@ export function HomePillars() {
               <h3 className="mt-8 font-serif text-xl font-extrabold tracking-tight text-brand-white uppercase">
                 {pillar.name}
               </h3>
-              <p className="mt-4 max-w-sm text-base leading-7 font-semibold text-brand-white">
+              <p className="mt-4 max-w-sm text-lg leading-7 font-semibold text-brand-white">
                 {pillar.lead}
               </p>
               <a

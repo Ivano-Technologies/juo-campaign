@@ -5,7 +5,6 @@ import { communityPath } from "@/lib/community";
 import {
   officialBrandedPortraits,
   officialPosters,
-  pendingPosterRasterizations,
   postersPath,
 } from "@/lib/posters";
 
@@ -79,11 +78,6 @@ export function HomePosters() {
               </li>
             ))}
           </ul>
-          <p className="mt-8 text-sm text-muted">
-            Additional official posters (Blue, White, 4, and 5) will appear here
-            after Brand rasterizes the source PDFs:{" "}
-            {pendingPosterRasterizations.map((item) => item.label).join(" · ")}.
-          </p>
         </div>
       </div>
     </section>

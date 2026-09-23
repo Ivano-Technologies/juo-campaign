@@ -91,14 +91,14 @@ export function HomeChallenges() {
               alt={officialPortrait.alt}
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover object-top lg:object-contain"
+              className="object-cover object-top"
             />
             <Image
               src="/images/brand/jo-candidate-mark.png"
               alt="JO"
               width={1375}
               height={978}
-              className="absolute right-5 bottom-5 h-12 w-auto"
+              className="challenges-mark h-10 w-auto sm:h-12"
             />
           </div>
         </div>

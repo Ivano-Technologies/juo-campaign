@@ -266,6 +266,23 @@ button.ghost-pill:active {
   width: 100%;
 }
 
+.challenges-mark {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+}
+
+/*
+ * Full-bleed cover shows the clasped hands and watch only when the pane is
+ * taller than the portrait (≈1024px and similar tall columns). In that case
+ * lift the JO mark above the hands/watch; keep it in the low corner otherwise.
+ */
+@container (max-aspect-ratio: 9 / 10) {
+  .challenges-mark {
+    bottom: 17%;
+  }
+}
+
 @media (min-width: 640px) {
   .challenges-pane {
     height: 34rem;
@@ -278,14 +295,11 @@ button.ghost-pill:active {
 
 @media (min-width: 1024px) {
   .challenges-pane {
-    /* Match the portrait file so cover does not slice the head or the baked JO mark. */
+    /* Full-bleed: fill the right column edge to edge and stretch to the section
+       height so the portrait is flush to the viewport with no white gutter. */
     height: auto;
-    width: min(100%, calc((100dvh - 4.75rem) * 838 / 1131));
-    aspect-ratio: 838 / 1131;
-    min-height: 0;
-    align-self: center;
-    justify-self: center;
-    max-height: calc(100dvh - 4.75rem);
+    width: 100%;
+    align-self: stretch;
   }
 
   .challenges-lockup {

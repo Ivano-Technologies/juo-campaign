@@ -144,18 +144,18 @@ export function HomeHero() {
           } ${slide.align === "left" ? "lg:max-w-[38rem]" : ""}`}
         >
           <p
-            className={`font-serif text-base font-extrabold tracking-[0.08em] uppercase sm:text-2xl lg:text-3xl ${slide.kickerClass}`}
+            className={`text-shimmer font-serif text-base font-extrabold tracking-[0.08em] uppercase sm:text-2xl lg:text-3xl ${slide.kickerClass}`}
           >
             {slide.kicker}
           </p>
-          <h1 className="mt-2 font-serif text-[1.85rem] leading-[0.98] font-extrabold tracking-[-0.03em] whitespace-pre-line text-brand-white uppercase sm:text-5xl sm:leading-[0.95] lg:text-[3.85rem] lg:whitespace-pre xl:text-[4.15rem]">
+          <h1 className="text-shimmer mt-2 font-serif text-[1.85rem] leading-[0.98] font-extrabold tracking-[-0.03em] whitespace-pre-line text-brand-white uppercase [animation-delay:200ms] sm:text-5xl sm:leading-[0.95] lg:text-[3.85rem] lg:whitespace-pre xl:text-[4.15rem]">
             {slide.title}
           </h1>
           {slide.lede !== "" ? (
             <p
               className={`mt-4 text-lg text-brand-white/90 ${
                 slide.lede.startsWith("#")
-                  ? "font-serif text-2xl font-extrabold tracking-[0.04em] uppercase sm:text-3xl"
+                  ? "text-shimmer font-serif text-2xl font-extrabold tracking-[0.04em] uppercase [animation-delay:400ms] sm:text-3xl"
                   : ""
               }`}
             >

@@ -6,10 +6,140 @@ export const manifestoPdfHref: string | null = null;
 export const manifestoPageTitle = pageSeoTitle("Manifesto");
 
 export const manifestoPageDescription =
-  "Approved Brand excerpts for the John Upan Odey Jnr manifesto. A Fresh Start for Cross River. PDF when published.";
+  "Eight approved manifesto pillars, THE TEN COMMITMENTS TO CROSS RIVERIANS, and Brand excerpts for the John Upan Odey Jnr manifesto. A Fresh Start for Cross River. PDF when published.";
 
 export const manifestoHeroLede =
-  "Approved Brand excerpts until the manifesto PDF is published.";
+  "Eight approved policy pillars and THE TEN COMMITMENTS TO CROSS RIVERIANS. Brand excerpts until the manifesto PDF is published.";
+
+export const manifestoPillarsTitle = "Eight manifesto pillars";
+export const manifestoPillarsIntro =
+  "Approved policy pillars for A Fresh Start. These are manifesto sectors — not the five Brand values (Service, Competence, Integrity, Opportunity, Unity) and not THE TEN COMMITMENTS TO CROSS RIVERIANS.";
+
+export const manifestoPillars = [
+  {
+    number: "01",
+    title: "PILLAR ONE: POWER FIRST — ENDING THE DARKNESS ECONOMY",
+    slug: "power-first",
+    blurb:
+      "Reliable energy is the foundation of a productive Cross River: for homes, farms, clinics, schools, and enterprise. A Fresh Start treats power as a first-order condition for growth.",
+  },
+  {
+    number: "02",
+    title: "PILLAR TWO: WEALTH THROUGH AGRICULTURE — FROM FARMS TO FACTORIES",
+    slug: "wealth-through-agriculture",
+    blurb:
+      "Cross River’s land and farmers can anchor shared wealth when production is valued and connected to markets. This pillar frames agriculture as a path to prosperity for communities across the state.",
+  },
+  {
+    number: "03",
+    title: "PILLAR THREE: INFRASTRUCTURE THAT CREATES WEALTH",
+    slug: "infrastructure-that-creates-wealth",
+    blurb:
+      "Roads, connectivity, and enabling works unlock farms, tourism, trade, and daily life. This pillar frames infrastructure as the backbone of growth, not spectacle.",
+  },
+  {
+    number: "04",
+    title: "PILLAR FOUR: HEALTHCARE CLOSE TO HOME",
+    slug: "healthcare-close-to-home",
+    blurb:
+      "Health underpins dignity and productivity. This pillar frames access to quality care as essential for families in Calabar, Obudu, and every LGA.",
+  },
+  {
+    number: "05",
+    title: "PILLAR FIVE: EDUCATION, SKILLS & THE 50,000 JOBS PLAN",
+    slug: "education-skills-the-50000-jobs-plan",
+    blurb:
+      "Education and skills prepare young people, and workers already in the economy, for useful work in a changing Cross River. This pillar frames learning as a productive-state investment, with enterprise that can start, scale, and stay.",
+  },
+  {
+    number: "06",
+    title: "PILLAR SIX: TOURISM, CULTURE & THE CREATIVE ECONOMY",
+    slug: "tourism-culture-the-creative-economy",
+    blurb:
+      "Cross River’s hospitality, culture, and natural assets can sustain year-round opportunity beyond a single season. This pillar frames tourism and the creative economy as a broader productive story for the state.",
+  },
+  {
+    number: "07",
+    title: "PILLAR SEVEN: TRANSPARENT & DIGITAL GOVERNMENT",
+    slug: "transparent-digital-government",
+    blurb:
+      "Public trust grows when government is open, accountable, and clear about how resources are used. This pillar frames transparency and digital government as a standard of Fresh Start governance.",
+  },
+  {
+    number: "08",
+    title: "PILLAR EIGHT: CLIMATE RESILIENCE, ENVIRONMENT & SUSTAINABLE DEVELOPMENT",
+    slug: "climate-resilience-environment-sustainable-development",
+    blurb:
+      "We will protect our environment while creating green economic opportunities.",
+  },
+] as const;
+
+export type ManifestoPillar = (typeof manifestoPillars)[number];
+
+const manifestoPillarCount: 8 = manifestoPillars.length;
+void manifestoPillarCount;
+
+export const tenCommitmentsTitle = "THE TEN COMMITMENTS TO CROSS RIVERIANS";
+export const tenCommitmentsIntro =
+  "Ten commitments to the people of Cross River. Distinct from the eight manifesto policy pillars and from the five Brand values.";
+
+export const tenCommitments = [
+  {
+    number: "1",
+    title: "A Productive Economy",
+    body: "We will move Cross River from a consumption-based economy to a production and processing economy.",
+  },
+  {
+    number: "2",
+    title: "Reliable Power",
+    body: "We will tackle electricity challenges because no economy grows in darkness.",
+  },
+  {
+    number: "3",
+    title: "Agricultural Transformation",
+    body: "We will ensure our farmers become producers, processors and shareholders in the value chain.",
+  },
+  {
+    number: "4",
+    title: "Jobs Through Enterprise",
+    body: "We will create opportunities for young people through technology, agriculture, tourism, manufacturing and entrepreneurship.",
+  },
+  {
+    number: "5",
+    title: "Quality Healthcare",
+    body: "We will strengthen healthcare from the ward level upward because a healthy population is the foundation of prosperity.",
+  },
+  {
+    number: "6",
+    title: "Modern Education and Skills",
+    body: "We will prepare our children and young people for the economy of the future.",
+  },
+  {
+    number: "7",
+    title: "Infrastructure for Growth",
+    body: "We will prioritize roads and infrastructure that create economic value.",
+  },
+  {
+    number: "8",
+    title: "Tourism Beyond Carnival",
+    body: "We will transform tourism from a seasonal event into a year-round economic industry.",
+  },
+  {
+    number: "9",
+    title: "Transparent Government",
+    body: "Every naira must have a purpose, every project must have accountability, and every citizen must have access to information.",
+  },
+  {
+    number: "10",
+    title: "Sustainable Development",
+    body: "We will protect our environment while creating green economic opportunities.",
+  },
+] as const;
+
+export type TenCommitment = (typeof tenCommitments)[number];
+
+const tenCommitmentCount: 10 = tenCommitments.length;
+void tenCommitmentCount;
 
 export const manifestoDownloadLabel = "Click to Download Manifesto";
 

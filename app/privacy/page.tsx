@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/page-hero";
+import { privacyPageDescription, privacyPageTitle } from "@/lib/legal";
 import { pageShareTags } from "@/lib/page-seo";
-import { pageTitle, site } from "@/lib/site";
-
-const privacyTitle = pageTitle("Privacy");
-const privacyDescription =
-  "How the John Upan Odey Jnr campaign handles personal data from join, contact, and donation forms, including Diaspora Connect.";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Privacy",
-  description: privacyDescription,
-  ...pageShareTags(privacyTitle, privacyDescription, "/privacy"),
+  title: {
+    absolute: privacyPageTitle,
+  },
+  description: privacyPageDescription,
+  ...pageShareTags(privacyPageTitle, privacyPageDescription, "/privacy"),
 };
 
 export default function PrivacyPage() {
@@ -18,7 +17,7 @@ export default function PrivacyPage() {
     <>
       <PageHero
         kicker="Before any form"
-        title="Privacy notice"
+        title="Privacy Notice"
         lede="This notice covers Join the Movement, Contact, and Donate, including people who join from outside Cross River through Diaspora Connect."
       />
       <article className="mx-auto max-w-3xl space-y-8 px-4 py-16 text-muted sm:px-6">

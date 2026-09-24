@@ -2,14 +2,18 @@ import type { Metadata } from "next";
 import { BrandMarks } from "@/components/brand-marks";
 import { Button } from "@/components/button";
 import { ManifestoExcerpts } from "@/components/manifesto-excerpts";
+import { ManifestoPillars } from "@/components/manifesto-pillars";
 import { ManifestoPlayer } from "@/components/manifesto-player";
 import { PageHero } from "@/components/page-hero";
+import { TenCommitments } from "@/components/ten-commitments";
 import {
   manifestoDownloadTitle,
   manifestoExcerptsTitle,
   manifestoHeroLede,
   manifestoPageDescription,
   manifestoPageTitle,
+  manifestoPillarsTitle,
+  tenCommitmentsTitle,
 } from "@/lib/manifesto";
 import { pageShareTags } from "@/lib/page-seo";
 
@@ -37,6 +41,14 @@ export default function ManifestoPage() {
         </Button>
       </PageHero>
       <section className="mx-auto max-w-3xl space-y-14 px-4 py-16 sm:px-6">
+        <div id="pillars" className="scroll-mt-28">
+          <ManifestoPillars heading={manifestoPillarsTitle} />
+        </div>
+
+        <div id="commitments" className="scroll-mt-28">
+          <TenCommitments heading={tenCommitmentsTitle} />
+        </div>
+
         <ManifestoExcerpts heading={manifestoExcerptsTitle} />
 
         <div>

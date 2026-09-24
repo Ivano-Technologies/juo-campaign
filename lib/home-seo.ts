@@ -2,7 +2,7 @@ import { brandSeoDescription, brandSeoTitle } from "@/lib/brand-seo";
 import { canonicalOrigin, site, socialLinks } from "@/lib/site";
 
 /**
- * IVA-48 Brand Architect SEO lock (Chris via Kezie).
+ * IVA-48 Brand Architect SEO lock.
  * Visible homepage copy stays WP-parity. Title/meta/OG/Twitter use Brand strings.
  */
 export const homeSeo = {

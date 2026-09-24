@@ -19,7 +19,7 @@ export const brand = {
     joWatermarkWhite: "/images/brand/jo-mark-watermark-white.png",
   },
   /**
-   * Kezie/CoS lock: Challenges / I COME TO SERVE uses only
+   * Challenges / I COME TO SERVE uses only
    * 01_john_upan_odey_portrait_front_gradient. Do not use white-bg 02,
    * BA page-1 crop, 04 profile, or 07 close.
    */
@@ -30,7 +30,7 @@ export const brand = {
       width: 838,
       height: 1131,
     },
-    /** Kezie suit portrait — Who is John / Meet John / profile OG only. */
+    /** Suit portrait — Who is John / Meet John / profile OG only. */
     whoIsJohn: {
       src: "/brand/juo-branded-4.jpg",
       alt: "John Upan Odey Jnr",

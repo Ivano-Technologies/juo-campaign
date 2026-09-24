@@ -75,10 +75,10 @@ export default function WhoIsJuoPage() {
             <h2 className="font-serif text-3xl">What he stands for</h2>
             <p className="mt-3 text-muted">
               A Fresh Start. One People, One Cross River. We produce. We
-              process. We prosper. Ten commitments and the {site.agenda} will
-              be published in full when the campaign manifesto PDF is delivered.
-              Until then, the policy page lists the approved manifesto pillars,
-              not invented slogans.
+              process. We prosper. The Manifesto page carries the eight
+              approved policy pillars and THE TEN COMMITMENTS TO CROSS
+              RIVERIANS. Brand values — Service, Competence, Integrity,
+              Opportunity, and Unity — live on The Vision.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <Button href="/manifesto" variant="secondary">

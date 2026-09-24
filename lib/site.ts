@@ -39,6 +39,8 @@ export const navItems = [
   { href: "/join", label: "Join" },
   { href: "/donate", label: "Donate" },
   { href: "/news", label: "News" },
+  { href: "/posters", label: "Poster Gallery" },
+  { href: "/photos", label: "Photo Gallery" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
@@ -51,7 +53,8 @@ export const footerQuickLinks = [
   { href: "/donate", label: "Donate" },
   { href: "/join", label: "Join the Movement" },
   { href: "/news", label: "Community" },
-  { href: "/posters", label: "Official posters" },
+  { href: "/posters", label: "Poster Gallery" },
+  { href: "/photos", label: "Photo Gallery" },
 ] as const;
 
 export const footerAboutLinks = [
@@ -60,7 +63,8 @@ export const footerAboutLinks = [
   { href: "/contact", label: "Contact" },
   { href: "/news", label: "News" },
   { href: "/manifesto", label: "Manifesto" },
-  { href: "/privacy", label: "Privacy" },
+  { href: "/privacy", label: "Privacy Notice" },
+  { href: "/terms", label: "Terms of Use" },
 ] as const;
 
 export const socialLinks = [

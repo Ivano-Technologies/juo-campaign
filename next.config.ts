@@ -9,6 +9,21 @@ const nextConfig: NextConfig = {
         destination: "/vision",
         statusCode: 301,
       },
+      {
+        source: "/privacy-policy",
+        destination: "/privacy",
+        statusCode: 301,
+      },
+      {
+        source: "/terms-of-use",
+        destination: "/terms",
+        statusCode: 301,
+      },
+      {
+        source: "/terms-and-conditions",
+        destination: "/terms",
+        statusCode: 301,
+      },
     ];
   },
 };

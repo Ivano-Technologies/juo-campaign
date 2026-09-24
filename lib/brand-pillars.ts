@@ -1,10 +1,11 @@
 /**
- * Brand pillars (exactly five). Who John stands for as a leader.
- * Not manifesto policy sectors (the Ten Commandments). Do not add a sixth.
+ * Brand values (exactly five). Who John stands for as a leader.
+ * Not the eight manifesto policy pillars and not THE TEN COMMITMENTS.
+ * Do not add a sixth.
  */
-export const brandPillarsTitle = "Brand pillars";
+export const brandPillarsTitle = "Our Brand Pillars";
 export const brandPillarsIntro =
-  "Five Brand pillars. Who John stands for as a leader, not manifesto policy sectors.";
+  "Five Brand values. Who John stands for as a leader — Service, Competence, Integrity, Opportunity, Unity. Not the eight manifesto policy pillars, and not THE TEN COMMITMENTS TO CROSS RIVERIANS.";
 
 export const brandPillars = [
   {

@@ -1,12 +1,12 @@
 /**
  * IVA-45 imagery inventory. Live routes may only wire official Brand assets
- * plus the three Kezie-kept hero slides.
+ * plus the three locked hero slides.
  */
 
 export const officialAssetsWired = [
   {
     path: "/brand/juo-come-to-serve-portrait-front.jpg",
-    role: "Kezie/CoS lock — Challenges / I COME TO SERVE gradient front portrait (01), plus /odey-archibong John portrait and hero watermark. Not white-bg 02, BA page-1, 04 profile, or 07 close.",
+    role: "Challenges / I COME TO SERVE gradient front portrait (01), plus /odey-archibong John portrait and hero watermark. Not white-bg 02, BA page-1, 04 profile, or 07 close.",
   },
   {
     path: "/images/people/odey-archibong-stella-official.jpg",
@@ -22,19 +22,19 @@ export const officialAssetsWired = [
   },
   {
     path: "/brand/juo-branded-1.jpg",
-    role: "Kezie branded portrait — Home official imagery and /posters (patterned traditional, red cap, facing camera).",
+    role: "Branded portrait — Photo Gallery and Home official imagery (patterned traditional, red cap, facing camera).",
   },
   {
     path: "/brand/juo-branded-2.jpg",
-    role: "Kezie branded portrait — Home official imagery and /posters (white traditional, red cap, facing camera).",
+    role: "Branded portrait — Photo Gallery and Home official imagery (white traditional, red cap, facing camera).",
   },
   {
     path: "/brand/juo-branded-3.jpg",
-    role: "Kezie branded portrait — Home official imagery and /posters (traditional attire, glasses, looking up).",
+    role: "Branded portrait — Photo Gallery and Home official imagery (traditional attire, glasses, looking up).",
   },
   {
     path: "/brand/juo-branded-4.jpg",
-    role: "Kezie branded suit portrait — Who is John / Meet John / profile OG, plus Home official imagery and /posters.",
+    role: "Branded suit portrait — Who is John / Meet John / profile OG, Photo Gallery, and Home official imagery.",
   },
   {
     path: "/images/brand/jo-mark-watermark-white.png",
@@ -77,8 +77,16 @@ export const officialAssetsWired = [
     role: "Community post — Home Campaign gallery and /news (NDC Cross River Listening Tour)",
   },
   {
+    path: "/brand/news/icap-foundation-fellow-1.jpg",
+    role: "News post — Home Campaign gallery, /news listing, and /news/john-upan-odey-named-foundation-fellow-of-icap",
+  },
+  {
+    path: "/brand/news/icap-foundation-fellow-2.jpg",
+    role: "News post — ICAP Foundation Fellow detail and listing",
+  },
+  {
     path: "/brand/ndc-logo.jpg",
-    role: "NDC logo — Manifesto and Join only",
+    role: "NDC logo — Manifesto and Join only, always beside the JO lock-up",
   },
 ] as const;
 
@@ -89,7 +97,7 @@ export const officialAssetsReserved = [
   },
   {
     path: "/brand/ba-poster-a-fresh-start.png",
-    reason: "BA A Fresh Start red-cap poster — removed from home + /posters per Kezie; other BA posters stay",
+    reason: "BA A Fresh Start red-cap poster — on /posters only, not on the homepage gallery",
   },
   {
     path: "/brand/juo-official-1.jpg",
@@ -113,7 +121,7 @@ export const officialAssetsReserved = [
   },
 ] as const;
 
-/** Circular campaign badges removed sitewide (Kezie / IVA-45). */
+/** Circular campaign badges removed sitewide (IVA-45). */
 export const circularLogosRemoved = [
   {
     path: "/media/2026/Frame-1171274791.png",

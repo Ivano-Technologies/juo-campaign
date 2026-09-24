@@ -5,7 +5,7 @@ export const campaignHashtag = "#OurTimeOurState";
 
 export const officialPortrait = brand.portraits.official;
 
-/** Kezie (IVA-45): keep exactly these 3 slides. The two John-portrait slides are gone. */
+/** IVA-45: keep exactly these 3 slides. The two John-portrait slides are gone. */
 export const heroSlides = [
   {
     src: "/media/2026/787657CB-F514-46F6-8681-CD05DA7AEF84-1_11zon.webp",
@@ -118,7 +118,7 @@ export const opportunityCards = [
 ] as const;
 
 /**
- * IVA-46 Kezie / BA lock: five Brand pillars only (not policy sectors).
+ * IVA-46 BA lock: five Brand pillars only (not policy sectors).
  * Numbered strip stays blue + white type.
  * 01–03 primary Royal Blue; 04–05 same hue, one shade deeper.
  */

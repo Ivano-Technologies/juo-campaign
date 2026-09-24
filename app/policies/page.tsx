@@ -69,7 +69,9 @@ export default function PoliciesPage() {
                 <p className="text-xs uppercase tracking-[0.2em] text-brand-red">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <h3 className="mt-2 font-serif text-2xl text-ink">{sector.name}</h3>
+                <h3 className="mt-2 font-serif text-2xl text-ink uppercase">
+                  {sector.title}
+                </h3>
                 <p className="mt-3 text-[1.05rem] leading-7 text-muted">
                   {sector.blurb}
                 </p>
@@ -78,10 +80,16 @@ export default function PoliciesPage() {
                     href="/vision#brand-pillars"
                     className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
                   >
-                    Brand pillars on The Vision
+                    Brand values on The Vision
                   </a>
                   <a
-                    href="/manifesto"
+                    href="/manifesto#commitments"
+                    className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
+                  >
+                    Ten Commitments
+                  </a>
+                  <a
+                    href="/manifesto#pillars"
                     className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
                   >
                     Read the full Manifesto

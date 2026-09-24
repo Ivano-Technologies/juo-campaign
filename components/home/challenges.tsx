@@ -94,11 +94,11 @@ export function HomeChallenges() {
               className="object-cover object-top"
             />
             <Image
-              src="/images/brand/jo-candidate-mark.png"
-              alt="JO"
-              width={1375}
-              height={978}
-              className="challenges-mark h-10 w-auto sm:h-12"
+              src={brand.marks.candidateMark1}
+              alt=""
+              width={1536}
+              height={1024}
+              className="challenges-mark h-12 w-auto sm:h-14 lg:h-16"
             />
           </div>
         </div>

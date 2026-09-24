@@ -286,23 +286,20 @@ button.ghost-pill:active {
   container-type: size;
   display: flex;
   align-items: flex-end;
-  /* Shared box: cutout fills this height; lockup type tracks cqh/cqi.
-     Sized for the 1.75x lockup so all four words fit without clipping while the
-     cover crop keeps the hands out of frame on the narrow (phone) layout. */
-  height: 27rem;
+  /* Shared box: portrait fills this height; lockup type tracks cqh/cqi.
+     Photo leads. Type stays smaller so I COME TO SERVE does not crowd the face. */
+  height: 34rem;
 }
 
 .challenges-lockup {
-  width: min(58%, 20rem);
+  width: min(42%, 16rem);
   max-width: calc(100% - 5.5rem);
   /*
-   * Four-line I COME TO SERVE lockup, enlarged 1.75x (font-size lives here so
-   * the words inherit it and a single flex gap gives equal spacing). COME /
-   * SERVE are the widest lines; cap by pane so all four stay visible at ~360px.
-   * Stacked pane heights below are raised so the bigger lockup sits under the
-   * face without clipping.
+   * Four-line I COME TO SERVE lockup. Font-size lives here so the words inherit
+   * it and a single flex gap gives equal spacing. Kept below the 1.75x scale
+   * so the portrait stays dominant.
    */
-  font-size: clamp(2.1875rem, min(27.125cqh, 23.625cqi), 10.9375rem);
+  font-size: clamp(1.35rem, min(16cqh, 13.5cqi), 6.5rem);
   gap: 0.12em;
 }
 
@@ -321,28 +318,17 @@ button.ghost-pill:active {
 
 .challenges-mark {
   position: absolute;
+  top: 1.25rem;
   right: 1.25rem;
-  bottom: 1.25rem;
-}
-
-/*
- * Full-bleed cover shows the clasped hands and watch only when the pane is
- * taller than the portrait (≈1024px and similar tall columns). In that case
- * lift the JO mark above the hands/watch; keep it in the low corner otherwise.
- */
-@container (max-aspect-ratio: 9 / 10) {
-  .challenges-mark {
-    bottom: 17%;
-  }
 }
 
 @media (min-width: 640px) {
   .challenges-pane {
-    height: 56rem;
+    height: 62rem;
   }
 
   .challenges-lockup {
-    font-size: clamp(2.625rem, min(32.375cqh, 28cqi), 11.375rem);
+    font-size: clamp(1.65rem, min(18cqh, 15cqi), 7rem);
   }
 }
 
@@ -356,10 +342,10 @@ button.ghost-pill:active {
   }
 
   .challenges-lockup {
-    width: min(50%, 28rem);
+    width: min(38%, 18rem);
     max-width: none;
     /* Pane is the full portrait, so type stays in the lower third and off the face. */
-    font-size: clamp(2.0125rem, min(9.1875cqh, 14cqi), 4.8125rem);
+    font-size: clamp(1.5rem, min(6.5cqh, 10cqi), 3.25rem);
   }
 }
 

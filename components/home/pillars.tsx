@@ -1,9 +1,23 @@
 import { Reveal } from "@/components/motion/reveal";
+import { brandPillarsIntro, brandPillarsTitle } from "@/lib/brand-pillars";
 import { homePillars } from "@/lib/home";
 
 export function HomePillars() {
   return (
-    <section id="brand-pillars" aria-label="Brand pillars">
+    <section id="brand-pillars" aria-labelledby="brand-pillars-title">
+      <div className="bg-brand-white px-4 py-10 sm:px-6 sm:py-12">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2
+            id="brand-pillars-title"
+            className="font-serif text-3xl font-extrabold tracking-tight text-brand-blue uppercase sm:text-4xl"
+          >
+            {brandPillarsTitle}
+          </h2>
+          <p className="mt-4 text-[1.05rem] leading-7 text-muted">
+            {brandPillarsIntro}
+          </p>
+        </div>
+      </div>
       <ol className="grid items-stretch gap-px bg-brand-white sm:grid-cols-2 lg:grid-cols-5">
         {homePillars.map((pillar, index) => (
           <li key={pillar.slug} className="flex min-w-0 bg-brand-red">

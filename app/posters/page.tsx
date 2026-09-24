@@ -3,9 +3,10 @@ import Image from "next/image";
 import { Button } from "@/components/button";
 import { PageHero } from "@/components/page-hero";
 import { pageShareTags } from "@/lib/page-seo";
+import { photosPath } from "@/lib/photos";
 import {
-  officialBrandedPortraits,
-  officialPosters,
+  johnCampaignPosters,
+  odeyArchibongCampaignPosters,
   pendingPosterRasterizations,
   postersPageDescription,
   postersPageTitle,
@@ -24,41 +25,23 @@ export default function PostersPage() {
     <>
       <PageHero
         kicker="Official campaign designs"
-        title="Poster gallery"
-        lede="Approved Brand posters and branded portraits only. No stock, AI, or unapproved imagery."
+        title="Campaign Poster Gallery"
+        lede="John’s posters first, Odey Archibong ticket posters below. Portraits and photographs live on the Photo Gallery."
       >
-        <Button href="/join" variant="white">
-          Join the Movement
+        <Button href={photosPath} variant="white">
+          Photo Gallery
         </Button>
-        <Button href="/donate" variant="ghost">
-          Donate
+        <Button href="/join" variant="ghost">
+          Join the Movement
         </Button>
       </PageHero>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <h2 className="sr-only">Portraits of John Upan Odey Jnr</h2>
-        <ul className="grid gap-10 sm:grid-cols-2">
-          {officialBrandedPortraits.map((portrait, index) => (
-            <li key={portrait.id}>
-              <div className="relative aspect-[3/4] w-full overflow-hidden border border-brand-blue/15 bg-brand-white">
-                <Image
-                  src={portrait.src}
-                  alt={portrait.alt}
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover object-top"
-                  priority={index < 2}
-                />
-              </div>
-            </li>
-          ))}
-        </ul>
-
-        <h2 className="mt-16 font-serif text-2xl text-ink sm:text-3xl">
-          Official posters
+        <h2 className="font-serif text-2xl text-ink sm:text-3xl">
+          John’s posters
         </h2>
-        <ul className="mt-8 grid gap-10 md:grid-cols-2">
-          {officialPosters.map((poster) => (
+        <ul className="mt-8 grid gap-10 md:grid-cols-3">
+          {johnCampaignPosters.map((poster) => (
             <li key={poster.id}>
               <figure>
                 <div className="relative aspect-[1241/1754] w-full overflow-hidden border border-brand-blue/15 bg-brand-white">
@@ -66,7 +49,32 @@ export default function PostersPage() {
                     src={poster.src}
                     alt={poster.alt}
                     fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+                <figcaption className="mt-4 font-serif text-xl text-ink">
+                  {poster.title}
+                </figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="mt-16 font-serif text-2xl text-ink sm:text-3xl">
+          Odey Archibong posters
+        </h2>
+        <ul className="mt-8 grid gap-10 md:grid-cols-3">
+          {odeyArchibongCampaignPosters.map((poster) => (
+            <li key={poster.id}>
+              <figure>
+                <div className="relative aspect-[1241/1754] w-full overflow-hidden border border-brand-blue/15 bg-brand-white">
+                  <Image
+                    src={poster.src}
+                    alt={poster.alt}
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
                     className="object-contain"
                   />
                 </div>

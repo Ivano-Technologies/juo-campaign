@@ -2,11 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { CommunityPostList } from "@/components/community-posts";
 import { communityPath } from "@/lib/community";
-import {
-  officialBrandedPortraits,
-  officialPosters,
-  postersPath,
-} from "@/lib/posters";
+import { photosPath } from "@/lib/photos";
+import { officialPosters, postersPath } from "@/lib/posters";
 
 export function HomePosters() {
   return (
@@ -30,7 +27,13 @@ export function HomePosters() {
               href={postersPath}
               className="text-sm font-semibold tracking-[0.12em] text-brand-blue uppercase underline underline-offset-4"
             >
-              View all posters
+              Poster Gallery
+            </Link>
+            <Link
+              href={photosPath}
+              className="text-sm font-semibold tracking-[0.12em] text-brand-blue uppercase underline underline-offset-4"
+            >
+              Photo Gallery
             </Link>
           </div>
         </div>
@@ -41,23 +44,8 @@ export function HomePosters() {
 
         <div className="mt-16">
           <h3 className="font-serif text-2xl font-extrabold text-brand-blue sm:text-3xl">
-            Official posters and imagery
+            Official posters
           </h3>
-          <ul className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {officialBrandedPortraits.map((portrait) => (
-              <li key={portrait.id}>
-                <div className="relative aspect-[3/4] w-full overflow-hidden border border-brand-blue/15 bg-brand-white">
-                  <Image
-                    src={portrait.src}
-                    alt={portrait.alt}
-                    fill
-                    sizes="(min-width: 1024px) 16rem, (min-width: 640px) 45vw, 90vw"
-                    className="object-cover object-top"
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
           <ul className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {officialPosters.map((poster) => (
               <li key={poster.id}>

@@ -8,7 +8,7 @@ import { heroSlides } from "@/lib/home";
 
 /** Total slide dwell, including caption fade in/out. */
 const INTERVAL_MS = 6000;
-/** Keep in sync with `.hero-caption` transition-duration in globals.css. */
+/** Keep in sync with `.hero-caption` opacity transition-duration in globals.css. */
 const FADE_MS = 650;
 
 export function HomeHero() {

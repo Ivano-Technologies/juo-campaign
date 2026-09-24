@@ -61,6 +61,18 @@ export const officialAssetsWired = [
     role: "Kit poster — Home gallery, /posters, OG image",
   },
   {
+    path: "/brand/odey-archibong-poster-4.png",
+    role: "Odey Archibong ticket poster 4 — /posters only (A Fresh Start)",
+  },
+  {
+    path: "/brand/odey-archibong-poster-5.png",
+    role: "Odey Archibong ticket poster 5 — /posters only (One People, One Cross River)",
+  },
+  {
+    path: "/brand/odey-archibong-poster-6.png",
+    role: "Odey Archibong ticket poster 6 — /posters only (A New Cross River is Possible)",
+  },
+  {
     path: "/brand/community/connecting-with-cross-rivers-youth.png",
     role: "Community post — Home Campaign gallery and /news (Connecting with Cross River’s Youth)",
   },

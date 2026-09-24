@@ -16,11 +16,8 @@ export function TenCommitments({ heading }: TenCommitmentsProps) {
       <ol className="mt-10 grid gap-8">
         {tenCommitments.map((commitment) => (
           <li key={commitment.number} className="scroll-mt-28">
-            <p className="text-xs font-semibold tracking-[0.22em] text-brand-red uppercase">
-              {commitment.number}
-            </p>
-            <h3 className="mt-2 font-serif text-2xl text-ink">
-              {commitment.title}
+            <h3 className="font-serif text-2xl text-ink">
+              {commitment.number}. {commitment.title}
             </h3>
             <p className="mt-3 text-[1.05rem] leading-7 text-muted">
               {commitment.body}

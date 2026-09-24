@@ -86,6 +86,33 @@ const odeyArchibongTicketPoster = {
   alt: "Official campaign poster: A Fresh Start, One People One Cross River. John Upan Odey Jnr for Governor with Dr Stella Charles Archibong for Deputy Governor.",
 } as const;
 
+const odeyArchibongPoster4 = {
+  id: "odey-archibong-poster-4",
+  src: "/brand/odey-archibong-poster-4.png",
+  width: 1083,
+  height: 1452,
+  title: "A Fresh Start",
+  alt: "Official campaign poster: A Fresh Start, One People One Cross River. John Upan Odey Jnr for Governor with Dr Stella Charles Archibong for Deputy Governor.",
+} as const;
+
+const odeyArchibongPoster5 = {
+  id: "odey-archibong-poster-5",
+  src: "/brand/odey-archibong-poster-5.png",
+  width: 1087,
+  height: 1447,
+  title: "One People, One Cross River",
+  alt: "Official campaign poster: A Fresh Start, One People One Cross River. John Upan Odey Jnr for Governor with Dr Stella Charles Archibong for Deputy Governor.",
+} as const;
+
+const odeyArchibongPoster6 = {
+  id: "odey-archibong-poster-6",
+  src: "/brand/odey-archibong-poster-6.png",
+  width: 1083,
+  height: 1452,
+  title: "A New Cross River is Possible",
+  alt: "Official campaign poster: A New Cross River is Possible, every community matters. John Upan Odey Jnr for Governor with Dr Stella Charles Archibong for Deputy Governor.",
+} as const;
+
 /** John's posters — Poster Gallery first. */
 export const johnCampaignPosters = [
   johnRisingPoster,
@@ -94,7 +121,12 @@ export const johnCampaignPosters = [
 ] as const;
 
 /** Odey Archibong ticket posters — Poster Gallery below John's. */
-export const odeyArchibongCampaignPosters = [odeyArchibongTicketPoster] as const;
+export const odeyArchibongCampaignPosters = [
+  odeyArchibongTicketPoster,
+  odeyArchibongPoster4,
+  odeyArchibongPoster5,
+  odeyArchibongPoster6,
+] as const;
 
 /**
  * Home preview keeps the live BA pair plus the ticket poster.
@@ -107,14 +139,13 @@ export const officialPosters = [
 ] as const;
 
 /**
- * Brand pack PDFs (Blue / White / Poster 4 / Poster 5) were not in the
- * web raster drop. Do not invent stand-ins — wait for rasterized files.
+ * Brand pack PDFs (Blue / White) were not in the web raster drop.
+ * Posters 4–6 now have approved rasters on /posters.
+ * Do not invent stand-ins — wait for remaining rasterized files.
  */
 export const pendingPosterRasterizations = [
   { id: "blue", label: "Official poster: Blue" },
   { id: "white", label: "Official poster: White" },
-  { id: "poster-4", label: "Official poster 4" },
-  { id: "poster-5", label: "Official poster 5" },
 ] as const;
 
 export type OfficialPoster = (typeof officialPosters)[number];

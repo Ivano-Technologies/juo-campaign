@@ -89,9 +89,8 @@ export default function PostersPage() {
         <div className="mt-14 border border-dashed border-line bg-brand-white px-5 py-6">
           <h2 className="font-serif text-2xl text-ink">Awaiting raster</h2>
           <p className="mt-3 text-[1.05rem] leading-7 text-muted">
-            Blue, White, Poster 4, and Poster 5 exist as Brand-pack PDFs. They
-            are not invented or substituted here. They will be added when
-            raster files land.
+            Blue and White exist as Brand-pack PDFs. They are not invented or
+            substituted here. They will be added when raster files land.
           </p>
           <ul className="mt-4 list-disc pl-5 text-sm text-muted">
             {pendingPosterRasterizations.map((item) => (

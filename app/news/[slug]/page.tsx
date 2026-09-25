@@ -55,6 +55,11 @@ export default async function NewsDetailPage({ params }: NewsDetailPageProps) {
         title={post.title}
         lede={post.body[0] ?? post.title}
       >
+        {post.watch ? (
+          <Button href={post.watch.url} variant="primary">
+            {post.watch.label}
+          </Button>
+        ) : null}
         <Button href={communityPath} variant="white">
           All news
         </Button>

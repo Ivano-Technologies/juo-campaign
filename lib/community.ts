@@ -14,15 +14,50 @@ export type CommunityImage = {
   alt: string;
 };
 
+export type CommunityWatch = {
+  url: `https://${string}`;
+  embedSrc: `https://${string}`;
+  label: string;
+};
+
+export type CommunityClose = {
+  lead: string;
+  lockup: string;
+};
+
 export type CommunityPost = {
   id: string;
   title: string;
   dateline?: string;
   body: readonly string[];
   images: readonly CommunityImage[];
+  watch?: CommunityWatch;
+  close?: CommunityClose;
 };
 
 export const communityPosts = [
+  {
+    id: "big-talk-with-john-upan-odey",
+    title: "BIG TALK WITH JOHN UPAN ODEY",
+    dateline: "A FRESH START… ONE PEOPLE, ONE CROSS RIVER",
+    body: [
+      "What does a different future look like for Cross River State?",
+      "On Big Talk, John Upan Odey, NDC Governorship Candidate for Cross River State, 2027, sits down for a candid conversation about the challenges facing the state, the opportunities that remain untapped, and the kind of leadership he says Cross River needs.",
+      "From jobs and enterprise to agriculture, infrastructure, healthcare, security, tourism and accountable governance, the conversation examines how Cross River can move from potential to measurable prosperity.",
+      "Odey brings into the conversation a recurring position in his public record: that development should be approached with data, clear targets, enterprise and measurable results, rather than simply announcing projects. His earlier public statements have similarly emphasized strengthening agriculture and value chains, supporting local businesses, developing tourism and improving government monitoring.",
+      "As the 2027 governorship race takes shape, the Big Talk interview provides an opportunity to hear directly from Odey about his vision and the issues he says matter most to Cross Riverians.",
+    ],
+    images: [],
+    watch: {
+      url: "https://www.youtube.com/live/VymqLxxIbGY?si=icZ_Q-byiQN_cBFn",
+      embedSrc: "https://www.youtube.com/embed/VymqLxxIbGY",
+      label: "Watch the full interview.",
+    },
+    close: {
+      lead: "JOHN UPAN ODEY 2027",
+      lockup: "A FRESH START - ONE PEOPLE, ONE CROSS RIVER",
+    },
+  },
   {
     id: "john-upan-odey-named-foundation-fellow-of-icap",
     title: "John Upan Odey Named Foundation Fellow of ICAP",

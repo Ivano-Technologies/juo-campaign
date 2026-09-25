@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/button";
 import {
   communityPostPath,
   communityPosts,
@@ -20,6 +21,9 @@ function PostImages({
   preview: boolean;
 }) {
   const images = preview ? post.images.slice(0, 1) : post.images;
+  if (images.length === 0) {
+    return null;
+  }
 
   return (
     <div className={images.length > 1 ? "mt-6 grid gap-4" : "mt-6"}>
@@ -39,6 +43,48 @@ function PostImages({
           />
         </figure>
       ))}
+    </div>
+  );
+}
+
+function PostWatch({ post }: { post: CommunityPost }) {
+  if (!post.watch) {
+    return null;
+  }
+
+  return (
+    <div className="mt-8 space-y-5">
+      <div className="relative aspect-video w-full overflow-hidden border border-brand-blue/15 bg-brand-blue">
+        <iframe
+          src={post.watch.embedSrc}
+          title={post.title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="strict-origin-when-cross-origin"
+          className="absolute inset-0 h-full w-full"
+        />
+      </div>
+      <Button href={post.watch.url} variant="primary" className="w-full sm:w-auto">
+        {post.watch.label}
+      </Button>
+    </div>
+  );
+}
+
+function PostClose({ post }: { post: CommunityPost }) {
+  if (!post.close) {
+    return null;
+  }
+
+  return (
+    <div className="mt-10 border-t border-line pt-10">
+      <p className="font-serif text-2xl font-extrabold tracking-tight text-brand-blue uppercase">
+        {post.close.lead}
+      </p>
+      <p className="mt-2 font-serif text-2xl font-extrabold tracking-tight text-brand-blue uppercase">
+        {post.close.lockup}
+      </p>
     </div>
   );
 }
@@ -90,7 +136,12 @@ export function CommunityPostArticle({
             Read the full post
           </Link>
         </p>
-      ) : null}
+      ) : (
+        <>
+          <PostWatch post={post} />
+          <PostClose post={post} />
+        </>
+      )}
       <PostImages post={post} layout={layout} preview={preview} />
     </article>
   );

@@ -26,7 +26,12 @@ const sizes = {
   sm: "min-h-11 px-4 py-2 text-sm",
 } as const;
 
-type ButtonHref = Route | `${string}#${string}`;
+type ExternalHref = `https://${string}`;
+type ButtonHref = Route | `${string}#${string}` | ExternalHref;
+
+function isExternalHref(href: string): href is ExternalHref {
+  return href.startsWith("https://");
+}
 
 type ButtonProps = {
   href?: ButtonHref;
@@ -56,6 +61,20 @@ export function Button({
   const classes = `inline-flex items-center justify-center rounded-full border text-center font-semibold tracking-wide whitespace-normal transition-[color,background-color,border-color,transform,box-shadow] duration-200 ease-out motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[0_10px_22px_-12px_color-mix(in_srgb,var(--brand-red)_55%,transparent)] ${sizes[size]} ${tone} ${usesGhostPill ? "ghost-pill" : ""} disabled:cursor-not-allowed disabled:opacity-60 ${className}`;
 
   if (href) {
+    if (isExternalHref(href)) {
+      return (
+        <a
+          href={href}
+          className={classes}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={onClick}
+        >
+          {children}
+        </a>
+      );
+    }
+
     if (href.includes("#")) {
       return (
         <a href={href} className={classes} onClick={onClick}>

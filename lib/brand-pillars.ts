@@ -5,7 +5,7 @@
  */
 export const brandPillarsTitle = "Our Brand Pillars";
 export const brandPillarsIntro =
-  "Five Brand values. Who John stands for as a leader — Service, Competence, Integrity, Opportunity, Unity. Not the eight manifesto policy pillars, and not THE TEN COMMITMENTS TO CROSS RIVERIANS.";
+  "Five Brand values. Who John stands for as a leader — Service, Competence, Integrity, Opportunity, Unity.";
 
 export const brandPillars = [
   {

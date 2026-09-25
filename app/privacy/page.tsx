@@ -25,7 +25,14 @@ export default function PrivacyPage() {
           <h2 className="font-serif text-2xl text-ink">Who we are</h2>
           <p className="mt-3">
             This site is the official campaign website for {site.name},{" "}
-            {site.office}. Use the{" "}
+            {site.office}. Write to{" "}
+            <a
+              href={`mailto:${site.contactEmail}`}
+              className="text-brand-blue underline"
+            >
+              {site.contactEmail}
+            </a>{" "}
+            or use the{" "}
             <a href="/contact" className="text-brand-blue underline">
               contact form
             </a>{" "}
@@ -66,7 +73,14 @@ export default function PrivacyPage() {
         <section>
           <h2 className="font-serif text-2xl text-ink">Your choices</h2>
           <p className="mt-3">
-            Use the{" "}
+            Write to{" "}
+            <a
+              href={`mailto:${site.contactEmail}`}
+              className="text-brand-blue underline"
+            >
+              {site.contactEmail}
+            </a>{" "}
+            or use the{" "}
             <a href="/contact" className="text-brand-blue underline">
               contact form
             </a>{" "}

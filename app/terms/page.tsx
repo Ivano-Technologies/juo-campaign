@@ -42,7 +42,14 @@ export default function TermsPage() {
         <section>
           <h2 className="font-serif text-2xl text-ink">Contact</h2>
           <p className="mt-3">
-            Campaign email is coming soon. Use the{" "}
+            Write to{" "}
+            <a
+              href={`mailto:${site.contactEmail}`}
+              className="text-brand-blue underline"
+            >
+              {site.contactEmail}
+            </a>{" "}
+            or use the{" "}
             <a href="/contact" className="text-brand-blue underline">
               contact form
             </a>{" "}

@@ -12,6 +12,8 @@ export const site = {
   origin: "Obudu, Cross River State",
   age: 48,
   domain: "votejohnupanodey.com",
+  /** Interim public campaign mailbox. Shown on Contact, Terms, and Privacy. */
+  contactEmail: "campaign@votejohnupanodey.com",
 } as const;
 
 /** www-primary canonical origin. Apex redirects to www. */

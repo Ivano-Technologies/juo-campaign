@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { CampaignGraphicsGallery } from "@/components/campaign-graphics";
 import { CommunityPostList } from "@/components/community-posts";
 import { communityPath } from "@/lib/community";
 import { photosPath } from "@/lib/photos";
@@ -40,6 +41,13 @@ export function HomePosters() {
 
         <div className="mt-10">
           <CommunityPostList />
+        </div>
+
+        <div className="mt-16">
+          <CampaignGraphicsGallery
+            heading="Campaign graphics"
+            headingLevel="h3"
+          />
         </div>
 
         <div className="mt-16">

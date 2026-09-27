@@ -30,4 +30,28 @@ export const officialCampaignPhotos = [
   },
 ] as const;
 
+/**
+ * Landscape BA gallery graphics (vehicle wraps). Native 4:3 frames —
+ * do not crop into the 3:4 portrait photo grid.
+ */
+export const campaignGraphics = [
+  {
+    id: "we-are-ready",
+    src: "/brand/gallery/we-are-ready.jpg",
+    width: 2000,
+    height: 1500,
+    title: "We are ready",
+    alt: "We are ready: Odey Archibong campaign bus. A Fresh Start, One People One Cross River. John Upan Odey Jnr for Governor with Dr Stella Charles Archibong for Deputy Governor.",
+  },
+  {
+    id: "odey-archibong-car-brand",
+    src: "/brand/gallery/odey-archibong-car-brand.jpg",
+    width: 2000,
+    height: 1498,
+    title: "Odey Archibong car brand",
+    alt: "Odey Archibong car brand: campaign vehicles. A Fresh Start, One People One Cross River. John Upan Odey Jnr for Governor with Dr Stella Charles Archibong for Deputy Governor.",
+  },
+] as const;
+
 export type OfficialCampaignPhoto = (typeof officialCampaignPhotos)[number];
+export type CampaignGraphic = (typeof campaignGraphics)[number];

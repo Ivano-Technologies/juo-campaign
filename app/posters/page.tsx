@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Button } from "@/components/button";
+import { CampaignGraphicsGallery } from "@/components/campaign-graphics";
 import { PageHero } from "@/components/page-hero";
 import { pageShareTags } from "@/lib/page-seo";
 import { photosPath } from "@/lib/photos";
@@ -85,6 +86,10 @@ export default function PostersPage() {
             </li>
           ))}
         </ul>
+
+        <div className="mt-16">
+          <CampaignGraphicsGallery heading="Campaign graphics" />
+        </div>
 
         <div className="mt-14 border border-dashed border-line bg-brand-white px-5 py-6">
           <h2 className="font-serif text-2xl text-ink">Awaiting raster</h2>

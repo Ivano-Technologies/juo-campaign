@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Button } from "@/components/button";
+import { CampaignGraphicsGallery } from "@/components/campaign-graphics";
 import { PageHero } from "@/components/page-hero";
 import { pageShareTags } from "@/lib/page-seo";
 import {
@@ -55,6 +56,10 @@ export default function PhotosPage() {
             </li>
           ))}
         </ul>
+
+        <div className="mt-16">
+          <CampaignGraphicsGallery heading="Campaign photographs" />
+        </div>
       </section>
     </>
   );

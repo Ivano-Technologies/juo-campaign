@@ -89,6 +89,18 @@ export const officialAssetsWired = [
     role: "Community post — Home Campaign gallery and /news (NDC Cross River Listening Tour)",
   },
   {
+    path: "/brand/news/ndc-chapter-chairmen-southern-1.jpg",
+    role: "News post — Home Campaign gallery, /news listing, and /news/meeting-with-ndc-chapter-chairmen-southern-senatorial-district (hero)",
+  },
+  {
+    path: "/brand/news/ndc-chapter-chairmen-southern-2.jpg",
+    role: "News post — NDC Chapter Chairmen Southern Senatorial District detail gallery",
+  },
+  {
+    path: "/brand/news/ndc-chapter-chairmen-southern-3.jpg",
+    role: "News post — NDC Chapter Chairmen Southern Senatorial District detail gallery",
+  },
+  {
     path: "/brand/news/icap-foundation-fellow-1.jpg",
     role: "News post — Home Campaign gallery, /news listing, and /news/john-upan-odey-named-foundation-fellow-of-icap",
   },

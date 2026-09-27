@@ -33,9 +33,49 @@ export type CommunityPost = {
   images: readonly CommunityImage[];
   watch?: CommunityWatch;
   close?: CommunityClose;
+  hashtags?: readonly string[];
 };
 
 export const communityPosts = [
+  {
+    id: "meeting-with-ndc-chapter-chairmen-southern-senatorial-district",
+    title: "Meeting with NDC Chapter Chairmen — Southern Senatorial District",
+    dateline: "Southern Senatorial District | September 27, 2026",
+    body: [
+      "Today, we engaged with the NDC Chapter Chairmen across the Southern Senatorial District of Cross River State in a substantive dialogue on grassroots campaign coordination and field-level mobilisation and hosted the Woman Leader of the Non-Indigenous Community and her Assistant, who came to interface with us and formally identify with the NDC party.",
+      "They expressed their eagerness to welcome us into their community, noting their significant numbers, and pledged their full support for the movement.",
+      "Discussions centred on door-to-door engagement, ward-to-ward inclusion, community outreach, grassroots communication, and the strategic coordination required for effective campaign operations.",
+      "A significant part of the conversation focused on equipping chapter structures with the appropriate campaign materials, communication resources, and operational support necessary to translate strategy into meaningful activity at the grassroots.",
+      "The message from the chapter leadership was clear: the structures are prepared to work, and with the necessary institutional support and resources, they are ready to take the campaign into communities across the district.",
+    ],
+    images: [
+      {
+        src: "/brand/news/ndc-chapter-chairmen-southern-1.jpg",
+        width: 2000,
+        height: 1500,
+        alt: "Odey Archibong campaign meeting with NDC Chapter Chairmen from the Southern Senatorial District of Cross River State.",
+      },
+      {
+        src: "/brand/news/ndc-chapter-chairmen-southern-2.jpg",
+        width: 2000,
+        height: 2000,
+        alt: "Woman Leader of the Non-Indigenous Community and her Assistant identify with the NDC at the Southern Senatorial District chapter chairmen meeting.",
+      },
+      {
+        src: "/brand/news/ndc-chapter-chairmen-southern-3.jpg",
+        width: 2000,
+        height: 1500,
+        alt: "Campaign dialogue with NDC Chapter Chairmen on grassroots mobilisation in the Southern Senatorial District.",
+      },
+    ],
+    hashtags: [
+      "#odeyarchibong2027",
+      "#AFRESHSTART",
+      "#ONEPEOPLE",
+      "#ONECROSSRIVER",
+      "#NDC",
+    ],
+  },
   {
     id: "big-talk-with-john-upan-odey",
     title: "BIG TALK WITH JOHN UPAN ODEY",

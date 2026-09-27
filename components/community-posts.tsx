@@ -89,6 +89,18 @@ function PostClose({ post }: { post: CommunityPost }) {
   );
 }
 
+function PostHashtags({ post }: { post: CommunityPost }) {
+  if (!post.hashtags || post.hashtags.length === 0) {
+    return null;
+  }
+
+  return (
+    <p className="mt-8 text-sm tracking-wide text-muted">
+      {post.hashtags.join(" · ")}
+    </p>
+  );
+}
+
 export function CommunityPostArticle({
   post,
   layout = "stack",
@@ -140,6 +152,7 @@ export function CommunityPostArticle({
         <>
           <PostWatch post={post} />
           <PostClose post={post} />
+          <PostHashtags post={post} />
         </>
       )}
       <PostImages post={post} layout={layout} preview={preview} />

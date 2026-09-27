@@ -73,6 +73,14 @@ export const officialAssetsWired = [
     role: "Odey Archibong ticket poster 6 — /posters only (A New Cross River is Possible)",
   },
   {
+    path: "/brand/gallery/we-are-ready.jpg",
+    role: "BA gallery graphic — Home Campaign gallery, /posters, and /photos (We are ready)",
+  },
+  {
+    path: "/brand/gallery/odey-archibong-car-brand.jpg",
+    role: "BA gallery graphic — Home Campaign gallery, /posters, and /photos (Odey Archibong car brand)",
+  },
+  {
     path: "/brand/community/connecting-with-cross-rivers-youth.png",
     role: "Community post — Home Campaign gallery and /news (Connecting with Cross River’s Youth)",
   },

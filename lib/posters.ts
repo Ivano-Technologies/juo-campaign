@@ -162,15 +162,5 @@ export const officialPosters = [
   odeyArchibongTicketPoster,
 ] as const;
 
-/**
- * Brand pack PDFs (Blue / White) were not in the web raster drop.
- * Posters 4–6 now have approved rasters on /posters.
- * Do not invent stand-ins — wait for remaining rasterized files.
- */
-export const pendingPosterRasterizations = [
-  { id: "blue", label: "Official poster: Blue" },
-  { id: "white", label: "Official poster: White" },
-] as const;
-
 export type OfficialPoster = (typeof officialPosters)[number];
 export type OfficialBrandedPortrait = (typeof officialBrandedPortraits)[number];

@@ -8,7 +8,7 @@ export const repsPageDescription =
 export const repsFacesTitle = "One people: local faces of the movement";
 export const repsFacesBody = [
   "A Fresh Start is built ward by ward and LGA by LGA. This page will list campaign representatives and coordinators so Cross Riverians can find trusted local contacts for organising, voter education, and community outreach.",
-  "Names, photos, and contact details will appear only when the campaign announces them through official updates. Nothing here invents a slate.",
+  "Names, photos, and contact details will appear only when the campaign announces them through official updates.",
 ] as const;
 
 export const repsFindTitle = "What you will find here (when announced)";
@@ -21,12 +21,10 @@ export const repsFindItems = [
 
 export const repsDirectoryTitle = "Directory status";
 export const repsDirectoryStatus = "Reps announced with campaign updates.";
-export const repsDirectoryEmpty =
-  "The directory is empty by design until Brand publishes confirmed names. Check /news and official campaign channels for announcements.";
 
 export const repsServeTitle = "Want to serve locally?";
 export const repsServeBody =
-  "If you want to volunteer as a coordinator or organiser in your LGA, from Calabar to Obudu and every community in between, register on Join the Movement. Placement and public listing follow campaign process, not this placeholder.";
+  "If you want to volunteer as a coordinator or organiser in your LGA, from Calabar to Obudu and every community in between, register on Join the Movement. Placement and public listing follow campaign process.";
 
 export const repsFilterRoles = [
   "Any role",

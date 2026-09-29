@@ -15,7 +15,7 @@ export const policiesHubBody = [
   "These are the eight approved manifesto policy pillars for Cross River 2027 under A Fresh Start: One People, One Cross River. They are manifesto sectors, not the five Brand values.",
 ] as const;
 export const policiesHubImportant =
-  "Important: Full programme language will come only from the approved manifesto PDF. This hub does not invent funds or extra promises. Brand values (who John stands for as a leader) live on The Vision. THE TEN COMMITMENTS TO CROSS RIVERIANS live on the Manifesto page, distinct from these eight pillars.";
+  "Important: Full programme language will come only from the approved manifesto PDF. Brand values (who John stands for as a leader) live on The Vision. THE TEN COMMITMENTS TO CROSS RIVERIANS live on the Manifesto page, distinct from these eight pillars.";
 
 export const policiesTenTitle = "Approved manifesto pillars";
 

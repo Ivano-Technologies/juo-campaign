@@ -8,7 +8,6 @@ export const diasporaPageDescription =
 export const diasporaIncludeTitle = "A Fresh Start includes Cross Riverians abroad";
 export const diasporaIncludeBody = [
   "One People, One Cross River does not stop at the state line. Cross Riverians in the diaspora are part of A Fresh Start through organising, skills, media, and community support. Naira bank transfer is published on the Donate page. Online checkout for card and international giving is coming soon.",
-  "This page explains purpose, who it is for, and how contact data is handled. It does not invent a formal “programme catalogue” or chapter network that Brand has not published.",
 ] as const;
 
 export const diasporaPurposeTitle = "Purpose";
@@ -21,20 +20,20 @@ export const diasporaPurposeItems = [
   "Find the official path to Donate",
 ] as const;
 
-export const diasporaWhoTitle = "Who it is for (eligibility framing)";
+export const diasporaWhoTitle = "Who it is for";
 export const diasporaWhoIntro = "You are welcome to connect if you:";
 export const diasporaWhoItems = [
   "Identify with Cross River and support a peaceful, lawful democratic campaign for 2027",
-  "Want to volunteer time, skills, or community organising, not to invent unofficial “official” roles",
+  "Want to volunteer time, skills, or community organising through official campaign channels",
   "Understand that public representative titles appear only when announced on Meet Your Reps or News",
 ] as const;
 export const diasporaWhoClose = [
   "There is no fee to register interest. The campaign will never ask you for passwords, seed phrases, or payments outside published Donate channels.",
 ] as const;
 
-export const diasporaTakePartTitle = "How to take part (interim)";
+export const diasporaTakePartTitle = "How to take part";
 export const diasporaTakePartBody =
-  "Until a dedicated diaspora form ships, use Join the Movement and select the diaspora option (or note your location/country in the form). For general enquiries, use Contact.";
+  "Use Join the Movement and select the diaspora option (or note your location/country in the form). For general enquiries, use Contact.";
 
 export const diasporaPrivacyTitle = "Privacy and data use";
 export const diasporaPrivacyBody = [

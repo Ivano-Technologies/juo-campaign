@@ -45,12 +45,10 @@ export const visionOfficialMission =
 export const visionWhyTitle = "Why this vision";
 export const visionWhyBody = [
   "Cross River is one people. Division does not build roads, power homes, or create lasting jobs. A Fresh Start means choosing unity of purpose across LGAs, generations, and communities so the state’s real strengths in people, land, culture, and location can work for everyone.",
-  "This page carries the Brand spine for the campaign. The five Brand pillars say who John stands for as a leader. Detailed policy commitments belong in the approved manifesto; they are not these Brand pillars.",
+  "The five Brand pillars say who John stands for as a leader. Detailed policy commitments belong in the approved manifesto; they are not these Brand pillars.",
 ] as const;
 
 export const visionAgendaTitle = "Approved manifesto excerpts";
-export const visionAgendaNote =
-  "Brand excerpts until the manifesto PDF is published. Full commitments wait on that file.";
 
 export {
   brandPillarsIntro as visionPillarsIntro,

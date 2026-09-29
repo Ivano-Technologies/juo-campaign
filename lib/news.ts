@@ -8,7 +8,6 @@ export const newsPageDescription =
 export const newsroomTitle = "Campaign newsroom";
 export const newsroomBody = [
   "This is the official news hub for John Upan Odey Jnr’s Cross River 2027 campaign. Only campaign-approved stories, speeches, press notes, and media will appear here.",
-  "Demo or template posts from older site shells are not carried across.",
 ] as const;
 
 export const newsReadyTitle = "Stay ready";

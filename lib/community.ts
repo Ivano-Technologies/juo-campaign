@@ -42,7 +42,7 @@ export const communityPosts = [
   {
     id: "meeting-with-ndc-chapter-chairmen-southern-senatorial-district",
     title: "Meeting with NDC Chapter Chairmen — Southern Senatorial District",
-    dateline: "Southern Senatorial District | September 27, 2026",
+    dateline: "27 September 2026",
     body: [
       "Today, we engaged with the NDC Chapter Chairmen across the Southern Senatorial District of Cross River State in a substantive dialogue on grassroots campaign coordination and field-level mobilisation and hosted the Woman Leader of the Non-Indigenous Community and her Assistant, who came to interface with us and formally identify with the NDC party.",
       "They expressed their eagerness to welcome us into their community, noting their significant numbers, and pledged their full support for the movement.",
@@ -81,7 +81,7 @@ export const communityPosts = [
   {
     id: "big-talk-with-john-upan-odey",
     title: "BIG TALK WITH JOHN UPAN ODEY",
-    dateline: "A FRESH START… ONE PEOPLE, ONE CROSS RIVER",
+    dateline: "25 September 2026",
     body: [
       "What does a different future look like for Cross River State?",
       "On Big Talk, John Upan Odey, NDC Governorship Candidate for Cross River State, 2027, sits down for a candid conversation about the challenges facing the state, the opportunities that remain untapped, and the kind of leadership he says Cross River needs.",
@@ -103,7 +103,7 @@ export const communityPosts = [
   {
     id: "john-upan-odey-named-foundation-fellow-of-icap",
     title: "John Upan Odey Named Foundation Fellow of ICAP",
-    dateline: "Abuja | September 23, 2026",
+    dateline: "23 September 2026",
     body: [
       "John Upan Odey has been named a Foundation Fellow of the Institute of Competition and Antitrust Practitioners (ICAP) at the institute’s formal unveiling and induction ceremony held in Abuja on Wednesday, September 23, 2026.",
       "The recognition places Odey among ICAP’s pioneer fellows as the institute begins its work of advancing professional standards, knowledge and ethical practice in competition and antitrust matters in Nigeria.",

@@ -2,11 +2,6 @@ export const brand = {
   colors: {
     /** Royal Blue — Brand Manual (IVA-31 / IVA-44). */
     blue: "#40449B",
-    /**
-     * IVA-46 pillar-strip exception only: same Royal hue, one shade deeper
-     * than #40449B for 04–06. Not a page background. Not near-black.
-     */
-    blueDeep: "#2C2F70",
     white: "#FFFFFF",
     red: "#EF2B35",
   },

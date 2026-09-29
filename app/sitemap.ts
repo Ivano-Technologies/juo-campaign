@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { communityPostPath, communityPosts } from "@/lib/community";
+import { communityPostPath, newsPosts } from "@/lib/community";
 import { canonicalOrigin } from "@/lib/site";
 
 /** Public, indexable routes. Canonical Vision is /vision; /the-vision 301s. */
@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages = publicPaths.map((path) => ({
     url: absoluteUrl(path),
   }));
-  const stories = communityPosts.map((post) => ({
+  const stories = newsPosts.map((post) => ({
     url: absoluteUrl(communityPostPath(post.id)),
   }));
   return [...pages, ...stories];

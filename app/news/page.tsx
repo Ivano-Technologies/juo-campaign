@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Button } from "@/components/button";
 import { CommunityPostList } from "@/components/community-posts";
 import { PageHero } from "@/components/page-hero";
+import { newsPosts } from "@/lib/community";
 import {
   newsPageDescription,
   newsPageTitle,
@@ -51,7 +52,7 @@ export default function NewsPage() {
           ))}
         </div>
 
-        <CommunityPostList layout="stack" />
+        <CommunityPostList layout="stack" posts={newsPosts} />
 
         <div>
           <h3 className="font-serif text-xl text-ink">{newsReadyTitle}</h3>

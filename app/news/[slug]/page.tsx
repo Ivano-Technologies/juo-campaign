@@ -6,9 +6,9 @@ import { PageHero } from "@/components/page-hero";
 import {
   communityPath,
   communityPostPath,
-  communityPosts,
   communityPostSeoTitle,
   getCommunityPost,
+  newsPosts,
 } from "@/lib/community";
 import { pageShareTags } from "@/lib/page-seo";
 
@@ -17,7 +17,7 @@ type NewsDetailPageProps = {
 };
 
 export function generateStaticParams() {
-  return communityPosts.map((post) => ({ slug: post.id }));
+  return newsPosts.map((post) => ({ slug: post.id }));
 }
 
 export async function generateMetadata({

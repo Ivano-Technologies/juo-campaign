@@ -12,6 +12,8 @@ export type CommunityImage = {
   width: number;
   height: number;
   alt: string;
+  avif?: string;
+  webp?: string;
 };
 
 export type CommunityWatch = {
@@ -189,12 +191,51 @@ export const communityPosts = [
   },
 ] as const satisfies readonly CommunityPost[];
 
+const pvcCollectionNotice = {
+  id: "your-vote-your-power",
+  title: "Your vote. Your power.",
+  dateline: "29 September 2026",
+  body: [
+    "The Independent National Electoral Commission (INEC) says collection of Permanent Voter Cards (PVCs) will begin Friday, 9 October 2026, across Nigeria.",
+    "To all NDC supporters in Cross River and across Nigeria: if you are a registered voter and your PVC is ready for collection, make plans to collect it from the designated INEC collection centre/office in your area.",
+    "Your PVC is your access to the ballot.",
+    "Your vote is your voice.",
+    "Your voice. Your power.",
+    "Collection begins: 9 October 2026",
+    "INEC offices/designated collection centres nationwide",
+    "Check your voter status.",
+    "Confirm your collection location.",
+    "Collect your PVC.",
+    "Let every eligible NDC supporter be ready to participate in the democratic process.",
+    "YOUR VOICE. YOUR POWER.",
+  ],
+  images: [
+    {
+      src: "/brand/pvc-collection.jpg",
+      avif: "/brand/pvc-collection.avif",
+      webp: "/brand/pvc-collection.webp",
+      width: 1415,
+      height: 2000,
+      alt: "Campaign poster: Collect your PVC. Your Vote. Our Power. NDC, Nigeria Democratic Congress. Collection begins 9th October 2026 at INEC offices nationwide, with hands holding permanent voter cards.",
+    },
+  ],
+  hashtags: [
+    "#NDC",
+    "#odeyarchibong2027",
+    "#NigeriaDemocraticCongress",
+    "#YourVoiceYourPower",
+  ],
+} as const satisfies CommunityPost;
+
+/** News index and story pages. Homepage community gallery stays on communityPosts. */
+export const newsPosts = [pvcCollectionNotice, ...communityPosts] as const satisfies readonly CommunityPost[];
+
 export function communityPostPath(id: string): `/news/${string}` {
   return `/news/${id}`;
 }
 
 export function getCommunityPost(id: string): CommunityPost | undefined {
-  return communityPosts.find((post) => post.id === id);
+  return newsPosts.find((post) => post.id === id);
 }
 
 export function communityPostSeoTitle(title: string): string {

@@ -8,11 +8,6 @@
    * unauthorised cyan / mint / maroon / pink map onto these three tokens.
    */
   --brand-blue: #40449B;
-  /*
-   * IVA-46 pillar-strip exception: same Royal hue, one shade deeper.
-   * Used only for numbered Brand pillars 04–05. Never a page/section canvas.
-   */
-  --brand-blue-deep: #2C2F70;
   --brand-white: #FFFFFF;
   --brand-red: #EF2B35;
 
@@ -43,7 +38,6 @@
 
 @theme inline {
   --color-brand-blue: var(--brand-blue);
-  --color-brand-blue-deep: var(--brand-blue-deep);
   --color-brand-white: var(--brand-white);
   --color-brand-red: var(--brand-red);
   --color-navy: var(--navy);

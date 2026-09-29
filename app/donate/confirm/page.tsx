@@ -11,6 +11,7 @@ const confirmDescription =
 export const metadata: Metadata = {
   title: "Donation received",
   description: confirmDescription,
+  robots: { index: false, follow: false },
   ...pageShareTags(confirmTitle, confirmDescription, "/donate/confirm"),
 };
 
@@ -20,7 +21,7 @@ export default function DonateConfirmPage() {
       <PageHero
         kicker="Thank you"
         title="Donation confirmation"
-        lede="If you reached this page after a successful payment, thank you. A receipt will follow once the naira processor is live. This screen is in place for that flow."
+        lede="If you reached this page after a successful payment, thank you. A receipt will follow once the naira processor is live."
       >
         <Button href="/" variant="white">
           Back home

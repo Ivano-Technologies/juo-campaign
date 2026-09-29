@@ -11,6 +11,7 @@ const confirmDescription =
 export const metadata: Metadata = {
   title: "Donation received",
   description: confirmDescription,
+  robots: { index: false, follow: false },
   ...pageShareTags(confirmTitle, confirmDescription, "/donate/confirm"),
 };
 

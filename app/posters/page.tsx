@@ -42,18 +42,33 @@ export default function PostersPage() {
           John’s posters
         </h2>
         <ul className="mt-8 grid gap-10 md:grid-cols-3">
-          {johnCampaignPosters.map((poster) => (
+          {johnCampaignPosters.map((poster, index) => (
             <li key={poster.id}>
               <figure>
                 <div className="relative aspect-[1241/1754] w-full overflow-hidden border border-brand-blue/15 bg-brand-white">
-                  <Image
-                    src={poster.src}
-                    alt={poster.alt}
-                    fill
-                    sizes="(min-width: 768px) 33vw, 100vw"
-                    className="object-contain"
-                    priority
-                  />
+                  {"avif" in poster ? (
+                    <picture className="contents">
+                      <source srcSet={poster.avif} type="image/avif" />
+                      <source srcSet={poster.webp} type="image/webp" />
+                      <Image
+                        src={poster.src}
+                        alt={poster.alt}
+                        fill
+                        sizes="(min-width: 768px) 33vw, 100vw"
+                        className="object-contain"
+                        unoptimized
+                      />
+                    </picture>
+                  ) : (
+                    <Image
+                      src={poster.src}
+                      alt={poster.alt}
+                      fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      className="object-contain"
+                      priority={index < 3}
+                    />
+                  )}
                 </div>
                 <figcaption className="mt-4 font-serif text-xl text-ink">
                   {poster.title}

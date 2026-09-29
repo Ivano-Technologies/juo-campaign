@@ -9,6 +9,7 @@ import {
 
 type CommunityPostListProps = {
   layout?: "grid" | "stack";
+  posts?: readonly CommunityPost[];
 };
 
 function PostImages({
@@ -27,22 +28,45 @@ function PostImages({
 
   return (
     <div className={images.length > 1 ? "mt-6 grid gap-4" : "mt-6"}>
-      {images.map((image) => (
-        <figure key={image.src}>
-          <Image
-            src={image.src}
-            alt={image.alt}
-            width={image.width}
-            height={image.height}
-            sizes={
-              layout === "stack"
-                ? "(min-width: 768px) 42rem, 100vw"
-                : "(min-width: 768px) 50vw, 100vw"
-            }
-            className="h-auto w-full border border-brand-blue/15"
-          />
-        </figure>
-      ))}
+      {images.map((image) => {
+        const sizes =
+          layout === "stack"
+            ? "(min-width: 768px) 42rem, 100vw"
+            : "(min-width: 768px) 50vw, 100vw";
+
+        if (image.avif && image.webp) {
+          return (
+            <figure key={image.src}>
+              <picture>
+                <source srcSet={image.avif} type="image/avif" />
+                <source srcSet={image.webp} type="image/webp" />
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  sizes={sizes}
+                  className="h-auto w-full border border-brand-blue/15 object-contain"
+                  unoptimized
+                />
+              </picture>
+            </figure>
+          );
+        }
+
+        return (
+          <figure key={image.src}>
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              sizes={sizes}
+              className="h-auto w-full border border-brand-blue/15"
+            />
+          </figure>
+        );
+      })}
     </div>
   );
 }
@@ -160,13 +184,16 @@ export function CommunityPostArticle({
   );
 }
 
-export function CommunityPostList({ layout = "grid" }: CommunityPostListProps) {
+export function CommunityPostList({
+  layout = "grid",
+  posts = communityPosts,
+}: CommunityPostListProps) {
   const listClass =
     layout === "stack" ? "grid gap-16" : "grid gap-12 md:grid-cols-2";
 
   return (
     <ul className={listClass}>
-      {communityPosts.map((post) => (
+      {posts.map((post) => (
         <li key={post.id} id={post.id}>
           <CommunityPostArticle
             post={post}

@@ -8,7 +8,6 @@ import { photosPath } from "@/lib/photos";
 import {
   johnCampaignPosters,
   odeyArchibongCampaignPosters,
-  pendingPosterRasterizations,
   postersPageDescription,
   postersPageTitle,
 } from "@/lib/posters";
@@ -104,19 +103,6 @@ export default function PostersPage() {
 
         <div className="mt-16">
           <CampaignGraphicsGallery heading="Campaign graphics" />
-        </div>
-
-        <div className="mt-14 border border-dashed border-line bg-brand-white px-5 py-6">
-          <h2 className="font-serif text-2xl text-ink">Awaiting raster</h2>
-          <p className="mt-3 text-[1.05rem] leading-7 text-muted">
-            Blue and White exist as Brand-pack PDFs. They are not invented or
-            substituted here. They will be added when raster files land.
-          </p>
-          <ul className="mt-4 list-disc pl-5 text-sm text-muted">
-            {pendingPosterRasterizations.map((item) => (
-              <li key={item.id}>{item.label}</li>
-            ))}
-          </ul>
         </div>
       </section>
     </>

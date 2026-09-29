@@ -25,8 +25,8 @@ export default function TermsPage() {
           <h2 className="font-serif text-2xl text-ink">Using this site</h2>
           <p className="mt-3">
             Pages, posters, and photographs here are for the {site.name}{" "}
-            campaign. They are not a WordPress demo, a law-firm template, or a
-            substitute for official government services.
+            campaign. They are not a substitute for official government
+            services.
           </p>
         </section>
         <section>

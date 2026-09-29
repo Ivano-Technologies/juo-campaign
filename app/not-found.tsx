@@ -8,8 +8,7 @@ export default function NotFound() {
         This page is not on the campaign map
       </h1>
       <p className="mx-auto mt-4 max-w-xl text-brand-white/80">
-        The WordPress demo URLs are gone. Use the menu, or go back to a Fresh
-        Start.
+        Use the menu, or go back to a Fresh Start.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Button href="/" variant="white">

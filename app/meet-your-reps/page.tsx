@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Button } from "@/components/button";
 import { PageHero } from "@/components/page-hero";
 import {
-  repsDirectoryEmpty,
   repsDirectoryStatus,
   repsDirectoryTitle,
   repsFacesBody,
@@ -62,13 +61,10 @@ export default function MeetYourRepsPage() {
 
           <h3 className="mt-10 font-serif text-2xl text-ink">{repsDirectoryTitle}</h3>
           <p className="mt-3 font-semibold text-ink">{repsDirectoryStatus}</p>
-          <p className="mt-3 text-[1.05rem] leading-7 text-muted">
-            {repsDirectoryEmpty}
-          </p>
 
           <form
             className="mt-8 grid gap-4 rounded-2xl border border-dashed border-line bg-brand-white p-6 sm:grid-cols-2"
-            aria-label="Future representative directory filters"
+            aria-label="Representative directory filters"
           >
             <label className="grid gap-1 text-sm">
               Local government
@@ -101,10 +97,6 @@ export default function MeetYourRepsPage() {
                 ))}
               </select>
             </label>
-            <p className="sm:col-span-2 text-sm text-muted">
-              Filters will work when confirmed names are published. No
-              representative cards are listed yet.
-            </p>
           </form>
         </div>
 

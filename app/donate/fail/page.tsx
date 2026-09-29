@@ -11,6 +11,7 @@ const failDescription =
 export const metadata: Metadata = {
   title: "Donation unsuccessful",
   description: failDescription,
+  robots: { index: false, follow: false },
   ...pageShareTags(failTitle, failDescription, "/donate/fail"),
 };
 

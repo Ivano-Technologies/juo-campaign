@@ -77,6 +77,28 @@ const johnFreshStartPoster = {
   alt: "Official campaign poster: A Fresh Start, building opportunities in every community. John Upan Odey Jnr for Governor, Cross River State 2027.",
 } as const;
 
+const johnKwankwasoPoster = {
+  id: "white-poster-kwankwaso",
+  src: "/brand/white-poster-kwankwaso.jpg",
+  avif: "/brand/white-poster-kwankwaso.avif",
+  webp: "/brand/white-poster-kwankwaso.webp",
+  width: 1416,
+  height: 2000,
+  title: "Vote Odey-Archibong",
+  alt: "Official campaign poster: A Fresh Start, One People - One Cross River. Peter Obi, NDC presidential candidate; John Upan Odey for governor; Dr Stella Charles Archibong for deputy governor; Rabiu Kwankwaso, NDC vice presidential candidate. Vote Odey-Archibong for Cross River State, Nigeria 2027.",
+} as const;
+
+const johnPvcCollectionPoster = {
+  id: "pvc-collection",
+  src: "/brand/pvc-collection.jpg",
+  avif: "/brand/pvc-collection.avif",
+  webp: "/brand/pvc-collection.webp",
+  width: 1415,
+  height: 2000,
+  title: "Collect Your PVC",
+  alt: "Campaign poster: Collect your PVC. Your Vote. Our Power. NDC, Nigeria Democratic Congress. Collection begins 9th October 2026 at INEC offices nationwide, with hands holding permanent voter cards.",
+} as const;
+
 const odeyArchibongTicketPoster = {
   id: "official-poster-1",
   src: brand.marks.officialPoster,
@@ -118,6 +140,8 @@ export const johnCampaignPosters = [
   johnRisingPoster,
   johnOnePeoplePoster,
   johnFreshStartPoster,
+  johnKwankwasoPoster,
+  johnPvcCollectionPoster,
 ] as const;
 
 /** Odey Archibong ticket posters — Poster Gallery below John's. */

@@ -6,10 +6,10 @@ export const manifestoPdfHref: string | null = null;
 export const manifestoPageTitle = pageSeoTitle("Manifesto");
 
 export const manifestoPageDescription =
-  "Eight approved manifesto pillars, THE TEN COMMITMENTS TO CROSS RIVERIANS, and Brand excerpts for the John Upan Odey Jnr manifesto. A Fresh Start for Cross River. PDF when published.";
+  "Eight approved manifesto pillars, THE TEN COMMITMENTS TO CROSS RIVERIANS, and Brand excerpts for the John Upan Odey Jnr manifesto. A Fresh Start for Cross River.";
 
 export const manifestoHeroLede =
-  "Eight approved policy pillars and THE TEN COMMITMENTS TO CROSS RIVERIANS. Brand excerpts until the manifesto PDF is published.";
+  "Eight approved policy pillars and THE TEN COMMITMENTS TO CROSS RIVERIANS.";
 
 export const manifestoPillarsTitle = "Eight manifesto pillars";
 export const manifestoPillarsIntro =
@@ -174,18 +174,3 @@ export const manifestoExcerpts = [
     ],
   },
 ] as const;
-
-export const manifestoDownloadTitle = "Download status";
-export const manifestoDownloadStatus =
-  "PDF download: Gated, awaiting approved manifesto file.";
-
-/** Spoken/readout text uses Brand excerpts only, not a fake PDF. */
-export const manifestoPlaceholderScript = [
-  manifestoExcerpts[0].title,
-  ...manifestoExcerpts[0].paragraphs,
-  manifestoExcerpts[1].title,
-  ...manifestoExcerpts[1].paragraphs,
-  manifestoExcerpts[2].title,
-  ...manifestoExcerpts[2].paragraphs,
-  "The approved manifesto PDF is not published yet.",
-].join(" ");

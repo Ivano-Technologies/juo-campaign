@@ -27,7 +27,6 @@ const initiatives = [
     tone: "blue",
     delayMs: 80,
   },
-  // TODO: placeholder pending BA approval
   {
     title: "Modern Infrastructure",
     tone: "white",

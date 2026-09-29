@@ -6,7 +6,6 @@ import { ManifestoExcerpts } from "@/components/manifesto-excerpts";
 import { VisionPillarShowcase } from "@/components/vision/pillar-showcase";
 import { brand } from "@/lib/brand";
 import {
-  visionAgendaNote,
   visionAgendaTitle,
   visionHeadlineLead,
   visionHeadlineLockup,
@@ -146,9 +145,6 @@ export default function VisionPage() {
       <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
           <ManifestoExcerpts heading={visionAgendaTitle} />
-          <p className="mt-6 text-[1.05rem] leading-7 text-muted">
-            {visionAgendaNote}
-          </p>
           <div className="mt-8">
             <ManifestoCta />
           </div>

@@ -7,7 +7,6 @@ import { ManifestoPlayer } from "@/components/manifesto-player";
 import { PageHero } from "@/components/page-hero";
 import { TenCommitments } from "@/components/ten-commitments";
 import {
-  manifestoDownloadTitle,
   manifestoExcerptsTitle,
   manifestoHeroLede,
   manifestoPageDescription,
@@ -51,12 +50,7 @@ export default function ManifestoPage() {
 
         <ManifestoExcerpts heading={manifestoExcerptsTitle} />
 
-        <div>
-          <h2 className="font-serif text-3xl text-ink">{manifestoDownloadTitle}</h2>
-          <div className="mt-6">
-            <ManifestoPlayer />
-          </div>
-        </div>
+        <ManifestoPlayer />
       </section>
     </>
   );

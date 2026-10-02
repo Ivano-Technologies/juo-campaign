@@ -26,13 +26,12 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: "NOT JUST A BETTER\nCROSS RIVER\nA GREATER ONE",
     lede: "…built on opportunity, innovation and shared prosperity.",
-    // Still 1 — monument. Caption stays bottom-left (IVA-95 PASS lock).
-    // Crop at 28% (was 68%) so Destination / crossRiver / Nation's Paradise
-    // sit fully in the desktop frame. 68% showed the plinth and clipped
-    // the disk; 26% and lower clip Paradise at the bottom edge.
+    // Still 1 — monument. PASS lock from #103 / 909f121: bottom-left
+    // over carved plinth + lawn. object-[center_68%] — do not use the
+    // tighter Destination crops (28% etc). Do not swap with the flags slide.
     align: "left",
     captionY: "bottom",
-    objectClass: "object-[center_28%]",
+    objectClass: "object-[center_68%]",
   },
   {
     src: "/media/2026/hero-still-2-flags.webp",

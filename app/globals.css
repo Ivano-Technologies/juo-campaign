@@ -34,6 +34,12 @@
   --clay: var(--brand-red);
   --cream: var(--brand-white);
   --paper: var(--brand-white);
+
+  /* IVA-97 — mobile caption dock (≤767). Photography may clip; glyphs must not. */
+  --hero-dock-left: 24px;
+  --hero-dock-right-clear: calc(56px + env(safe-area-inset-right, 0px));
+  --hero-dock-max-width: calc(100% - var(--hero-dock-left) - var(--hero-dock-right-clear));
+  --hero-track-hashtag: 0.04em;
 }
 
 @theme inline {
@@ -198,14 +204,27 @@ h6 {
   }
 }
 
-/* IVA-96 §3 — single bottom-left caption dock on every slide. */
+/* IVA-97 — clip still photography only; caption stack stays overflow:visible. */
+.hero-still {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero-slide {
+  overflow: visible;
+}
+
+/* IVA-96 §3 — single bottom-left caption dock on every slide.
+   IVA-97 — mobile dock math + never clip caption glyphs (esp. arch hashtag). */
 .hero-caption-dock {
   position: absolute;
   z-index: 2;
-  right: 3.5rem;
+  right: auto;
   bottom: 4.5rem;
-  left: 1.5rem;
-  max-width: calc(100vw - 3rem);
+  left: var(--hero-dock-left);
+  max-width: var(--hero-dock-max-width);
+  overflow: visible;
   text-align: left;
 }
 
@@ -224,6 +243,18 @@ h6 {
   }
 }
 
+/* IVA-97 P0 — never ellipsis / never hide trailing caption glyphs. */
+.hero-caption,
+.hero-caption-dock,
+.hero-caption h1,
+.hero-caption p,
+.hero-caption .hero-hashtag,
+.hero-caption .hero-headline,
+.hero-caption .hero-track-kicker {
+  overflow: visible;
+  text-overflow: clip;
+}
+
 .hero-track-kicker {
   letter-spacing: 0.1em;
 }
@@ -233,7 +264,40 @@ h6 {
 }
 
 .hero-track-hashtag {
-  letter-spacing: 0.04em;
+  letter-spacing: var(--hero-track-hashtag);
+}
+
+.hero-hashtag,
+.hero-headline {
+  overflow: visible;
+  text-overflow: clip;
+  hyphens: none;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+@media (max-width: 767px) {
+  .hero-caption-dock {
+    /* ≥8px after last glyph inside the dock, before the arrow clear zone. */
+    padding-right: 8px;
+  }
+
+  /* Scale ExtraBold hashtag before wrap; floor 1.125rem. Tracking stays 0.04em
+     unless QA finds it tight — then reduce toward 0.02em, never cut glyphs. */
+  .hero-hashtag {
+    font-size: clamp(1.125rem, 5.2vw, 1.75rem);
+    line-height: 1.05;
+  }
+
+  /* P1 arch stack: kicker → hashtag ~6–8px; hashtag → CTA ≥12–16px. */
+  .hero-caption-dock :is(h1, p).hero-hashtag,
+  .hero-caption-dock :is(h1, p).hero-headline {
+    margin-top: 7px;
+  }
+
+  .hero-caption-dock a {
+    margin-top: 14px;
+  }
 }
 
 .hero-caption.is-off {

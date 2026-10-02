@@ -72,7 +72,7 @@ export const footerAboutLinks = [
 export const socialLinks = [
   {
     name: "Facebook",
-    href: "https://www.facebook.com/profile.php?id=61590512712490",
+    href: "https://www.facebook.com/share/1DsWmc1Eak/",
     icon: "facebook",
   },
   {

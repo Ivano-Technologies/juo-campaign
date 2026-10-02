@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Poppins } from "next/font/google";
+import { montserrat, poppins } from "@/app/fonts";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { SiteFooter } from "@/components/site-footer";
@@ -7,21 +7,6 @@ import { SiteHeader } from "@/components/site-header";
 import { homeSeo } from "@/lib/home-seo";
 import { canonicalOrigin, site } from "@/lib/site";
 import "./globals.css";
-
-/** IVA-44 — Montserrat Bold for headings, Poppins for body (next/font). */
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
-  variable: "--font-montserrat",
-  display: "swap",
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-poppins",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(canonicalOrigin),

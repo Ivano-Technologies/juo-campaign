@@ -26,8 +26,8 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: "NOT JUST A BETTER\nCROSS RIVER\nA GREATER ONE",
     lede: "…built on opportunity, innovation and shared prosperity.",
-    // Lower-left over carved plinth + lawn. Desktop crop biased down so the
-    // white Paradise disc is not the caption ground (IVA-95 contrast).
+    // Still 1 — monument. Bottom-left over carved plinth + lawn (away from
+    // pale Paradise lettering). Do not swap with the flags slide.
     align: "left",
     captionY: "bottom",
     objectClass: "object-[center_68%]",
@@ -39,7 +39,8 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: "ONE PEOPLE,\nONE CROSS RIVER",
     lede: "",
-    // Lower-right over open lawn — clear of flag stripes and mid-frame flowers.
+    // Still 2 — flags. Bottom-right over lawn/trees (clear of stripes).
+    // Do not swap with the monument slide.
     align: "right",
     captionY: "bottom",
     objectClass: "object-center",
@@ -51,12 +52,13 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: "LET'S BUILD WHAT\nCAN BE",
     lede: campaignHashtag.toUpperCase(),
-    // Lower-left over hedges/lawn. IVA-93 used object-[center_30%] to keep the
-    // cannon in frame; nudged to 46% so the caption ground is garden, not pale
-    // sky. Cannon stays in the upper-right of the desktop crop.
+    // Lower-left over hedges/lawn. IVA-93 lock: object-[center_30%] so the
+    // cannon stays in the upper-right of the desktop frame. Do not nudge
+    // toward 46% — that crops the cannon out. Contrast is the Royal Blue
+    // outline + bottom-left garden lockup, not a deeper crop.
     align: "left",
     captionY: "bottom",
-    objectClass: "object-[center_46%]",
+    objectClass: "object-[center_30%]",
     signature: "John Upan Odey",
   },
   {

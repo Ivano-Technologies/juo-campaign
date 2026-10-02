@@ -4,7 +4,46 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { useDocumentHidden } from "@/components/motion/use-document-hidden";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
-import { heroSlides } from "@/lib/home";
+import {
+  heroSlides,
+  type HeroCaptionAlign,
+  type HeroCaptionY,
+} from "@/lib/home";
+
+function captionAlignClass(align: HeroCaptionAlign): string {
+  if (align === "center") {
+    return "justify-center text-center";
+  }
+  return align === "left"
+    ? "justify-start text-left"
+    : "justify-end text-right";
+}
+
+function captionYClass(captionY: HeroCaptionY): string {
+  if (captionY === "top") {
+    return "items-start pt-12 sm:pt-16";
+  }
+  if (captionY === "bottom") {
+    return "items-end";
+  }
+  return "items-center";
+}
+
+function captionScrimClass(
+  align: HeroCaptionAlign,
+  captionY: HeroCaptionY,
+): string {
+  if (captionY === "bottom") {
+    return "bg-gradient-to-t from-brand-blue/32 via-brand-blue/10 to-transparent";
+  }
+  if (align === "right") {
+    return "bg-gradient-to-l from-brand-blue/35 via-transparent to-transparent";
+  }
+  if (align === "center") {
+    return "bg-gradient-to-t from-brand-blue/28 via-transparent to-transparent";
+  }
+  return "bg-gradient-to-r from-brand-blue/25 via-transparent to-transparent";
+}
 
 /** Total slide dwell, including caption fade in/out. */
 const INTERVAL_MS = 6000;
@@ -59,14 +98,6 @@ export function HomeHero() {
     };
   }, [index, paused, reduced]);
 
-  const slide = heroSlides[index] ?? heroSlides[0];
-  const captionBox =
-    slide.align === "left"
-      ? "justify-start text-left"
-      : "justify-end text-right";
-  const captionY =
-    slide.captionY === "center" ? "items-center" : "items-end";
-
   return (
     <section
       className="relative isolate h-[min(92vh,920px)] min-h-[32rem] overflow-hidden bg-brand-blue text-brand-white"
@@ -91,32 +122,66 @@ export function HomeHero() {
       aria-roledescription="carousel"
       aria-label="Campaign photographs"
     >
-      {heroSlides.map((item, slideIndex) => (
-        <div
-          key={item.src}
-          className={`absolute inset-0 transition-opacity duration-700 ${
-            slideIndex === index ? "opacity-100" : "opacity-0"
-          }`}
-          aria-hidden={slideIndex !== index}
-        >
-          <Image
-            src={item.src}
-            alt={item.alt}
-            fill
-            priority={slideIndex === 0}
-            sizes="100vw"
-            className={`object-cover ${item.objectClass}`}
-          />
-        </div>
-      ))}
-
-      <div
-        className={`pointer-events-none absolute inset-0 z-[1] ${
-          slide.align === "right"
-            ? "bg-gradient-to-l from-brand-blue/35 via-transparent to-transparent"
-            : "bg-gradient-to-r from-brand-blue/25 via-transparent to-transparent"
-        }`}
-      />
+      {heroSlides.map((item, slideIndex) => {
+        const isActive = slideIndex === index;
+        const TitleTag = slideIndex === 0 ? "h1" : "p";
+        return (
+          <div
+            key={item.src}
+            data-hero-still={item.src}
+            className={`absolute inset-0 transition-opacity duration-700 ${
+              isActive ? "opacity-100" : "opacity-0"
+            }`}
+            aria-hidden={!isActive}
+          >
+            <Image
+              src={item.src}
+              alt={item.alt}
+              fill
+              priority={slideIndex === 0}
+              sizes="100vw"
+              className={`object-cover ${item.objectClass}`}
+            />
+            <div
+              className={`pointer-events-none absolute inset-0 z-[1] ${captionScrimClass(item.align, item.captionY)}`}
+            />
+            <div
+              className={`absolute inset-0 z-[2] flex h-full px-6 pb-24 sm:px-16 md:pb-16 lg:px-24 ${captionAlignClass(item.align)} ${captionYClass(item.captionY)}`}
+            >
+              <div
+                className={`hero-caption w-full max-w-[min(58rem,calc(100vw-3rem))] ${
+                  isActive && !captionOn && !reduced ? "is-off" : ""
+                } ${item.align === "left" || item.align === "center" ? "lg:max-w-[46rem]" : ""}`}
+              >
+                <p
+                  className={`hero-caption-outline text-shimmer font-serif text-base font-extrabold tracking-[0.08em] uppercase sm:text-2xl lg:text-3xl ${item.kickerClass}`}
+                >
+                  {item.kicker}
+                </p>
+                <TitleTag className="hero-caption-outline text-shimmer mt-2 font-serif text-[1.85rem] leading-[0.98] font-extrabold tracking-[-0.015em] whitespace-pre-line text-brand-white uppercase [animation-delay:200ms] sm:text-5xl sm:leading-[0.95] lg:text-[3.85rem] lg:whitespace-pre xl:text-[4.15rem]">
+                  {item.title}
+                </TitleTag>
+                {item.lede !== "" ? (
+                  <p
+                    className={`hero-caption-outline mt-4 text-lg text-brand-white ${
+                      item.lede.startsWith("#")
+                        ? "text-shimmer font-serif text-2xl font-extrabold tracking-[0.04em] uppercase [animation-delay:400ms] sm:text-3xl"
+                        : ""
+                    }`}
+                  >
+                    {item.lede}
+                  </p>
+                ) : null}
+                {"signature" in item && item.signature ? (
+                  <p className="hero-caption-outline mt-6 font-serif text-xl font-semibold text-brand-white italic sm:text-2xl">
+                    {item.signature}
+                  </p>
+                ) : null}
+              </div>
+            </div>
+          </div>
+        );
+      })}
 
       <button
         type="button"
@@ -134,41 +199,6 @@ export function HomeHero() {
       >
         ›
       </button>
-
-      <div
-        className={`relative z-[2] flex h-full px-6 pb-24 sm:px-16 md:pb-16 lg:px-24 ${captionBox} ${captionY}`}
-      >
-        <div
-          className={`hero-caption w-full max-w-[min(58rem,calc(100vw-3rem))] ${
-            !captionOn && !reduced ? "is-off" : ""
-          } ${slide.align === "left" ? "lg:max-w-[46rem]" : ""}`}
-        >
-          <p
-            className={`text-shimmer font-serif text-base font-extrabold tracking-[0.08em] uppercase sm:text-2xl lg:text-3xl ${slide.kickerClass}`}
-          >
-            {slide.kicker}
-          </p>
-          <h1 className="text-shimmer mt-2 font-serif text-[1.85rem] leading-[0.98] font-extrabold tracking-[-0.03em] whitespace-pre-line text-brand-white uppercase [animation-delay:200ms] sm:text-5xl sm:leading-[0.95] lg:text-[3.85rem] lg:whitespace-pre xl:text-[4.15rem]">
-            {slide.title}
-          </h1>
-          {slide.lede !== "" ? (
-            <p
-              className={`mt-4 text-lg text-brand-white/90 ${
-                slide.lede.startsWith("#")
-                  ? "text-shimmer font-serif text-2xl font-extrabold tracking-[0.04em] uppercase [animation-delay:400ms] sm:text-3xl"
-                  : ""
-              }`}
-            >
-              {slide.lede}
-            </p>
-          ) : null}
-          {"signature" in slide && slide.signature ? (
-            <p className="mt-6 font-serif text-xl font-semibold text-brand-white italic sm:text-2xl">
-              {slide.signature}
-            </p>
-          ) : null}
-        </div>
-      </div>
     </section>
   );
 }

@@ -5,10 +5,18 @@ export const campaignHashtag = "#OurTimeOurState";
 
 export const officialPortrait = brand.portraits.official;
 
+/** Per-slide caption lockups. Hero maps these to flex alignment. */
+export type HeroCaptionAlign = "left" | "center" | "right";
+export type HeroCaptionY = "top" | "center" | "bottom";
+
 /**
  * IVA-93: Brand-treated homepage stills (4). Supersedes the IVA-45
  * three-slide lock now that Chris delivered print-resolution hero art.
- * Vertical 1920×2713 WebP — object-cover object-center for full-bleed crop.
+ * Vertical 1920×2713 WebP — object-cover with per-slide crop bias.
+ *
+ * IVA-95 caption framing: sit writeups in the cleanest region of each
+ * still (avoid pale sky, pale monument lettering, busy flag stripes).
+ * Outline is Royal Blue only — see `.hero-caption-outline`.
  */
 export const heroSlides = [
   {
@@ -18,9 +26,11 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: "NOT JUST A BETTER\nCROSS RIVER\nA GREATER ONE",
     lede: "…built on opportunity, innovation and shared prosperity.",
+    // Still 1 — monument. Bottom-left over carved plinth + lawn (away from
+    // pale Paradise lettering). Do not swap with the flags slide.
     align: "left",
-    captionY: "center",
-    objectClass: "object-center",
+    captionY: "bottom",
+    objectClass: "object-[center_68%]",
   },
   {
     src: "/media/2026/hero-still-2-flags.webp",
@@ -29,8 +39,10 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: "ONE PEOPLE,\nONE CROSS RIVER",
     lede: "",
+    // Still 2 — flags. Bottom-right over lawn/trees (clear of stripes).
+    // Do not swap with the monument slide.
     align: "right",
-    captionY: "center",
+    captionY: "bottom",
     objectClass: "object-center",
   },
   {
@@ -40,8 +52,12 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: "LET'S BUILD WHAT\nCAN BE",
     lede: campaignHashtag.toUpperCase(),
+    // Lower-left over hedges/lawn. IVA-93 lock: object-[center_30%] so the
+    // cannon stays in the upper-right of the desktop frame. Do not nudge
+    // toward 46% — that crops the cannon out. Contrast is the Royal Blue
+    // outline + bottom-left garden lockup, not a deeper crop.
     align: "left",
-    captionY: "center",
+    captionY: "bottom",
     objectClass: "object-[center_30%]",
     signature: "John Upan Odey",
   },
@@ -52,8 +68,9 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: campaignHashtag.toUpperCase(),
     lede: "One People, One Cross River",
-    align: "right",
-    captionY: "center",
+    // Lower-center over dark asphalt — not the busy columns or the pale lodge.
+    align: "center",
+    captionY: "bottom",
     objectClass: "object-center",
   },
 ] as const;

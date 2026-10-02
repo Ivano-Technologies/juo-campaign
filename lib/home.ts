@@ -5,22 +5,15 @@ export const campaignHashtag = "#OurTimeOurState";
 
 export const officialPortrait = brand.portraits.official;
 
-/** IVA-45: keep exactly these 3 slides. The two John-portrait slides are gone. */
+/**
+ * IVA-93: Brand-treated homepage stills (4). Supersedes the IVA-45
+ * three-slide lock now that Chris delivered print-resolution hero art.
+ * Vertical 1920×2713 WebP — object-cover object-center for full-bleed crop.
+ */
 export const heroSlides = [
   {
-    src: "/media/2026/787657CB-F514-46F6-8681-CD05DA7AEF84-1_11zon.webp",
-    alt: "Winding highland road through green Cross River hills",
-    kicker: brand.sloganLead,
-    kickerClass: "text-brand-white",
-    title: "ONE PEOPLE,\nONE CROSS RIVER",
-    lede: "",
-    align: "right",
-    captionY: "center",
-    objectClass: "object-center",
-  },
-  {
-    src: "/media/2026/E9BA618D-2E0A-4F15-A893-E86858069DA0-1_11zon.webp",
-    alt: "Welcome to Cross River: The Nation’s Paradise monument against a blue sky",
+    src: "/media/2026/hero-still-1-monument.webp",
+    alt: "Destination Cross River roundabout monument, The Nation’s Paradise, under a blue sky",
     kicker: "THE NEXT CHAPTER",
     kickerClass: "text-brand-white",
     title: "NOT JUST A BETTER\nCROSS RIVER\nA GREATER ONE",
@@ -30,20 +23,43 @@ export const heroSlides = [
     objectClass: "object-center",
   },
   {
-    src: "/media/2026/AFA4FC12-2414-4B4E-A96D-62B98BD104D2-1_11zon.webp",
-    alt: "Crowd forming the words A NEW CRS around the elephant at Cross River National Park",
+    src: "/media/2026/hero-still-2-flags.webp",
+    alt: "Rows of Cross River blue, white, and blue flags on a lawn",
+    kicker: brand.sloganLead,
+    kickerClass: "text-brand-white",
+    title: "ONE PEOPLE,\nONE CROSS RIVER",
+    lede: "",
+    align: "right",
+    captionY: "center",
+    objectClass: "object-center",
+  },
+  {
+    src: "/media/2026/hero-still-3-memorial.webp",
+    alt: "Landscaped memorial garden with a white pillar and cannon under a blue sky",
     kicker: "ENOUGH OF WHAT IS",
     kickerClass: "text-brand-white",
     title: "LET'S BUILD WHAT\nCAN BE",
     lede: campaignHashtag.toUpperCase(),
     align: "left",
     captionY: "center",
-    objectClass: "object-center",
+    objectClass: "object-[center_30%]",
     signature: "John Upan Odey",
+  },
+  {
+    src: "/media/2026/hero-still-4-arch.webp",
+    alt: "Stone park entrance arch with a bull-head sculpture on a road through green Cross River hills",
+    kicker: "A FRESH START",
+    kickerClass: "text-brand-white",
+    title: campaignHashtag.toUpperCase(),
+    lede: "One People, One Cross River",
+    align: "right",
+    captionY: "center",
+    objectClass: "object-center",
   },
 ] as const;
 
-const heroSlideCount: 3 = heroSlides.length;
+/** IVA-93: Brand delivered 4 treated stills for the homepage hero. */
+const heroSlideCount: 4 = heroSlides.length;
 void heroSlideCount;
 
 /**

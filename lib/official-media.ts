@@ -1,6 +1,6 @@
 /**
  * IVA-45 imagery inventory. Live routes may only wire official Brand assets
- * plus the three locked hero slides.
+ * plus the four IVA-93 treated homepage hero stills.
  */
 
 export const officialAssetsWired = [

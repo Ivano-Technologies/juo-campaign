@@ -26,11 +26,13 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: "NOT JUST A BETTER\nCROSS RIVER\nA GREATER ONE",
     lede: "…built on opportunity, innovation and shared prosperity.",
-    // Still 1 — monument. Bottom-left over carved plinth + lawn (away from
-    // pale Paradise lettering). Do not swap with the flags slide.
+    // Still 1 — monument. Caption stays bottom-left (IVA-95 PASS lock).
+    // Crop at 28% (was 68%) so Destination / crossRiver / Nation's Paradise
+    // sit fully in the desktop frame. 68% showed the plinth and clipped
+    // the disk; 26% and lower clip Paradise at the bottom edge.
     align: "left",
     captionY: "bottom",
-    objectClass: "object-[center_68%]",
+    objectClass: "object-[center_28%]",
   },
   {
     src: "/media/2026/hero-still-2-flags.webp",
@@ -68,10 +70,12 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: campaignHashtag.toUpperCase(),
     lede: "One People, One Cross River",
-    // Lower-center over dark asphalt — not the busy columns or the pale lodge.
+    // Caption stays bottom-center on the road (IVA-95 PASS lock).
+    // Crop at 36% (was object-center / 50%) so the bull horns/head on the
+    // arch beam stay fully in frame — 50% clipped the sculpture at the top.
     align: "center",
     captionY: "bottom",
-    objectClass: "object-center",
+    objectClass: "object-[center_36%]",
   },
 ] as const;
 

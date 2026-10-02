@@ -4,7 +4,36 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { useDocumentHidden } from "@/components/motion/use-document-hidden";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
-import { heroSlides } from "@/lib/home";
+import { heroSlides, type HeroCaptionY } from "@/lib/home";
+
+function captionAlignClass(align: "left" | "right"): string {
+  return align === "left"
+    ? "justify-start text-left"
+    : "justify-end text-right";
+}
+
+function captionYClass(captionY: HeroCaptionY): string {
+  if (captionY === "top") {
+    return "items-start pt-12 sm:pt-16";
+  }
+  if (captionY === "bottom") {
+    return "items-end";
+  }
+  return "items-center";
+}
+
+function captionScrimClass(
+  align: "left" | "right",
+  captionY: HeroCaptionY,
+): string {
+  if (captionY === "bottom") {
+    return "bg-gradient-to-t from-brand-blue/28 via-brand-blue/8 to-transparent";
+  }
+  if (align === "right") {
+    return "bg-gradient-to-l from-brand-blue/35 via-transparent to-transparent";
+  }
+  return "bg-gradient-to-r from-brand-blue/25 via-transparent to-transparent";
+}
 
 /** Total slide dwell, including caption fade in/out. */
 const INTERVAL_MS = 6000;
@@ -60,12 +89,9 @@ export function HomeHero() {
   }, [index, paused, reduced]);
 
   const slide = heroSlides[index] ?? heroSlides[0];
-  const captionBox =
-    slide.align === "left"
-      ? "justify-start text-left"
-      : "justify-end text-right";
-  const captionY =
-    slide.captionY === "center" ? "items-center" : "items-end";
+  const captionBox = captionAlignClass(slide.align);
+  const captionY = captionYClass(slide.captionY);
+  const captionScrim = captionScrimClass(slide.align, slide.captionY);
 
   return (
     <section
@@ -111,11 +137,7 @@ export function HomeHero() {
       ))}
 
       <div
-        className={`pointer-events-none absolute inset-0 z-[1] ${
-          slide.align === "right"
-            ? "bg-gradient-to-l from-brand-blue/35 via-transparent to-transparent"
-            : "bg-gradient-to-r from-brand-blue/25 via-transparent to-transparent"
-        }`}
+        className={`pointer-events-none absolute inset-0 z-[1] ${captionScrim}`}
       />
 
       <button
@@ -144,16 +166,16 @@ export function HomeHero() {
           } ${slide.align === "left" ? "lg:max-w-[46rem]" : ""}`}
         >
           <p
-            className={`text-shimmer font-serif text-base font-extrabold tracking-[0.08em] uppercase sm:text-2xl lg:text-3xl ${slide.kickerClass}`}
+            className={`hero-caption-outline text-shimmer font-serif text-base font-extrabold tracking-[0.08em] uppercase sm:text-2xl lg:text-3xl ${slide.kickerClass}`}
           >
             {slide.kicker}
           </p>
-          <h1 className="text-shimmer mt-2 font-serif text-[1.85rem] leading-[0.98] font-extrabold tracking-[-0.03em] whitespace-pre-line text-brand-white uppercase [animation-delay:200ms] sm:text-5xl sm:leading-[0.95] lg:text-[3.85rem] lg:whitespace-pre xl:text-[4.15rem]">
+          <h1 className="hero-caption-outline text-shimmer mt-2 font-serif text-[1.85rem] leading-[0.98] font-extrabold tracking-[-0.03em] whitespace-pre-line text-brand-white uppercase [animation-delay:200ms] sm:text-5xl sm:leading-[0.95] lg:text-[3.85rem] lg:whitespace-pre xl:text-[4.15rem]">
             {slide.title}
           </h1>
           {slide.lede !== "" ? (
             <p
-              className={`mt-4 text-lg text-brand-white/90 ${
+              className={`hero-caption-outline mt-4 text-lg text-brand-white ${
                 slide.lede.startsWith("#")
                   ? "text-shimmer font-serif text-2xl font-extrabold tracking-[0.04em] uppercase [animation-delay:400ms] sm:text-3xl"
                   : ""
@@ -163,7 +185,7 @@ export function HomeHero() {
             </p>
           ) : null}
           {"signature" in slide && slide.signature ? (
-            <p className="mt-6 font-serif text-xl font-semibold text-brand-white italic sm:text-2xl">
+            <p className="hero-caption-outline mt-6 font-serif text-xl font-semibold text-brand-white italic sm:text-2xl">
               {slide.signature}
             </p>
           ) : null}

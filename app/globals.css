@@ -214,6 +214,36 @@ h6 {
   }
 }
 
+/*
+ * IVA-95 — reusable Royal Blue outline for homepage hero caption type
+ * (kicker, title, lede, hashtag, signature). Kezie lock: brand.colors.blue
+ * / --brand-blue #40449B only — not Red. Prefer a real stroke over a heavy
+ * dark scrim so white type holds on pale stone, clouds, and busy stills.
+ */
+.hero-caption-outline {
+  -webkit-text-stroke: clamp(1.5px, 0.034em, 2.75px) var(--brand-blue);
+  paint-order: stroke fill;
+}
+
+/* background-clip:text can swallow -webkit-text-stroke. Restore a crisp
+   8-way outline in the same Royal Blue token so shimmer and stroke coexist. */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-caption .text-shimmer.hero-caption-outline {
+      -webkit-text-stroke-width: 0;
+      filter:
+        drop-shadow(0.03em 0 0 var(--brand-blue))
+        drop-shadow(-0.03em 0 0 var(--brand-blue))
+        drop-shadow(0 0.03em 0 var(--brand-blue))
+        drop-shadow(0 -0.03em 0 var(--brand-blue))
+        drop-shadow(0.022em 0.022em 0 var(--brand-blue))
+        drop-shadow(-0.022em -0.022em 0 var(--brand-blue))
+        drop-shadow(0.022em -0.022em 0 var(--brand-blue))
+        drop-shadow(-0.022em 0.022em 0 var(--brand-blue));
+    }
+  }
+}
+
 .motion-reveal {
   opacity: 0;
   transform: translateY(14px);

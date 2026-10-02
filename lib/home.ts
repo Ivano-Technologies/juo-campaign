@@ -5,10 +5,17 @@ export const campaignHashtag = "#OurTimeOurState";
 
 export const officialPortrait = brand.portraits.official;
 
+/** Per-slide caption vertical lockup. Hero maps these to flex alignment. */
+export type HeroCaptionY = "top" | "center" | "bottom";
+
 /**
  * IVA-93: Brand-treated homepage stills (4). Supersedes the IVA-45
  * three-slide lock now that Chris delivered print-resolution hero art.
- * Vertical 1920×2713 WebP — object-cover object-center for full-bleed crop.
+ * Vertical 1920×2713 WebP — object-cover with per-slide crop bias.
+ *
+ * IVA-95 caption framing: sit writeups in the cleanest region of each
+ * still (avoid pale sky, pale monument lettering, busy flag stripes).
+ * Outline is Royal Blue only — see `.hero-caption-outline`.
  */
 export const heroSlides = [
   {
@@ -18,8 +25,9 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: "NOT JUST A BETTER\nCROSS RIVER\nA GREATER ONE",
     lede: "…built on opportunity, innovation and shared prosperity.",
+    // Lower-left over carved plinth + lawn — not the white CrossRiver letters or clouds.
     align: "left",
-    captionY: "center",
+    captionY: "bottom",
     objectClass: "object-center",
   },
   {
@@ -29,8 +37,9 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: "ONE PEOPLE,\nONE CROSS RIVER",
     lede: "",
+    // Lower-right over open lawn — clear of flag stripes and mid-frame flowers.
     align: "right",
-    captionY: "center",
+    captionY: "bottom",
     objectClass: "object-center",
   },
   {
@@ -40,8 +49,9 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: "LET'S BUILD WHAT\nCAN BE",
     lede: campaignHashtag.toUpperCase(),
+    // Lower-left over hedges/lawn. Keep IVA-93 desktop crop so the cannon stays in frame.
     align: "left",
-    captionY: "center",
+    captionY: "bottom",
     objectClass: "object-[center_30%]",
     signature: "John Upan Odey",
   },
@@ -52,8 +62,9 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: campaignHashtag.toUpperCase(),
     lede: "One People, One Cross River",
-    align: "right",
-    captionY: "center",
+    // Lower-left over dark asphalt — not the busy stone columns or pale sky.
+    align: "left",
+    captionY: "bottom",
     objectClass: "object-center",
   },
 ] as const;

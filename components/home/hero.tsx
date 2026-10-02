@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { useDocumentHidden } from "@/components/motion/use-document-hidden";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
+import { montserrat } from "@/app/fonts";
 import {
   heroSlides,
   type HeroCaptionAlign,
@@ -149,23 +150,23 @@ export function HomeHero() {
               className={`absolute inset-0 z-[2] flex h-full px-6 pb-24 sm:px-16 md:pb-16 lg:px-24 ${captionAlignClass(item.align)} ${captionYClass(item.captionY)}`}
             >
               <div
-                className={`hero-caption w-full max-w-[min(58rem,calc(100vw-3rem))] ${
+                className={`hero-caption ${montserrat.className} font-montserrat font-extrabold w-full max-w-[min(58rem,calc(100vw-3rem))] ${
                   isActive && !captionOn && !reduced ? "is-off" : ""
                 } ${item.align === "left" || item.align === "center" ? "lg:max-w-[46rem]" : ""}`}
               >
                 <p
-                  className={`hero-caption-outline text-shimmer font-serif text-base font-extrabold tracking-[0.08em] uppercase sm:text-2xl lg:text-3xl ${item.kickerClass}`}
+                  className={`hero-caption-outline ${montserrat.className} font-montserrat text-base font-extrabold tracking-[0.08em] uppercase sm:text-2xl lg:text-3xl ${item.kickerClass}`}
                 >
                   {item.kicker}
                 </p>
-                <TitleTag className="hero-caption-outline text-shimmer mt-2 font-serif text-[1.85rem] leading-[0.98] font-extrabold tracking-[-0.015em] whitespace-pre-line text-brand-white uppercase [animation-delay:200ms] sm:text-5xl sm:leading-[0.95] lg:text-[3.85rem] lg:whitespace-pre xl:text-[4.15rem]">
+                <TitleTag className={`hero-caption-outline ${montserrat.className} font-montserrat mt-2 text-[1.85rem] leading-[0.98] font-extrabold tracking-[-0.015em] whitespace-pre-line text-brand-white uppercase sm:text-5xl sm:leading-[0.95] lg:text-[3.85rem] lg:whitespace-pre xl:text-[4.15rem]`}>
                   {item.title}
                 </TitleTag>
                 {item.lede !== "" ? (
                   <p
-                    className={`hero-caption-outline mt-4 text-lg text-brand-white ${
+                    className={`hero-caption-outline ${montserrat.className} font-montserrat mt-4 text-lg font-extrabold text-brand-white ${
                       item.lede.startsWith("#")
-                        ? "text-shimmer font-serif text-2xl font-extrabold tracking-[0.04em] uppercase [animation-delay:400ms] sm:text-3xl"
+                        ? "text-2xl tracking-[0.04em] uppercase sm:text-3xl"
                         : ""
                     }`}
                   >
@@ -173,7 +174,7 @@ export function HomeHero() {
                   </p>
                 ) : null}
                 {"signature" in item && item.signature ? (
-                  <p className="hero-caption-outline mt-6 font-serif text-xl font-semibold text-brand-white italic sm:text-2xl">
+                  <p className={`hero-caption-outline ${montserrat.className} font-montserrat mt-6 text-xl font-extrabold text-brand-white italic sm:text-2xl`}>
                     {item.signature}
                   </p>
                 ) : null}

@@ -155,15 +155,12 @@ h6 {
 /* IVA-34 #1 — written hero content only. Opacity duration must match FADE_MS in hero.tsx.
    Default visible so the first HTML stays crawl-safe without JS.
    Enter: fade + soft slide from the left (~22px). Exit: fade + slight slide left.
-   IVA-95 font follow-up: lockup is next/font Montserrat ExtraBold (800).
-   Family is the Montserrat variable — not Tailwind font-serif — so kicker,
-   title, lede, hashtag, and signature stay the sans block face. Outline
-   stroke on .hero-caption-outline is unchanged. */
+   IVA-96: Montserrat family only; role weights live on the elements (not 800). */
 .hero-caption {
   opacity: 1;
   transform: translateX(0);
   font-family: var(--font-montserrat), Arial, sans-serif;
-  font-weight: 800;
+  color: var(--brand-white);
   transition:
     opacity 650ms ease-in-out,
     transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -171,9 +168,72 @@ h6 {
 
 .hero-caption,
 .hero-caption h1,
-.hero-caption p {
+.hero-caption p,
+.hero-caption a {
   font-family: var(--font-montserrat), Arial, sans-serif;
-  font-weight: 800;
+  color: var(--brand-white);
+}
+
+/* IVA-96 §1 — soft bottom navy scrim. Not a Brand kit color; overlay only. */
+.hero-scrim {
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 52%;
+  background: linear-gradient(
+    to top,
+    rgba(10, 14, 40, 0.78) 0%,
+    rgba(10, 14, 40, 0.55) 28%,
+    rgba(10, 14, 40, 0.22) 55%,
+    rgba(10, 14, 40, 0) 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .hero-scrim {
+    height: 46%;
+  }
+}
+
+/* IVA-96 §3 — single bottom-left caption dock on every slide. */
+.hero-caption-dock {
+  position: absolute;
+  z-index: 2;
+  right: 3.5rem;
+  bottom: 4.5rem;
+  left: 1.5rem;
+  max-width: calc(100vw - 3rem);
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .hero-caption-dock {
+    right: 5.5rem;
+    bottom: 4rem;
+    left: 4rem;
+    max-width: 46rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-caption-dock {
+    left: 6rem;
+  }
+}
+
+.hero-track-kicker {
+  letter-spacing: 0.1em;
+}
+
+.hero-track-headline {
+  letter-spacing: -0.015em;
+}
+
+.hero-track-hashtag {
+  letter-spacing: 0.04em;
 }
 
 .hero-caption.is-off {
@@ -233,15 +293,8 @@ h6 {
 }
 
 /*
- * IVA-95 — reusable Royal Blue outline for homepage hero caption type
- * (kicker, title, lede, hashtag, signature). Kezie lock: brand.colors.blue
- * / --brand-blue #40449B only — not Red. Prefer a real stroke over a heavy
- * dark scrim so white type holds on pale stone, clouds, and busy stills.
- *
- * Stroke + 8-way drop-shadow: paint-order keeps glyph weight; the shadows
- * stay visible when shimmer's background-clip:text swallows -webkit-text-stroke.
- * Slimmer than #104's half-stroke (1–2px / 0.016em) — a hairline Royal Blue
- * halo that still reads on pale stills without inflating the PASS type.
+ * IVA-95 Royal Blue hairline — do not apply on homepage hero captions
+ * (IVA-96 §1: white type on navy scrim, no #40449B stroke).
  */
 .hero-caption-outline {
   -webkit-text-stroke: clamp(0.5px, 0.012em, 1px) var(--brand-blue);

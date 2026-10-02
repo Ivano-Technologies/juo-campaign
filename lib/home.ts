@@ -6,23 +6,23 @@ export const campaignHashtag = "#OurTimeOurState";
 export const officialPortrait = brand.portraits.official;
 
 /**
- * IVA-93 stills; IVA-96 caption set. Order locked: monument → flags →
- * memorial → arch. Hashtag and “A Fresh Start” live on the arch only.
+ * IVA-93 stills; IVA-96 chrome; BA caption copy (IVA-95 @ a76e45da).
+ * Order locked: monument → flags → memorial → arch.
  */
 export const heroSlides = [
   {
     src: "/media/2026/hero-still-1-monument.webp",
     alt: "Destination Cross River roundabout monument, The Nation’s Paradise, under a blue sky",
     kicker: "THE NEXT CHAPTER",
-    title: "A GREATER\nCROSS RIVER.",
-    titleMobile: "A GREATER\nCROSS RIVER.",
+    title: "NOT JUST A BETTER\nCROSS RIVER\nA GREATER ONE",
+    titleMobile: "NOT JUST A BETTER\nCROSS RIVER\nA GREATER ONE",
     lede: "…built on opportunity, innovation and shared prosperity.",
     objectClass: "object-[center_68%]",
   },
   {
     src: "/media/2026/hero-still-2-flags.webp",
     alt: "Rows of Cross River blue, white, and blue flags on a lawn",
-    kicker: "ONE STATE",
+    kicker: brand.sloganLead,
     title: "ONE PEOPLE,\nONE CROSS RIVER",
     lede: "",
     objectClass: "object-center",
@@ -31,8 +31,8 @@ export const heroSlides = [
     src: "/media/2026/hero-still-3-memorial.webp",
     alt: "Landscaped memorial garden with a white pillar and cannon under a blue sky",
     kicker: "ENOUGH OF WHAT IS",
-    title: "LET’S BUILD\nWHAT CAN BE",
-    lede: "",
+    title: "LET'S BUILD WHAT\nCAN BE",
+    lede: campaignHashtag.toUpperCase(),
     objectClass: "object-[center_22%]",
     signature: "John Upan Odey",
   },
@@ -41,7 +41,7 @@ export const heroSlides = [
     alt: "Stone park entrance arch with a bull-head sculpture on a road through green Cross River hills",
     kicker: "A FRESH START",
     title: campaignHashtag.toUpperCase(),
-    lede: "One people, one Cross River.",
+    lede: "One People, One Cross River",
     objectClass: "object-[center_36%]",
     cta: {
       href: "/join",

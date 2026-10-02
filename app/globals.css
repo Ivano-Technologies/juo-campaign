@@ -222,33 +222,35 @@ h6 {
  *
  * Stroke + 8-way drop-shadow: paint-order keeps glyph weight; the shadows
  * stay visible when shimmer's background-clip:text swallows -webkit-text-stroke.
+ * Slimmer than #104's half-stroke (1–2px / 0.016em) — a hairline Royal Blue
+ * halo that still reads on pale stills without inflating the PASS type.
  */
 .hero-caption-outline {
-  -webkit-text-stroke: clamp(2px, 0.048em, 4px) var(--brand-blue);
+  -webkit-text-stroke: clamp(0.5px, 0.012em, 1px) var(--brand-blue);
   paint-order: stroke fill;
   filter:
-    drop-shadow(0.032em 0 0 var(--brand-blue))
-    drop-shadow(-0.032em 0 0 var(--brand-blue))
-    drop-shadow(0 0.032em 0 var(--brand-blue))
-    drop-shadow(0 -0.032em 0 var(--brand-blue))
-    drop-shadow(0.024em 0.024em 0 var(--brand-blue))
-    drop-shadow(-0.024em -0.024em 0 var(--brand-blue))
-    drop-shadow(0.024em -0.024em 0 var(--brand-blue))
-    drop-shadow(-0.024em 0.024em 0 var(--brand-blue));
+    drop-shadow(0.008em 0 0 var(--brand-blue))
+    drop-shadow(-0.008em 0 0 var(--brand-blue))
+    drop-shadow(0 0.008em 0 var(--brand-blue))
+    drop-shadow(0 -0.008em 0 var(--brand-blue))
+    drop-shadow(0.006em 0.006em 0 var(--brand-blue))
+    drop-shadow(-0.006em -0.006em 0 var(--brand-blue))
+    drop-shadow(0.006em -0.006em 0 var(--brand-blue))
+    drop-shadow(-0.006em 0.006em 0 var(--brand-blue));
 }
 
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
   @media (prefers-reduced-motion: no-preference) {
     .hero-caption .text-shimmer.hero-caption-outline {
       filter:
-        drop-shadow(0.032em 0 0 var(--brand-blue))
-        drop-shadow(-0.032em 0 0 var(--brand-blue))
-        drop-shadow(0 0.032em 0 var(--brand-blue))
-        drop-shadow(0 -0.032em 0 var(--brand-blue))
-        drop-shadow(0.024em 0.024em 0 var(--brand-blue))
-        drop-shadow(-0.024em -0.024em 0 var(--brand-blue))
-        drop-shadow(0.024em -0.024em 0 var(--brand-blue))
-        drop-shadow(-0.024em 0.024em 0 var(--brand-blue));
+        drop-shadow(0.008em 0 0 var(--brand-blue))
+        drop-shadow(-0.008em 0 0 var(--brand-blue))
+        drop-shadow(0 0.008em 0 var(--brand-blue))
+        drop-shadow(0 -0.008em 0 var(--brand-blue))
+        drop-shadow(0.006em 0.006em 0 var(--brand-blue))
+        drop-shadow(-0.006em -0.006em 0 var(--brand-blue))
+        drop-shadow(0.006em -0.006em 0 var(--brand-blue))
+        drop-shadow(-0.006em 0.006em 0 var(--brand-blue));
     }
   }
 }

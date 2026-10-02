@@ -5,7 +5,8 @@ export const campaignHashtag = "#OurTimeOurState";
 
 export const officialPortrait = brand.portraits.official;
 
-/** Per-slide caption vertical lockup. Hero maps these to flex alignment. */
+/** Per-slide caption lockups. Hero maps these to flex alignment. */
+export type HeroCaptionAlign = "left" | "center" | "right";
 export type HeroCaptionY = "top" | "center" | "bottom";
 
 /**
@@ -25,10 +26,11 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: "NOT JUST A BETTER\nCROSS RIVER\nA GREATER ONE",
     lede: "…built on opportunity, innovation and shared prosperity.",
-    // Lower-left over carved plinth + lawn — not the white CrossRiver letters or clouds.
+    // Lower-left over carved plinth + lawn. Desktop crop biased down so the
+    // white Paradise disc is not the caption ground (IVA-95 contrast).
     align: "left",
     captionY: "bottom",
-    objectClass: "object-center",
+    objectClass: "object-[center_68%]",
   },
   {
     src: "/media/2026/hero-still-2-flags.webp",
@@ -49,10 +51,12 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: "LET'S BUILD WHAT\nCAN BE",
     lede: campaignHashtag.toUpperCase(),
-    // Lower-left over hedges/lawn. Keep IVA-93 desktop crop so the cannon stays in frame.
+    // Lower-left over hedges/lawn. IVA-93 used object-[center_30%] to keep the
+    // cannon in frame; nudged to 46% so the caption ground is garden, not pale
+    // sky. Cannon stays in the upper-right of the desktop crop.
     align: "left",
     captionY: "bottom",
-    objectClass: "object-[center_30%]",
+    objectClass: "object-[center_46%]",
     signature: "John Upan Odey",
   },
   {
@@ -62,8 +66,8 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: campaignHashtag.toUpperCase(),
     lede: "One People, One Cross River",
-    // Lower-left over dark asphalt — not the busy stone columns or pale sky.
-    align: "left",
+    // Lower-center over dark asphalt — not the busy columns or the pale lodge.
+    align: "center",
     captionY: "bottom",
     objectClass: "object-center",
   },

@@ -4,9 +4,16 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { useDocumentHidden } from "@/components/motion/use-document-hidden";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
-import { heroSlides, type HeroCaptionY } from "@/lib/home";
+import {
+  heroSlides,
+  type HeroCaptionAlign,
+  type HeroCaptionY,
+} from "@/lib/home";
 
-function captionAlignClass(align: "left" | "right"): string {
+function captionAlignClass(align: HeroCaptionAlign): string {
+  if (align === "center") {
+    return "justify-center text-center";
+  }
   return align === "left"
     ? "justify-start text-left"
     : "justify-end text-right";
@@ -23,14 +30,17 @@ function captionYClass(captionY: HeroCaptionY): string {
 }
 
 function captionScrimClass(
-  align: "left" | "right",
+  align: HeroCaptionAlign,
   captionY: HeroCaptionY,
 ): string {
   if (captionY === "bottom") {
-    return "bg-gradient-to-t from-brand-blue/28 via-brand-blue/8 to-transparent";
+    return "bg-gradient-to-t from-brand-blue/32 via-brand-blue/10 to-transparent";
   }
   if (align === "right") {
     return "bg-gradient-to-l from-brand-blue/35 via-transparent to-transparent";
+  }
+  if (align === "center") {
+    return "bg-gradient-to-t from-brand-blue/28 via-transparent to-transparent";
   }
   return "bg-gradient-to-r from-brand-blue/25 via-transparent to-transparent";
 }
@@ -163,14 +173,14 @@ export function HomeHero() {
         <div
           className={`hero-caption w-full max-w-[min(58rem,calc(100vw-3rem))] ${
             !captionOn && !reduced ? "is-off" : ""
-          } ${slide.align === "left" ? "lg:max-w-[46rem]" : ""}`}
+          } ${slide.align === "left" || slide.align === "center" ? "lg:max-w-[46rem]" : ""}`}
         >
           <p
             className={`hero-caption-outline text-shimmer font-serif text-base font-extrabold tracking-[0.08em] uppercase sm:text-2xl lg:text-3xl ${slide.kickerClass}`}
           >
             {slide.kicker}
           </p>
-          <h1 className="hero-caption-outline text-shimmer mt-2 font-serif text-[1.85rem] leading-[0.98] font-extrabold tracking-[-0.03em] whitespace-pre-line text-brand-white uppercase [animation-delay:200ms] sm:text-5xl sm:leading-[0.95] lg:text-[3.85rem] lg:whitespace-pre xl:text-[4.15rem]">
+          <h1 className="hero-caption-outline text-shimmer mt-2 font-serif text-[1.85rem] leading-[0.98] font-extrabold tracking-[-0.015em] whitespace-pre-line text-brand-white uppercase [animation-delay:200ms] sm:text-5xl sm:leading-[0.95] lg:text-[3.85rem] lg:whitespace-pre xl:text-[4.15rem]">
             {slide.title}
           </h1>
           {slide.lede !== "" ? (

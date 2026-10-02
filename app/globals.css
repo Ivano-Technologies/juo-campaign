@@ -219,27 +219,36 @@ h6 {
  * (kicker, title, lede, hashtag, signature). Kezie lock: brand.colors.blue
  * / --brand-blue #40449B only — not Red. Prefer a real stroke over a heavy
  * dark scrim so white type holds on pale stone, clouds, and busy stills.
+ *
+ * Stroke + 8-way drop-shadow: paint-order keeps glyph weight; the shadows
+ * stay visible when shimmer's background-clip:text swallows -webkit-text-stroke.
  */
 .hero-caption-outline {
-  -webkit-text-stroke: clamp(1.5px, 0.034em, 2.75px) var(--brand-blue);
+  -webkit-text-stroke: clamp(2px, 0.048em, 4px) var(--brand-blue);
   paint-order: stroke fill;
+  filter:
+    drop-shadow(0.032em 0 0 var(--brand-blue))
+    drop-shadow(-0.032em 0 0 var(--brand-blue))
+    drop-shadow(0 0.032em 0 var(--brand-blue))
+    drop-shadow(0 -0.032em 0 var(--brand-blue))
+    drop-shadow(0.024em 0.024em 0 var(--brand-blue))
+    drop-shadow(-0.024em -0.024em 0 var(--brand-blue))
+    drop-shadow(0.024em -0.024em 0 var(--brand-blue))
+    drop-shadow(-0.024em 0.024em 0 var(--brand-blue));
 }
 
-/* background-clip:text can swallow -webkit-text-stroke. Restore a crisp
-   8-way outline in the same Royal Blue token so shimmer and stroke coexist. */
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
   @media (prefers-reduced-motion: no-preference) {
     .hero-caption .text-shimmer.hero-caption-outline {
-      -webkit-text-stroke-width: 0;
       filter:
-        drop-shadow(0.03em 0 0 var(--brand-blue))
-        drop-shadow(-0.03em 0 0 var(--brand-blue))
-        drop-shadow(0 0.03em 0 var(--brand-blue))
-        drop-shadow(0 -0.03em 0 var(--brand-blue))
-        drop-shadow(0.022em 0.022em 0 var(--brand-blue))
-        drop-shadow(-0.022em -0.022em 0 var(--brand-blue))
-        drop-shadow(0.022em -0.022em 0 var(--brand-blue))
-        drop-shadow(-0.022em 0.022em 0 var(--brand-blue));
+        drop-shadow(0.032em 0 0 var(--brand-blue))
+        drop-shadow(-0.032em 0 0 var(--brand-blue))
+        drop-shadow(0 0.032em 0 var(--brand-blue))
+        drop-shadow(0 -0.032em 0 var(--brand-blue))
+        drop-shadow(0.024em 0.024em 0 var(--brand-blue))
+        drop-shadow(-0.024em -0.024em 0 var(--brand-blue))
+        drop-shadow(0.024em -0.024em 0 var(--brand-blue))
+        drop-shadow(-0.024em 0.024em 0 var(--brand-blue));
     }
   }
 }

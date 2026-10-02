@@ -105,19 +105,22 @@ export function HomeHero() {
           <div
             key={item.src}
             data-hero-still={item.src}
-            className={`absolute inset-0 transition-opacity duration-700 ${
+            className={`hero-slide absolute inset-0 transition-opacity duration-700 ${
               isActive ? "opacity-100" : "pointer-events-none opacity-0"
             }`}
             aria-hidden={!isActive}
           >
-            <Image
-              src={item.src}
-              alt={item.alt}
-              fill
-              priority={slideIndex === 0}
-              sizes="100vw"
-              className={`object-cover ${item.objectClass}`}
-            />
+            {/* IVA-97 — still clips photography; caption dock is a sibling so glyphs stay visible. */}
+            <div className="hero-still">
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                priority={slideIndex === 0}
+                sizes="100vw"
+                className={`object-cover ${item.objectClass}`}
+              />
+            </div>
             <div className="hero-scrim" aria-hidden="true" />
             <div
               className={`hero-caption hero-caption-dock ${montserrat.className} font-montserrat ${
@@ -130,8 +133,8 @@ export function HomeHero() {
               <TitleTag
                 className={`mt-1.5 font-extrabold text-brand-white uppercase md:mt-2 ${
                   isHashtag
-                    ? "hero-track-hashtag text-[1.65rem] leading-[1.05] md:text-[3.15rem] md:leading-[0.98] xl:text-[3.75rem]"
-                    : "hero-track-headline text-[1.65rem] leading-[1.05] md:text-[3.5rem] md:leading-[0.98] xl:text-[4.15rem]"
+                    ? "hero-hashtag hero-track-hashtag leading-[1.05] md:text-[3.15rem] md:leading-[0.98] xl:text-[3.75rem]"
+                    : "hero-headline hero-track-headline text-[1.65rem] leading-[1.05] md:text-[3.5rem] md:leading-[0.98] xl:text-[4.15rem]"
                 }`}
               >
                 <span className="whitespace-pre-line md:hidden">{mobileTitle}</span>

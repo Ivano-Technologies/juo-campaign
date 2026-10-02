@@ -1,9 +1,10 @@
 import { Montserrat, Poppins } from "next/font/google";
 
-/** IVA-44 — Montserrat for headings, Poppins for body (next/font). */
+/** IVA-44 — Montserrat for headings, Poppins for body (next/font).
+ * IVA-96 hero roles: 600 kicker, 800 headline, 500 support/credit, 700 CTA. */
 export const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
+  weight: ["500", "600", "700", "800", "900"],
   variable: "--font-montserrat",
   display: "swap",
 });

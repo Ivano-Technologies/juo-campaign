@@ -1,55 +1,24 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
+import { montserrat } from "@/app/fonts";
 import { useDocumentHidden } from "@/components/motion/use-document-hidden";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
-import { montserrat } from "@/app/fonts";
-import {
-  heroSlides,
-  type HeroCaptionAlign,
-  type HeroCaptionY,
-} from "@/lib/home";
+import { heroSlides } from "@/lib/home";
 
-function captionAlignClass(align: HeroCaptionAlign): string {
-  if (align === "center") {
-    return "justify-center text-center";
-  }
-  return align === "left"
-    ? "justify-start text-left"
-    : "justify-end text-right";
-}
-
-function captionYClass(captionY: HeroCaptionY): string {
-  if (captionY === "top") {
-    return "items-start pt-12 sm:pt-16";
-  }
-  if (captionY === "bottom") {
-    return "items-end";
-  }
-  return "items-center";
-}
-
-function captionScrimClass(
-  align: HeroCaptionAlign,
-  captionY: HeroCaptionY,
-): string {
-  if (captionY === "bottom") {
-    return "bg-gradient-to-t from-brand-blue/32 via-brand-blue/10 to-transparent";
-  }
-  if (align === "right") {
-    return "bg-gradient-to-l from-brand-blue/35 via-transparent to-transparent";
-  }
-  if (align === "center") {
-    return "bg-gradient-to-t from-brand-blue/28 via-transparent to-transparent";
-  }
-  return "bg-gradient-to-r from-brand-blue/25 via-transparent to-transparent";
-}
-
-/** Total slide dwell, including caption fade in/out. */
-const INTERVAL_MS = 6000;
+/** IVA-96 §5 — 6.5s dwell, including caption fade in/out. */
+const INTERVAL_MS = 6500;
 /** Keep in sync with `.hero-caption` opacity transition-duration in globals.css. */
 const FADE_MS = 650;
+
+function slideTitle(item: (typeof heroSlides)[number], compact: boolean): string {
+  if (compact && "titleMobile" in item && item.titleMobile) {
+    return item.titleMobile;
+  }
+  return item.title;
+}
 
 export function HomeHero() {
   const reduced = usePrefersReducedMotion();
@@ -123,15 +92,21 @@ export function HomeHero() {
       aria-roledescription="carousel"
       aria-label="Campaign photographs"
     >
+      <p className="sr-only" aria-live="polite" aria-atomic="true">
+        Slide {index + 1} of {heroSlides.length}
+      </p>
       {heroSlides.map((item, slideIndex) => {
         const isActive = slideIndex === index;
         const TitleTag = slideIndex === 0 ? "h1" : "p";
+        const isHashtag = item.title.startsWith("#");
+        const mobileTitle = slideTitle(item, true);
+        const desktopTitle = slideTitle(item, false);
         return (
           <div
             key={item.src}
             data-hero-still={item.src}
             className={`absolute inset-0 transition-opacity duration-700 ${
-              isActive ? "opacity-100" : "opacity-0"
+              isActive ? "opacity-100" : "pointer-events-none opacity-0"
             }`}
             aria-hidden={!isActive}
           >
@@ -143,42 +118,43 @@ export function HomeHero() {
               sizes="100vw"
               className={`object-cover ${item.objectClass}`}
             />
+            <div className="hero-scrim" aria-hidden="true" />
             <div
-              className={`pointer-events-none absolute inset-0 z-[1] ${captionScrimClass(item.align, item.captionY)}`}
-            />
-            <div
-              className={`absolute inset-0 z-[2] flex h-full px-6 pb-24 sm:px-16 md:pb-16 lg:px-24 ${captionAlignClass(item.align)} ${captionYClass(item.captionY)}`}
+              className={`hero-caption hero-caption-dock ${montserrat.className} font-montserrat ${
+                isActive && !captionOn && !reduced ? "is-off" : ""
+              }`}
             >
-              <div
-                className={`hero-caption ${montserrat.className} font-montserrat font-extrabold w-full max-w-[min(58rem,calc(100vw-3rem))] ${
-                  isActive && !captionOn && !reduced ? "is-off" : ""
-                } ${item.align === "left" || item.align === "center" ? "lg:max-w-[46rem]" : ""}`}
+              <p className="hero-track-kicker text-sm font-semibold text-brand-white uppercase md:text-2xl lg:text-[1.75rem] lg:leading-[1.2]">
+                {item.kicker}
+              </p>
+              <TitleTag
+                className={`mt-1.5 font-extrabold text-brand-white uppercase md:mt-2 ${
+                  isHashtag
+                    ? "hero-track-hashtag text-[1.65rem] leading-[1.05] md:text-[3.15rem] md:leading-[0.98] xl:text-[3.75rem]"
+                    : "hero-track-headline text-[1.65rem] leading-[1.05] md:text-[3.5rem] md:leading-[0.98] xl:text-[4.15rem]"
+                }`}
               >
-                <p
-                  className={`hero-caption-outline ${montserrat.className} font-montserrat text-base font-extrabold tracking-[0.08em] uppercase sm:text-2xl lg:text-3xl ${item.kickerClass}`}
-                >
-                  {item.kicker}
+                <span className="whitespace-pre-line md:hidden">{mobileTitle}</span>
+                <span className="hidden whitespace-pre-line md:inline">{desktopTitle}</span>
+              </TitleTag>
+              {item.lede !== "" ? (
+                <p className="mt-3.5 hidden text-lg leading-snug font-medium text-brand-white md:block lg:text-xl">
+                  {item.lede}
                 </p>
-                <TitleTag className={`hero-caption-outline ${montserrat.className} font-montserrat mt-2 text-[1.85rem] leading-[0.98] font-extrabold tracking-[-0.015em] whitespace-pre-line text-brand-white uppercase sm:text-5xl sm:leading-[0.95] lg:text-[3.85rem] lg:whitespace-pre xl:text-[4.15rem]`}>
-                  {item.title}
-                </TitleTag>
-                {item.lede !== "" ? (
-                  <p
-                    className={`hero-caption-outline ${montserrat.className} font-montserrat mt-4 text-lg font-extrabold text-brand-white ${
-                      item.lede.startsWith("#")
-                        ? "text-2xl tracking-[0.04em] uppercase sm:text-3xl"
-                        : ""
-                    }`}
-                  >
-                    {item.lede}
-                  </p>
-                ) : null}
-                {"signature" in item && item.signature ? (
-                  <p className={`hero-caption-outline ${montserrat.className} font-montserrat mt-6 text-xl font-extrabold text-brand-white italic sm:text-2xl`}>
-                    {item.signature}
-                  </p>
-                ) : null}
-              </div>
+              ) : null}
+              {"signature" in item && item.signature ? (
+                <p className="mt-3 hidden text-lg leading-snug font-medium tracking-[0.02em] text-brand-white italic md:block">
+                  {item.signature}
+                </p>
+              ) : null}
+              {"cta" in item && item.cta ? (
+                <Link
+                  href={item.cta.href}
+                  className="mt-4 inline-flex min-h-11 items-center bg-brand-red px-4 py-2.5 text-[11px] font-bold tracking-[0.12em] text-brand-white uppercase transition-[background-color,transform] duration-200 ease-out hover:bg-brand-red/90 motion-safe:hover:-translate-y-0.5 md:px-[18px] md:text-xs"
+                >
+                  {item.cta.label}
+                </Link>
+              ) : null}
             </div>
           </div>
         );
@@ -186,7 +162,7 @@ export function HomeHero() {
 
       <button
         type="button"
-        className="absolute left-3 bottom-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue/40 text-2xl text-brand-white backdrop-blur-sm transition-[background-color,transform,box-shadow] duration-200 ease-out hover:bg-brand-blue/70 motion-safe:hover:-translate-y-0.5"
+        className="absolute top-1/2 left-2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[rgba(64,68,155,0.45)] text-2xl text-brand-white backdrop-blur-sm transition-[background-color] duration-200 ease-out hover:bg-[rgba(64,68,155,0.7)] md:left-4"
         aria-label="Previous slide"
         onClick={() => go(index - 1)}
       >
@@ -194,12 +170,38 @@ export function HomeHero() {
       </button>
       <button
         type="button"
-        className="absolute right-5 bottom-5 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-brand-blue/40 text-2xl text-brand-white backdrop-blur-sm transition-[background-color,transform,box-shadow] duration-200 ease-out hover:bg-brand-blue/70 motion-safe:hover:-translate-y-0.5"
+        className="absolute top-1/2 right-2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-[rgba(64,68,155,0.45)] text-2xl text-brand-white backdrop-blur-sm transition-[background-color] duration-200 ease-out hover:bg-[rgba(64,68,155,0.7)] md:right-4"
         aria-label="Next slide"
         onClick={() => go(index + 1)}
       >
         ›
       </button>
+      <div
+        className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2.5 md:bottom-5"
+        aria-label="Slide pagination"
+      >
+        {heroSlides.map((item, slideIndex) => {
+          const isCurrent = slideIndex === index;
+          return (
+            <button
+              key={item.src}
+              type="button"
+              aria-label={`Slide ${slideIndex + 1} of ${heroSlides.length}`}
+              aria-current={isCurrent ? "true" : undefined}
+              className="flex h-11 w-11 items-center justify-center"
+              onClick={() => go(slideIndex)}
+            >
+              <span
+                className={`block rounded-full ${
+                  isCurrent
+                    ? "h-2 w-2 bg-brand-blue shadow-[0_0_0_2px_#fff] md:h-2.5 md:w-2.5"
+                    : "h-2 w-2 bg-brand-white/40 md:h-2.5 md:w-2.5"
+                }`}
+              />
+            </button>
+          );
+        })}
+      </div>
     </section>
   );
 }

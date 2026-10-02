@@ -149,13 +149,24 @@ h6 {
 
 /* IVA-34 #1 — written hero content only. Opacity duration must match FADE_MS in hero.tsx.
    Default visible so the first HTML stays crawl-safe without JS.
-   Enter: fade + soft slide from the left (~22px). Exit: fade + slight slide left. */
+   Enter: fade + soft slide from the left (~22px). Exit: fade + slight slide left.
+   IVA-95 font follow-up: caption lockup is Montserrat ExtraBold (800) so
+   lede/signature cannot fall through to body Poppins, and slide-1 h1 cannot
+   inherit the global heading weight 700. Outline stroke is unchanged. */
 .hero-caption {
   opacity: 1;
   transform: translateX(0);
+  font-family: var(--font-montserrat), Arial, sans-serif;
+  font-weight: 800;
   transition:
     opacity 650ms ease-in-out,
     transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-caption h1,
+.hero-caption p {
+  font-family: var(--font-montserrat), Arial, sans-serif;
+  font-weight: 800;
 }
 
 .hero-caption.is-off {

@@ -149,7 +149,7 @@ export function HomeHero() {
               className={`absolute inset-0 z-[2] flex h-full px-6 pb-24 sm:px-16 md:pb-16 lg:px-24 ${captionAlignClass(item.align)} ${captionYClass(item.captionY)}`}
             >
               <div
-                className={`hero-caption w-full max-w-[min(58rem,calc(100vw-3rem))] ${
+                className={`hero-caption font-serif font-extrabold w-full max-w-[min(58rem,calc(100vw-3rem))] ${
                   isActive && !captionOn && !reduced ? "is-off" : ""
                 } ${item.align === "left" || item.align === "center" ? "lg:max-w-[46rem]" : ""}`}
               >
@@ -163,9 +163,9 @@ export function HomeHero() {
                 </TitleTag>
                 {item.lede !== "" ? (
                   <p
-                    className={`hero-caption-outline mt-4 text-lg text-brand-white ${
+                    className={`hero-caption-outline mt-4 font-serif text-lg font-extrabold text-brand-white ${
                       item.lede.startsWith("#")
-                        ? "text-shimmer font-serif text-2xl font-extrabold tracking-[0.04em] uppercase [animation-delay:400ms] sm:text-3xl"
+                        ? "text-shimmer text-2xl tracking-[0.04em] uppercase [animation-delay:400ms] sm:text-3xl"
                         : ""
                     }`}
                   >
@@ -173,7 +173,7 @@ export function HomeHero() {
                   </p>
                 ) : null}
                 {"signature" in item && item.signature ? (
-                  <p className="hero-caption-outline mt-6 font-serif text-xl font-semibold text-brand-white italic sm:text-2xl">
+                  <p className="hero-caption-outline mt-6 font-serif text-xl font-extrabold text-brand-white italic sm:text-2xl">
                     {item.signature}
                   </p>
                 ) : null}

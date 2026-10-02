@@ -42,7 +42,7 @@ export const heroSlides = [
     lede: campaignHashtag.toUpperCase(),
     align: "left",
     captionY: "center",
-    objectClass: "object-center",
+    objectClass: "object-[center_30%]",
     signature: "John Upan Odey",
   },
   {

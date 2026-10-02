@@ -20,18 +20,19 @@ export type HeroCaptionY = "top" | "center" | "bottom";
  */
 export const heroSlides = [
   {
-    src: "/media/2026/hero-still-1-monument.webp",
-    alt: "Destination Cross River roundabout monument, The Nation’s Paradise, under a blue sky",
-    kicker: "THE NEXT CHAPTER",
+    src: "/media/2026/hero-still-4-arch.webp",
+    alt: "Stone park entrance arch with a bull-head sculpture on a road through green Cross River hills",
+    kicker: "A FRESH START",
     kickerClass: "text-brand-white",
-    title: "NOT JUST A BETTER\nCROSS RIVER\nA GREATER ONE",
-    lede: "…built on opportunity, innovation and shared prosperity.",
-    // Still 1 — monument. PASS lock from #103 / 909f121: bottom-left
-    // over carved plinth + lawn. object-[center_68%] — do not use the
-    // tighter Destination crops (28% etc). Do not swap with the flags slide.
-    align: "left",
+    title: campaignHashtag.toUpperCase(),
+    lede: "One People, One Cross River",
+    // Position 1 — arch (IVA-95 follow-up swap with monument). Caption
+    // stays bound to this still: bottom-center on the road (IVA-95 PASS
+    // lock). Crop at 36% so the bull horns/head on the arch beam stay
+    // fully in frame — 50% clipped the sculpture at the top.
+    align: "center",
     captionY: "bottom",
-    objectClass: "object-[center_68%]",
+    objectClass: "object-[center_36%]",
   },
   {
     src: "/media/2026/hero-still-2-flags.webp",
@@ -63,18 +64,19 @@ export const heroSlides = [
     signature: "John Upan Odey",
   },
   {
-    src: "/media/2026/hero-still-4-arch.webp",
-    alt: "Stone park entrance arch with a bull-head sculpture on a road through green Cross River hills",
-    kicker: "A FRESH START",
+    src: "/media/2026/hero-still-1-monument.webp",
+    alt: "Destination Cross River roundabout monument, The Nation’s Paradise, under a blue sky",
+    kicker: "THE NEXT CHAPTER",
     kickerClass: "text-brand-white",
-    title: campaignHashtag.toUpperCase(),
-    lede: "One People, One Cross River",
-    // Caption stays bottom-center on the road (IVA-95 PASS lock).
-    // Crop at 36% (was object-center / 50%) so the bull horns/head on the
-    // arch beam stay fully in frame — 50% clipped the sculpture at the top.
-    align: "center",
+    title: "NOT JUST A BETTER\nCROSS RIVER\nA GREATER ONE",
+    lede: "…built on opportunity, innovation and shared prosperity.",
+    // Position 4 — monument (IVA-95 follow-up swap with arch). PASS lock
+    // from #103 / 909f121: bottom-left over carved plinth + lawn.
+    // object-[center_68%] — do not use the tighter Destination crops
+    // (28% etc). Do not swap with the flags slide.
+    align: "left",
     captionY: "bottom",
-    objectClass: "object-[center_36%]",
+    objectClass: "object-[center_68%]",
   },
 ] as const;
 

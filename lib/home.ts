@@ -5,22 +5,34 @@ export const campaignHashtag = "#OurTimeOurState";
 
 export const officialPortrait = brand.portraits.official;
 
+/** Per-slide caption lockups. Hero maps these to flex alignment. */
+export type HeroCaptionAlign = "left" | "center" | "right";
+export type HeroCaptionY = "top" | "center" | "bottom";
+
 /**
  * IVA-93: Brand-treated homepage stills (4). Supersedes the IVA-45
  * three-slide lock now that Chris delivered print-resolution hero art.
- * Vertical 1920×2713 WebP — object-cover object-center for full-bleed crop.
+ * Vertical 1920×2713 WebP — object-cover with per-slide crop bias.
+ *
+ * IVA-95 caption framing: sit writeups in the cleanest region of each
+ * still (avoid pale sky, pale monument lettering, busy flag stripes).
+ * Outline is Royal Blue only — see `.hero-caption-outline`.
  */
 export const heroSlides = [
   {
-    src: "/media/2026/hero-still-1-monument.webp",
-    alt: "Destination Cross River roundabout monument, The Nation’s Paradise, under a blue sky",
-    kicker: "THE NEXT CHAPTER",
+    src: "/media/2026/hero-still-4-arch.webp",
+    alt: "Stone park entrance arch with a bull-head sculpture on a road through green Cross River hills",
+    kicker: "A FRESH START",
     kickerClass: "text-brand-white",
-    title: "NOT JUST A BETTER\nCROSS RIVER\nA GREATER ONE",
-    lede: "…built on opportunity, innovation and shared prosperity.",
-    align: "left",
-    captionY: "center",
-    objectClass: "object-center",
+    title: campaignHashtag.toUpperCase(),
+    lede: "One People, One Cross River",
+    // Position 1 — arch (IVA-95 follow-up swap with monument). Caption
+    // stays bound to this still: bottom-center on the road (IVA-95 PASS
+    // lock). Crop at 36% so the bull horns/head on the arch beam stay
+    // fully in frame — 50% clipped the sculpture at the top.
+    align: "center",
+    captionY: "bottom",
+    objectClass: "object-[center_36%]",
   },
   {
     src: "/media/2026/hero-still-2-flags.webp",
@@ -29,8 +41,10 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: "ONE PEOPLE,\nONE CROSS RIVER",
     lede: "",
+    // Still 2 — flags. Bottom-right over lawn/trees (clear of stripes).
+    // Do not swap with the monument slide.
     align: "right",
-    captionY: "center",
+    captionY: "bottom",
     objectClass: "object-center",
   },
   {
@@ -40,21 +54,29 @@ export const heroSlides = [
     kickerClass: "text-brand-white",
     title: "LET'S BUILD WHAT\nCAN BE",
     lede: campaignHashtag.toUpperCase(),
+    // Lower-left over hedges/lawn. IVA-93 lock: object-[center_30%] so the
+    // cannon stays in the upper-right of the desktop frame. Do not nudge
+    // toward 46% — that crops the cannon out. Contrast is the Royal Blue
+    // outline + bottom-left garden lockup, not a deeper crop.
     align: "left",
-    captionY: "center",
+    captionY: "bottom",
     objectClass: "object-[center_30%]",
     signature: "John Upan Odey",
   },
   {
-    src: "/media/2026/hero-still-4-arch.webp",
-    alt: "Stone park entrance arch with a bull-head sculpture on a road through green Cross River hills",
-    kicker: "A FRESH START",
+    src: "/media/2026/hero-still-1-monument.webp",
+    alt: "Destination Cross River roundabout monument, The Nation’s Paradise, under a blue sky",
+    kicker: "THE NEXT CHAPTER",
     kickerClass: "text-brand-white",
-    title: campaignHashtag.toUpperCase(),
-    lede: "One People, One Cross River",
-    align: "right",
-    captionY: "center",
-    objectClass: "object-center",
+    title: "NOT JUST A BETTER\nCROSS RIVER\nA GREATER ONE",
+    lede: "…built on opportunity, innovation and shared prosperity.",
+    // Position 4 — monument (IVA-95 follow-up swap with arch). PASS lock
+    // from #103 / 909f121: bottom-left over carved plinth + lawn.
+    // object-[center_68%] — do not use the tighter Destination crops
+    // (28% etc). Do not swap with the flags slide.
+    align: "left",
+    captionY: "bottom",
+    objectClass: "object-[center_68%]",
   },
 ] as const;
 

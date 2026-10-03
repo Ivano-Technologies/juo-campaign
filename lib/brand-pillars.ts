@@ -1,6 +1,6 @@
 /**
  * Brand values (exactly five). Who John stands for as a leader.
- * Not the eight manifesto policy pillars and not THE TEN COMMITMENTS.
+ * Not the nine manifesto policy pillars and not THE TEN COMMITMENTS.
  * Do not add a sixth.
  */
 export const brandPillarsTitle = "Our Brand Pillars";

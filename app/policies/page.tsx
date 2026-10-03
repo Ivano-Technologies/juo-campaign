@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Button } from "@/components/button";
 import { ManifestoCta } from "@/components/manifesto-cta";
 import { PageHero } from "@/components/page-hero";
+import { manifestoStackedHeadline } from "@/lib/manifesto";
+import { pageShareTags } from "@/lib/page-seo";
 import {
   policiesHubBody,
   policiesHubImportant,
@@ -13,7 +15,6 @@ import {
   policiesTenTitle,
   policySectors,
 } from "@/lib/policies";
-import { pageShareTags } from "@/lib/page-seo";
 
 export const metadata: Metadata = {
   title: {
@@ -60,40 +61,48 @@ export default function PoliciesPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <h2 className="font-serif text-3xl text-ink">{policiesTenTitle}</h2>
           <ol className="mt-8 grid gap-4 sm:grid-cols-2">
-            {policySectors.map((sector) => (
-              <li
-                key={sector.slug}
-                id={sector.slug}
-                className="scroll-mt-28 rounded-2xl border border-line bg-brand-white p-6"
-              >
-                <h3 className="font-serif text-2xl text-ink uppercase">
-                  {sector.title}
-                </h3>
-                <p className="mt-3 text-[1.05rem] leading-7 text-muted">
-                  {sector.blurb}
-                </p>
-                <p className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">
-                  <a
-                    href="/vision#brand-pillars"
-                    className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
-                  >
-                    Brand values on The Vision
-                  </a>
-                  <a
-                    href="/manifesto#commitments"
-                    className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
-                  >
-                    Ten Commitments
-                  </a>
-                  <a
-                    href="/manifesto#pillars"
-                    className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
-                  >
-                    Read the full Manifesto
-                  </a>
-                </p>
-              </li>
-            ))}
+            {policySectors.map((sector) => {
+              const headline = manifestoStackedHeadline(sector);
+              return (
+                <li
+                  key={sector.slug}
+                  id={sector.slug}
+                  className="scroll-mt-28 min-w-0 rounded-2xl border border-line bg-brand-white p-6"
+                >
+                  <h3 className="font-serif text-2xl text-ink uppercase break-words">
+                    {sector.title}
+                  </h3>
+                  {headline ? (
+                    <p className="mt-3 font-serif text-2xl text-ink uppercase break-words whitespace-pre-line">
+                      {headline}
+                    </p>
+                  ) : null}
+                  <p className="mt-3 text-[1.05rem] leading-7 text-muted break-words">
+                    {sector.blurb}
+                  </p>
+                  <p className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                    <a
+                      href="/vision#brand-pillars"
+                      className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
+                    >
+                      Brand values on The Vision
+                    </a>
+                    <a
+                      href="/manifesto#commitments"
+                      className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
+                    >
+                      Ten Commitments
+                    </a>
+                    <a
+                      href="/manifesto#pillars"
+                      className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
+                    >
+                      Read the full Manifesto
+                    </a>
+                  </p>
+                </li>
+              );
+            })}
           </ol>
         </div>
       </section>

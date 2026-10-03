@@ -17,7 +17,7 @@ export function ManifestoPillars({ heading }: ManifestoPillarsProps) {
             <h3 className="font-serif text-2xl tracking-tight text-ink uppercase">
               {pillar.title}
             </h3>
-            <p className="mt-3 text-[1.05rem] leading-7 text-muted">
+            <p className="mt-3 whitespace-pre-line text-[1.05rem] leading-7 text-muted">
               {pillar.blurb}
             </p>
           </li>

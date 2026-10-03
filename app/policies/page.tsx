@@ -69,7 +69,7 @@ export default function PoliciesPage() {
                 <h3 className="font-serif text-2xl text-ink uppercase">
                   {sector.title}
                 </h3>
-                <p className="mt-3 text-[1.05rem] leading-7 text-muted">
+                <p className="mt-3 whitespace-pre-line text-[1.05rem] leading-7 text-muted">
                   {sector.blurb}
                 </p>
                 <p className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">

@@ -6,12 +6,12 @@ export const manifestoPdfHref: string | null = null;
 export const manifestoPageTitle = pageSeoTitle("Manifesto");
 
 export const manifestoPageDescription =
-  "Eight approved manifesto pillars, THE TEN COMMITMENTS TO CROSS RIVERIANS, and Brand excerpts for the John Upan Odey Jnr manifesto. A Fresh Start for Cross River.";
+  "Nine approved manifesto pillars, THE TEN COMMITMENTS TO CROSS RIVERIANS, and Brand excerpts for the John Upan Odey Jnr manifesto. A Fresh Start for Cross River.";
 
 export const manifestoHeroLede =
-  "Eight approved policy pillars and THE TEN COMMITMENTS TO CROSS RIVERIANS.";
+  "Nine approved policy pillars and THE TEN COMMITMENTS TO CROSS RIVERIANS.";
 
-export const manifestoPillarsTitle = "Eight manifesto pillars";
+export const manifestoPillarsTitle = "Nine manifesto pillars";
 export const manifestoPillarsIntro =
   "Approved policy pillars for A Fresh Start. These are manifesto sectors — not the five Brand values (Service, Competence, Integrity, Opportunity, Unity) and not THE TEN COMMITMENTS TO CROSS RIVERIANS.";
 
@@ -72,16 +72,31 @@ export const manifestoPillars = [
     blurb:
       "We will protect our environment while creating green economic opportunities.",
   },
+  {
+    number: "09",
+    title: "PILLAR NINE: SECURITY AS A FOUNDATION FOR PROSPERITY",
+    slug: "security-as-a-foundation-for-prosperity",
+    blurb: `WE WILL BUILD
+A CROSS RIVER WHERE
+SECURITY IS NOT
+A PRIVILEGE
+Because the security
+of Cross River is not only
+about stopping crime.
+It is about protecting
+life, livelihood, dignity
+and opportunity.`,
+  },
 ] as const;
 
 export type ManifestoPillar = (typeof manifestoPillars)[number];
 
-const manifestoPillarCount: 8 = manifestoPillars.length;
+const manifestoPillarCount: 9 = manifestoPillars.length;
 void manifestoPillarCount;
 
 export const tenCommitmentsTitle = "THE TEN COMMITMENTS TO CROSS RIVERIANS";
 export const tenCommitmentsIntro =
-  "Ten commitments to the people of Cross River. Distinct from the eight manifesto policy pillars and from the five Brand values.";
+  "Ten commitments to the people of Cross River. Distinct from the nine manifesto policy pillars and from the five Brand values.";
 
 export const tenCommitments = [
   {

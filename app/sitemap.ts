@@ -11,6 +11,10 @@ import { canonicalOrigin } from "@/lib/site";
  * lastModified = latest git committer date of the page file and/or the lib
  * module that supplies that route’s copy. Do not invent dates.
  *
+ * Production URL for Google Search Console:
+ * https://www.votejohnupanodey.com/sitemap.xml
+ * Every entry is an absolute www URL (`canonicalOrigin`).
+ *
  * Utility shells (/donate/confirm, /donate/fail) are intentionally omitted
  * and carry robots noindex on their pages.
  */

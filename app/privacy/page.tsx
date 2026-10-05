@@ -44,11 +44,14 @@ export default function PrivacyPage() {
           <p className="mt-3">
             When you use Join the Movement we store the details you send: name,
             email, phone, local government or location (including “Diaspora /
-            outside Cross River”), and how you want to help. Contact stores
-            name, email, and your message. Bank transfer on Donate uses the
-            published account details and does not collect extra form data on
-            this site. When online checkout opens, donate data will be limited
-            to what the payment processor and Nigerian law require.
+            outside Cross River”), and how you want to help. If you arrive from
+            a tagged join link, we also store a short campaign source label
+            from that link (for example calabar) so field activity can be
+            attributed. That label is not your name, email, or phone. Contact
+            stores name, email, and your message. Bank transfer on Donate uses
+            the published account details and does not collect extra form data
+            on this site. When online checkout opens, donate data will be
+            limited to what the payment processor and Nigerian law require.
           </p>
         </section>
         <section>

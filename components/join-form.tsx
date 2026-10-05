@@ -1,8 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/button";
 import { FormStatusNote } from "@/components/form-status";
+import {
+  JOIN_FORM_ID,
+  VOLUNTEER_FORM_START_EVENT,
+  VOLUNTEER_FORM_SUBMIT_EVENT,
+  trackGaEvent,
+} from "@/lib/analytics";
+import {
+  persistCampaignSource,
+  readStoredCampaignSource,
+} from "@/lib/campaign-source";
 import { JOIN_SUCCESS, readJsonMessage } from "@/lib/forms";
 import { crossRiverLgas, joinInterests } from "@/lib/site";
 
@@ -26,26 +36,66 @@ const initial: JoinState = {
   privacy: false,
 };
 
-export function JoinForm() {
+type JoinFormProps = {
+  campaignSource?: string | null;
+};
+
+export function JoinForm({ campaignSource = null }: JoinFormProps) {
   const [values, setValues] = useState<JoinState>(initial);
   const [pending, setPending] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
   const [tone, setTone] = useState<StatusTone>("info");
+  const formStartSent = useRef(false);
+
+  useEffect(() => {
+    if (campaignSource) {
+      persistCampaignSource(campaignSource);
+    }
+  }, [campaignSource]);
+
+  function currentAttribution(): string | null {
+    if (campaignSource) {
+      persistCampaignSource(campaignSource);
+      return campaignSource;
+    }
+    return readStoredCampaignSource();
+  }
+
+  function markFormStart() {
+    if (formStartSent.current) {
+      return;
+    }
+    formStartSent.current = true;
+    trackGaEvent(VOLUNTEER_FORM_START_EVENT, {
+      form_id: JOIN_FORM_ID,
+      campaign_source: currentAttribution() ?? undefined,
+    });
+  }
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setPending(true);
     setStatus(null);
+    const attribution = currentAttribution();
 
     try {
       const response = await fetch("/api/join", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        body: JSON.stringify({
+          ...values,
+          campaign_source: attribution,
+        }),
       });
-      const payload = (await readJsonMessage(response));
+      const payload = await readJsonMessage(response);
 
       if (response.ok) {
+        trackGaEvent(VOLUNTEER_FORM_SUBMIT_EVENT, {
+          form_id: JOIN_FORM_ID,
+          campaign_source: attribution ?? "(not_set)",
+          lga: values.lga,
+          interest: values.interest,
+        });
         setTone("success");
         setStatus(payload.message ?? JOIN_SUCCESS.message);
         setValues(initial);
@@ -63,7 +113,11 @@ export function JoinForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid min-w-0 gap-4 rounded-2xl border border-line bg-brand-white p-6 shadow-sm">
+    <form
+      onSubmit={onSubmit}
+      onFocusCapture={markFormStart}
+      className="grid min-w-0 gap-4 rounded-2xl border border-line bg-brand-white p-6 shadow-sm"
+    >
       <label className="grid gap-1 text-sm">
         Full name
         <input

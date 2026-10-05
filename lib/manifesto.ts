@@ -1,7 +1,8 @@
 import { pageSeoTitle } from "@/lib/brand-seo";
 
-/** Null until the approved manifesto PDF is delivered. */
-export const manifestoPdfHref: string | null = null;
+/** Approved manifesto PDF is live for Preview (IVA-17). */
+export const manifestoPdfHref: string | null =
+  "/media/manifesto-john-upan-odey.pdf";
 
 export const manifestoPageTitle = pageSeoTitle("Manifesto");
 

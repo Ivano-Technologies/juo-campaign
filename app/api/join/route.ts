@@ -35,7 +35,7 @@ export async function POST(request: Request) {
     return jsonError(FORM_UNAVAILABLE, 503);
   }
 
-  const { error } = await supabase.from("join_submissions").insert({
+  const baseRow = {
     name: parsed.name,
     email: parsed.email,
     phone: parsed.phone,
@@ -43,14 +43,37 @@ export async function POST(request: Request) {
     interest: parsed.interest,
     privacy_accepted: parsed.privacy_accepted,
     source: parsed.source,
-  });
+  };
+  const row = parsed.campaign_source
+    ? { ...baseRow, campaign_source: parsed.campaign_source }
+    : baseRow;
+
+  const { error } = await supabase.from("join_submissions").insert(row);
 
   if (error) {
+    if (parsed.campaign_source && isMissingCampaignSourceColumn(error.message)) {
+      console.warn(
+        "join_submissions.campaign_source is not applied yet; saving without attribution.",
+        error.message,
+      );
+      const retry = await supabase.from("join_submissions").insert(baseRow);
+      if (!retry.error) {
+        return NextResponse.json(JOIN_SUCCESS, { status: 201 });
+      }
+      console.error("join_submissions insert failed:", retry.error.message);
+      return jsonError(FORM_SUBMIT_FAILED, 503);
+    }
+
     console.error("join_submissions insert failed:", error.message);
     return jsonError(FORM_SUBMIT_FAILED, 503);
   }
 
   return NextResponse.json(JOIN_SUCCESS, { status: 201 });
+}
+
+function isMissingCampaignSourceColumn(message: string): boolean {
+  const lower = message.toLowerCase();
+  return lower.includes("campaign_source") && lower.includes("column");
 }
 
 function jsonError(body: FormErrorBody, status: 400 | 503) {

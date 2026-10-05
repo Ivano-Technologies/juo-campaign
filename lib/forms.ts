@@ -1,3 +1,4 @@
+import { normalizeCampaignSource } from "@/lib/campaign-source";
 import { crossRiverLgas, joinInterests } from "@/lib/site";
 
 export const FORM_UNAVAILABLE = {
@@ -71,7 +72,10 @@ export type JoinSubmissionInput = {
   lga: string;
   interest: string;
   privacy_accepted: true;
+  /** Form-type label for this table. Not the field campaign tag. */
   source: "join";
+  /** Tagged-link slug from `?source=` / `utm_source`. Null when untagged. */
+  campaign_source: string | null;
 };
 
 export type ContactSubmissionInput = {
@@ -131,6 +135,7 @@ export function validateJoinSubmission(
       interest,
       privacy_accepted: true,
       source: "join",
+      campaign_source: normalizeCampaignSource(record.campaign_source),
     };
   } catch (error) {
     return validationError(

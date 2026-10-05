@@ -3,6 +3,7 @@ import { BrandMarks } from "@/components/brand-marks";
 import { Button } from "@/components/button";
 import { JoinForm } from "@/components/join-form";
 import { PageHero } from "@/components/page-hero";
+import { campaignSourceFromSearchParams } from "@/lib/campaign-source";
 import { pageShareTags } from "@/lib/page-seo";
 import { pageTitle } from "@/lib/site";
 
@@ -16,7 +17,17 @@ export const metadata: Metadata = {
   ...pageShareTags(joinTitle, joinDescription, "/join"),
 };
 
-export default function JoinPage() {
+type JoinPageProps = {
+  searchParams: Promise<{
+    source?: string | string[];
+    utm_source?: string | string[];
+  }>;
+};
+
+export default async function JoinPage({ searchParams }: JoinPageProps) {
+  const params = await searchParams;
+  const campaignSource = campaignSourceFromSearchParams(params);
+
   return (
     <>
       <PageHero
@@ -54,7 +65,7 @@ export default function JoinPage() {
             contact you about volunteering and updates.
           </p>
         </div>
-        <JoinForm />
+        <JoinForm campaignSource={campaignSource} />
       </section>
     </>
   );

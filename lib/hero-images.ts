@@ -1,7 +1,7 @@
 /**
  * IVA-128 — homepage hero stills. Only the first still is the LCP image.
  * Other carousel frames stay out of the document until they are shown
- * (or the LCP still has loaded, which reveals the next frame).
+ * or prefetched as N+1 of the active frame.
  */
 export function shouldLoadHeroStill(
   slideIndex: number,
@@ -17,18 +17,24 @@ export function shouldLoadHeroStill(
   return slideIndex === activeIndex || loadedIndexes.has(slideIndex);
 }
 
-/** After the LCP still decodes, start the next frame without competing at first paint. */
+/**
+ * Prefetch target for the still after `activeIndex`, wrapping last → first.
+ * Returns null when there is no other frame to warm (single-slide carousel
+ * or invalid indexes). First paint must not call this for index 0 until the
+ * LCP still has decoded — callers enqueue N+1 on load and on every advance.
+ */
 export function nextHeroStillIndex(
-  loadedIndex: number,
+  activeIndex: number,
   slideCount: number,
 ): number | null {
   if (
-    !Number.isInteger(loadedIndex) ||
+    !Number.isInteger(activeIndex) ||
     !Number.isInteger(slideCount) ||
-    loadedIndex !== 0 ||
-    slideCount < 2
+    activeIndex < 0 ||
+    slideCount < 2 ||
+    activeIndex >= slideCount
   ) {
     return null;
   }
-  return 1;
+  return (activeIndex + 1) % slideCount;
 }

@@ -47,6 +47,17 @@ export function HomeHero() {
     });
   }, []);
 
+  const revealActiveAndNext = useCallback(
+    (activeIndex: number) => {
+      revealStill(activeIndex);
+      const prefetch = nextHeroStillIndex(activeIndex, heroSlides.length);
+      if (prefetch !== null) {
+        revealStill(prefetch);
+      }
+    },
+    [revealStill],
+  );
+
   const onStillLoad = useCallback(
     (slideIndex: number) => {
       const prefetch = nextHeroStillIndex(slideIndex, heroSlides.length);
@@ -63,10 +74,10 @@ export function HomeHero() {
       const total = heroSlides.length;
       const resolved = (next + total) % total;
       setCaptionOn(reduced);
-      revealStill(resolved);
+      revealActiveAndNext(resolved);
       setIndex(resolved);
     },
-    [reduced, revealStill],
+    [reduced, revealActiveAndNext],
   );
 
   useEffect(() => {
@@ -91,7 +102,7 @@ export function HomeHero() {
     }, INTERVAL_MS - FADE_MS);
     const advanceId = window.setTimeout(() => {
       const nextIndex = (index + 1) % heroSlides.length;
-      revealStill(nextIndex);
+      revealActiveAndNext(nextIndex);
       setIndex(nextIndex);
     }, INTERVAL_MS);
 
@@ -99,7 +110,7 @@ export function HomeHero() {
       window.clearTimeout(fadeOutId);
       window.clearTimeout(advanceId);
     };
-  }, [index, paused, reduced, revealStill]);
+  }, [index, paused, reduced, revealActiveAndNext]);
 
   return (
     <section

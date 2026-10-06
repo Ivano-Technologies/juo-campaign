@@ -29,8 +29,12 @@ test("shouldLoadHeroStill rejects negative indexes", () => {
   assert.equal(shouldLoadHeroStill(0, -1, loaded), false);
 });
 
-test("nextHeroStillIndex only prefetches slide 1 after the LCP still", () => {
+test("nextHeroStillIndex prefetches N+1 and wraps last to first", () => {
   assert.equal(nextHeroStillIndex(0, 4), 1);
+  assert.equal(nextHeroStillIndex(1, 4), 2);
+  assert.equal(nextHeroStillIndex(2, 4), 3);
+  assert.equal(nextHeroStillIndex(3, 4), 0);
   assert.equal(nextHeroStillIndex(0, 1), null);
-  assert.equal(nextHeroStillIndex(1, 4), null);
+  assert.equal(nextHeroStillIndex(-1, 4), null);
+  assert.equal(nextHeroStillIndex(4, 4), null);
 });

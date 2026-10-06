@@ -38,7 +38,7 @@ export const officialAssetsWired = [
   },
   {
     path: "/images/brand/jo-mark-watermark-white.png",
-    role: "White single-colour JO mark — /vision hero decorative watermark only",
+    role: "White single-colour JO mark — PageHero default watermark and /vision navy hero",
   },
   {
     path: "/brand/candidate-mark-1.png",

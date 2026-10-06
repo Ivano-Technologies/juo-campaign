@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Button } from "@/components/button";
+import { JoHeroWatermark } from "@/components/jo-hero-watermark";
 import { ManifestoCta } from "@/components/manifesto-cta";
 import { ManifestoExcerpts } from "@/components/manifesto-excerpts";
 import { VisionPillarShowcase } from "@/components/vision/pillar-showcase";
-import { brand } from "@/lib/brand";
 import {
   visionAgendaTitle,
   visionHeadlineLead,
@@ -61,18 +60,7 @@ export default function VisionPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(visionJsonLd) }}
       />
       <section className="relative overflow-hidden bg-brand-blue text-brand-white">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 lg:block"
-        >
-          <Image
-            src={brand.marks.joWatermarkWhite}
-            alt=""
-            width={1375}
-            height={978}
-            className="absolute top-1/2 right-0 h-[100%] w-auto max-w-none -translate-y-1/2 translate-x-[8%] object-contain opacity-[0.08]"
-          />
-        </div>
+        <JoHeroWatermark />
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20">
           <div className="min-w-0 max-w-4xl">
             <p className="text-xs uppercase tracking-[0.28em] text-brand-red">

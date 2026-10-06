@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { JoHeroWatermark } from "@/components/jo-hero-watermark";
 import { PrimaryCtaButtons } from "@/components/primary-ctas";
 
 type PageHeroProps = {
@@ -20,7 +21,7 @@ export function PageHero({
 }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden bg-brand-blue text-brand-white">
-      {watermark}
+      {watermark ?? <JoHeroWatermark />}
       <div
         className={`relative z-10 mx-auto flex max-w-7xl flex-col gap-10 px-4 py-16 sm:px-6 sm:py-20 ${
           aside ? "lg:flex-row lg:items-center lg:justify-between" : ""

@@ -35,7 +35,7 @@ export function HomeMeet() {
           delayMs={140}
           className="order-1 flex items-center justify-center lg:order-none lg:h-full"
         >
-          <SuitPortrait priority matchColumn sizes="(min-width: 1024px) 32rem, 100vw" />
+          <SuitPortrait matchColumn sizes="(min-width: 1024px) 32rem, 100vw" />
         </Reveal>
       </div>
     </section>

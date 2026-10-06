@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { brand } from "@/lib/brand";
-import { socialLinks } from "@/lib/site";
 import { SocialGlyph } from "@/components/icons";
+import { brand } from "@/lib/brand";
+import { compactJoMarkSizes, footerJoLockupSizes } from "@/lib/image-sizes";
+import { socialLinks } from "@/lib/site";
 
 type SocialRowProps = {
   className?: string;
@@ -46,6 +47,7 @@ export function JoMarkCompact({
       width={1536}
       height={1024}
       priority={priority}
+      sizes={compactJoMarkSizes}
       className={`object-contain ${className}`}
     />
   );
@@ -66,6 +68,7 @@ export function JoMarkLockup({
       width={2172}
       height={724}
       priority={priority}
+      sizes={footerJoLockupSizes}
       className={`object-contain ${className}`}
     />
   );

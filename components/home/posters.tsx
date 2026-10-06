@@ -64,6 +64,7 @@ export function HomePosters() {
                       alt={poster.alt}
                       fill
                       sizes="(min-width: 1024px) 20rem, (min-width: 640px) 45vw, 90vw"
+                      loading="lazy"
                       className="object-contain"
                     />
                   </div>

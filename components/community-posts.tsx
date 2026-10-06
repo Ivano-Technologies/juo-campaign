@@ -46,6 +46,7 @@ function PostImages({
                   width={image.width}
                   height={image.height}
                   sizes={sizes}
+                  loading="lazy"
                   className="h-auto w-full border border-brand-blue/15 object-contain"
                   unoptimized
                 />
@@ -62,6 +63,7 @@ function PostImages({
               width={image.width}
               height={image.height}
               sizes={sizes}
+              loading="lazy"
               className="h-auto w-full border border-brand-blue/15"
             />
           </figure>

@@ -6,6 +6,10 @@ import { useCallback, useEffect, useState } from "react";
 import { montserrat } from "@/app/fonts";
 import { useDocumentHidden } from "@/components/motion/use-document-hidden";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
+import {
+  nextHeroStillIndex,
+  shouldLoadHeroStill,
+} from "@/lib/hero-images";
 import { heroSlides } from "@/lib/home";
 
 /** IVA-96 §5 — 6.5s dwell, including caption fade in/out. */
@@ -27,15 +31,53 @@ export function HomeHero() {
   const [hoverPaused, setHoverPaused] = useState(false);
   const [focusPaused, setFocusPaused] = useState(false);
   const [captionOn, setCaptionOn] = useState(true);
+  const [loadedStills, setLoadedStills] = useState<ReadonlySet<number>>(
+    () => new Set([0]),
+  );
   const paused = hoverPaused || focusPaused || tabHidden;
+
+  const revealStill = useCallback((slideIndex: number) => {
+    setLoadedStills((current) => {
+      if (current.has(slideIndex)) {
+        return current;
+      }
+      const next = new Set(current);
+      next.add(slideIndex);
+      return next;
+    });
+  }, []);
+
+  const revealActiveAndNext = useCallback(
+    (activeIndex: number) => {
+      revealStill(activeIndex);
+      const prefetch = nextHeroStillIndex(activeIndex, heroSlides.length);
+      if (prefetch !== null) {
+        revealStill(prefetch);
+      }
+    },
+    [revealStill],
+  );
+
+  const onStillLoad = useCallback(
+    (slideIndex: number) => {
+      const prefetch = nextHeroStillIndex(slideIndex, heroSlides.length);
+      if (prefetch === null) {
+        return;
+      }
+      revealStill(prefetch);
+    },
+    [revealStill],
+  );
 
   const go = useCallback(
     (next: number) => {
       const total = heroSlides.length;
+      const resolved = (next + total) % total;
       setCaptionOn(reduced);
-      setIndex((next + total) % total);
+      revealActiveAndNext(resolved);
+      setIndex(resolved);
     },
-    [reduced],
+    [reduced, revealActiveAndNext],
   );
 
   useEffect(() => {
@@ -59,14 +101,16 @@ export function HomeHero() {
       setCaptionOn(false);
     }, INTERVAL_MS - FADE_MS);
     const advanceId = window.setTimeout(() => {
-      setIndex((current) => (current + 1) % heroSlides.length);
+      const nextIndex = (index + 1) % heroSlides.length;
+      revealActiveAndNext(nextIndex);
+      setIndex(nextIndex);
     }, INTERVAL_MS);
 
     return () => {
       window.clearTimeout(fadeOutId);
       window.clearTimeout(advanceId);
     };
-  }, [index, paused, reduced]);
+  }, [index, paused, reduced, revealActiveAndNext]);
 
   return (
     <section
@@ -112,14 +156,17 @@ export function HomeHero() {
           >
             {/* IVA-97 — still clips photography; caption dock is a sibling so glyphs stay visible. */}
             <div className="hero-still">
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                priority={slideIndex === 0}
-                sizes="100vw"
-                className={`object-cover ${item.objectClass}`}
-              />
+              {shouldLoadHeroStill(slideIndex, index, loadedStills) ? (
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  priority={slideIndex === 0}
+                  sizes="100vw"
+                  className={`object-cover ${item.objectClass}`}
+                  onLoad={() => onStillLoad(slideIndex)}
+                />
+              ) : null}
             </div>
             <div className="hero-scrim" aria-hidden="true" />
             <div

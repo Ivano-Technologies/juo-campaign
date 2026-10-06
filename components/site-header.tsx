@@ -7,6 +7,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import Image from "next/image";
 import { SocialRow } from "@/components/socials";
 import { brand } from "@/lib/brand";
+import { headerJoMarkSizes } from "@/lib/image-sizes";
 import { isNavActive, site, wpNavItems } from "@/lib/site";
 
 export function SiteHeader() {
@@ -56,7 +57,7 @@ export function SiteHeader() {
             alt=""
             width={1536}
             height={1024}
-            priority
+            sizes={headerJoMarkSizes}
             className="h-10 w-auto object-contain sm:h-12"
           />
           <span className="sr-only">{site.name}</span>

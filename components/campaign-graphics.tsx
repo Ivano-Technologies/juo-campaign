@@ -33,6 +33,7 @@ export function CampaignGraphicsGallery({
                   alt={graphic.alt}
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
+                  loading="lazy"
                   className="object-contain"
                 />
               </div>

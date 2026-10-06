@@ -7,6 +7,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 import { brand } from "@/lib/brand";
 import { challenges, challengesLockup, officialPortrait } from "@/lib/home";
+import { challengesJoMarkSizes } from "@/lib/image-sizes";
 
 export function HomeChallenges() {
   const reduced = usePrefersReducedMotion();
@@ -91,6 +92,7 @@ export function HomeChallenges() {
               alt={officialPortrait.alt}
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
+              loading="lazy"
               className="object-cover object-top"
             />
             <Image
@@ -98,6 +100,8 @@ export function HomeChallenges() {
               alt=""
               width={1536}
               height={1024}
+              sizes={challengesJoMarkSizes}
+              loading="lazy"
               className="challenges-mark h-12 w-auto sm:h-14 lg:h-16"
             />
           </div>

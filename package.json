@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types --test lib/campaign-source.test.ts lib/search-console.test.ts"
+    "test": "node --experimental-strip-types --test lib/campaign-source.test.ts lib/search-console.test.ts lib/hero-images.test.ts lib/image-sizes.test.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

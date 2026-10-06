@@ -20,6 +20,12 @@ export const site = {
 export const canonicalOrigin = `https://www.${site.domain}` as const;
 
 /**
+ * Public sitemap URL for Production / Google Search Console.
+ * Next.js serves this from `app/sitemap.ts` at `/sitemap.xml`.
+ */
+export const sitemapUrl = `${canonicalOrigin}/sitemap.xml` as const;
+
+/**
  * Locked SiteHeader chrome — text links, never pills.
  * HOME · THE VISION · MANIFESTO · MEET YOUR REPS · DIASPORA CONNECT · DONATE
  */

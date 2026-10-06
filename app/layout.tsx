@@ -5,6 +5,7 @@ import { ScrollToTop } from "@/components/scroll-to-top";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { homeSeo } from "@/lib/home-seo";
+import { googleVerificationMetadata } from "@/lib/search-console";
 import { canonicalOrigin, site } from "@/lib/site";
 import "./globals.css";
 
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
     index: process.env.VERCEL_ENV === "production",
     follow: true,
   },
+  ...googleVerificationMetadata(),
   openGraph: {
     type: "website",
     locale: "en_NG",

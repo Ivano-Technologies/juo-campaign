@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { brand } from "@/lib/brand";
+import { brandCandidateLockupSizes, brandNdcSizes } from "@/lib/image-sizes";
 
 type BrandMarksVariant = "join" | "manifesto";
 
@@ -26,6 +27,7 @@ export function BrandMarks({ variant }: BrandMarksProps) {
         width={567}
         height={340}
         priority
+        sizes={brandNdcSizes}
         className={`${ndcHeight} w-auto shrink-0`}
       />
       <span
@@ -38,6 +40,7 @@ export function BrandMarks({ variant }: BrandMarksProps) {
         width={2172}
         height={724}
         priority
+        sizes={brandCandidateLockupSizes}
         className={`${markHeight} w-auto shrink-0`}
       />
     </div>

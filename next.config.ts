@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   typedRoutes: true,
+  images: {
+    // Serve AVIF first, WebP fallback, via next/image (IVA-128).
+    formats: ["image/avif", "image/webp"],
+  },
   async redirects() {
     return [
       {

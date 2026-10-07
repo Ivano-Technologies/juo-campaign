@@ -1,43 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
 import { DiamondRule, ProhibitIcon } from "@/components/icons";
 import { Reveal } from "@/components/motion/reveal";
-import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
-import { brand } from "@/lib/brand";
-import { challenges, challengesLockup, officialPortrait } from "@/lib/home";
-import { challengesJoMarkSizes } from "@/lib/image-sizes";
+import { challenges, homepagePoster } from "@/lib/home";
 
 export function HomeChallenges() {
-  const reduced = usePrefersReducedMotion();
-  const sectionRef = useRef<HTMLElement>(null);
-  const [offset, setOffset] = useState(0);
-
-  useEffect(() => {
-    if (reduced) {
-      return;
-    }
-
-    const node = sectionRef.current;
-    if (!node) {
-      return;
-    }
-
-    const onScroll = () => {
-      const rect = node.getBoundingClientRect();
-      const view = window.innerHeight || 1;
-      const progress = (view / 2 - (rect.top + rect.height / 2)) / view;
-      setOffset(Math.max(-10, Math.min(10, progress * 20)));
-    };
-
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [reduced]);
-
   return (
-    <section id="challenges" ref={sectionRef} className="scroll-mt-[4.75rem] bg-brand-white">
+    <section id="challenges" className="scroll-mt-[4.75rem] bg-brand-white">
       <div className="grid min-h-[38rem] lg:min-h-[48rem] lg:grid-cols-2">
         <div className="flex flex-col justify-center border-b border-line bg-brand-white px-5 py-14 text-brand-blue sm:px-12 sm:py-16 lg:border-r lg:border-b-0 lg:px-16 lg:py-20">
           <Reveal>
@@ -66,43 +36,14 @@ export function HomeChallenges() {
         </div>
 
         <div className="challenges-pane relative w-full self-stretch overflow-hidden bg-brand-white">
-          <div className="challenges-lockup relative z-10 flex h-full flex-col justify-end px-3 pb-2 sm:px-4 sm:pb-3 lg:px-5 lg:pb-5">
-            <p className="sr-only">{brand.serveLine}</p>
-            {challengesLockup.map((line) => (
-              <p
-                key={line.word}
-                className={`challenges-word font-serif font-black tracking-tight uppercase ${
-                  line.emphasis
-                    ? "challenges-word-serve text-brand-red"
-                    : "text-brand-blue"
-                }`}
-                style={
-                  line.emphasis
-                    ? { transform: `translate3d(0, ${offset}px, 0)` }
-                    : undefined
-                }
-              >
-                {line.word}
-              </p>
-            ))}
-          </div>
           <div className="challenges-portrait pointer-events-none absolute inset-0 z-0">
             <Image
-              src={officialPortrait.src}
-              alt={officialPortrait.alt}
+              src={homepagePoster.src}
+              alt={homepagePoster.alt}
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               loading="lazy"
-              className="object-cover object-top"
-            />
-            <Image
-              src={brand.marks.candidateMark1}
-              alt=""
-              width={1536}
-              height={1024}
-              sizes={challengesJoMarkSizes}
-              loading="lazy"
-              className="challenges-mark h-12 w-auto sm:h-14 lg:h-16"
+              className="object-cover object-center"
             />
           </div>
         </div>

@@ -14,9 +14,19 @@ export const brand = {
     joWatermarkWhite: "/images/brand/jo-mark-watermark-white.png",
   },
   /**
-   * Challenges / I COME TO SERVE uses only
-   * 01_john_upan_odey_portrait_front_gradient. Do not use white-bg 02,
-   * BA page-1 crop, 04 profile, or 07 close.
+   * IVA-134 homepage challenges pane — campaign poster (vote governor).
+   * Prefer this over portraits.official so Odey Archibong / photos keep the
+   * come-to-serve portrait.
+   */
+  homepagePoster: {
+    src: "/brand/homepage-poster-vote-governor.jpg",
+    alt: "John Upan Odey for Governor of Cross River",
+    width: 1600,
+    height: 2129,
+  },
+  /**
+   * Come-to-serve portrait for Odey Archibong / photo registry.
+   * Homepage challenges pane uses homepagePoster (IVA-134).
    */
   portraits: {
     official: {

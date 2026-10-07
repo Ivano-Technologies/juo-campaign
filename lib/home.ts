@@ -5,6 +5,9 @@ export const campaignHashtag = "#OurTimeOurState";
 
 export const officialPortrait = brand.portraits.official;
 
+/** IVA-134: homepage challenges pane campaign poster. */
+export const homepagePoster = brand.homepagePoster;
+
 /**
  * IVA-93 stills; IVA-96 chrome; BA caption copy (IVA-95 @ a76e45da).
  * Order locked: monument → flags → memorial → arch.

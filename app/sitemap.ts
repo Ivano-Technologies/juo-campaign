@@ -4,6 +4,7 @@ import {
   newsPosts,
   type CommunityPost,
 } from "@/lib/community";
+import { lgaPlanPath, lgaPlans } from "@/lib/lga-plans";
 import { canonicalOrigin } from "@/lib/site";
 
 /**
@@ -38,6 +39,7 @@ const publicPages: readonly {
   { path: "/terms", lastModified: "2026-09-29T12:43:41+01:00" }, // app/terms/page.tsx (c1b60f7)
   { path: "/posters", lastModified: "2026-09-29T12:43:41+01:00" }, // page + lib/posters.ts (c1b60f7)
   { path: "/photos", lastModified: "2026-09-27T15:48:31+01:00" }, // page + lib/photos.ts (f3e5d99)
+  { path: "/lga-plans", lastModified: "2026-10-07T12:08:56+01:00" }, // app/lga-plans + lib/lga-plans.ts
 ];
 
 /**
@@ -115,5 +117,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: storyLastModified(post),
   }));
 
-  return [...pages, ...stories];
+  const lgaDetails = lgaPlans.map((plan) => ({
+    url: absoluteUrl(lgaPlanPath(plan.slug)),
+    lastModified: new Date("2026-10-07T12:08:56+01:00"),
+  }));
+
+  return [...pages, ...lgaDetails, ...stories];
 }

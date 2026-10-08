@@ -57,6 +57,7 @@ export const footerQuickLinks = [
   { href: "/vision", label: "The Vision" },
   { href: "/manifesto", label: "Manifesto" },
   { href: "/meet-your-reps", label: "Meet Your Reps" },
+  { href: "/lga-plans", label: "LGA Plans" },
   { href: "/diaspora-connect", label: "Diaspora Connect" },
   { href: "/donate", label: "Donate" },
   { href: "/join", label: "Join the Movement" },

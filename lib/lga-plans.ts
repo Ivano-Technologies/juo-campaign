@@ -17,7 +17,7 @@ export const lgaPlansPath = "/lga-plans" as const;
 export const lgaPlansPageTitle = pageSeoTitle("LGA Plans");
 
 export const lgaPlansPageDescription =
-  "Eighteen local government plans for Cross River under Odey Archibong 2027: A Fresh Start. One People. One Cross River. I Come To Serve.";
+  "Eighteen local government plans for Cross River under Odey-Archibong 2027: A Fresh Start. One People. One Cross River. I Come To Serve.";
 
 export const lgaPlansHeroLede =
   "Every local government has its own plan. Pick your LGA to read the plan written for your community.";

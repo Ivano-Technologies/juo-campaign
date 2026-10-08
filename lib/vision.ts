@@ -24,7 +24,7 @@ export const visionHeroBody =
 
 export const visionHeroCtas = [
   { href: "/manifesto", label: "Read the Manifesto" },
-  { href: "/odey-archibong", label: "Odey Archibong" },
+  { href: "/odey-archibong", label: "Odey-Archibong" },
   { href: "/join", label: "Join the Movement" },
   { href: "/john-upan-odey", label: "Who is John Upan Odey Jnr" },
 ] as const;

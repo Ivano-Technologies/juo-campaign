@@ -55,7 +55,7 @@ export const communityPosts = [
         src: "/brand/news/ndc-chapter-chairmen-southern-1.jpg",
         width: 2000,
         height: 1500,
-        alt: "Odey Archibong campaign meeting with NDC Chapter Chairmen from the Southern Senatorial District of Cross River State.",
+        alt: "Odey-Archibong campaign meeting with NDC Chapter Chairmen from the Southern Senatorial District of Cross River State.",
       },
       {
         src: "/brand/news/ndc-chapter-chairmen-southern-2.jpg",

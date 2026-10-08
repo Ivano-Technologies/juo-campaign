@@ -5,7 +5,7 @@ import { canonicalOrigin, education, site, socialLinks } from "@/lib/site";
 export const profilePath = "/john-upan-odey" as const;
 
 export const profileSeo = {
-  title: "Who is John Upan Odey | NDC Governorship Candidate for Cross River State.",
+  title: "Who is John Upan Odey | NDC Governorship Candidate for Cross River State",
   description:
     "Meet John Upan Odey, banker from Obudu, NDC governorship candidate for Cross River. Education, career, and why he serves.",
   canonical: `${canonicalOrigin}${profilePath}`,

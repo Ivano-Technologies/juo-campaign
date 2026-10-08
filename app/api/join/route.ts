@@ -40,6 +40,7 @@ export async function POST(request: Request) {
     email: parsed.email,
     phone: parsed.phone,
     lga: parsed.lga,
+    ward: parsed.ward,
     interest: parsed.interest,
     privacy_accepted: parsed.privacy_accepted,
     source: parsed.source,

@@ -59,12 +59,13 @@ Node 20+. Package manager is pnpm (`packageManager` field in `package.json`).
 - `NEXT_PUBLIC_SUPABASE_URL` — `https://xxljlhgjjirewkovuzif.supabase.co` (project **JUO**, `eu-west-1`)
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY` — publishable/anon key (do **not** commit)
 - `NEXT_PUBLIC_GA_MEASUREMENT_ID` — optional GA4 Measurement ID (`G-XXXXXXXX`). Set on Vercel Production. When unset, no gtag scripts load. Join success fires `volunteer_form_submit` (see `docs/analytics-join.md`).
+- `SMTP_HOST`, `SMTP_PORT` (default 465), `SMTP_USER`, `SMTP_PASS`: server only SMTP for the contact auto reply (Hostinger mailbox `campaign@`). Set on Production and Preview. When `SMTP_HOST`, `SMTP_USER` or `SMTP_PASS` is unset the auto reply is skipped and logged.
 - `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` — optional Google Search Console HTML-tag token (the `content` value only, not the full `<meta>` tag). Set on Vercel Production after copying it from Search Console. When unset or blank, no `google-site-verification` meta is rendered. This does **not** mean the property is verified.
 
 Helpers live in `lib/supabase/`. They return `null` when env is missing so local/CI builds stay green without secrets. Form routes insert with the anon key (RLS is insert-only; no select):
 
 - `POST /api/join` → **201** on success, **400** if invalid, **503** if Supabase env is missing or the insert fails
-- `POST /api/contact` → same status contract
+- `POST /api/contact` → same status contract. After the row is stored it sends the approved auto reply (IVA-47, `lib/contact-auto-reply.ts`) from `campaign@votejohnupanodey.com` to the address entered, over SMTP (`lib/smtp-mailer.ts`). The send runs after the response; a missing config or send failure is logged and never fails the submission. The form sends a `submission_id` UUID used as the row id, so a retried request is not stored or answered twice.
 
 Schema for those tables is documented in `supabase/migrations/` (already applied on project **JUO**, except follow-up columns noted in later migration files). Join attribution (`campaign_source` from `?source=` / `utm_source`) is IVA-103; the GA4 volunteer key event is IVA-102. Ops notes: `docs/analytics-join.md`.
 

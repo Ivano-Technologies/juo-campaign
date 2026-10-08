@@ -15,12 +15,25 @@ import {
 } from "@/lib/campaign-source";
 import { JOIN_SUCCESS, readJsonMessage } from "@/lib/forms";
 import { crossRiverLgas, joinInterests } from "@/lib/site";
+import {
+  WARD_FREE_TEXT_MAX_LENGTH,
+  WARD_NOT_LISTED,
+  lgaIsFreeTextOnly,
+  lgaNeedsWard,
+  validateWard,
+  wardCopy,
+  wardsForLga,
+} from "@/lib/wards";
 
 type JoinState = {
   name: string;
   email: string;
   phone: string;
   lga: string;
+  /** Selected ward name, WARD_NOT_LISTED, or "" (none yet). */
+  ward: string;
+  /** Free text ward when the ward isn't listed. */
+  wardOther: string;
   interest: string;
   privacy: boolean;
 };
@@ -32,9 +45,17 @@ const initial: JoinState = {
   email: "",
   phone: "",
   lga: "",
+  ward: "",
+  wardOther: "",
   interest: "",
   privacy: false,
 };
+
+const WARD_SELECT_ID = "join-ward";
+const WARD_OTHER_ID = "join-ward-other";
+const WARD_HELP_ID = "join-ward-help";
+const WARD_OTHER_HELP_ID = "join-ward-other-help";
+const WARD_ERROR_ID = "join-ward-error";
 
 type JoinFormProps = {
   campaignSource?: string | null;
@@ -45,6 +66,7 @@ export function JoinForm({ campaignSource = null }: JoinFormProps) {
   const [pending, setPending] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
   const [tone, setTone] = useState<StatusTone>("info");
+  const [wardError, setWardError] = useState<string | null>(null);
   const formStartSent = useRef(false);
 
   useEffect(() => {
@@ -72,8 +94,39 @@ export function JoinForm({ campaignSource = null }: JoinFormProps) {
     });
   }
 
+  const wardList = wardsForLga(values.lga);
+  const showWardField = values.lga === "" || lgaNeedsWard(values.lga);
+  const wardFreeTextOnly = lgaIsFreeTextOnly(values.lga);
+  const wardUnlisted = wardFreeTextOnly || values.ward === WARD_NOT_LISTED;
+  const showWardOther = values.lga !== "" && wardUnlisted;
+
+  function selectLga(lga: string) {
+    // A new LGA means a new ward list: always start the ward over.
+    setValues({ ...values, lga, ward: "", wardOther: "" });
+    setWardError(null);
+  }
+
+  function describedBy(...ids: Array<string | false>): string | undefined {
+    const value = ids.filter(Boolean).join(" ");
+    return value || undefined;
+  }
+
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const wardValue = wardUnlisted ? values.wardOther : values.ward;
+    const wardCheck = validateWard({
+      lga: values.lga,
+      ward: wardValue,
+      wardUnlisted,
+    });
+    if (!wardCheck.ok) {
+      setWardError(wardCheck.message);
+      document
+        .getElementById(showWardOther ? WARD_OTHER_ID : WARD_SELECT_ID)
+        ?.focus();
+      return;
+    }
+    setWardError(null);
     setPending(true);
     setStatus(null);
     const attribution = currentAttribution();
@@ -83,7 +136,14 @@ export function JoinForm({ campaignSource = null }: JoinFormProps) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          ...values,
+          name: values.name,
+          email: values.email,
+          phone: values.phone,
+          lga: values.lga,
+          ward: wardCheck.ward,
+          ward_unlisted: wardUnlisted,
+          interest: values.interest,
+          privacy: values.privacy,
           campaign_source: attribution,
         }),
       });
@@ -159,7 +219,7 @@ export function JoinForm({ campaignSource = null }: JoinFormProps) {
           required
           name="lga"
           value={values.lga}
-          onChange={(event) => setValues({ ...values, lga: event.target.value })}
+          onChange={(event) => selectLga(event.target.value)}
           className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-brand-white px-3 py-2"
         >
           <option value="">Select</option>
@@ -170,6 +230,89 @@ export function JoinForm({ campaignSource = null }: JoinFormProps) {
           ))}
         </select>
       </label>
+      {showWardField ? (
+        <div className="grid gap-2">
+          {wardFreeTextOnly ? null : (
+            <label className="grid gap-1 text-sm">
+              {wardCopy.label}
+              <select
+                id={WARD_SELECT_ID}
+                required
+                name="ward"
+                disabled={values.lga === ""}
+                value={values.ward}
+                onChange={(event) => {
+                  setValues({
+                    ...values,
+                    ward: event.target.value,
+                    wardOther: "",
+                  });
+                  setWardError(null);
+                }}
+                onInvalid={() => setWardError(wardCopy.errors.select)}
+                aria-invalid={wardError && !showWardOther ? true : undefined}
+                aria-describedby={describedBy(
+                  values.lga === "" && WARD_HELP_ID,
+                  Boolean(wardError) && !showWardOther && WARD_ERROR_ID,
+                )}
+                className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-brand-white px-3 py-2 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                <option value="">{wardCopy.placeholder}</option>
+                {wardList.map((ward) => (
+                  <option key={ward.code} value={ward.name}>
+                    {ward.name}
+                  </option>
+                ))}
+                {values.lga ? (
+                  <option value={WARD_NOT_LISTED}>{wardCopy.notListed}</option>
+                ) : null}
+              </select>
+            </label>
+          )}
+          {values.lga === "" ? (
+            <p id={WARD_HELP_ID} className="text-xs text-muted">
+              {wardCopy.pickLgaFirst}
+            </p>
+          ) : null}
+          {showWardOther ? (
+            <label className="grid gap-1 text-sm">
+              {wardFreeTextOnly ? wardCopy.label : wardCopy.otherLabel}
+              <input
+                id={WARD_OTHER_ID}
+                required
+                name="ward_other"
+                autoComplete="off"
+                maxLength={WARD_FREE_TEXT_MAX_LENGTH}
+                placeholder={wardCopy.otherPlaceholder}
+                value={values.wardOther}
+                onChange={(event) => {
+                  setValues({ ...values, wardOther: event.target.value });
+                  setWardError(null);
+                }}
+                onInvalid={() => setWardError(wardCopy.errors.type)}
+                aria-invalid={wardError ? true : undefined}
+                aria-describedby={describedBy(
+                  WARD_OTHER_HELP_ID,
+                  Boolean(wardError) && WARD_ERROR_ID,
+                )}
+                className="min-h-11 w-full min-w-0 rounded-lg border border-line bg-brand-white px-3 py-2"
+              />
+              <span id={WARD_OTHER_HELP_ID} className="text-xs text-muted">
+                {wardCopy.otherHelp}
+              </span>
+            </label>
+          ) : null}
+          {wardError ? (
+            <p
+              id={WARD_ERROR_ID}
+              role="alert"
+              className="text-sm font-semibold text-brand-red"
+            >
+              {wardError}
+            </p>
+          ) : null}
+        </div>
+      ) : null}
       <label id="diaspora" className="grid scroll-mt-28 gap-1 text-sm">
         How do you want to help?
         <select

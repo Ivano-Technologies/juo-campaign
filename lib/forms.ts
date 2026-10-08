@@ -1,5 +1,6 @@
 import { normalizeCampaignSource } from "@/lib/campaign-source";
 import { crossRiverLgas, joinInterests } from "@/lib/site";
+import { validateWard } from "@/lib/wards";
 
 export const FORM_UNAVAILABLE = {
   ok: false,
@@ -70,6 +71,11 @@ export type JoinSubmissionInput = {
   email: string;
   phone: string;
   lga: string;
+  /**
+   * INEC ward name for the selected LGA, or the volunteer's own text when
+   * their ward isn't listed. Null for Diaspora / outside Cross River.
+   */
+  ward: string | null;
   interest: string;
   privacy_accepted: true;
   /** Form-type label for this table. Not the field campaign tag. */
@@ -118,6 +124,14 @@ export function validateJoinSubmission(
     if (!lga || !LGA_VALUES.has(lga)) {
       return validationError("Please select a local government or location.");
     }
+    const ward = validateWard({
+      lga,
+      ward: record.ward,
+      wardUnlisted: record.ward_unlisted === true,
+    });
+    if (!ward.ok) {
+      return validationError(ward.message);
+    }
     if (!interest || !INTEREST_VALUES.has(interest)) {
       return validationError("Please select how you want to help.");
     }
@@ -132,6 +146,7 @@ export function validateJoinSubmission(
       email,
       phone,
       lga,
+      ward: ward.ward,
       interest,
       privacy_accepted: true,
       source: "join",

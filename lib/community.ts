@@ -41,14 +41,14 @@ export type CommunityPost = {
 export const communityPosts = [
   {
     id: "meeting-with-ndc-chapter-chairmen-southern-senatorial-district",
-    title: "Meeting with NDC Chapter Chairmen — Southern Senatorial District",
+    title: "Meeting with NDC Chapter Chairmen, Southern Senatorial District",
     dateline: "27 September 2026",
     body: [
-      "Today, we engaged with the NDC Chapter Chairmen across the Southern Senatorial District of Cross River State in a substantive dialogue on grassroots campaign coordination and field-level mobilisation and hosted the Woman Leader of the Non-Indigenous Community and her Assistant, who came to interface with us and formally identify with the NDC party.",
+      "Today, we engaged with the NDC Chapter Chairmen across the Southern Senatorial District of Cross River State in a substantive dialogue on grassroots campaign coordination and mobilisation in the field and hosted the Woman Leader of the Non-Indigenous Community and her Assistant, who came to interface with us and formally identify with the NDC party.",
       "They expressed their eagerness to welcome us into their community, noting their significant numbers, and pledged their full support for the movement.",
-      "Discussions centred on door-to-door engagement, ward-to-ward inclusion, community outreach, grassroots communication, and the strategic coordination required for effective campaign operations.",
+      "Discussions centred on house to house engagement, inclusion in every ward, community outreach, grassroots communication, and the strategic coordination required for effective campaign operations.",
       "A significant part of the conversation focused on equipping chapter structures with the appropriate campaign materials, communication resources, and operational support necessary to translate strategy into meaningful activity at the grassroots.",
-      "The message from the chapter leadership was clear: the structures are prepared to work, and with the necessary institutional support and resources, they are ready to take the campaign into communities across the district.",
+      "The message from the chapter leadership was clear: the chapter structures are ready to take the campaign into every community across the district.",
     ],
     images: [
       {
@@ -97,7 +97,7 @@ export const communityPosts = [
     },
     close: {
       lead: "JOHN UPAN ODEY 2027",
-      lockup: "A FRESH START - ONE PEOPLE, ONE CROSS RIVER",
+      lockup: "A FRESH START. ONE PEOPLE, ONE CROSS RIVER.",
     },
   },
   {
@@ -178,7 +178,7 @@ export const communityPosts = [
     body: [
       "The NDC Cross River Listening tour brings the party closer to the grassroots, creating opportunities to engage directly with ward members across the state.",
       "Through these conversations, ward members share their experiences, concerns, and aspirations, helping to ensure that the voices of communities remain central to the conversation about Cross River’s future.",
-      "Odey- Archibong is invested in and committed to listening. Engaging and Building One people- One Cross River Together.",
+      "The Odey-Archibong campaign is committed to listening, engaging and building One People, One Cross River together.",
     ],
     images: [
       {

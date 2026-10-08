@@ -6,7 +6,7 @@ import { pageTitle } from "@/lib/site";
 
 const confirmTitle = pageTitle("Donation received");
 const confirmDescription =
-  "Thank you for supporting the John Upan Odey Jnr campaign.";
+  "Thank you for supporting the John Upan Odey campaign.";
 
 export const metadata: Metadata = {
   title: "Donation received",

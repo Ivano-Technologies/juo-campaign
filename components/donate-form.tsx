@@ -35,8 +35,8 @@ export function DonateForm() {
           <a href="#bank-transfer" className="font-semibold text-brand-blue underline">
             official bank transfer
           </a>{" "}
-          details on this page. Card and international options stay closed
-          until counsel and banking sign off.
+          details on this page. Card and international giving will be
+          available soon.
         </p>
       </div>
 

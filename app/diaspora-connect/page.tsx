@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Button } from "@/components/button";
 import { PageHero } from "@/components/page-hero";
 import {
-  diasporaDoesNotItems,
-  diasporaDoesNotTitle,
   diasporaIncludeBody,
   diasporaIncludeTitle,
   diasporaPageDescription,
@@ -112,15 +110,6 @@ export default function DiasporaConnectPage() {
               Privacy
             </a>
           </p>
-        </div>
-
-        <div>
-          <h2 className="font-serif text-3xl text-ink">{diasporaDoesNotTitle}</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-5 text-[1.05rem] leading-7 text-muted">
-            {diasporaDoesNotItems.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
         </div>
       </section>
     </>

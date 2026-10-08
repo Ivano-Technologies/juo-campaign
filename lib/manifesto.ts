@@ -7,64 +7,64 @@ export const manifestoPdfHref: string | null =
 export const manifestoPageTitle = pageSeoTitle("Manifesto");
 
 export const manifestoPageDescription =
-  "Nine approved manifesto pillars, THE TEN COMMITMENTS TO CROSS RIVERIANS, and Brand excerpts for the John Upan Odey Jnr manifesto. A Fresh Start for Cross River.";
+  "The manifesto of John Upan Odey: nine policy pillars and Ten Commitments to Cross Riverians for A Fresh Start.";
 
 export const manifestoHeroLede =
-  "Nine approved policy pillars and THE TEN COMMITMENTS TO CROSS RIVERIANS.";
+  "Nine policy pillars and Ten Commitments to the people of Cross River.";
 
 export const manifestoPillarsTitle = "Nine manifesto pillars";
 export const manifestoPillarsIntro =
-  "Approved policy pillars for A Fresh Start. These are manifesto sectors — not the five Brand values (Service, Competence, Integrity, Opportunity, Unity) and not THE TEN COMMITMENTS TO CROSS RIVERIANS.";
+  "Nine policy pillars that set out how A Fresh Start will deliver for Cross River.";
 
 export const manifestoPillars = [
   {
     number: "01",
-    title: "PILLAR ONE: POWER FIRST — ENDING THE DARKNESS ECONOMY",
+    title: "PILLAR ONE: POWER FIRST, ENDING THE DARKNESS ECONOMY",
     slug: "power-first",
     blurb:
-      "Reliable energy is the foundation of a productive Cross River: for homes, farms, clinics, schools, and enterprise. A Fresh Start treats power as a first-order condition for growth.",
+      "Reliable energy is the foundation of a productive Cross River: for homes, farms, clinics, schools, and enterprise. A Fresh Start treats power as an essential condition for growth.",
   },
   {
     number: "02",
-    title: "PILLAR TWO: WEALTH THROUGH AGRICULTURE — FROM FARMS TO FACTORIES",
+    title: "PILLAR TWO: WEALTH THROUGH AGRICULTURE, FROM FARMS TO FACTORIES",
     slug: "wealth-through-agriculture",
     blurb:
-      "Cross River’s land and farmers can anchor shared wealth when production is valued and connected to markets. This pillar frames agriculture as a path to prosperity for communities across the state.",
+      "Cross River’s land and farmers can anchor shared wealth when production is valued and connected to markets. We will make agriculture a path to prosperity for communities across the state.",
   },
   {
     number: "03",
     title: "PILLAR THREE: INFRASTRUCTURE THAT CREATES WEALTH",
     slug: "infrastructure-that-creates-wealth",
     blurb:
-      "Roads, connectivity, and enabling works unlock farms, tourism, trade, and daily life. This pillar frames infrastructure as the backbone of growth, not spectacle.",
+      "Roads, connectivity, and enabling works unlock farms, tourism, trade, and daily life. We will invest in infrastructure as the backbone of growth.",
   },
   {
     number: "04",
     title: "PILLAR FOUR: HEALTHCARE CLOSE TO HOME",
     slug: "healthcare-close-to-home",
     blurb:
-      "Health underpins dignity and productivity. This pillar frames access to quality care as essential for families in Calabar, Obudu, and every LGA.",
+      "Health underpins dignity and productivity. We will bring quality care within reach of families in Calabar, Obudu and every Local Government Area.",
   },
   {
     number: "05",
     title: "PILLAR FIVE: EDUCATION, SKILLS & THE 50,000 JOBS PLAN",
     slug: "education-skills-the-50000-jobs-plan",
     blurb:
-      "Education and skills prepare young people, and workers already in the economy, for useful work in a changing Cross River. This pillar frames learning as a productive-state investment, with enterprise that can start, scale, and stay.",
+      "Education and skills prepare young people, and workers already in the economy, for useful work in a changing Cross River. We will treat learning as an investment in a productive state, with enterprises that can start, grow and stay in Cross River.",
   },
   {
     number: "06",
     title: "PILLAR SIX: TOURISM, CULTURE & THE CREATIVE ECONOMY",
     slug: "tourism-culture-the-creative-economy",
     blurb:
-      "Cross River’s hospitality, culture, and natural assets can sustain year-round opportunity beyond a single season. This pillar frames tourism and the creative economy as a broader productive story for the state.",
+      "Cross River’s hospitality, culture, and natural assets can sustain opportunity all year round, beyond a single season. We will grow tourism and the creative economy into a major source of jobs for the state.",
   },
   {
     number: "07",
     title: "PILLAR SEVEN: TRANSPARENT & DIGITAL GOVERNMENT",
     slug: "transparent-digital-government",
     blurb:
-      "Public trust grows when government is open, accountable, and clear about how resources are used. This pillar frames transparency and digital government as a standard of Fresh Start governance.",
+      "Public trust grows when government is open, accountable, and clear about how resources are used. Transparency and digital government will be the standard of Fresh Start governance.",
   },
   {
     number: "08",
@@ -100,13 +100,13 @@ export function manifestoStackedHeadline(
 
 export const tenCommitmentsTitle = "THE TEN COMMITMENTS TO CROSS RIVERIANS";
 export const tenCommitmentsIntro =
-  "Ten commitments to the people of Cross River. Distinct from the nine manifesto policy pillars and from the five Brand values.";
+  "Ten commitments to the people of Cross River.";
 
 export const tenCommitments = [
   {
     number: "1",
     title: "A Productive Economy",
-    body: "We will move Cross River from a consumption-based economy to a production and processing economy.",
+    body: "We will move Cross River from an economy based on consumption to a production and processing economy.",
   },
   {
     number: "2",
@@ -141,7 +141,7 @@ export const tenCommitments = [
   {
     number: "8",
     title: "Tourism Beyond Carnival",
-    body: "We will transform tourism from a seasonal event into a year-round economic industry.",
+    body: "We will transform tourism from a seasonal event into an all year round economic industry.",
   },
   {
     number: "9",
@@ -162,11 +162,11 @@ void tenCommitmentCount;
 
 export const manifestoDownloadLabel = "Click to Download Manifesto";
 
-export const manifestoExcerptsTitle = "Approved excerpts";
+export const manifestoExcerptsTitle = "From the Manifesto";
 
 export const manifestoExcerpts = [
   {
-    title: "ONE PEOPLE- ONE CROSS RIVER:",
+    title: "ONE PEOPLE, ONE CROSS RIVER:",
     paragraphs: [
       "Cross River is more than North, Central or South. It is one people, with one shared future.",
       "From Calabar to Ogoja, from Ikom to Bakassi, the challenges may look different, but the aspirations are deeply connected: better roads, meaningful opportunities, stronger communities and an economy that allows people to build dignified lives.",
@@ -189,7 +189,8 @@ export const manifestoExcerpts = [
       "For young Cross Riverians, the aspiration is not simply to participate in political conversations, but to participate in building the economy and institutions that will shape their future.",
       "A Fresh Start describes a model in which young people can contribute their creativity, ideas and expertise through policy development, community engagement, enterprise, technology and agriculture.",
       "It is a vision of a state where hard work is rewarded, vulnerable people are protected, young people can pursue meaningful opportunities, and every community has a place in Cross River's future.",
-      "The future of Cross River should be something its people build, not something they wait for. - ODEY-ARCHIBONG 2027",
+      "The future of Cross River should be something its people build, not something they wait for.",
+      "ODEY-ARCHIBONG 2027",
     ],
   },
 ] as const;

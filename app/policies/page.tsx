@@ -8,8 +8,7 @@ import {
   policiesHubBody,
   policiesHubImportant,
   policiesHubTitle,
-  policiesNotOldBody,
-  policiesNotOldTitle,
+  policiesLinks,
   policiesPageDescription,
   policiesPageTitle,
   policiesTenTitle,
@@ -35,7 +34,7 @@ export default function PoliciesPage() {
           The Vision
         </Button>
         <Button href="/john-upan-odey" variant="ghost">
-          Who is John Upan Odey Jnr
+          Who is John Upan Odey
         </Button>
         <Button href="/join" variant="ghost">
           Join the Movement
@@ -80,38 +79,22 @@ export default function PoliciesPage() {
                   <p className="mt-3 text-[1.05rem] leading-7 text-muted break-words">
                     {sector.blurb}
                   </p>
-                  <p className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm">
-                    <a
-                      href="/vision#brand-pillars"
-                      className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
-                    >
-                      Brand values on The Vision
-                    </a>
-                    <a
-                      href="/manifesto#commitments"
-                      className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
-                    >
-                      Ten Commitments
-                    </a>
-                    <a
-                      href="/manifesto#pillars"
-                      className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
-                    >
-                      Read the full Manifesto
-                    </a>
-                  </p>
                 </li>
               );
             })}
           </ol>
+          <p className="mt-8 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            {policiesLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="inline-flex min-h-11 items-center font-semibold text-brand-blue underline"
+              >
+                {link.label}
+              </a>
+            ))}
+          </p>
         </div>
-      </section>
-
-      <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
-        <h2 className="font-serif text-3xl text-ink">{policiesNotOldTitle}</h2>
-        <p className="mt-4 text-[1.05rem] leading-7 text-muted">
-          {policiesNotOldBody}
-        </p>
       </section>
     </>
   );

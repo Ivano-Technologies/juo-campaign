@@ -85,7 +85,7 @@ export default function WhoIsJuoPage() {
                 Manifesto
               </Button>
               <Button href="/odey-archibong" variant="secondary">
-                Odey Archibong
+                Odey-Archibong
               </Button>
             </div>
           </section>

@@ -26,7 +26,7 @@ export default function PostersPage() {
       <PageHero
         kicker="Official campaign designs"
         title="Campaign Poster Gallery"
-        lede="John’s posters first, Odey Archibong ticket posters below. Portraits and photographs live on the Photo Gallery."
+        lede="John’s posters first, Odey-Archibong ticket posters below. Portraits and photographs live on the Photo Gallery."
       >
         <Button href={photosPath} variant="white">
           Photo Gallery
@@ -78,7 +78,7 @@ export default function PostersPage() {
         </ul>
 
         <h2 className="mt-16 font-serif text-2xl text-ink sm:text-3xl">
-          Odey Archibong posters
+          Odey-Archibong posters
         </h2>
         <ul className="mt-8 grid gap-10 md:grid-cols-3">
           {odeyArchibongCampaignPosters.map((poster) => (

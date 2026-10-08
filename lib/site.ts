@@ -68,7 +68,7 @@ export const footerQuickLinks = [
 
 export const footerAboutLinks = [
   { href: "/john-upan-odey", label: "Who is JUO" },
-  { href: "/odey-archibong", label: "Odey Archibong" },
+  { href: "/odey-archibong", label: "Odey-Archibong" },
   { href: "/contact", label: "Contact" },
   { href: "/news", label: "News" },
   { href: "/manifesto", label: "Manifesto" },

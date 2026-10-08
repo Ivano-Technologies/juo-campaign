@@ -6,7 +6,7 @@ export const postersPath = "/posters" as const;
 export const postersPageTitle = pageSeoTitle("Campaign Poster Gallery");
 
 export const postersPageDescription =
-  "Official John Upan Odey Jnr campaign posters, with Odey Archibong ticket posters below. Approved Brand designs only. Portraits live on the Photo Gallery.";
+  "Official John Upan Odey Jnr campaign posters, with Odey-Archibong ticket posters below. Approved Brand designs only. Portraits live on the Photo Gallery.";
 
 const baPosterSize = {
   width: 1241,

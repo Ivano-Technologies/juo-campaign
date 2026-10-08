@@ -7,11 +7,42 @@ import { useCallback, useEffect, useId, useRef, type KeyboardEvent } from "react
 import {
   lgaPlanFooterLockup,
   lgaPlanPath,
+  lgaPlanPromiseLabel,
   lgaPlans,
+  lgaPlansClosingNote,
   lgaPlansPath,
   lgaPlansSelectLabel,
   type LgaPlan,
 } from "@/lib/lga-plans";
+
+function ClosingNote() {
+  return (
+    <section
+      aria-labelledby="lga-plans-closing-note"
+      className="rounded-2xl border border-line bg-brand-white p-6 sm:p-8"
+    >
+      <h2
+        id="lga-plans-closing-note"
+        className="text-xs font-semibold tracking-[0.28em] text-brand-red uppercase"
+      >
+        {lgaPlansClosingNote.label}
+      </h2>
+      <p className="mt-3 text-[1.05rem] leading-7 text-muted">
+        {lgaPlansClosingNote.intro}
+      </p>
+      <ul className="mt-6 grid gap-6 sm:grid-cols-3">
+        {lgaPlansClosingNote.pillars.map((pillar) => (
+          <li key={pillar.title}>
+            <h3 className="font-serif text-2xl text-ink">{pillar.title}</h3>
+            <p className="mt-2 text-[1.05rem] leading-7 text-muted">
+              {pillar.body}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
 
 type LgaPlansExplorerProps = {
   /** When set (detail route), that LGA is selected and announced. */
@@ -53,21 +84,41 @@ function PlanCard({ plan }: { plan: LgaPlan }) {
           </footer>
         </div>
 
-        <div
-          className="flex min-h-56 flex-col items-center justify-center border-t border-dashed border-line bg-paper p-6 text-center lg:min-h-full lg:border-t-0 lg:border-l"
-          aria-hidden="true"
-        >
-          <div className="flex h-full min-h-48 w-full flex-col items-center justify-center rounded-xl border-2 border-dashed border-line px-4 py-10">
-            <p className="text-xs font-semibold tracking-[0.24em] text-brand-red uppercase">
-              Design placeholder
-            </p>
-            <p className="mt-3 max-w-xs font-serif text-2xl text-ink">
-              {plan.name}
-            </p>
-            <p className="mt-2 text-sm leading-6 text-muted">{plan.visualCue}</p>
-            <p className="mt-6 max-w-xs text-xs leading-5 text-muted">
-              Artwork for this LGA arrives with the approved creative. The LGA
-              name stays the hero of the board.
+        <div className="min-w-0 border-t border-line bg-paper p-6 sm:p-8 lg:border-t-0 lg:border-l">
+          <h3 className="text-xs font-semibold tracking-[0.28em] text-brand-red uppercase">
+            {plan.planHeading}
+          </h3>
+          <p className="mt-3 font-serif text-xl leading-snug text-ink uppercase sm:text-2xl">
+            {plan.planLine}
+          </p>
+
+          <ol className="mt-6 space-y-5">
+            {plan.points.map((point, index) => (
+              <li key={point.title} className="flex gap-4">
+                <span
+                  className="w-6 shrink-0 font-serif text-xl leading-7 text-brand-red"
+                  aria-hidden="true"
+                >
+                  {index + 1}.
+                </span>
+                <div className="min-w-0">
+                  <h4 className="font-semibold leading-7 text-ink">
+                    {point.title}
+                  </h4>
+                  <p className="mt-1 text-[1.05rem] leading-7 text-muted">
+                    {point.body}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <div className="mt-8 border-t border-line pt-6">
+            <h4 className="text-xs font-semibold tracking-[0.28em] text-brand-red uppercase">
+              {lgaPlanPromiseLabel}
+            </h4>
+            <p className="mt-3 font-serif text-xl leading-snug text-ink">
+              {plan.promise}
             </p>
           </div>
         </div>
@@ -175,7 +226,7 @@ export function LgaPlansExplorer({ initialSlug }: LgaPlansExplorerProps) {
           ) : null}
         </div>
         <p className="mt-3 text-[1.05rem] leading-7 text-muted">
-          Eighteen boards. One promise per local government. Use the list or
+          Eighteen local governments. One plan for each. Use the list or
           arrow keys to move between plans.
         </p>
 
@@ -215,6 +266,8 @@ export function LgaPlansExplorer({ initialSlug }: LgaPlansExplorerProps) {
       <div id={panelId} role="region" aria-live="polite" aria-atomic="true">
         <PlanCard plan={selected} />
       </div>
+
+      <ClosingNote />
     </div>
   );
 }

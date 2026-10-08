@@ -8,7 +8,10 @@ import { pageSeoTitle } from "@/lib/brand-seo";
  * edits are the agreed normalizations: every plan heading reads
  * "THE ODEY-ARCHIBONG PLAN FOR <LGA>", and hyphenated compounds in body
  * copy follow the JUO no-hyphen rule (hyphen replaced by a space or closed
- * up, no words changed). Do not invent, trim or paraphrase. visualCue is a
+ * up, no words changed). "Odey-Archibong" and "Nigeria-Cameroon" keep
+ * their hyphens as in Chris's spelling. The background paragraphs and Abi's
+ * plan intro are from the same email, with the same normalizations.
+ * Do not invent, trim or paraphrase. visualCue is a
  * design brief label for future artwork and is not rendered.
  */
 
@@ -17,7 +20,7 @@ export const lgaPlansPath = "/lga-plans" as const;
 export const lgaPlansPageTitle = pageSeoTitle("LGA Plans");
 
 export const lgaPlansPageDescription =
-  "Eighteen local government plans for Cross River under Odey Archibong 2027: A Fresh Start. One People. One Cross River. I Come To Serve.";
+  "Eighteen local government plans for Cross River under Odey-Archibong 2027: A Fresh Start. One People. One Cross River. I Come To Serve.";
 
 export const lgaPlansHeroLede =
   "Every local government has its own plan. Pick your LGA to read the plan written for your community.";
@@ -48,8 +51,16 @@ export type LgaPlan = {
   /** Always "THE ODEY-ARCHIBONG PLAN FOR <LGA IN CAPS>". */
   planHeading: string;
   planLine: string;
+  /** Optional one line plan intro shown under planLine (Abi only). */
+  intro?: string;
   points: readonly LgaPlanPoint[];
   promise: string;
+  /**
+   * Chris Adah's background paragraphs that come before each plan heading
+   * in the 7 Oct 2026 email. Rendered as a muted Background note below the
+   * plan card, set apart from the plan itself.
+   */
+  background: readonly string[];
   /** Design brief cue for future LGA artwork. Not rendered. */
   visualCue: string;
 };
@@ -82,6 +93,7 @@ export const lgaPlans = [
     supportingLine: "Better roads. Better markets. Better livelihoods.",
     planHeading: "THE ODEY-ARCHIBONG PLAN FOR ABI",
     planLine: "FARMS THAT PAY. ROADS THAT CONNECT. RESOURCES THAT CREATE VALUE.",
+    intro: "The plan is to make agriculture more productive and commercially rewarding by improving the connection between the farmer, the farm, the road and the market.",
     points: [
       {
         title: "Better Farm to Market Roads",
@@ -101,6 +113,10 @@ export const lgaPlans = [
       },
     ],
     promise: "Abi should not merely feed Cross River. Abi's farmers should be able to feed, educate and build better futures for their own families from the wealth their land produces.",
+    background: [
+      "Abi is a farming community, and its agricultural strength should be reflected in the prosperity of the families who cultivate its land.",
+      "Abi also has documented quartz deposits at Adadama, Itigidi and Ekureku, giving the LGA an additional natural resource asset that can support construction and industrial value chains.",
+    ],
     visualCue: "Farming communities",
   },
   {
@@ -129,6 +145,10 @@ export const lgaPlans = [
       },
     ],
     promise: "Akamkpa should no longer be defined by what it possesses underground or hidden in its forests, but by what those resources do for the people who call Akamkpa home.",
+    background: [
+      "Akamkpa has an unusual combination of agriculture, forests, tourism and substantial mineral resources. Its documented deposits include limestone, iron ore, manganese, tourmaline, cassiterite, tantalite and feldspar.",
+      "The state also identifies tourism assets around Akamkpa, including Kwa Falls, while oil palm is one of the state's agricultural priorities in the LGA.",
+    ],
     visualCue: "Roads and opportunity",
   },
   {
@@ -161,6 +181,10 @@ export const lgaPlans = [
       },
     ],
     promise: "Prosperity should not require an Akpabuyo child to leave home before opportunity becomes possible.",
+    background: [
+      "Akpabuyo's identity is closely connected to farming, fishing, coastal communities and its proximity to Calabar. Its official mineral record identifies quartz deposits around Idundu, Esuk Ekpo Eyoh and Ifondo.",
+      "Current local government programmes also identify fisheries, aquaculture, poultry and tree crop development as economic opportunities.",
+    ],
     visualCue: "Local prosperity",
   },
   {
@@ -193,6 +217,10 @@ export const lgaPlans = [
       },
     ],
     promise: "Bakassi should never have to ask whether Cross River remembers it. Its people should see development, opportunity and dignity reach their communities.",
+    background: [
+      "Bakassi is fundamentally a riverine/coastal community, with fishing and maritime livelihoods deeply connected to the identity of its people.",
+      "The current Cross River mineral table does not list a solid mineral deposit for Bakassi. Older state resource materials have identified petroleum potential in the Bakassi area, but this should not be presented as an established commercial reserve without further verification.",
+    ],
     visualCue: "Coastal communities",
   },
   {
@@ -225,6 +253,10 @@ export const lgaPlans = [
       },
     ],
     promise: "The basics are not luxuries. A mother should find water. A farmer should find a road. A sick person should find care. A young person should find opportunity.",
+    background: [
+      "Bekwarra's agricultural identity makes roads, markets, water and healthcare especially important. Its documented resources include olivine basalt, kaolin, salt, clay and granite.",
+      "Bekwarra is also part of the state's emerging agricultural corridor, including rice and other food production initiatives.",
+    ],
     visualCue: "Basics that work",
   },
   {
@@ -257,6 +289,10 @@ export const lgaPlans = [
       },
     ],
     promise: "When the farmer prospers, the family prospers. When the family prospers, Biase prospers.",
+    background: [
+      "Biase is strongly agricultural, while the state's mineral records identify tourmaline, barite, quartz, clay and lepidolite.",
+      "The 2026 Biase budget also places substantial emphasis on agricultural inputs, farmer credit, agrochemicals, extension services, tree crops and farm infrastructure.",
+    ],
     visualCue: "Farming communities",
   },
   {
@@ -289,6 +325,11 @@ export const lgaPlans = [
       },
     ],
     promise: "Boki should not merely grow the raw materials that make somebody else wealthy. The value created from Boki's land should create opportunities for Boki's people.",
+    background: [
+      "This is one of the clearest LGA identities in Cross River.",
+      "Boki is known for its agricultural potential, particularly cocoa and oil palm, while its extraordinary rainforest, wildlife and conservation assets give it a major tourism dimension. The state has also identified granite and iron ore deposits in Boki.",
+      "The state has recently moved to revitalise the Boki and Nsadop oil palm estates.",
+    ],
     visualCue: "Cocoa",
   },
   {
@@ -321,6 +362,10 @@ export const lgaPlans = [
       },
     ],
     promise: "Calabar's reputation as a beautiful city must be matched by the everyday experience of the people who live there.",
+    background: [
+      "Calabar Municipal is the state's principal urban and administrative centre, with strong connections to tourism, hospitality, commerce, culture and services.",
+      "Its documented mineral resources include kaolin and quartz.",
+    ],
     visualCue: "Urban infrastructure",
   },
   {
@@ -353,6 +398,9 @@ export const lgaPlans = [
       },
     ],
     promise: "A family should not have to watch its home, belongings or livelihood disappear under floodwater every rainy season.",
+    background: [
+      "Calabar South's urban and waterfront character makes drainage, sanitation and flood resilience particularly important. Its official mineral record identifies quartz at Bay Side and Esuk Otu.",
+    ],
     visualCue: "Urban infrastructure",
   },
   {
@@ -369,7 +417,7 @@ export const lgaPlans = [
       },
       {
         title: "Border Trade",
-        body: "Improve infrastructure and commercial systems around the Nigeria Cameroon trade corridor.",
+        body: "Improve infrastructure and commercial systems around the Nigeria-Cameroon trade corridor.",
       },
       {
         title: "Farmer Prosperity",
@@ -385,6 +433,10 @@ export const lgaPlans = [
       },
     ],
     promise: "Etung should not export its cocoa, its young people and its opportunities while importing the prosperity that should have been created at home.",
+    background: [
+      "Etung is one of Cross River's strongest cocoa and border trade identities. Current reporting identifies cocoa development and the Ajassor border corridor as important economic opportunities.",
+      "Its documented minerals include basalt and marble, while the state also identifies Agbokim Waterfalls and other natural assets within the wider tourism economy.",
+    ],
     visualCue: "Agriculture and trade",
   },
   {
@@ -417,6 +469,9 @@ export const lgaPlans = [
       },
     ],
     promise: "Ikom has always traded. The next chapter should be about creating, processing and keeping more of the wealth generated by that trade.",
+    background: [
+      "Ikom has a strong commercial identity and is an important agricultural trading centre. Cocoa is one of the state's identified crop clusters in Ikom, while the LGA's mineral deposits include barite, tantalite, rutile and iron ore.",
+    ],
     visualCue: "Commerce and connectivity",
   },
   {
@@ -449,6 +504,10 @@ export const lgaPlans = [
       },
     ],
     promise: "Obanliku should not merely be somewhere people travel to admire. It should be somewhere its own people can build prosperous lives.",
+    background: [
+      "Obanliku combines extraordinary tourism potential with agriculture. Its mineral record identifies diamond at Becheeve Ranch and gold at Utanga.",
+      "The area is also closely connected to the Obudu tourism corridor, with recent state plans linking tourism investment to employment for farmers, artisans, transport operators and businesses.",
+    ],
     visualCue: "Tourism and beauty",
   },
   {
@@ -481,6 +540,9 @@ export const lgaPlans = [
       },
     ],
     promise: "Development should not stop at the town centre. It must reach the farmer whose hands keep Obubra's economy alive.",
+    background: [
+      "Obubra has a strong agricultural identity, with cassava among the state's crop development priorities. Its documented mineral resources include barite, amethyst, galena and salt deposits.",
+    ],
     visualCue: "Farming communities",
   },
   {
@@ -513,6 +575,10 @@ export const lgaPlans = [
       },
     ],
     promise: "Obudu's greatest resource is not only the mountain. It is the people who have lived beneath it, worked its land and carried its name for generations.",
+    background: [
+      "Obudu is one of Cross River's strongest tourism identities, built around the Obudu mountain landscape and tourism economy, while agriculture remains important.",
+      "Its official LGA information identifies kaolin rich clay, granite, tin, basalt, quartzite, feldspar, lead, zinc and manganese among its mineral resources.",
+    ],
     visualCue: "Mountains and tourism",
   },
   {
@@ -545,6 +611,9 @@ export const lgaPlans = [
       },
     ],
     promise: "People should not merely watch economic activity pass their doorsteps. Odukpani's position should create opportunities for the people who live there.",
+    background: [
+      "Odukpani sits within an important transport and economic corridor. Its mineral record identifies kaolin and quartz, while the state has identified cassava production as a major agricultural opportunity in the LGA.",
+    ],
     visualCue: "Roads and communities",
   },
   {
@@ -577,6 +646,9 @@ export const lgaPlans = [
       },
     ],
     promise: "Ogoja should never feel like government is somewhere far away. Development must travel the roads, reach the communities and touch ordinary lives.",
+    background: [
+      "Ogoja has a strong agricultural identity, particularly around rice and food production, and has also been positioned for tourism development. Its documented mineral deposits include limestone at Ishibori and sandstone at Nkporo.",
+    ],
     visualCue: "Services and connection",
   },
   {
@@ -609,6 +681,10 @@ export const lgaPlans = [
       },
     ],
     promise: "Yakurr should never have to choose between preserving its identity and pursuing prosperity. Its land and culture can become foundations for a future that still feels unmistakably Yakurr.",
+    background: [
+      "Yakurr has a powerful agricultural and cultural identity, especially through its Leboku/New Yam cultural tradition, while its documented mineral resources include limestone at Mkpani and Idomi and uranium deposits at Idomi and Agoi Bami.",
+      "The state also identifies Yakurr among its agricultural development areas.",
+    ],
     visualCue: "Farming and culture",
   },
   {
@@ -641,6 +717,10 @@ export const lgaPlans = [
       },
     ],
     promise: "Yala's young people should not have to leave home simply because opportunity has not yet arrived there. The future should be something they can build on their own soil.",
+    background: [
+      "Yala has a strong agricultural identity, including food production, while its mineral resources are unusually diverse: salt, barite, galena, limestone, granite, calcite, pyrite and clay are documented across locations in the LGA.",
+      "The state has also identified Yala within its agricultural development programme.",
+    ],
     visualCue: "Youth and agriculture",
   },
 ] as const satisfies readonly LgaPlan[];

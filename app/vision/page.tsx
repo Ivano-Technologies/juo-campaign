@@ -176,7 +176,7 @@ export default function VisionPage() {
             Join the Movement
           </Button>
           <Button href="/odey-archibong" variant="ghost">
-            Odey Archibong
+            Odey-Archibong
           </Button>
           <Button href="/john-upan-odey" variant="ghost">
             Who is JUO

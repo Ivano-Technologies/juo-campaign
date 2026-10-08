@@ -31,14 +31,14 @@ export const brand = {
   portraits: {
     official: {
       src: "/brand/juo-come-to-serve-portrait-front.jpg",
-      alt: "John Upan Odey Jnr in traditional attire, facing camera",
+      alt: "John Upan Odey in traditional attire, facing camera",
       width: 838,
       height: 1131,
     },
     /** Suit portrait — Who is John / Meet John / profile OG only. */
     whoIsJohn: {
       src: "/brand/juo-branded-4.jpg",
-      alt: "John Upan Odey Jnr",
+      alt: "John Upan Odey",
       width: 1058,
       height: 1486,
     },

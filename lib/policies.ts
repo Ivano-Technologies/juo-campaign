@@ -8,20 +8,23 @@ import { manifestoPillars } from "@/lib/manifesto";
 export const policiesPageTitle = pageSeoTitle("Policies");
 
 export const policiesPageDescription =
-  "Nine approved manifesto pillars for Cross River 2027 under John Upan Odey Jnr: power, agriculture, infrastructure, healthcare, education and jobs, tourism and culture, transparent digital government, climate resilience, and security.";
+  "Nine manifesto pillars for Cross River 2027 under John Upan Odey: power, agriculture, infrastructure, healthcare, education and jobs, tourism and culture, transparent digital government, climate resilience, and security.";
 
 export const policiesHubTitle = "Nine manifesto pillars";
 export const policiesHubBody = [
-  "These are the nine approved manifesto policy pillars for Cross River 2027 under A Fresh Start: One People, One Cross River. They are manifesto sectors, not the five Brand values.",
+  "Nine policy pillars for Cross River 2027 under A Fresh Start: One People, One Cross River.",
 ] as const;
 export const policiesHubImportant =
-  "Important: Full programme language will come only from the approved manifesto PDF. Brand values (who John stands for as a leader) live on The Vision. THE TEN COMMITMENTS TO CROSS RIVERIANS live on the Manifesto page, distinct from these nine pillars.";
+  "The full programme is set out in the Manifesto, which you can download.";
 
-export const policiesTenTitle = "Approved manifesto pillars";
+export const policiesTenTitle = "The nine policy pillars";
 
-export const policiesNotOldTitle = "Not Brand values, not the Ten Commitments";
-export const policiesNotOldBody =
-  "Brand values are five: Service, Competence, Integrity, Opportunity, and Unity. They describe who John stands for as a leader and live on The Vision. THE TEN COMMITMENTS TO CROSS RIVERIANS are a separate list on the Manifesto page. The nine titles above are the approved manifesto policy pillars.";
+/** Single link row after the nine pillars (site copy QA row 55). */
+export const policiesLinks = [
+  { href: "/vision#brand-pillars", label: "Our values" },
+  { href: "/manifesto#commitments", label: "The Ten Commitments" },
+  { href: "/manifesto#pillars", label: "Read the full Manifesto" },
+] as const;
 
 export const policySectors = manifestoPillars;
 

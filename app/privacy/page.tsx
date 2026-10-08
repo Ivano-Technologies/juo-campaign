@@ -16,7 +16,7 @@ export default function PrivacyPage() {
   return (
     <>
       <PageHero
-        kicker="Before any form"
+        kicker="Your data"
         title="Privacy Notice"
         lede="This notice covers Join the Movement, Contact, and Donate, including people who join from outside Cross River through Diaspora Connect."
       />

@@ -3,9 +3,9 @@
  * Not the nine manifesto policy pillars and not THE TEN COMMITMENTS.
  * Do not add a sixth.
  */
-export const brandPillarsTitle = "Our Brand Pillars";
+export const brandPillarsTitle = "Our Values";
 export const brandPillarsIntro =
-  "Five Brand values. Who John stands for as a leader — Service, Competence, Integrity, Opportunity, Unity.";
+  "Five values that define John Upan Odey as a leader: Service, Competence, Integrity, Opportunity and Unity.";
 
 export const brandPillars = [
   {
@@ -21,7 +21,7 @@ export const brandPillars = [
     name: "Competence",
     slug: "competence",
     lead: "Leadership that knows how to get things done.",
-    body: "Finance, fintech, infrastructure finance, public-sector transformation, and digital innovation: competence that gets things done.",
+    body: "Finance, fintech, infrastructure finance, public sector transformation, and digital innovation: competence that gets things done.",
     tone: "primary",
   },
   {

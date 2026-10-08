@@ -1,7 +1,7 @@
 import { pageSeoTitle } from "@/lib/brand-seo";
 
 export const site = {
-  name: "John Upan Odey Jnr",
+  name: "John Upan Odey",
   shortName: "JUO",
   tagline: "A Fresh Start",
   unityLine: "One People, One Cross River",

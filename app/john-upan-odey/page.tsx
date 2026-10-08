@@ -43,7 +43,7 @@ export default function WhoIsJuoPage() {
     <>
       <JsonLd data={profilePersonJsonLd()} />
       <PageHero
-        kicker="John Upan Odey Jnr"
+        kicker="John Upan Odey"
         title="Who is John Upan Odey"
         lede={`${site.name}, ${site.office}. Age ${site.age}, born ${site.origin}. A Fresh Start for a state that produces, processes, and prospers together.`}
       >
@@ -55,7 +55,7 @@ export default function WhoIsJuoPage() {
           <section>
             <h2 className="font-serif text-3xl">In brief</h2>
             <p className="mt-3 text-muted">
-              John Upan Odey Jnr is the Nigerian Democratic Congress
+              John Upan Odey is the Nigeria Democratic Congress
               governorship candidate for Cross River State in 2027. He is a
               banker and manager from Obudu who is asking Cross Riverians to
               end the politics of division and begin a season of real service.
@@ -64,7 +64,7 @@ export default function WhoIsJuoPage() {
           <section>
             <h2 className="font-serif text-3xl">Why I serve</h2>
             <p className="mt-3 text-muted">
-              The campaign’s public spine is simple: we are one people and one
+              Our message is simple: we are one people and one
               Cross River. Hunger does not know zoning. Roads, farms, clinics,
               and jobs belong to every local government. The work is to turn
               the state’s soil, tourism, and talent into broad prosperity, not
@@ -75,10 +75,9 @@ export default function WhoIsJuoPage() {
             <h2 className="font-serif text-3xl">What he stands for</h2>
             <p className="mt-3 text-muted">
               A Fresh Start. One People, One Cross River. We produce. We
-              process. We prosper. The Manifesto page carries the nine
-              approved policy pillars and THE TEN COMMITMENTS TO CROSS
-              RIVERIANS. Brand values — Service, Competence, Integrity,
-              Opportunity, and Unity — live on The Vision.
+              process. We prosper. His programme is set out in nine policy
+              pillars and Ten Commitments to Cross Riverians, guided by five
+              values: Service, Competence, Integrity, Opportunity and Unity.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <Button href="/manifesto" variant="secondary">

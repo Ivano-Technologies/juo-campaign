@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   authors: [{ name: site.name }],
   keywords: [
     "John Upan Odey",
-    "John Upan Odey Jnr",
     "Cross River",
     "NDC",
     "2027",

@@ -6,7 +6,7 @@ export const postersPath = "/posters" as const;
 export const postersPageTitle = pageSeoTitle("Campaign Poster Gallery");
 
 export const postersPageDescription =
-  "Official John Upan Odey Jnr campaign posters, with Odey-Archibong ticket posters below. Approved Brand designs only. Portraits live on the Photo Gallery.";
+  "Official John Upan Odey campaign posters, with Odey-Archibong ticket posters below. Portraits live on the Photo Gallery.";
 
 const baPosterSize = {
   width: 1241,
@@ -25,28 +25,28 @@ export const officialBrandedPortraits = [
     src: "/brand/juo-branded-1.jpg",
     width: brandedPortraitSize.width,
     height: brandedPortraitSize.height,
-    alt: "John Upan Odey Jnr in patterned traditional attire and a red cap, facing camera.",
+    alt: "John Upan Odey in patterned traditional attire and a red cap, facing camera.",
   },
   {
     id: "juo-branded-2",
     src: "/brand/juo-branded-2.jpg",
     width: brandedPortraitSize.width,
     height: brandedPortraitSize.height,
-    alt: "John Upan Odey Jnr in white traditional attire and a red cap, facing camera.",
+    alt: "John Upan Odey in white traditional attire and a red cap, facing camera.",
   },
   {
     id: "juo-branded-3",
     src: "/brand/juo-branded-3.jpg",
     width: brandedPortraitSize.width,
     height: brandedPortraitSize.height,
-    alt: "John Upan Odey Jnr in traditional attire and glasses, looking up.",
+    alt: "John Upan Odey in traditional attire and glasses, looking up.",
   },
   {
     id: "juo-branded-4",
     src: "/brand/juo-branded-4.jpg",
     width: 1058,
     height: 1486,
-    alt: "John Upan Odey Jnr in a dark suit, glasses, and a red and navy striped tie.",
+    alt: "John Upan Odey in a dark suit, glasses, and a red and navy striped tie.",
   },
 ] as const;
 
@@ -56,7 +56,7 @@ const johnRisingPoster = {
   width: baPosterSize.width,
   height: baPosterSize.height,
   title: "Cross River Rising",
-  alt: "Official campaign poster: Cross River Rising, a New Cross River is Possible. John Upan Odey Jnr for Governor, Cross River State 2027.",
+  alt: "Official campaign poster: Cross River Rising, a New Cross River is Possible. John Upan Odey for Governor, Cross River State 2027.",
 } as const;
 
 const johnOnePeoplePoster = {
@@ -65,7 +65,7 @@ const johnOnePeoplePoster = {
   width: baPosterSize.width,
   height: baPosterSize.height,
   title: "One People, One Cross River",
-  alt: "Official campaign poster: One People One Cross River, every community matters. John Upan Odey Jnr for Governor, Cross River State 2027.",
+  alt: "Official campaign poster: One People One Cross River, every community matters. John Upan Odey for Governor, Cross River State 2027.",
 } as const;
 
 const johnFreshStartPoster = {
@@ -74,7 +74,7 @@ const johnFreshStartPoster = {
   width: baPosterSize.width,
   height: baPosterSize.height,
   title: "A Fresh Start",
-  alt: "Official campaign poster: A Fresh Start, building opportunities in every community. John Upan Odey Jnr for Governor, Cross River State 2027.",
+  alt: "Official campaign poster: A Fresh Start, building opportunities in every community. John Upan Odey for Governor, Cross River State 2027.",
 } as const;
 
 const johnKwankwasoPoster = {
@@ -85,7 +85,7 @@ const johnKwankwasoPoster = {
   width: 1416,
   height: 2000,
   title: "Vote Odey-Archibong",
-  alt: "Official campaign poster: A Fresh Start, One People - One Cross River. Peter Obi, NDC presidential candidate; John Upan Odey for governor; Dr Stella Charles Archibong for deputy governor; Rabiu Kwankwaso, NDC vice presidential candidate. Vote Odey-Archibong for Cross River State, Nigeria 2027.",
+  alt: "Official campaign poster: A Fresh Start, One People, One Cross River. Peter Obi, NDC presidential candidate; John Upan Odey for governor; Dr Stella Charles Archibong for deputy governor; Rabiu Kwankwaso, NDC vice presidential candidate. Vote Odey-Archibong for Cross River State, Nigeria 2027.",
 } as const;
 
 const johnPvcCollectionPoster = {
@@ -105,7 +105,7 @@ const odeyArchibongTicketPoster = {
   width: 2174,
   height: 2892,
   title: "Vote Odey-Archibong",
-  alt: "Official campaign poster: A Fresh Start, One People One Cross River. John Upan Odey Jnr for Governor with Dr Stella Charles Archibong for Deputy Governor.",
+  alt: "Official campaign poster: A Fresh Start, One People One Cross River. John Upan Odey for Governor with Dr Stella Charles Archibong for Deputy Governor.",
 } as const;
 
 const odeyArchibongPoster4 = {
@@ -114,7 +114,7 @@ const odeyArchibongPoster4 = {
   width: 1083,
   height: 1452,
   title: "A Fresh Start",
-  alt: "Official campaign poster: A Fresh Start, One People One Cross River. John Upan Odey Jnr for Governor with Dr Stella Charles Archibong for Deputy Governor.",
+  alt: "Official campaign poster: A Fresh Start, One People One Cross River. John Upan Odey for Governor with Dr Stella Charles Archibong for Deputy Governor.",
 } as const;
 
 const odeyArchibongPoster5 = {
@@ -123,7 +123,7 @@ const odeyArchibongPoster5 = {
   width: 1087,
   height: 1447,
   title: "One People, One Cross River",
-  alt: "Official campaign poster: A Fresh Start, One People One Cross River. John Upan Odey Jnr for Governor with Dr Stella Charles Archibong for Deputy Governor.",
+  alt: "Official campaign poster: A Fresh Start, One People One Cross River. John Upan Odey for Governor with Dr Stella Charles Archibong for Deputy Governor.",
 } as const;
 
 const odeyArchibongPoster6 = {
@@ -132,7 +132,7 @@ const odeyArchibongPoster6 = {
   width: 1083,
   height: 1452,
   title: "A New Cross River is Possible",
-  alt: "Official campaign poster: A New Cross River is Possible, every community matters. John Upan Odey Jnr for Governor with Dr Stella Charles Archibong for Deputy Governor.",
+  alt: "Official campaign poster: A New Cross River is Possible, every community matters. John Upan Odey for Governor with Dr Stella Charles Archibong for Deputy Governor.",
 } as const;
 
 /** John's posters — Poster Gallery first. */

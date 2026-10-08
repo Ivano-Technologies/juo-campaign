@@ -61,7 +61,7 @@ export default function OdeyArchibongPage() {
           The Vision
         </Button>
         <Button href="/john-upan-odey" variant="ghost">
-          Who is John Upan Odey Jnr
+          Who is John Upan Odey
         </Button>
         <Button href="/join" variant="ghost">
           Join the Movement

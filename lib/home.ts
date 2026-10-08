@@ -41,7 +41,7 @@ export const heroSlides = [
   },
   {
     src: "/media/2026/hero-still-4-arch.webp",
-    alt: "Stone park entrance arch with a bull-head sculpture on a road through green Cross River hills",
+    alt: "Stone park entrance arch with a bull head sculpture on a road through green Cross River hills",
     kicker: "A FRESH START",
     title: campaignHashtag.toUpperCase(),
     lede: "One People, One Cross River",
@@ -104,7 +104,7 @@ export const challenges = [
 export const opportunityCards = [
   {
     title: "Tourism",
-    body: "World-class destinations, rich heritage, and untapped opportunities that can drive jobs and economic growth.",
+    body: "Destinations of international standing, rich heritage, and untapped opportunities that can drive jobs and economic growth.",
   },
   {
     title: "Agriculture",
@@ -135,14 +135,25 @@ export const opportunityCards = [
  */
 export { brandPillars as homePillars } from "@/lib/brand-pillars";
 
-export const futureHighlights = [
+/**
+ * Jobs card is a target, not an achievement: 200,000 jobs by 2031
+ * (Chris confirmed, 8 Oct 2026). A card is either a plain line or a
+ * headline with a supporting line.
+ */
+export const futureHighlights: readonly (
+  | string
+  | { readonly headline: string; readonly supporting: string }
+)[] = [
   "Schools are digitally connected",
   "Roads connect communities and markets",
   "Government spending is transparent",
-  "10,000+ new jobs have been created",
+  {
+    headline: "200,000 jobs by 2031",
+    supporting: "Our scorecard target for new jobs across Cross River",
+  },
   "Every ward has functional healthcare",
   "Young founders can build here",
-] as const;
+];
 
 /** Campaign words only — never the WP “DEVELOPER” demo remnant. */
 export const futureCyclerWords = ["SECURE", "AWESOME", "FOR US"] as const;

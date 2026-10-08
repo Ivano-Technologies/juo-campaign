@@ -9,7 +9,7 @@ import { pageTitle } from "@/lib/site";
 
 const joinTitle = pageTitle("Join the Movement");
 const joinDescription =
-  "Volunteer with the John Upan Odey Jnr campaign. Join the Movement for a Fresh Start in Cross River.";
+  "Volunteer with the John Upan Odey campaign. Join the Movement for a Fresh Start in Cross River.";
 
 export const metadata: Metadata = {
   title: "Join the Movement",

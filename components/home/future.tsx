@@ -125,10 +125,17 @@ export function HomeFuture() {
             >
               {futureHighlights.map((item) => (
                 <li
-                  key={item}
+                  key={typeof item === "string" ? item : item.headline}
                   className="pointer-events-none flex min-h-[8.5rem] w-full shrink-0 snap-start items-center border border-white/20 bg-white/12 px-5 py-6 text-sm leading-6 text-brand-white backdrop-blur-md sm:w-[calc(50%-0.5rem)] lg:w-[calc(25%-0.75rem)]"
                 >
-                  {item}
+                  {typeof item === "string" ? (
+                    item
+                  ) : (
+                    <span className="flex flex-col gap-1">
+                      <span className="font-semibold">{item.headline}</span>
+                      <span className="text-brand-white/85">{item.supporting}</span>
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>

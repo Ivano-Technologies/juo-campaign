@@ -3,7 +3,7 @@ import { pageSeoTitle } from "@/lib/brand-seo";
 export const repsPageTitle = pageSeoTitle("Meet Your Reps");
 
 export const repsPageDescription =
-  "Campaign representatives and coordinators for John Upan Odey Jnr across Cross River. Slate and LGA contacts will be announced with official campaign updates.";
+  "Campaign representatives and coordinators for John Upan Odey across Cross River. Slate and LGA contacts will be announced with official campaign updates.";
 
 export const repsFacesTitle = "One people: local faces of the movement";
 export const repsFacesBody = [
@@ -14,17 +14,17 @@ export const repsFacesBody = [
 export const repsFindTitle = "What you will find here (when announced)";
 export const repsFindItems = [
   "State and LGA coordinators",
-  "Ward-level contacts where published",
+  "Ward contacts, once published",
   "How to verify that a person speaks for the campaign",
-  "Links to Join and Contact for volunteers still being placed",
 ] as const;
 
-export const repsDirectoryTitle = "Directory status";
-export const repsDirectoryStatus = "Reps announced with campaign updates.";
+export const repsDirectoryTitle = "Directory";
+export const repsDirectoryStatus =
+  "Representatives will be listed here as they are announced.";
 
 export const repsServeTitle = "Want to serve locally?";
 export const repsServeBody =
-  "If you want to volunteer as a coordinator or organiser in your LGA, from Calabar to Obudu and every community in between, register on Join the Movement. Placement and public listing follow campaign process.";
+  "If you want to volunteer as a coordinator or organiser in your LGA, from Calabar to Obudu and every community in between, register on Join the Movement. The campaign team will be in touch about opportunities in your area.";
 
 export const repsFilterRoles = [
   "Any role",

@@ -27,7 +27,7 @@ export function HomeMeet() {
             “{meetQuote}”
           </blockquote>
           <Button href="/john-upan-odey" variant="secondary" className="mt-8 rounded-none">
-            Who is John Upan Odey Jnr
+            Who is John Upan Odey
           </Button>
         </Reveal>
 

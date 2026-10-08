@@ -7,7 +7,7 @@ import { pageTitle, site } from "@/lib/site";
 
 const contactTitle = pageTitle("Contact");
 const contactDescription =
-  `Official contact for the John Upan Odey Jnr campaign: ${site.contactEmail} and a message form.`;
+  `Official contact for the John Upan Odey campaign: ${site.contactEmail} and a message form.`;
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -21,7 +21,7 @@ export default function ContactPage() {
       <PageHero
         kicker="Official channels"
         title="Contact"
-        lede="Write to the campaign desk. The message form on this page is live."
+        lede="Write to the campaign desk using the form below or by email."
       >
         <Button href="/join" variant="ghost">
           Join the Movement

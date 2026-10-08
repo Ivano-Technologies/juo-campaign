@@ -26,7 +26,7 @@ export default function PostersPage() {
       <PageHero
         kicker="Official campaign designs"
         title="Campaign Poster Gallery"
-        lede="John’s posters first, Odey-Archibong ticket posters below. Portraits and photographs live on the Photo Gallery."
+        lede="Official campaign posters for John Upan Odey and the Odey-Archibong ticket. Portraits and photographs are in the Photo Gallery."
       >
         <Button href={photosPath} variant="white">
           Photo Gallery

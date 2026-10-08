@@ -104,7 +104,7 @@ export function OdeyArchibongColumns({
         <figure className="relative aspect-[4/5] overflow-hidden border border-line bg-brand-blue">
           <Image
             src={brand.portraits.official.src}
-            alt="John Upan Odey Jnr"
+            alt="John Upan Odey"
             fill
             sizes="(min-width: 1024px) 28rem, 100vw"
             className="object-cover object-top"

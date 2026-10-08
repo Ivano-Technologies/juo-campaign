@@ -18,7 +18,7 @@ export default function TermsPage() {
       <PageHero
         kicker="Official campaign website"
         title="Terms of Use"
-        lede="This website is the official campaign site for John Upan Odey Jnr, NDC Governorship Candidate for Cross River State."
+        lede="This website is the official campaign site for John Upan Odey, NDC Governorship Candidate for Cross River State."
       />
       <article className="mx-auto max-w-3xl space-y-8 px-4 py-16 text-muted sm:px-6">
         <section>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { OfficialHashtags } from "@/components/official-hashtags";
 import { PrimaryCtas } from "@/components/primary-ctas";
 import { brand } from "@/lib/brand";
 import { campaignHashtag } from "@/lib/home";
@@ -30,9 +31,7 @@ export function HomeGetInvolved() {
             <p className="mt-3 text-sm font-semibold uppercase tracking-[0.12em] text-brand-white">
               {brand.slogan}
             </p>
-            <p className="mt-2 max-w-xl text-xs tracking-wide text-brand-white/80">
-              {brand.hashtags.join(" · ")}
-            </p>
+            <OfficialHashtags className="mt-2 max-w-xl text-xs tracking-wide text-brand-white/80" />
           </div>
         </div>
         <PrimaryCtas />

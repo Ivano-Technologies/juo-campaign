@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Button } from "@/components/button";
 import { CampaignGraphicsGallery } from "@/components/campaign-graphics";
+import { OfficialHashtags } from "@/components/official-hashtags";
 import { PageHero } from "@/components/page-hero";
 import { pageShareTags } from "@/lib/page-seo";
 import { photosPath } from "@/lib/photos";
@@ -35,6 +36,15 @@ export default function PostersPage() {
           Join the Movement
         </Button>
       </PageHero>
+
+      <section className="bg-brand-blue text-brand-white">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-8 sm:px-6 sm:flex-row sm:items-baseline sm:justify-between">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-red">
+            Official hashtags
+          </p>
+          <OfficialHashtags className="text-sm tracking-wide text-brand-white sm:text-right" />
+        </div>
+      </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <h2 className="font-serif text-2xl text-ink sm:text-3xl">
@@ -81,7 +91,7 @@ export default function PostersPage() {
           Odey-Archibong posters
         </h2>
         <ul className="mt-8 grid gap-10 md:grid-cols-3">
-          {odeyArchibongCampaignPosters.map((poster) => (
+          {odeyArchibongCampaignPosters.map((poster, index) => (
             <li key={poster.id}>
               <figure>
                 <div className="relative aspect-[1241/1754] w-full overflow-hidden border border-brand-blue/15 bg-brand-white">
@@ -91,6 +101,7 @@ export default function PostersPage() {
                     fill
                     sizes="(min-width: 768px) 33vw, 100vw"
                     className="object-contain"
+                    priority={index < 3}
                   />
                 </div>
                 <figcaption className="mt-4 font-serif text-xl text-ink">

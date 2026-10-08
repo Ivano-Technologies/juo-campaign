@@ -44,7 +44,8 @@ export default function PrivacyPage() {
           <p className="mt-3">
             When you use Join the Movement we store the details you send: name,
             email, phone, local government or location (including “Diaspora /
-            outside Cross River”), and how you want to help. If you arrive from
+            outside Cross River”), your ward if you are in Cross River, and how
+            you want to help. If you arrive from
             a tagged join link, we also store a short campaign source label
             from that link (for example calabar) so field activity can be
             attributed. That label is not your name, email, or phone. Contact

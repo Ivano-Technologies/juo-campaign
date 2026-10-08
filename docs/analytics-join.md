@@ -106,6 +106,22 @@ Cross River split:
 
 CRM / desk export: filter `join_submissions.campaign_source` in Supabase once the column is applied.
 
+## Ward (stored in Supabase, not sent to GA4)
+
+The join form asks for **Ward** after the LGA. The dropdown lists the INEC registration areas (wards) for the selected LGA from `lib/wards.ts` (INEC sources are cited in that file). "My ward isn't listed" reveals a required free text input. Diaspora / outside Cross River has no ward.
+
+- Stored in `join_submissions.ward` next to `lga` (see `supabase/migrations/20261008084919_join_ward.sql`). Optional column: rows before 8 Oct 2026 and Diaspora rows stay `NULL`. No backfill.
+- Volunteer list for the desk / Brand Architect: Supabase Table Editor on `join_submissions` (or its CSV export) now has a `ward` column. Useful columns: `created_at`, `name`, `lga`, `ward`, `phone`, `interest`, `campaign_source`.
+- `volunteer_form_submit` is **unchanged** (same name and params: `form_id`, `campaign_source`, `lga`, `interest`). Ward is not sent to GA4.
+
+SQL for a desk pull (run in the Supabase SQL editor as a project member, not with the anon key):
+
+```sql
+select created_at, name, lga, ward, phone, interest, campaign_source
+from public.join_submissions
+order by created_at desc;
+```
+
 ## Preview notes
 
 - Preview only loads gtag when `NEXT_PUBLIC_GA_MEASUREMENT_ID` is set on that Vercel environment.

@@ -57,8 +57,9 @@ export type LgaPlan = {
   promise: string;
   /**
    * Chris Adah's background paragraphs that come before each plan heading
-   * in the 7 Oct 2026 email. Rendered as a muted Background note below the
-   * plan card, set apart from the plan itself.
+   * in the 7 Oct 2026 email. Kept as data; the muted Background note below
+   * the plan card is hidden while SHOW_BACKGROUND is false in
+   * components/lga-plans-explorer.tsx.
    */
   background: readonly string[];
   /** Design brief cue for future LGA artwork. Not rendered. */

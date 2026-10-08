@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/button";
 import { FormStatusNote } from "@/components/form-status";
 import { CONTACT_SUCCESS, readJsonMessage } from "@/lib/forms";
@@ -14,6 +14,18 @@ type ContactState = {
 
 type StatusTone = "error" | "info" | "success";
 
+/**
+ * One id per distinct submission so a retry of the same request (for example
+ * after a dropped connection) is not stored or auto replied to twice.
+ */
+function newSubmissionId(): string | undefined {
+  try {
+    return globalThis.crypto?.randomUUID?.();
+  } catch {
+    return undefined;
+  }
+}
+
 const initial: ContactState = {
   name: "",
   email: "",
@@ -26,17 +38,27 @@ export function ContactForm() {
   const [pending, setPending] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
   const [tone, setTone] = useState<StatusTone>("info");
+  const submission = useRef<{ key: string; id: string | undefined } | null>(
+    null,
+  );
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setPending(true);
     setStatus(null);
+    const key = JSON.stringify(values);
+    if (submission.current?.key !== key) {
+      submission.current = { key, id: newSubmissionId() };
+    }
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        body: JSON.stringify({
+          ...values,
+          submission_id: submission.current.id,
+        }),
       });
       const payload = (await readJsonMessage(response));
 
@@ -44,6 +66,7 @@ export function ContactForm() {
         setTone("success");
         setStatus(payload.message ?? CONTACT_SUCCESS.message);
         setValues(initial);
+        submission.current = null;
         return;
       }
 

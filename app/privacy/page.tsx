@@ -62,8 +62,9 @@ export default function PrivacyPage() {
             interest you select (ward work, organising, professional skills,
             media, donations, or Diaspora Connect) and to send campaign
             updates you asked for. Contact messages are used to reply from the
-            campaign desk. We do not treat a join form as INEC voter
-            registration.
+            campaign desk. When you send a message, we also send one automatic
+            email to the address you gave to confirm we received it. We do not
+            treat a join form as INEC voter registration.
           </p>
         </section>
         <section>

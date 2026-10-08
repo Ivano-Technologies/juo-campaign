@@ -24,11 +24,17 @@
  *   Calabar Mun 08  EIGTH (typo, shown "Eight", matching RAC PDF WARD EIGHT)
  *   Obudu 05, 06    OBUDU URBAN I / II        (RAC PDF: UBANG I / II)
  *   Odukpani 05     EKORI/ANAKU               (RAC PDF: EKORI ANAKU)
- *   Odukpani 11     ONIMAN-KIONG (hyphen)     (RAC PDF: ONIMANKIONG)
+ *   Odukpani 11     ONIMAN-KIONG              (RAC PDF: ONIMANKIONG) *
  *   Yakurr 01       AFREKPE/EKPENTI           (RAC PDF: AFREKPE/EPENTI)
  *   Yakurr 06       IJIMAN                    (RAC PDF: IJEMAN)
  *   Yakurr 11       ABANAKPAI                 (RAC PDF: ABANAKPI)
  *   The RAC PDF also writes some Roman numerals as 1 / 11 (for I / II).
+ *
+ * * Source choice: Odukpani 11 is the one name that does NOT follow source 1.
+ *   It uses the RAC PDF spelling "Onimankiong" instead of the CVR
+ *   "ONIMAN-KIONG", because the site's no hyphen rule only allows
+ *   Odey-Archibong, Nigeria-Cameroon and Non-Indigenous (Kezie, 8 Oct 2026).
+ *   No ward display name in this file contains a hyphen.
  *
  * LGA spelling map (INEC to site): "CALABAR MUNICIPALITY" is the site's
  * "Calabar Municipal". All other INEC LGA names match the site values.
@@ -298,7 +304,7 @@ export const crossRiverWards = {
       { code: "08", name: "Obomitiat/Mbiabo/Ediong", inec: "OBOMITIAT/MBIABO/EDIONG" },
       { code: "09", name: "Odot", inec: "ODOT" },
       { code: "10", name: "Odukpani Central", inec: "ODUKPANI CENTRAL" },
-      { code: "11", name: "Oniman-Kiong", inec: "ONIMAN-KIONG" },
+      { code: "11", name: "Onimankiong", inec: "ONIMAN-KIONG" },
       { code: "12", name: "Ikoneto", inec: "IKONETO" },
       { code: "13", name: "Ito/Idere/Ukwa", inec: "ITO/IDERE/UKWA" },
     ],

@@ -77,6 +77,17 @@ test("wardsForLga filters by the selected LGA", () => {
   assert.deepEqual(wardsForLga("Lagos"), []);
 });
 
+test("ward display names contain no hyphens (Odukpani 11 is Onimankiong)", () => {
+  const odukpani = wardsForLga("Odukpani").map((ward) => ward.name);
+  assert.ok(odukpani.includes("Onimankiong"));
+  assert.ok(!odukpani.includes("Oniman-Kiong"));
+  for (const [lga, list] of Object.entries(crossRiverWards)) {
+    for (const ward of list.wards) {
+      assert.doesNotMatch(ward.name, /[-\u2010-\u2015]/, `${lga}: ${ward.name}`);
+    }
+  }
+});
+
 test("lgaNeedsWard is true only for Cross River LGAs", () => {
   assert.equal(lgaNeedsWard("Yala"), true);
   assert.equal(lgaNeedsWard("Calabar Municipal"), true);

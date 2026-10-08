@@ -99,6 +99,34 @@ const johnPvcCollectionPoster = {
   alt: "Campaign poster: Collect your PVC. Your Vote. Our Power. NDC, Nigeria Democratic Congress. Collection begins 9th October 2026 at INEC offices nationwide, with hands holding permanent voter cards.",
 } as const;
 
+
+const chrisOfficialPosterBlue = {
+  id: "chris-official-poster-blue",
+  src: "/brand/chris-official/official-poster-blue.png",
+  width: 2706,
+  height: 3605,
+  title: "Official Poster Blue",
+  alt: "Official campaign poster Blue: A Fresh Start, One People One Cross River. Peter Gregory Obi for President, John Upan Odey for Governor, Dr Stella Charles Archibong for Deputy Governor. Vote Odey-Archibong for Cross River State, Nigeria 2027.",
+} as const;
+
+const chrisOfficialPosterWhite = {
+  id: "chris-official-poster-white",
+  src: "/brand/chris-official/official-poster-white.png",
+  width: 2706,
+  height: 3605,
+  title: "Official Poster White",
+  alt: "Official campaign poster White: A Fresh Start, One People One Cross River. Peter Gregory Obi for President, John Upan Odey for Governor, Dr Stella Charles Archibong for Deputy Governor. Odey-Archibong for Cross River State, Nigeria 2027.",
+} as const;
+
+const chrisOfficialPoster4 = {
+  id: "chris-official-poster-4",
+  src: "/brand/chris-official/official-poster-4.png",
+  width: 2485,
+  height: 3513,
+  title: "Official Poster 4",
+  alt: "Official campaign poster 4: A Fresh Start, One People One Cross River. John Upan Odey for Governor with Dr Stella Charles Archibong for Deputy Governor. Vote Odey-Archibong for Cross River State, Nigeria 2027.",
+} as const;
+
 const odeyArchibongTicketPoster = {
   id: "official-poster-1",
   src: brand.marks.officialPoster,
@@ -146,6 +174,9 @@ export const johnCampaignPosters = [
 
 /** Odey Archibong ticket posters — Poster Gallery below John's. */
 export const odeyArchibongCampaignPosters = [
+  chrisOfficialPosterBlue,
+  chrisOfficialPosterWhite,
+  chrisOfficialPoster4,
   odeyArchibongTicketPoster,
   odeyArchibongPoster4,
   odeyArchibongPoster5,

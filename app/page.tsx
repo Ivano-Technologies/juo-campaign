@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { HomeChallenges } from "@/components/home/challenges";
 import { HomeFuture } from "@/components/home/future";
+import { HomeGetInvolved } from "@/components/home/get-involved";
 import { HomeHero } from "@/components/home/hero";
 import { HomeInitiatives } from "@/components/home/initiatives";
 import { HomeMeet } from "@/components/home/meet";
@@ -64,6 +65,7 @@ export default function HomePage() {
       <HomeInitiatives />
       <HomePosters />
       <HomeMeet />
+      <HomeGetInvolved />
     </>
   );
 }

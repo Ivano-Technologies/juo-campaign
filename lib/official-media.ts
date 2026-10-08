@@ -61,6 +61,18 @@ export const officialAssetsWired = [
     role: "Kit poster — Home gallery, /posters, OG image",
   },
   {
+    path: "/brand/chris-official/official-poster-blue.png",
+    role: "Chris kit Official Poster Blue on /posters Odey-Archibong gallery (IVA-31)",
+  },
+  {
+    path: "/brand/chris-official/official-poster-white.png",
+    role: "Chris kit Official Poster White on /posters Odey-Archibong gallery (IVA-31); distinct from white-poster-kwankwaso",
+  },
+  {
+    path: "/brand/chris-official/official-poster-4.png",
+    role: "Chris kit Official Poster 4 on /posters Odey-Archibong gallery (IVA-31)",
+  },
+  {
     path: "/brand/odey-archibong-poster-4.png",
     role: "Odey Archibong ticket poster 4 — /posters only (A Fresh Start)",
   },

@@ -90,7 +90,25 @@ export type ContactSubmissionInput = {
   message: string;
   privacy_accepted: true;
   source: "contact";
+  /**
+   * Client generated UUID for this form fill, used as the row id so a retry
+   * of the same submission is not stored or auto replied to twice.
+   * Null when the client did not send one (older clients).
+   */
+  submission_id: string | null;
 };
+
+const SUBMISSION_ID_PATTERN =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
+
+/** Accepts a lowercase or uppercase UUID string; anything else becomes null. */
+export function normalizeSubmissionId(raw: unknown): string | null {
+  if (typeof raw !== "string") {
+    return null;
+  }
+  const value = raw.trim().toLowerCase();
+  return SUBMISSION_ID_PATTERN.test(value) ? value : null;
+}
 
 export function parseJsonRequestBody(value: unknown): Record<string, unknown> {
   const record = asRecord(value);
@@ -190,6 +208,7 @@ export function validateContactSubmission(
       message,
       privacy_accepted: true,
       source: "contact",
+      submission_id: normalizeSubmissionId(record.submission_id),
     };
   } catch (error) {
     return validationError(

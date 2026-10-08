@@ -15,6 +15,37 @@ import {
   type LgaPlan,
 } from "@/lib/lga-plans";
 
+/**
+ * Chris Adah's background notes, shown as a muted aside below the plan card
+ * (restored 8 Oct 2026, without current state government programmes).
+ */
+function BackgroundNote({ plan }: { plan: LgaPlan }) {
+  if (plan.background.length === 0) {
+    return null;
+  }
+  const headingId = `lga-plan-background-${plan.slug}`;
+  return (
+    <aside
+      aria-labelledby={headingId}
+      className="border-l-2 border-line pl-4 sm:pl-6"
+    >
+      <h3
+        id={headingId}
+        className="text-xs font-semibold tracking-[0.28em] text-muted uppercase"
+      >
+        Background
+      </h3>
+      <div className="mt-3 space-y-3">
+        {plan.background.map((paragraph) => (
+          <p key={paragraph} className="text-sm leading-6 text-muted italic">
+            {paragraph}
+          </p>
+        ))}
+      </div>
+    </aside>
+  );
+}
+
 function ClosingNote() {
   return (
     <section
@@ -305,6 +336,8 @@ export function LgaPlansExplorer({ initialSlug }: LgaPlansExplorerProps) {
       <div id={panelId} role="region" aria-live="polite" aria-atomic="true">
         <PlanCard plan={selected} />
       </div>
+
+      <BackgroundNote plan={selected} />
 
       <ClosingNote />
     </div>

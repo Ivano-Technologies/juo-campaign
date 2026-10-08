@@ -44,6 +44,19 @@ function ClosingNote() {
   );
 }
 
+/**
+ * Sticky site header is 76px tall; keep a little breathing room so a scrolled
+ * target never sits underneath it. Matches the `scroll-mt-[92px]` class below.
+ */
+const STICKY_HEADER_SCROLL_OFFSET_PX = 92;
+
+/**
+ * Set only when the visitor picks a different LGA (tap, click or arrow keys).
+ * A direct visit to an LGA page leaves this null, so the page lands at the top
+ * with the hero visible and never scrolls on its own.
+ */
+let pendingUserSelection: { slug: string; viaKeyboard: boolean } | null = null;
+
 type LgaPlansExplorerProps = {
   /** When set (detail route), that LGA is selected and announced. */
   initialSlug?: string;
@@ -63,7 +76,7 @@ function PlanCard({ plan }: { plan: LgaPlan }) {
             </p>
             <h2
               id={`lga-plan-name-${plan.slug}`}
-              className="mt-3 font-serif text-3xl text-ink sm:text-4xl"
+              className="mt-3 scroll-mt-[92px] font-serif text-3xl text-ink sm:text-4xl"
             >
               {plan.name}
             </h2>
@@ -133,24 +146,45 @@ export function LgaPlansExplorer({ initialSlug }: LgaPlansExplorerProps) {
   const panelId = useId();
   const selected =
     lgaPlans.find((plan) => plan.slug === initialSlug) ?? lgaPlans[0];
-  const selectedButtonRef = useRef<HTMLButtonElement | null>(null);
+  const listboxRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (!initialSlug) {
+    const pending = pendingUserSelection;
+    if (!initialSlug || !pending || pending.slug !== initialSlug) {
       return;
     }
-    selectedButtonRef.current?.scrollIntoView({
-      block: "nearest",
-      inline: "nearest",
-      behavior: "smooth",
+    pendingUserSelection = null;
+
+    if (pending.viaKeyboard) {
+      listboxRef.current?.focus({ preventScroll: true });
+    }
+
+    const planName = document.getElementById(`lga-plan-name-${initialSlug}`);
+    if (!planName) {
+      return;
+    }
+    const rect = planName.getBoundingClientRect();
+    const fullyVisible =
+      rect.top >= STICKY_HEADER_SCROLL_OFFSET_PX &&
+      rect.bottom <= window.innerHeight;
+    if (fullyVisible) {
+      return;
+    }
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    planName.scrollIntoView({
+      block: "start",
+      behavior: reduceMotion ? "auto" : "smooth",
     });
   }, [initialSlug]);
 
   const selectPlan = useCallback(
-    (slug: string) => {
+    (slug: string, viaKeyboard = false) => {
       if (slug === selected.slug && initialSlug) {
         return;
       }
+      pendingUserSelection = { slug, viaKeyboard };
       router.push(lgaPlanPath(slug) as Route, { scroll: false });
     },
     [initialSlug, router, selected.slug],
@@ -203,7 +237,7 @@ export function LgaPlansExplorer({ initialSlug }: LgaPlansExplorerProps) {
       event.preventDefault();
       const next = lgaPlans[nextIndex];
       if (next) {
-        selectPlan(next.slug);
+        selectPlan(next.slug, true);
       }
     },
     [selectPlan, selected.slug],
@@ -231,6 +265,7 @@ export function LgaPlansExplorer({ initialSlug }: LgaPlansExplorerProps) {
         </p>
 
         <div
+          ref={listboxRef}
           role="listbox"
           aria-labelledby={listId}
           aria-activedescendant={`lga-option-${selected.slug}`}
@@ -245,7 +280,6 @@ export function LgaPlansExplorer({ initialSlug }: LgaPlansExplorerProps) {
               <button
                 key={plan.slug}
                 id={`lga-option-${plan.slug}`}
-                ref={isSelected ? selectedButtonRef : undefined}
                 type="button"
                 role="option"
                 aria-selected={isSelected}

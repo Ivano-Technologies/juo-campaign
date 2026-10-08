@@ -15,8 +15,14 @@ import {
   type LgaPlan,
 } from "@/lib/lga-plans";
 
+/**
+ * Chris's background paragraphs stay in lib/lga-plans.ts but are hidden for
+ * now (Kezie, 8 Oct 2026). Set to true to show the Background note again.
+ */
+const SHOW_BACKGROUND = false;
+
 function BackgroundNote({ plan }: { plan: LgaPlan }) {
-  if (plan.background.length === 0) {
+  if (!SHOW_BACKGROUND || plan.background.length === 0) {
     return null;
   }
   const headingId = `lga-plan-background-${plan.slug}`;

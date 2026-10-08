@@ -8,12 +8,13 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types --test lib/campaign-source.test.ts lib/search-console.test.ts lib/hero-images.test.ts lib/image-sizes.test.ts lib/wards.test.ts lib/lga-background.test.ts"
+    "test": "node --experimental-strip-types --import ./scripts/test-register.mjs --test lib/campaign-source.test.ts lib/search-console.test.ts lib/hero-images.test.ts lib/image-sizes.test.ts lib/wards.test.ts lib/lga-background.test.ts lib/contact-submit.test.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.116.0",
     "next": "16.3.5",
+    "nodemailer": "^10.0.16",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },

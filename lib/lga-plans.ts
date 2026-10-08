@@ -369,7 +369,7 @@ export const lgaPlans = [
       },
       {
         title: "Border Trade",
-        body: "Improve infrastructure and commercial systems around the Nigeria Cameroon trade corridor.",
+        body: "Improve infrastructure and commercial systems around the Nigeria-Cameroon trade corridor.",
       },
       {
         title: "Farmer Prosperity",

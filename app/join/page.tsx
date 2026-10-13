@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { BrandMarks } from "@/components/brand-marks";
 import { Button } from "@/components/button";
+import Image from "next/image";
 import { JoinForm } from "@/components/join-form";
 import { PageHero } from "@/components/page-hero";
 import { campaignSourceFromSearchParams } from "@/lib/campaign-source";
+import { joinCommunityPhotoSizes } from "@/lib/image-sizes";
 import { pageShareTags } from "@/lib/page-seo";
 import { pageTitle } from "@/lib/site";
 
@@ -64,6 +66,14 @@ export default async function JoinPage({ searchParams }: JoinPageProps) {
             before you submit. Your details are stored so the campaign can
             contact you about volunteering and updates.
           </p>
+          <Image
+            src="/brand/communities-for-odey.webp"
+            alt="Supporters of John Upan Odey from a Cross River community gathered around an NDC chapter banner, giving the victory sign"
+            width={1400}
+            height={933}
+            sizes={joinCommunityPhotoSizes}
+            className="mt-8 h-auto w-full rounded-lg object-cover"
+          />
         </div>
         <JoinForm campaignSource={campaignSource} />
       </section>

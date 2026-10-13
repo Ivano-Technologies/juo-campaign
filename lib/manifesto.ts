@@ -4,6 +4,9 @@ import { pageSeoTitle } from "@/lib/brand-seo";
 export const manifestoPdfHref: string | null =
   "/media/manifesto-john-upan-odey.pdf";
 
+/** IVA-151: alt text uses the title printed on the cover. */
+export const manifestoCoverAlt = "The manifesto front cover, THE MANIFESTO";
+
 export const manifestoPageTitle = pageSeoTitle("Manifesto");
 
 export const manifestoPageDescription =

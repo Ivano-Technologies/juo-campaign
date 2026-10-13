@@ -8,8 +8,8 @@ type TenCommitmentsProps = {
 
 export function TenCommitments({ heading }: TenCommitmentsProps) {
   return (
-    <div className="grid gap-8 sm:grid-cols-12 sm:gap-x-10 lg:gap-x-16">
-      <div className="min-w-0 sm:col-span-7 sm:col-start-1 sm:row-start-1">
+    <div className="grid md:grid-cols-[minmax(0,1fr)_280px] md:gap-x-10 lg:grid-cols-12 lg:gap-x-16">
+      <div className="min-w-0 md:col-start-1 md:row-start-1 lg:col-span-7">
         <h2 className="font-serif text-3xl tracking-tight text-ink uppercase">
           {heading}
         </h2>
@@ -17,17 +17,17 @@ export function TenCommitments({ heading }: TenCommitmentsProps) {
           {tenCommitmentsIntro}
         </p>
       </div>
-      <div className="sm:sticky sm:top-28 sm:col-span-5 sm:col-start-8 sm:row-span-2 sm:row-start-1 sm:self-start">
+      <div className="mx-auto mt-8 mb-8 w-[70%] max-w-[260px] md:sticky md:top-28 md:col-start-2 md:row-span-2 md:row-start-1 md:mx-0 md:mt-0 md:mb-0 md:w-full md:max-w-none md:self-start lg:col-span-5 lg:col-start-8">
         <Image
           src="/brand/juo-ten-commitments.webp"
           alt="John Upan Odey in a white shirt, hand on chin, in a thoughtful pose"
           width={1067}
           height={1600}
           sizes={tenCommitmentsPortraitSizes}
-          className="mx-auto h-auto w-full max-w-[280px] rounded-lg bg-brand-white object-cover sm:mr-0"
+          className="aspect-[1200/1658] h-auto w-full rounded-lg border border-white/10 bg-brand-white object-cover object-[50%_20%] shadow-xl shadow-brand-blue/15"
         />
       </div>
-      <ol className="grid min-w-0 gap-8 sm:col-span-7 sm:col-start-1 sm:row-start-2 sm:mt-2">
+      <ol className="grid min-w-0 gap-8 md:col-start-1 md:row-start-2 md:mt-10 lg:col-span-7">
         {tenCommitments.map((commitment) => (
           <li key={commitment.number} className="scroll-mt-28">
             <h3 className="font-serif text-2xl text-ink">

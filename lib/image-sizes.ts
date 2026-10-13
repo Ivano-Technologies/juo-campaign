@@ -30,8 +30,9 @@ export const brandNdcSizes =
 export const brandCandidateLockupSizes =
   "(min-width: 1024px) 192px, (min-width: 640px) 168px, 144px";
 
-/** IVA-149: John Upan Odey portrait beside THE TEN COMMITMENTS heading (5/12, max 280px). */
-export const tenCommitmentsPortraitSizes = "280px";
+/** IVA-149: John Upan Odey portrait beside THE TEN COMMITMENTS heading (matches the #157 cover: 5/12 at lg, 280px at md, 70vw max 260px on mobile). */
+export const tenCommitmentsPortraitSizes =
+  "(min-width: 1024px) 436px, (min-width: 768px) 280px, min(70vw, 260px)";
 
 /** IVA-150: community photo in the /join left column (lg: half of max-w-6xl). */
 export const joinCommunityPhotoSizes =

@@ -44,10 +44,14 @@ export default function ManifestoPage() {
           <ManifestoPillars heading={manifestoPillarsTitle} />
         </div>
 
-        <div id="commitments" className="scroll-mt-28">
-          <TenCommitments heading={tenCommitmentsTitle} />
-        </div>
-
+      </section>
+      <section
+        id="commitments"
+        className="mx-auto max-w-[1200px] scroll-mt-28 px-5 md:px-8"
+      >
+        <TenCommitments heading={tenCommitmentsTitle} />
+      </section>
+      <section className="mx-auto max-w-3xl space-y-14 px-4 py-16 sm:px-6">
         <ManifestoExcerpts heading={manifestoExcerptsTitle} />
 
         <ManifestoPlayer />

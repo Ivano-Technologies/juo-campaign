@@ -9,8 +9,8 @@ type TenCommitmentsProps = {
 export function TenCommitments({ heading }: TenCommitmentsProps) {
   return (
     <div>
-      <div className="grid gap-8 sm:grid-cols-[minmax(0,1fr)_14rem] sm:items-center">
-        <div className="min-w-0">
+      <div className="grid gap-8 sm:grid-cols-12 sm:items-start">
+        <div className="min-w-0 sm:col-span-7">
           <h2 className="font-serif text-3xl tracking-tight text-ink uppercase">
             {heading}
           </h2>
@@ -24,7 +24,7 @@ export function TenCommitments({ heading }: TenCommitmentsProps) {
           width={1067}
           height={1600}
           sizes={tenCommitmentsPortraitSizes}
-          className="mx-auto h-auto w-full max-w-xs rounded-lg bg-brand-white object-cover sm:max-w-none"
+          className="mx-auto h-auto w-full max-w-[280px] rounded-lg bg-brand-white object-cover sm:col-span-5 sm:mr-0"
         />
       </div>
       <ol className="mt-10 grid gap-8">

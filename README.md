@@ -61,6 +61,8 @@ Node 20+. Package manager is pnpm (`packageManager` field in `package.json`).
 - `NEXT_PUBLIC_GA_MEASUREMENT_ID` — optional GA4 Measurement ID (`G-XXXXXXXX`). Set on Vercel Production. When unset, no gtag scripts load. Join success fires `volunteer_form_submit` (see `docs/analytics-join.md`).
 - `SMTP_HOST`, `SMTP_PORT` (default 465), `SMTP_USER`, `SMTP_PASS`: server only SMTP for the contact auto reply (Hostinger mailbox `campaign@`). Set on Production and Preview. When `SMTP_HOST`, `SMTP_USER` or `SMTP_PASS` is unset the auto reply is skipped and logged.
 - `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` — optional Google Search Console HTML-tag token (the `content` value only, not the full `<meta>` tag). Set on Vercel Production after copying it from Search Console. When unset or blank, no `google-site-verification` meta is rendered. This does **not** mean the property is verified.
+- `ADMIN_EMAILS`: server only, comma separated staff emails allowed into `/admin`. Every admin can approve consent on pending offline signups at `/admin/volunteers`.
+- `CONSENT_APPROVER_EMAILS`: optional, server only, comma separated extra emails that may also approve consent (kept for backward compatibility). Approval is allowed when the email is in `ADMIN_EMAILS` or `CONSENT_APPROVER_EMAILS`; anyone else gets **403** from `POST /api/admin/volunteers/[id]/approve` and does not see the Approve consent button.
 
 Helpers live in `lib/supabase/`. They return `null` when env is missing so local/CI builds stay green without secrets. Form routes insert with the anon key (RLS is insert-only; no select):
 

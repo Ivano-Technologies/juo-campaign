@@ -48,7 +48,7 @@ Rules:
 - Emails and other `@` values are dropped
 - The slug is kept in `sessionStorage` for the rest of the tab so a later `/join` visit in that tab still attributes
 
-The form-type column `join_submissions.source` stays `join`. Attribution is stored separately in `join_submissions.campaign_source` (see `supabase/migrations/20261005140000_join_campaign_source.sql`). Apply that migration on the live JUO Supabase project if the column is not there yet. Do not change RLS.
+The form-type column `join_submissions.source` stays `join`. Attribution is stored separately in `join_submissions.campaign_source` (see `supabase/migrations/20261005135922_join_campaign_source.sql`). Apply that migration on the live JUO Supabase project if the column is not there yet. Do not change RLS.
 
 Until the column is applied, tagged sign-ups still save; attribution is skipped with a server warning.
 

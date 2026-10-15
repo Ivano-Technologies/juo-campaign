@@ -56,7 +56,9 @@ export async function POST(request: Request) {
     community: parsed.value.community,
     interest: parsed.value.interest,
     role: parsed.value.role,
-    privacy_accepted: true,
+    // Offline rows are never auto consented: Chris approves consent later.
+    privacy_accepted: false,
+    consent_status: "pending",
     source: "offline",
     intake_channel: "offline",
     entered_by: session.email,

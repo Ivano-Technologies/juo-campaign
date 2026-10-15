@@ -19,7 +19,16 @@ export const DUPLICATE_PHONE_MESSAGE =
   "This phone number is already registered. The existing record has not been changed.";
 
 export const OFFLINE_INTAKE_SUCCESS =
-  "Volunteer saved. You can enter the next one.";
+  "Volunteer saved and waiting for consent approval. You can enter the next one.";
+
+export type ConsentStatus = "pending" | "vetted";
+
+export const consentStatusLabels: Record<ConsentStatus, string> = {
+  pending: "Waiting for consent approval",
+  vetted: "Consent approved",
+};
+
+export const sharedPhoneLegacyLabel = "Shared phone number (older web signup)";
 
 export type OfflineIntakeInput = {
   name: string;

@@ -24,3 +24,12 @@ test("rejects an unknown role and a bad phone", () => {
   assert.equal(validateOfflineIntake({ ...base, role: "Chief" }).ok, false);
   assert.equal(validateOfflineIntake({ ...base, phone: "123" }).ok, false);
 });
+
+test("consent labels are plain words with no hyphens or dashes", async () => {
+  const { consentStatusLabels, sharedPhoneLegacyLabel } = await import("./volunteer-intake.ts");
+  assert.equal(consentStatusLabels.pending, "Waiting for consent approval");
+  assert.equal(consentStatusLabels.vetted, "Consent approved");
+  for (const label of [...Object.values(consentStatusLabels), sharedPhoneLegacyLabel]) {
+    assert.doesNotMatch(label, /[-\u2013\u2014]/);
+  }
+});

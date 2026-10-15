@@ -73,7 +73,7 @@ export function PendingConsentList({
         </ul>
       )}
       {!canApprove && rows.length > 0 ? (
-        <p className="text-xs text-muted">Only the consent approver can approve consent.</p>
+        <p className="text-xs text-muted">Only an admin can approve consent.</p>
       ) : null}
     </section>
   );

@@ -8,17 +8,17 @@ function reply(status: number, ok: boolean, message: string) {
   return NextResponse.json({ ok, message }, { status });
 }
 
-/** Approve consent on one pending offline row. Consent approvers only. */
+/** Approve consent on one pending offline row. Any admin (ADMIN_EMAILS or CONSENT_APPROVER_EMAILS). */
 export async function POST(
   _request: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
   const session = await getAdminSession();
-  if (session.state !== "allowed") {
+  if (session.state === "signed_out") {
     return reply(401, false, "Please sign in with an allowed staff email.");
   }
   if (!session.canApproveConsent) {
-    return reply(403, false, "Only the consent approver can approve consent.");
+    return reply(403, false, "Only an admin can approve consent.");
   }
 
   const { id } = await params;

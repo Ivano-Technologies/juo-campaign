@@ -1,32 +1,21 @@
+import { canApproveConsent, parseEmailList } from "@/lib/consent-approver";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 /** Staff emails allowed into /admin, from the ADMIN_EMAILS env var (comma separated). */
 export function adminEmailAllowlist(): Set<string> {
-  return new Set(
-    (process.env.ADMIN_EMAILS ?? "")
-      .split(",")
-      .map((email) => email.trim().toLowerCase())
-      .filter(Boolean),
-  );
+  return parseEmailList(process.env.ADMIN_EMAILS);
 }
 
-/**
- * Staff allowed to approve consent on offline rows, from CONSENT_APPROVER_EMAILS
- * (comma separated). Expected value: Chris Adah's email. Approvers must also be
- * listed in ADMIN_EMAILS.
- */
-export function consentApproverAllowlist(): Set<string> {
-  return new Set(
-    (process.env.CONSENT_APPROVER_EMAILS ?? "")
-      .split(",")
-      .map((email) => email.trim().toLowerCase())
-      .filter(Boolean),
-  );
+function approverEnv() {
+  return {
+    ADMIN_EMAILS: process.env.ADMIN_EMAILS,
+    CONSENT_APPROVER_EMAILS: process.env.CONSENT_APPROVER_EMAILS,
+  };
 }
 
 export type AdminSession =
   | { state: "signed_out" }
-  | { state: "not_allowed"; email: string }
+  | { state: "not_allowed"; email: string; canApproveConsent: boolean }
   | { state: "allowed"; email: string; canApproveConsent: boolean };
 
 export async function getAdminSession(): Promise<AdminSession> {
@@ -43,7 +32,7 @@ export async function getAdminSession(): Promise<AdminSession> {
     ? {
         state: "allowed",
         email,
-        canApproveConsent: consentApproverAllowlist().has(email),
+        canApproveConsent: canApproveConsent(email, approverEnv()),
       }
-    : { state: "not_allowed", email };
+    : { state: "not_allowed", email, canApproveConsent: canApproveConsent(email, approverEnv()) };
 }

@@ -79,7 +79,7 @@ export const footerAboutLinks = [
 export const socialLinks = [
   {
     name: "Facebook",
-    href: "https://www.facebook.com/share/1DsWmc1Eak/",
+    href: "https://www.facebook.com/johnupanodey",
     icon: "facebook",
   },
   {
@@ -89,7 +89,7 @@ export const socialLinks = [
   },
   {
     name: "YouTube",
-    href: "https://youtube.com/@johnupanodey",
+    href: "https://www.youtube.com/@johnupanodey",
     icon: "youtube",
   },
   {

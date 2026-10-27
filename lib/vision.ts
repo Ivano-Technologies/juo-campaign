@@ -1,4 +1,4 @@
-import { brand } from "@/lib/brand";
+import { homeSeo } from "@/lib/home-seo";
 import { brandPillars } from "@/lib/brand-pillars";
 import { canonicalOrigin, site } from "@/lib/site";
 
@@ -78,7 +78,7 @@ export const visionShareHashtags = [
   "#JUO2027",
 ] as const;
 
-export const visionOgImage = brand.marks.officialPoster;
+export const visionOgImage = homeSeo.ogImage.path;
 
 /** Brand spine only — no invented pillar policy. */
 export const visionOrbitUnityLine =

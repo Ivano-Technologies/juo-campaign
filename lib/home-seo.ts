@@ -11,10 +11,10 @@ export const homeSeo = {
   canonical: canonicalOrigin,
   ogUrl: `${canonicalOrigin}/`,
   ogImage: {
-    path: "/brand/official-poster-1.png",
-    url: `${canonicalOrigin}/brand/official-poster-1.png`,
-    width: 2174,
-    height: 2892,
+    path: "/brand/og-official-poster-1.jpg",
+    url: `${canonicalOrigin}/brand/og-official-poster-1.jpg`,
+    width: 1200,
+    height: 630,
     alt: "Official campaign poster: A Fresh Start, One People One Cross River",
   },
   logo: {

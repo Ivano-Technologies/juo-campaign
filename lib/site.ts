@@ -74,6 +74,7 @@ export const footerAboutLinks = [
   { href: "/manifesto", label: "Manifesto" },
   { href: "/privacy", label: "Privacy Notice" },
   { href: "/terms", label: "Terms of Use" },
+  { href: "/cookies", label: "Cookie Notice" },
 ] as const;
 
 export const socialLinks = [

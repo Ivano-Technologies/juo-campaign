@@ -37,6 +37,7 @@ const publicPages: readonly {
   { path: "/policies", lastModified: "2026-10-03T12:42:59Z" }, // lib/policies.ts (IVA-98)
   { path: "/privacy", lastModified: "2026-09-25T16:54:13+01:00" }, // app/privacy/page.tsx (debfafe)
   { path: "/terms", lastModified: "2026-09-29T12:43:41+01:00" }, // app/terms/page.tsx (c1b60f7)
+  { path: "/cookies", lastModified: "2026-10-28T00:00:00+01:00" }, // app/cookies/page.tsx (final text dated 28 October 2026)
   { path: "/posters", lastModified: "2026-09-29T12:43:41+01:00" }, // page + lib/posters.ts (c1b60f7)
   { path: "/photos", lastModified: "2026-09-27T15:48:31+01:00" }, // page + lib/photos.ts (f3e5d99)
   { path: "/lga-plans", lastModified: "2026-10-07T12:08:56+01:00" }, // app/lga-plans + lib/lga-plans.ts

@@ -18,7 +18,10 @@ export type CommunityImage = {
 
 export type CommunityWatch = {
   url: `https://${string}`;
-  embedSrc: `https://${string}`;
+  /** Privacy enhanced embed. Loaded only after the visitor clicks play. */
+  embedSrc: `https://www.youtube-nocookie.com/embed/${string}`;
+  /** Self hosted poster so no YouTube request happens before the click. */
+  poster: CommunityImage;
   label: string;
 };
 
@@ -92,7 +95,13 @@ export const communityPosts = [
     images: [],
     watch: {
       url: "https://www.youtube.com/live/VymqLxxIbGY?si=icZ_Q-byiQN_cBFn",
-      embedSrc: "https://www.youtube.com/embed/VymqLxxIbGY",
+      embedSrc: "https://www.youtube-nocookie.com/embed/VymqLxxIbGY",
+      poster: {
+        src: "/brand/news/big-talk-with-john-upan-odey-poster.jpg",
+        width: 1280,
+        height: 720,
+        alt: "Big Talk with John Upan Odey video thumbnail.",
+      },
       label: "Watch the full interview.",
     },
     close: {

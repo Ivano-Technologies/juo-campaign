@@ -1,5 +1,6 @@
 import type { Route } from "next";
 import Link from "next/link";
+import { CookieSettingsButton } from "@/components/cookie-banner";
 import { JoMarkLockup, SocialRow } from "@/components/socials";
 import { campaignHashtag, footerBlurb } from "@/lib/home";
 import { footerAboutLinks, footerQuickLinks } from "@/lib/site";
@@ -53,6 +54,9 @@ export function SiteFooter() {
                 </Link>
               </li>
             ))}
+            <li>
+              <CookieSettingsButton className="inline-flex min-h-11 cursor-pointer items-center text-left transition-[color,transform] duration-200 ease-out hover:text-brand-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-white motion-safe:hover:translate-x-0.5" />
+            </li>
           </ul>
         </div>
       </div>

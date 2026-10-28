@@ -28,7 +28,7 @@ export default function CookiesPage() {
         title="Cookie notice"
         lede={`Last updated ${cookiesLastUpdated}`}
       />
-      <article className="mx-auto max-w-3xl space-y-8 px-4 py-16 text-muted sm:px-6">
+      <article className="mx-auto max-w-3xl space-y-8 px-4 py-16 text-ink sm:px-6">
         <section>
           <h2 className="font-serif text-2xl text-ink">Essential (always on)</h2>
           <p className="mt-3">

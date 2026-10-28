@@ -66,7 +66,7 @@ export function CookieBanner() {
       >
         We use cookies
       </h2>
-      <p id="cookie-banner-text" className="mt-2 text-sm leading-6 text-muted">
+      <p id="cookie-banner-text" className="mt-2 text-sm leading-6 text-ink">
         We use Google Analytics to see how people use this site, only if you
         agree.
       </p>

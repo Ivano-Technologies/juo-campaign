@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { montserrat, poppins } from "@/app/fonts";
+import { CookieBanner } from "@/components/cookie-banner";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { getGaMeasurementId } from "@/lib/analytics";
 import { homeSeo } from "@/lib/home-seo";
 import { googleVerificationMetadata } from "@/lib/search-console";
 import { canonicalOrigin, site } from "@/lib/site";
@@ -71,13 +73,14 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <CookieBanner />
         <SiteHeader />
         <main id="main" className="flex-1">
           {children}
         </main>
         <SiteFooter />
         <ScrollToTop />
-        <GoogleAnalytics />
+        <GoogleAnalytics measurementId={getGaMeasurementId()} />
       </body>
     </html>
   );

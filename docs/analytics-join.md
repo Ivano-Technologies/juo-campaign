@@ -4,6 +4,8 @@ Volunteer sign-ups on `/join` now fire a GA4 event on **successful submit** (HTT
 
 Measurement ID is `NEXT_PUBLIC_GA_MEASUREMENT_ID` (see `.env.example`). Do not hard-code it. When the env var is unset, gtag does not load and events no-op.
 
+**Consent (legal audit item 4).** Even when the ID is set, gtag loads only after the visitor clicks Accept in the cookie banner (`components/cookie-banner.tsx`, `lib/consent.ts`). Before a choice and after Reject there is no gtag request and no `_ga` cookie, so join events no-op for those visitors. The choice is stored in localStorage under `juo_cookie_consent` and can be changed from "Cookie settings" in the footer or on /cookies.
+
 ## Events
 
 | Event | When | Mark as key event? |

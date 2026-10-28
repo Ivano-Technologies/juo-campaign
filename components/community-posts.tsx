@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/button";
+import { YouTubeClickEmbed } from "@/components/youtube-click-embed";
 import {
   communityPostPath,
   communityPosts,
@@ -81,14 +82,10 @@ function PostWatch({ post }: { post: CommunityPost }) {
   return (
     <div className="mt-8 space-y-5">
       <div className="relative aspect-video w-full overflow-hidden border border-brand-blue/15 bg-brand-blue">
-        <iframe
-          src={post.watch.embedSrc}
+        <YouTubeClickEmbed
+          embedSrc={post.watch.embedSrc}
           title={post.title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="strict-origin-when-cross-origin"
-          className="absolute inset-0 h-full w-full"
+          poster={post.watch.poster}
         />
       </div>
       <Button href={post.watch.url} variant="primary" className="w-full sm:w-auto">

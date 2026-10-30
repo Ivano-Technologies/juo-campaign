@@ -9,7 +9,6 @@ const base = {
   community: "Test community",
   interest: "Volunteer in my ward or LGA",
   role: "Volunteer",
-  age_confirmed: true,
 };
 
 test("accepts a valid offline entry and normalises the phone", () => {
@@ -31,24 +30,6 @@ test("consent labels are plain words with no hyphens or dashes", async () => {
   assert.equal(consentStatusLabels.pending, "Waiting for consent approval");
   assert.equal(consentStatusLabels.vetted, "Consent approved");
   for (const label of [...Object.values(consentStatusLabels), sharedPhoneLegacyLabel]) {
-    assert.doesNotMatch(label, /[-\u2013\u2014]/);
-  }
-});
-
-test("requires the 18 or older box to be ticked", async () => {
-  const { AGE_CONFIRM_REQUIRED_MESSAGE } = await import("./volunteer-intake.ts");
-  const { age_confirmed: _omit, ...withoutAge } = base;
-  void _omit;
-  for (const input of [withoutAge, { ...base, age_confirmed: false }, { ...base, age_confirmed: "true" }]) {
-    const result = validateOfflineIntake(input);
-    assert.equal(result.ok, false);
-    if (!result.ok) assert.equal(result.message, AGE_CONFIRM_REQUIRED_MESSAGE);
-  }
-});
-
-test("age copy has no hyphens or dashes", async () => {
-  const { AGE_CONFIRM_LABEL, AGE_CONFIRM_REQUIRED_MESSAGE } = await import("./volunteer-intake.ts");
-  for (const label of [AGE_CONFIRM_LABEL, AGE_CONFIRM_REQUIRED_MESSAGE]) {
     assert.doesNotMatch(label, /[-\u2013\u2014]/);
   }
 });

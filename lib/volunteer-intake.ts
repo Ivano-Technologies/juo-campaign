@@ -21,6 +21,22 @@ export const DUPLICATE_PHONE_MESSAGE =
 export const OFFLINE_INTAKE_SUCCESS =
   "Volunteer saved and waiting for consent approval. You can enter the next one.";
 
+/** Label for the required age checkbox on the offline intake form. */
+export const AGE_CONFIRM_LABEL = "I am 18 or older";
+
+export const AGE_CONFIRM_REQUIRED_MESSAGE =
+  "Please confirm the volunteer is 18 or older before saving.";
+
+/**
+ * True only when the age box was ticked. The request key is `age_confirmed`.
+ * Validate only: it is never written to join_submissions, so the table and
+ * anything synced from it (such as the volunteer Google Sheet) keep the same
+ * columns in the same order.
+ */
+export function isAgeConfirmed(value: unknown): value is true {
+  return value === true;
+}
+
 export type ConsentStatus = "pending" | "vetted";
 
 export const consentStatusLabels: Record<ConsentStatus, string> = {
@@ -39,6 +55,8 @@ export type OfflineIntakeInput = {
   community: string;
   interest: string;
   role: string;
+  /** Always true on a valid entry. Validate only, not stored. */
+  age_confirmed: true;
 };
 
 export type OfflineIntakeResult =
@@ -102,6 +120,9 @@ export function validateOfflineIntake(value: unknown): OfflineIntakeResult {
   if (!ROLE_VALUES.has(role)) {
     return { ok: false, message: "Please select a role." };
   }
+  if (!isAgeConfirmed(record.age_confirmed)) {
+    return { ok: false, message: AGE_CONFIRM_REQUIRED_MESSAGE };
+  }
 
   return {
     ok: true,
@@ -114,6 +135,7 @@ export function validateOfflineIntake(value: unknown): OfflineIntakeResult {
       community,
       interest,
       role,
+      age_confirmed: true,
     },
   };
 }

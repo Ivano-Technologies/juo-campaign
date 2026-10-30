@@ -5,7 +5,12 @@ import { Button } from "@/components/button";
 import { FormStatusNote } from "@/components/form-status";
 import { readJsonMessage } from "@/lib/forms";
 import { crossRiverLgas, joinInterests } from "@/lib/site";
-import { COMMUNITY_MAX_LENGTH, volunteerRoles } from "@/lib/volunteer-intake";
+import {
+  AGE_CONFIRM_LABEL,
+  AGE_CONFIRM_REQUIRED_MESSAGE,
+  COMMUNITY_MAX_LENGTH,
+  volunteerRoles,
+} from "@/lib/volunteer-intake";
 import {
   WARD_FREE_TEXT_MAX_LENGTH,
   WARD_NOT_LISTED,
@@ -24,6 +29,7 @@ type IntakeState = {
   community: string;
   interest: string;
   role: string;
+  ageConfirmed: boolean;
 };
 
 const initial: IntakeState = {
@@ -35,6 +41,7 @@ const initial: IntakeState = {
   community: "",
   interest: "",
   role: "",
+  ageConfirmed: false,
 };
 
 const fieldClass =
@@ -44,6 +51,7 @@ export function OfflineIntakeForm() {
   const [values, setValues] = useState<IntakeState>(initial);
   const [pending, setPending] = useState(false);
   const [status, setStatus] = useState<{ tone: "error" | "success"; message: string } | null>(null);
+  const [ageError, setAgeError] = useState(false);
 
   const wardList = wardsForLga(values.lga);
   const showWard = values.lga === "" || lgaNeedsWard(values.lga);
@@ -55,8 +63,14 @@ export function OfflineIntakeForm() {
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setPending(true);
     setStatus(null);
+    if (!values.ageConfirmed) {
+      setAgeError(true);
+      setStatus({ tone: "error", message: AGE_CONFIRM_REQUIRED_MESSAGE });
+      return;
+    }
+    setAgeError(false);
+    setPending(true);
     try {
       const response = await fetch("/api/admin/volunteers", {
         method: "POST",
@@ -70,6 +84,7 @@ export function OfflineIntakeForm() {
           community: values.community,
           interest: values.interest,
           role: values.role,
+          age_confirmed: values.ageConfirmed,
         }),
       });
       const payload = await readJsonMessage(response);
@@ -186,6 +201,21 @@ export function OfflineIntakeForm() {
             </option>
           ))}
         </select>
+      </label>
+      <label className="flex min-h-11 items-start gap-3 py-2.5 text-sm sm:col-span-2">
+        <input
+          type="checkbox"
+          name="age_confirmed"
+          aria-required="true"
+          aria-invalid={ageError ? true : undefined}
+          checked={values.ageConfirmed}
+          onChange={(e) => {
+            set("ageConfirmed", e.target.checked);
+            if (e.target.checked) setAgeError(false);
+          }}
+          className="mt-0.5 h-5 w-5 shrink-0 accent-brand-red"
+        />
+        <span className={ageError ? "text-brand-red" : undefined}>{AGE_CONFIRM_LABEL}</span>
       </label>
       <div className="sm:col-span-2">
         <Button type="submit" variant="primary" disabled={pending}>

@@ -28,6 +28,20 @@ export const CONTACT_SUCCESS = {
     "Thank you. The campaign desk has received your message and will reply if a response is needed.",
 } as const;
 
+/** Label for the required age checkbox on the /join form. */
+export const JOIN_AGE_LABEL = "I am 18 or older";
+
+export const JOIN_AGE_REQUIRED_MESSAGE = "Please confirm you are 18 or older.";
+
+/**
+ * True only when the /join age box was ticked. The request key is
+ * `age_confirmed`. Validate only: it is never written to join_submissions, so
+ * the table and anything synced from it keep the same columns in the same order.
+ */
+export function isAgeConfirmed(record: Record<string, unknown>): boolean {
+  return record.age_confirmed === true;
+}
+
 export type FormErrorCode =
   | "VALIDATION_ERROR"
   | "FORM_UNAVAILABLE"
@@ -157,6 +171,9 @@ export function validateJoinSubmission(
       return validationError(
         "Please confirm you have read the privacy notice and agree to be contacted.",
       );
+    }
+    if (!isAgeConfirmed(record)) {
+      return validationError(JOIN_AGE_REQUIRED_MESSAGE);
     }
 
     return {

@@ -13,7 +13,12 @@ import {
   persistCampaignSource,
   readStoredCampaignSource,
 } from "@/lib/campaign-source";
-import { JOIN_SUCCESS, readJsonMessage } from "@/lib/forms";
+import {
+  JOIN_AGE_LABEL,
+  JOIN_AGE_REQUIRED_MESSAGE,
+  JOIN_SUCCESS,
+  readJsonMessage,
+} from "@/lib/forms";
 import { crossRiverLgas, joinInterests } from "@/lib/site";
 import {
   WARD_FREE_TEXT_MAX_LENGTH,
@@ -36,6 +41,7 @@ type JoinState = {
   wardOther: string;
   interest: string;
   privacy: boolean;
+  ageConfirmed: boolean;
 };
 
 type StatusTone = "error" | "info" | "success";
@@ -49,6 +55,7 @@ const initial: JoinState = {
   wardOther: "",
   interest: "",
   privacy: false,
+  ageConfirmed: false,
 };
 
 const WARD_SELECT_ID = "join-ward";
@@ -56,6 +63,8 @@ const WARD_OTHER_ID = "join-ward-other";
 const WARD_HELP_ID = "join-ward-help";
 const WARD_OTHER_HELP_ID = "join-ward-other-help";
 const WARD_ERROR_ID = "join-ward-error";
+const AGE_CHECKBOX_ID = "join-age";
+const AGE_ERROR_ID = "join-age-error";
 
 type JoinFormProps = {
   campaignSource?: string | null;
@@ -67,6 +76,7 @@ export function JoinForm({ campaignSource = null }: JoinFormProps) {
   const [status, setStatus] = useState<string | null>(null);
   const [tone, setTone] = useState<StatusTone>("info");
   const [wardError, setWardError] = useState<string | null>(null);
+  const [ageError, setAgeError] = useState(false);
   const formStartSent = useRef(false);
 
   useEffect(() => {
@@ -127,6 +137,12 @@ export function JoinForm({ campaignSource = null }: JoinFormProps) {
       return;
     }
     setWardError(null);
+    if (!values.ageConfirmed) {
+      setAgeError(true);
+      document.getElementById(AGE_CHECKBOX_ID)?.focus();
+      return;
+    }
+    setAgeError(false);
     setPending(true);
     setStatus(null);
     const attribution = currentAttribution();
@@ -144,6 +160,7 @@ export function JoinForm({ campaignSource = null }: JoinFormProps) {
           ward_unlisted: wardUnlisted,
           interest: values.interest,
           privacy: values.privacy,
+          age_confirmed: values.ageConfirmed,
           campaign_source: attribution,
         }),
       });
@@ -350,6 +367,41 @@ export function JoinForm({ campaignSource = null }: JoinFormProps) {
           registration.
         </span>
       </label>
+      <div className="grid gap-1">
+        <label
+          htmlFor={AGE_CHECKBOX_ID}
+          className={`flex min-h-11 items-start gap-3 py-2.5 text-sm ${
+            ageError ? "font-semibold text-brand-red" : "text-muted"
+          }`}
+        >
+          <input
+            id={AGE_CHECKBOX_ID}
+            type="checkbox"
+            name="age_confirmed"
+            aria-required="true"
+            aria-invalid={ageError ? true : undefined}
+            aria-describedby={ageError ? AGE_ERROR_ID : undefined}
+            checked={values.ageConfirmed}
+            onChange={(event) => {
+              setValues({ ...values, ageConfirmed: event.target.checked });
+              if (event.target.checked) {
+                setAgeError(false);
+              }
+            }}
+            className="mt-0.5 h-5 w-5 shrink-0 accent-brand-red"
+          />
+          <span>{JOIN_AGE_LABEL}</span>
+        </label>
+        {ageError ? (
+          <p
+            id={AGE_ERROR_ID}
+            role="alert"
+            className="text-sm font-semibold text-brand-red"
+          >
+            {JOIN_AGE_REQUIRED_MESSAGE}
+          </p>
+        ) : null}
+      </div>
       {status ? <FormStatusNote tone={tone} message={status} /> : null}
       <Button type="submit" variant="primary" disabled={pending}>
         {pending ? "Sending…" : "Join the Movement"}

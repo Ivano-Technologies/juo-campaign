@@ -175,9 +175,11 @@ export default function VisionPage() {
           <Button href="/join" variant="ghost">
             Join the Movement
           </Button>
-          <Button href="/odey-archibong" variant="ghost">
-            Odey-Archibong
-          </Button>
+          {process.env.NEXT_PUBLIC_SHOW_STELLA === "true" ? (
+            <Button href="/odey-archibong" variant="ghost">
+              Odey-Archibong
+            </Button>
+          ) : null}
           <Button href="/john-upan-odey" variant="ghost">
             Who is JUO
           </Button>

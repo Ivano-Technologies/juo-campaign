@@ -1,22 +1,34 @@
 import { brandSeoDescription, brandSeoTitle } from "@/lib/brand-seo";
 import { canonicalOrigin, site, socialLinks } from "@/lib/site";
 
+const stellaOgImage = {
+  path: "/brand/og-official-poster-1.jpg",
+  url: `${canonicalOrigin}/brand/og-official-poster-1.jpg`,
+  width: 1200,
+  height: 630,
+  alt: "Official campaign poster: A Fresh Start, One People One Cross River",
+} as const;
+
+const johnOgImage = {
+  path: "/brand/homepage-poster-vote-governor.jpg",
+  url: `${canonicalOrigin}/brand/homepage-poster-vote-governor.jpg`,
+  width: 1600,
+  height: 2129,
+  alt: "John Upan Odey for Governor of Cross River",
+} as const;
+
 /**
  * IVA-48 Brand Architect SEO lock.
  * Visible homepage copy stays WP-parity. Title/meta/OG/Twitter use Brand strings.
+ * OG image falls back to the John-only homepage poster when SHOW_STELLA is off.
  */
 export const homeSeo = {
   title: brandSeoTitle,
   description: brandSeoDescription,
   canonical: canonicalOrigin,
   ogUrl: `${canonicalOrigin}/`,
-  ogImage: {
-    path: "/brand/og-official-poster-1.jpg",
-    url: `${canonicalOrigin}/brand/og-official-poster-1.jpg`,
-    width: 1200,
-    height: 630,
-    alt: "Official campaign poster: A Fresh Start, One People One Cross River",
-  },
+  ogImage:
+    process.env.NEXT_PUBLIC_SHOW_STELLA === "true" ? stellaOgImage : johnOgImage,
   logo: {
     path: "/brand/candidate-mark-1.png",
     url: `${canonicalOrigin}/brand/candidate-mark-1.png`,

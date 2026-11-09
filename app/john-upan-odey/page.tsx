@@ -83,9 +83,11 @@ export default function WhoIsJuoPage() {
               <Button href="/manifesto" variant="secondary">
                 Manifesto
               </Button>
-              <Button href="/odey-archibong" variant="secondary">
-                Odey-Archibong
-              </Button>
+              {process.env.NEXT_PUBLIC_SHOW_STELLA === "true" ? (
+                <Button href="/odey-archibong" variant="secondary">
+                  Odey-Archibong
+                </Button>
+              ) : null}
             </div>
           </section>
         </article>

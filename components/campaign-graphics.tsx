@@ -12,6 +12,10 @@ export function CampaignGraphicsGallery({
 }: CampaignGraphicsGalleryProps) {
   const Heading = headingLevel;
 
+  if (campaignGraphics.length === 0) {
+    return null;
+  }
+
   return (
     <div>
       <Heading

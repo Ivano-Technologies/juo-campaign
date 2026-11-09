@@ -1,3 +1,4 @@
+import type { Route } from "next";
 import { homeSeo } from "@/lib/home-seo";
 import { brandPillars } from "@/lib/brand-pillars";
 import { canonicalOrigin, site } from "@/lib/site";
@@ -22,12 +23,14 @@ export const visionHeroSubhead = site.prosperityLine;
 export const visionHeroBody =
   "To build One Cross River: united in purpose, inclusive in opportunity and resilient in prosperity, a state where every citizen, every community, and every generation has the opportunity to thrive, contribute, and fulfil its potential.";
 
-export const visionHeroCtas = [
+export const visionHeroCtas: { href: Route; label: string }[] = [
   { href: "/manifesto", label: "Read the Manifesto" },
-  { href: "/odey-archibong", label: "Odey-Archibong" },
+  ...(process.env.NEXT_PUBLIC_SHOW_STELLA === "true"
+    ? [{ href: "/odey-archibong" as Route, label: "Odey-Archibong" }]
+    : []),
   { href: "/join", label: "Join the Movement" },
   { href: "/john-upan-odey", label: "Who is John Upan Odey" },
-] as const;
+];
 
 export const visionOfficialTitle = "Official Vision and Mission";
 export const visionOfficialVisionLabel = "VISION";
@@ -73,10 +76,11 @@ export const visionShareHashtags = [
   "#AFreshStart",
   "#OnePeople",
   "#OneCrossRiver",
-  "#OdeyArchibong2027",
-  "#VoteOdeyArchibong2027",
+  ...(process.env.NEXT_PUBLIC_SHOW_STELLA === "true"
+    ? (["#OdeyArchibong2027", "#VoteOdeyArchibong2027"] as const)
+    : []),
   "#JUO2027",
-] as const;
+];
 
 export const visionOgImage = homeSeo.ogImage.path;
 

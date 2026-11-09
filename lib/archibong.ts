@@ -3,6 +3,22 @@ import { canonicalOrigin } from "@/lib/site";
 export const archibongPath = "/odey-archibong" as const;
 export const archibongPageUrl = `${canonicalOrigin}${archibongPath}` as const;
 
+/** Hero watermark portrait. Kept here so brand.ts does not ship this name. */
+export const stellaOfficialPortrait = {
+  src: "/images/people/odey-archibong-stella-official.jpg",
+  alt: "Apostle Dr. Stella Charles Archibong",
+  width: 1079,
+  height: 1280,
+} as const;
+
+/** Body portrait on /odey-archibong. Exact 4:5, centered, full head tie. */
+export const stellaOfficialPortrait4x5 = {
+  src: "/images/people/odey-archibong-stella-official-4x5.jpg",
+  alt: "Apostle Dr. Stella Charles Archibong",
+  width: 1024,
+  height: 1280,
+} as const;
+
 export const archibongPageTitle =
   "TWO JOURNEYS. ONE PURPOSE. ONE CROSS RIVER";
 

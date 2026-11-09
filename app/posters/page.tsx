@@ -8,7 +8,7 @@ import { pageShareTags } from "@/lib/page-seo";
 import { photosPath } from "@/lib/photos";
 import {
   johnCampaignPosters,
-  odeyArchibongCampaignPosters,
+  ticketCampaignPosters,
   postersPageDescription,
   postersPageTitle,
 } from "@/lib/posters";
@@ -27,7 +27,11 @@ export default function PostersPage() {
       <PageHero
         kicker="Official campaign designs"
         title="Campaign Poster Gallery"
-        lede="Official campaign posters for John Upan Odey and the Odey-Archibong ticket. Portraits and photographs are in the Photo Gallery."
+        lede={
+          process.env.NEXT_PUBLIC_SHOW_STELLA === "true"
+            ? "Official campaign posters for John Upan Odey and the Odey-Archibong ticket. Portraits and photographs are in the Photo Gallery."
+            : "Official campaign posters for John Upan Odey. Portraits and photographs are in the Photo Gallery."
+        }
       >
         <Button href={photosPath} variant="white">
           Photo Gallery
@@ -87,30 +91,35 @@ export default function PostersPage() {
           ))}
         </ul>
 
-        <h2 className="mt-16 font-serif text-2xl text-ink sm:text-3xl">
-          Odey-Archibong posters
-        </h2>
-        <ul className="mt-8 grid gap-10 md:grid-cols-3">
-          {odeyArchibongCampaignPosters.map((poster, index) => (
-            <li key={poster.id}>
-              <figure>
-                <div className="relative aspect-[1241/1754] w-full overflow-hidden border border-brand-blue/15 bg-brand-white">
-                  <Image
-                    src={poster.src}
-                    alt={poster.alt}
-                    fill
-                    sizes="(min-width: 768px) 33vw, 100vw"
-                    className="object-contain"
-                    priority={index < 3}
-                  />
-                </div>
-                <figcaption className="mt-4 font-serif text-xl text-ink">
-                  {poster.title}
-                </figcaption>
-              </figure>
-            </li>
-          ))}
-        </ul>
+        {process.env.NEXT_PUBLIC_SHOW_STELLA === "true" &&
+        ticketCampaignPosters.length > 0 ? (
+          <>
+            <h2 className="mt-16 font-serif text-2xl text-ink sm:text-3xl">
+              Odey-Archibong posters
+            </h2>
+            <ul className="mt-8 grid gap-10 md:grid-cols-3">
+              {ticketCampaignPosters.map((poster, index) => (
+                <li key={poster.id}>
+                  <figure>
+                    <div className="relative aspect-[1241/1754] w-full overflow-hidden border border-brand-blue/15 bg-brand-white">
+                      <Image
+                        src={poster.src}
+                        alt={poster.alt}
+                        fill
+                        sizes="(min-width: 768px) 33vw, 100vw"
+                        className="object-contain"
+                        priority={index < 3}
+                      />
+                    </div>
+                    <figcaption className="mt-4 font-serif text-xl text-ink">
+                      {poster.title}
+                    </figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : null}
 
         <div className="mt-16">
           <CampaignGraphicsGallery heading="Campaign graphics" />

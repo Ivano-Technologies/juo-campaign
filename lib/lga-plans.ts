@@ -1,5 +1,12 @@
 import { pageSeoTitle } from "@/lib/brand-seo";
 
+function lgaPlanHeading(lga: string): string {
+  if (process.env.NEXT_PUBLIC_SHOW_STELLA === "true") {
+    return `THE ODEY-ARCHIBONG PLAN FOR ${lga}`;
+  }
+  return `THE JOHN UPAN ODEY PLAN FOR ${lga}`;
+}
+
 /**
  * ODEY-ARCHIBONG 2027 LGA plans (IVA-138).
  * Headlines and supporting lines are locked from Chris Adah's OOH LGA PDF.
@@ -29,7 +36,9 @@ export const lgaPlansPath = "/lga-plans" as const;
 export const lgaPlansPageTitle = pageSeoTitle("LGA Plans");
 
 export const lgaPlansPageDescription =
-  "Eighteen local government plans for Cross River under Odey-Archibong 2027: A Fresh Start. One People. One Cross River. I Come To Serve.";
+  process.env.NEXT_PUBLIC_SHOW_STELLA === "true"
+    ? "Eighteen local government plans for Cross River under Odey-Archibong 2027: A Fresh Start. One People. One Cross River. I Come To Serve."
+    : "Eighteen local government plans for Cross River under John Upan Odey 2027: A Fresh Start. One People. One Cross River. I Come To Serve.";
 
 export const lgaPlansHeroLede =
   "Every local government has its own plan. Pick your LGA to read the plan written for your community.";
@@ -38,7 +47,9 @@ export const lgaPlansSelectLabel = "Choose your local government";
 
 /** Consistent OOH footer lock-up on every plan card (exact PDF wording). */
 export const lgaPlanFooterLockup = [
-  "ODEY-ARCHIBONG 2027",
+  process.env.NEXT_PUBLIC_SHOW_STELLA === "true"
+    ? "ODEY-ARCHIBONG 2027"
+    : "JOHN UPAN ODEY 2027",
   "A FRESH START",
   "ONE PEOPLE. ONE CROSS RIVER.",
   "I COME TO SERVE.",
@@ -100,7 +111,7 @@ export const lgaPlans = [
     name: "Abi",
     headline: "ABI, YOUR FARM MUST FEED YOUR FAMILY, NOT JUST THE MARKET.",
     supportingLine: "Better roads. Better markets. Better livelihoods.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR ABI",
+    planHeading: lgaPlanHeading("ABI"),
     planLine: "FARMS THAT PAY. ROADS THAT CONNECT. RESOURCES THAT CREATE VALUE.",
     intro: "The plan is to make agriculture more productive and commercially rewarding by improving the connection between the farmer, the farm, the road and the market.",
     points: [
@@ -133,7 +144,7 @@ export const lgaPlans = [
     name: "Akamkpa",
     headline: "AKAMKPA DESERVES ROADS THAT CONNECT OPPORTUNITY.",
     supportingLine: "Let our farms, communities and businesses move forward.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR AKAMKPA",
+    planHeading: lgaPlanHeading("AKAMKPA"),
     planLine: "FROM FORESTS AND FARMS TO FACTORIES AND MARKETS.",
     points: [
       {
@@ -165,7 +176,7 @@ export const lgaPlans = [
     name: "Akpabuyo",
     headline: "AKPABUYO MUST PROSPER WHERE ITS PEOPLE LIVE.",
     supportingLine: "Better infrastructure. Stronger livelihoods. A Fresh Start.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR AKPABUYO",
+    planHeading: lgaPlanHeading("AKPABUYO"),
     planLine: "WHERE LAND, WATER AND PEOPLE CREATE PROSPERITY.",
     points: [
       {
@@ -200,7 +211,7 @@ export const lgaPlans = [
     name: "Bakassi",
     headline: "BAKASSI IS NOT FORGOTTEN.",
     supportingLine: "Secure communities. Stronger livelihoods. Shared prosperity.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR BAKASSI",
+    planHeading: lgaPlanHeading("BAKASSI"),
     planLine: "FROM A COASTAL COMMUNITY TO A COASTAL ECONOMIC FRONTIER.",
     points: [
       {
@@ -236,7 +247,7 @@ export const lgaPlans = [
     name: "Bekwarra",
     headline: "BEKWARRA DESERVES THE BASICS THAT WORK.",
     supportingLine: "Roads. Water. Healthcare. Opportunity.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR BEKWARRA",
+    planHeading: lgaPlanHeading("BEKWARRA"),
     planLine: "ROADS. WATER. HEALTHCARE. FOOD. OPPORTUNITY.",
     points: [
       {
@@ -271,7 +282,7 @@ export const lgaPlans = [
     name: "Biase",
     headline: "BIASE FEEDS CROSS RIVER. LET'S PROTECT ITS FARMERS.",
     supportingLine: "Resilient communities. Better agriculture. Better incomes.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR BIASE",
+    planHeading: lgaPlanHeading("BIASE"),
     planLine: "THE HAND THAT FEEDS CROSS RIVER MUST NOT BE LEFT BEHIND.",
     points: [
       {
@@ -306,7 +317,7 @@ export const lgaPlans = [
     name: "Boki",
     headline: "BOKI'S COCOA SHOULD CREATE BOKI'S WEALTH.",
     supportingLine: "Better roads. Agro-processing. More jobs at home.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR BOKI",
+    planHeading: lgaPlanHeading("BOKI"),
     planLine: "FROM COCOA BEANS TO BOKI BRANDS. FROM PALM TO PROCESSING.",
     points: [
       {
@@ -342,7 +353,7 @@ export const lgaPlans = [
     name: "Calabar Municipal",
     headline: "CALABAR MUST WORK FOR EVERYONE.",
     supportingLine: "Cleaner streets. Better infrastructure. More opportunities.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR CALABAR MUNICIPAL",
+    planHeading: lgaPlanHeading("CALABAR MUNICIPAL"),
     planLine: "A CITY THAT WORKS SHOULD WORK FOR THE PEOPLE WHO LIVE IN IT.",
     points: [
       {
@@ -378,7 +389,7 @@ export const lgaPlans = [
     name: "Calabar South",
     headline: "CALABAR SOUTH DESERVES TO LIVE ABOVE THE FLOODS.",
     supportingLine: "Better drainage. Better communities. A Fresh Start.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR CALABAR SOUTH",
+    planHeading: lgaPlanHeading("CALABAR SOUTH"),
     planLine: "SAFE HOMES. DRY ROADS. CLEANER COMMUNITIES. BETTER LIVES.",
     points: [
       {
@@ -413,7 +424,7 @@ export const lgaPlans = [
     name: "Etung",
     headline: "ETUNG HAS MORE TO OFFER, AND OUR PEOPLE MUST BENEFIT.",
     supportingLine: "Agriculture. Trade. Jobs. Opportunity.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR ETUNG",
+    planHeading: lgaPlanHeading("ETUNG"),
     planLine: "COCOA. TRADE. TOURISM. RESOURCES. JOBS.",
     points: [
       {
@@ -449,7 +460,7 @@ export const lgaPlans = [
     name: "Ikom",
     headline: "IKOM SHOULD BE A COMMERCIAL POWERHOUSE.",
     supportingLine: "Better connectivity. Stronger businesses. More jobs.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR IKOM",
+    planHeading: lgaPlanHeading("IKOM"),
     planLine: "WHERE TRADE MEETS AGRICULTURE, INDUSTRY AND OPPORTUNITY.",
     points: [
       {
@@ -484,7 +495,7 @@ export const lgaPlans = [
     name: "Obanliku",
     headline: "OBANLIKU'S BEAUTY SHOULD CREATE PROSPERITY.",
     supportingLine: "Tourism. Agriculture. Jobs for our people.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR OBANLIKU",
+    planHeading: lgaPlanHeading("OBANLIKU"),
     planLine: "WHERE NATURE BECOMES OPPORTUNITY WITHOUT LOSING ITS SOUL.",
     points: [
       {
@@ -520,7 +531,7 @@ export const lgaPlans = [
     name: "Obubra",
     headline: "OBUBRA DESERVES DEVELOPMENT THAT REACHES THE FARMER.",
     supportingLine: "Better infrastructure. Better healthcare. Better opportunity.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR OBUBRA",
+    planHeading: lgaPlanHeading("OBUBRA"),
     planLine: "FROM THE FARM TO THE FACTORY. FROM THE MINERAL TO THE MARKET.",
     points: [
       {
@@ -555,7 +566,7 @@ export const lgaPlans = [
     name: "Obudu",
     headline: "OBUDU'S POTENTIAL MUST BECOME OUR PEOPLE'S PROSPERITY.",
     supportingLine: "Tourism. Agriculture. Jobs. A Fresh Start.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR OBUDU",
+    planHeading: lgaPlanHeading("OBUDU"),
     planLine: "MOUNTAINS. FARMS. MINERALS. TALENT. OPPORTUNITY.",
     points: [
       {
@@ -591,7 +602,7 @@ export const lgaPlans = [
     name: "Odukpani",
     headline: "ODUKPANI MUST BE MORE THAN A COMMUNITY WE PASS THROUGH.",
     supportingLine: "Better roads. Stronger communities. Greater opportunity.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR ODUKPANI",
+    planHeading: lgaPlanHeading("ODUKPANI"),
     planLine: "FROM TRANSIT CORRIDOR TO ECONOMIC CORRIDOR.",
     points: [
       {
@@ -626,7 +637,7 @@ export const lgaPlans = [
     name: "Ogoja",
     headline: "OGOJA MUST NO LONGER FEEL FAR FROM GOVERNMENT.",
     supportingLine: "Better roads. Better services. More opportunity.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR OGOJA",
+    planHeading: lgaPlanHeading("OGOJA"),
     planLine: "BETTER ROADS. BETTER SERVICES. MORE OPPORTUNITY.",
     points: [
       {
@@ -661,7 +672,7 @@ export const lgaPlans = [
     name: "Yakurr",
     headline: "YAKURR'S LAND. YAKURR'S CULTURE. YAKURR'S PROSPERITY.",
     supportingLine: "Agriculture. Enterprise. Tourism. Jobs.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR YAKURR",
+    planHeading: lgaPlanHeading("YAKURR"),
     planLine: "PROTECT THE LAND. HONOUR THE CULTURE. CREATE THE FUTURE.",
     points: [
       {
@@ -696,7 +707,7 @@ export const lgaPlans = [
     name: "Yala",
     headline: "YALA, YOUR FUTURE MUST BE BUILT HERE.",
     supportingLine: "Better roads. Stronger agriculture. More opportunities for our youth.",
-    planHeading: "THE ODEY-ARCHIBONG PLAN FOR YALA",
+    planHeading: lgaPlanHeading("YALA"),
     planLine: "FROM AGRICULTURAL STRENGTH TO A DIVERSIFIED LOCAL ECONOMY.",
     points: [
       {

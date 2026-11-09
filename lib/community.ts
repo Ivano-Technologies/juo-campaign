@@ -41,6 +41,58 @@ export type CommunityPost = {
   hashtags?: readonly string[];
 };
 
+function stellaSouthernChairmenImages(): readonly CommunityImage[] {
+  if (process.env.NEXT_PUBLIC_SHOW_STELLA !== "true") {
+    return [];
+  }
+
+  return [
+    {
+      src: "/brand/news/ndc-chapter-chairmen-southern-1.jpg",
+      width: 2000,
+      height: 1500,
+      alt: "Odey-Archibong campaign meeting with NDC Chapter Chairmen from the Southern Senatorial District of Cross River State.",
+    },
+    {
+      src: "/brand/news/ndc-chapter-chairmen-southern-2.jpg",
+      width: 2000,
+      height: 2000,
+      alt: "Woman Leader of the Non-Indigenous Community and her Assistant identify with the NDC at the Southern Senatorial District chapter chairmen meeting.",
+    },
+    {
+      src: "/brand/news/ndc-chapter-chairmen-southern-3.jpg",
+      width: 2000,
+      height: 1500,
+      alt: "Campaign dialogue with NDC Chapter Chairmen on grassroots mobilisation in the Southern Senatorial District.",
+    },
+  ];
+}
+
+function stellaWardLeadersPost(): CommunityPost | null {
+  if (process.env.NEXT_PUBLIC_SHOW_STELLA !== "true") {
+    return null;
+  }
+
+  return {
+    id: "engagement-with-ward-leaders",
+    title: "Engagement with Ward Leaders",
+    body: [
+      "NDC Cross River Deputy Governor Candidate,  Dr. Stella Charles Archibong engages with ward leaders in a constructive dialogue focused on strengthening grassroots connections, listening to local perspectives and deepening understanding of the priorities of communities across Cross River.",
+      "The engagement reflects the importance of working closely with people at the grassroots in building a more inclusive and responsive approach to governance.",
+    ],
+    images: [
+      {
+        src: "/brand/community/engagement-with-ward-leaders.png",
+        width: 1127,
+        height: 1396,
+        alt: "Engagement with Ward Leaders",
+      },
+    ],
+  };
+}
+
+const wardLeadersPost = stellaWardLeadersPost();
+
 export const communityPosts = [
   {
     id: "meeting-with-ndc-chapter-chairmen-southern-senatorial-district",
@@ -53,28 +105,11 @@ export const communityPosts = [
       "A significant part of the conversation focused on equipping chapter structures with the appropriate campaign materials, communication resources, and operational support necessary to translate strategy into meaningful activity at the grassroots.",
       "The message from the chapter leadership was clear: the chapter structures are ready to take the campaign into every community across the district.",
     ],
-    images: [
-      {
-        src: "/brand/news/ndc-chapter-chairmen-southern-1.jpg",
-        width: 2000,
-        height: 1500,
-        alt: "Odey-Archibong campaign meeting with NDC Chapter Chairmen from the Southern Senatorial District of Cross River State.",
-      },
-      {
-        src: "/brand/news/ndc-chapter-chairmen-southern-2.jpg",
-        width: 2000,
-        height: 2000,
-        alt: "Woman Leader of the Non-Indigenous Community and her Assistant identify with the NDC at the Southern Senatorial District chapter chairmen meeting.",
-      },
-      {
-        src: "/brand/news/ndc-chapter-chairmen-southern-3.jpg",
-        width: 2000,
-        height: 1500,
-        alt: "Campaign dialogue with NDC Chapter Chairmen on grassroots mobilisation in the Southern Senatorial District.",
-      },
-    ],
+    images: stellaSouthernChairmenImages(),
     hashtags: [
-      "#odeyarchibong2027",
+      ...(process.env.NEXT_PUBLIC_SHOW_STELLA === "true"
+        ? (["#odeyarchibong2027"] as const)
+        : []),
       "#AFRESHSTART",
       "#ONEPEOPLE",
       "#ONECROSSRIVER",
@@ -149,22 +184,7 @@ export const communityPosts = [
       },
     ],
   },
-  {
-    id: "engagement-with-ward-leaders",
-    title: "Engagement with Ward Leaders",
-    body: [
-      "NDC Cross River Deputy Governor Candidate,  Dr. Stella Charles Archibong engages with ward leaders in a constructive dialogue focused on strengthening grassroots connections, listening to local perspectives and deepening understanding of the priorities of communities across Cross River.",
-      "The engagement reflects the importance of working closely with people at the grassroots in building a more inclusive and responsive approach to governance.",
-    ],
-    images: [
-      {
-        src: "/brand/community/engagement-with-ward-leaders.png",
-        width: 1127,
-        height: 1396,
-        alt: "Engagement with Ward Leaders",
-      },
-    ],
-  },
+  ...(wardLeadersPost ? [wardLeadersPost] : []),
   {
     id: "a-meeting-of-purpose",
     title: "A Meeting of Purpose",
@@ -187,7 +207,9 @@ export const communityPosts = [
     body: [
       "The NDC Cross River Listening tour brings the party closer to the grassroots, creating opportunities to engage directly with ward members across the state.",
       "Through these conversations, ward members share their experiences, concerns, and aspirations, helping to ensure that the voices of communities remain central to the conversation about Cross River’s future.",
-      "The Odey-Archibong campaign is committed to listening, engaging and building One People, One Cross River together.",
+      process.env.NEXT_PUBLIC_SHOW_STELLA === "true"
+        ? "The Odey-Archibong campaign is committed to listening, engaging and building One People, One Cross River together."
+        : "The campaign is committed to listening, engaging and building One People, One Cross River together.",
     ],
     images: [
       {
@@ -198,7 +220,7 @@ export const communityPosts = [
       },
     ],
   },
-] as const satisfies readonly CommunityPost[];
+] satisfies readonly CommunityPost[];
 
 const pvcCollectionNotice = {
   id: "your-vote-your-power",
@@ -230,7 +252,9 @@ const pvcCollectionNotice = {
   ],
   hashtags: [
     "#NDC",
-    "#odeyarchibong2027",
+    ...(process.env.NEXT_PUBLIC_SHOW_STELLA === "true"
+      ? (["#odeyarchibong2027"] as const)
+      : []),
     "#NigeriaDemocraticCongress",
     "#YourVoiceYourPower",
   ],

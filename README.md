@@ -10,7 +10,7 @@ Stack: **Next.js App Router + TypeScript + Tailwind CSS v4 + pnpm**. Join/contac
 |---|---|
 | `/` | Home — A Fresh Start |
 | `/john-upan-odey` | Who is JUO |
-| `/odey-archibong` | Odey Archibong story |
+| `/odey-archibong` | Ticket story (redirects home while `SHOW_STELLA` in `lib/campaign-flags.ts` is false) |
 | `/vision` | Official Vision and Mission |
 | `/policies` | Policy pillars stub |
 | `/manifesto` | Manifesto excerpts (PDF pending IVA-17) |

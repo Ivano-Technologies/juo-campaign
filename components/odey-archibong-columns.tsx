@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { stellaOfficialPortrait4x5 } from "@/lib/archibong";
 import { brand } from "@/lib/brand";
 
 type OdeyArchibongColumnsProps = {
@@ -112,8 +113,8 @@ export function OdeyArchibongColumns({
         </figure>
         <figure className="relative aspect-[4/5] overflow-hidden border border-line bg-brand-blue">
           <Image
-            src={brand.portraits.stellaOfficial4x5.src}
-            alt="Apostle Dr. Stella Charles Archibong"
+            src={stellaOfficialPortrait4x5.src}
+            alt={stellaOfficialPortrait4x5.alt}
             fill
             sizes="(min-width: 1024px) 28rem, 100vw"
             className="object-cover object-center"

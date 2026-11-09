@@ -6,7 +6,9 @@ export const postersPath = "/posters" as const;
 export const postersPageTitle = pageSeoTitle("Campaign Poster Gallery");
 
 export const postersPageDescription =
-  "Official John Upan Odey campaign posters, with Odey-Archibong ticket posters below. Portraits live on the Photo Gallery.";
+  process.env.NEXT_PUBLIC_SHOW_STELLA === "true"
+  ? "Official John Upan Odey campaign posters, with Odey-Archibong ticket posters below. Portraits live on the Photo Gallery."
+  : "Official John Upan Odey campaign posters. Portraits live on the Photo Gallery.";
 
 const baPosterSize = {
   width: 1241,
@@ -77,17 +79,6 @@ const johnFreshStartPoster = {
   alt: "Official campaign poster: A Fresh Start, building opportunities in every community. John Upan Odey for Governor, Cross River State 2027.",
 } as const;
 
-const johnKwankwasoPoster = {
-  id: "white-poster-kwankwaso",
-  src: "/brand/white-poster-kwankwaso.jpg",
-  avif: "/brand/white-poster-kwankwaso.avif",
-  webp: "/brand/white-poster-kwankwaso.webp",
-  width: 1416,
-  height: 2000,
-  title: "Vote Odey-Archibong",
-  alt: "Official campaign poster: A Fresh Start, One People, One Cross River. Peter Obi, NDC presidential candidate; John Upan Odey for governor; Dr Stella Charles Archibong for deputy governor; Rabiu Kwankwaso, NDC vice presidential candidate. Vote Odey-Archibong for Cross River State, Nigeria 2027.",
-} as const;
-
 const johnPvcCollectionPoster = {
   id: "pvc-collection",
   src: "/brand/pvc-collection.jpg",
@@ -100,98 +91,125 @@ const johnPvcCollectionPoster = {
 } as const;
 
 
-const chrisOfficialPosterBlue = {
-  id: "chris-official-poster-blue",
-  src: "/brand/chris-official/official-poster-blue.png",
-  width: 2706,
-  height: 3605,
-  title: "Official Poster Blue",
-  alt: "Official campaign poster Blue: A Fresh Start, One People One Cross River. Peter Gregory Obi for President, John Upan Odey for Governor, Dr Stella Charles Archibong for Deputy Governor. Vote Odey-Archibong for Cross River State, Nigeria 2027.",
-} as const;
+function stellaTicketPosters() {
+  if (process.env.NEXT_PUBLIC_SHOW_STELLA !== "true") {
+    return null;
+  }
 
-const chrisOfficialPosterWhite = {
-  id: "chris-official-poster-white",
-  src: "/brand/chris-official/official-poster-white.png",
-  width: 2706,
-  height: 3605,
-  title: "Official Poster White",
-  alt: "Official campaign poster White: A Fresh Start, One People One Cross River. Peter Gregory Obi for President, John Upan Odey for Governor, Dr Stella Charles Archibong for Deputy Governor. Odey-Archibong for Cross River State, Nigeria 2027.",
-} as const;
+  const johnKwankwasoPoster = {
+    id: "white-poster-kwankwaso",
+    src: "/brand/white-poster-kwankwaso.jpg",
+    avif: "/brand/white-poster-kwankwaso.avif",
+    webp: "/brand/white-poster-kwankwaso.webp",
+    width: 1416,
+    height: 2000,
+    title: "Vote Odey-Archibong",
+    alt: "Official campaign poster: A Fresh Start, One People, One Cross River. Peter Obi, NDC presidential candidate; John Upan Odey for governor; Dr Stella Charles Archibong for deputy governor; Rabiu Kwankwaso, NDC vice presidential candidate. Vote Odey-Archibong for Cross River State, Nigeria 2027.",
+  } as const;
 
-const chrisOfficialPoster4 = {
-  id: "chris-official-poster-4",
-  src: "/brand/chris-official/official-poster-4.png",
-  width: 2485,
-  height: 3513,
-  title: "Official Poster 4",
-  alt: "Official campaign poster 4: A Fresh Start, One People One Cross River. John Upan Odey for Governor with Dr Stella Charles Archibong for Deputy Governor. Vote Odey-Archibong for Cross River State, Nigeria 2027.",
-} as const;
+  const chrisOfficialPosterBlue = {
+    id: "chris-official-poster-blue",
+    src: "/brand/chris-official/official-poster-blue.png",
+    width: 2706,
+    height: 3605,
+    title: "Official Poster Blue",
+    alt: "Official campaign poster Blue: A Fresh Start, One People One Cross River. Peter Gregory Obi for President, John Upan Odey for Governor, Dr Stella Charles Archibong for Deputy Governor. Vote Odey-Archibong for Cross River State, Nigeria 2027.",
+  } as const;
 
-const odeyArchibongTicketPoster = {
-  id: "official-poster-1",
-  src: brand.marks.officialPoster,
-  width: 2174,
-  height: 2892,
-  title: "Vote Odey-Archibong",
-  alt: "Official campaign poster: A Fresh Start, One People One Cross River. John Upan Odey for Governor with Dr Stella Charles Archibong for Deputy Governor.",
-} as const;
+  const chrisOfficialPosterWhite = {
+    id: "chris-official-poster-white",
+    src: "/brand/chris-official/official-poster-white.png",
+    width: 2706,
+    height: 3605,
+    title: "Official Poster White",
+    alt: "Official campaign poster White: A Fresh Start, One People One Cross River. Peter Gregory Obi for President, John Upan Odey for Governor, Dr Stella Charles Archibong for Deputy Governor. Odey-Archibong for Cross River State, Nigeria 2027.",
+  } as const;
 
-const odeyArchibongPoster4 = {
-  id: "odey-archibong-poster-4",
-  src: "/brand/odey-archibong-poster-4.png",
-  width: 1083,
-  height: 1452,
-  title: "A Fresh Start",
-  alt: "Official campaign poster: A Fresh Start, One People One Cross River. John Upan Odey for Governor with Dr Stella Charles Archibong for Deputy Governor.",
-} as const;
+  const chrisOfficialPoster4 = {
+    id: "chris-official-poster-4",
+    src: "/brand/chris-official/official-poster-4.png",
+    width: 2485,
+    height: 3513,
+    title: "Official Poster 4",
+    alt: "Official campaign poster 4: A Fresh Start, One People One Cross River. John Upan Odey for Governor with Dr Stella Charles Archibong for Deputy Governor. Vote Odey-Archibong for Cross River State, Nigeria 2027.",
+  } as const;
 
-const odeyArchibongPoster5 = {
-  id: "odey-archibong-poster-5",
-  src: "/brand/odey-archibong-poster-5.png",
-  width: 1087,
-  height: 1447,
-  title: "One People, One Cross River",
-  alt: "Official campaign poster: A Fresh Start, One People One Cross River. John Upan Odey for Governor with Dr Stella Charles Archibong for Deputy Governor.",
-} as const;
+  const odeyArchibongTicketPoster = {
+    id: "official-poster-1",
+    src: brand.marks.officialPoster,
+    width: 2174,
+    height: 2892,
+    title: "Vote Odey-Archibong",
+    alt: "Official campaign poster: A Fresh Start, One People One Cross River. John Upan Odey for Governor with Dr Stella Charles Archibong for Deputy Governor.",
+  } as const;
 
-const odeyArchibongPoster6 = {
-  id: "odey-archibong-poster-6",
-  src: "/brand/odey-archibong-poster-6.png",
-  width: 1083,
-  height: 1452,
-  title: "A New Cross River is Possible",
-  alt: "Official campaign poster: A New Cross River is Possible, every community matters. John Upan Odey for Governor with Dr Stella Charles Archibong for Deputy Governor.",
-} as const;
+  const odeyArchibongPoster4 = {
+    id: "odey-archibong-poster-4",
+    src: "/brand/odey-archibong-poster-4.png",
+    width: 1083,
+    height: 1452,
+    title: "A Fresh Start",
+    alt: "Official campaign poster: A Fresh Start, One People One Cross River. John Upan Odey for Governor with Dr Stella Charles Archibong for Deputy Governor.",
+  } as const;
+
+  const odeyArchibongPoster5 = {
+    id: "odey-archibong-poster-5",
+    src: "/brand/odey-archibong-poster-5.png",
+    width: 1087,
+    height: 1447,
+    title: "One People, One Cross River",
+    alt: "Official campaign poster: A Fresh Start, One People One Cross River. John Upan Odey for Governor with Dr Stella Charles Archibong for Deputy Governor.",
+  } as const;
+
+  const odeyArchibongPoster6 = {
+    id: "odey-archibong-poster-6",
+    src: "/brand/odey-archibong-poster-6.png",
+    width: 1083,
+    height: 1452,
+    title: "A New Cross River is Possible",
+    alt: "Official campaign poster: A New Cross River is Possible, every community matters. John Upan Odey for Governor with Dr Stella Charles Archibong for Deputy Governor.",
+  } as const;
+
+  return {
+    johnKwankwasoPoster,
+    ticketPosters: [
+      chrisOfficialPosterBlue,
+      chrisOfficialPosterWhite,
+      chrisOfficialPoster4,
+      odeyArchibongTicketPoster,
+      odeyArchibongPoster4,
+      odeyArchibongPoster5,
+      odeyArchibongPoster6,
+    ],
+    homeTicketPoster: odeyArchibongTicketPoster,
+  };
+}
+
+const stellaPosters = stellaTicketPosters();
 
 /** John's posters — Poster Gallery first. */
 export const johnCampaignPosters = [
   johnRisingPoster,
   johnOnePeoplePoster,
   johnFreshStartPoster,
-  johnKwankwasoPoster,
+  ...(stellaPosters ? [stellaPosters.johnKwankwasoPoster] : []),
   johnPvcCollectionPoster,
-] as const;
+];
 
-/** Odey Archibong ticket posters — Poster Gallery below John's. */
-export const odeyArchibongCampaignPosters = [
-  chrisOfficialPosterBlue,
-  chrisOfficialPosterWhite,
-  chrisOfficialPoster4,
-  odeyArchibongTicketPoster,
-  odeyArchibongPoster4,
-  odeyArchibongPoster5,
-  odeyArchibongPoster6,
-] as const;
+/** Ticket posters — Poster Gallery below John's. Hidden when SHOW_STELLA is off. */
+export const ticketCampaignPosters = stellaPosters
+  ? stellaPosters.ticketPosters
+  : [];
 
 /**
- * Home preview keeps the live BA pair plus the ticket poster.
+ * Home preview keeps the live BA pair plus the ticket poster when shown.
  * The red-cap Fresh Start poster is on /posters only.
  */
 export const officialPosters = [
   johnRisingPoster,
   johnOnePeoplePoster,
-  odeyArchibongTicketPoster,
-] as const;
+  ...(stellaPosters ? [stellaPosters.homeTicketPoster] : []),
+];
 
 export type OfficialPoster = (typeof officialPosters)[number];
 export type OfficialBrandedPortrait = (typeof officialBrandedPortraits)[number];

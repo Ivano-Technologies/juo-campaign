@@ -30,7 +30,14 @@ const publicPages: readonly {
   { path: "/manifesto", lastModified: "2026-10-03T12:42:59Z" }, // lib/manifesto.ts (IVA-98)
   { path: "/vision", lastModified: "2026-09-29T12:43:41+01:00" }, // app/vision/page.tsx (c1b60f7)
   { path: "/john-upan-odey", lastModified: "2026-10-03T12:42:59Z" }, // app/john-upan-odey/page.tsx (IVA-98)
-  { path: "/odey-archibong", lastModified: "2026-09-23T02:51:33Z" }, // app/odey-archibong/page.tsx (3d18f98)
+  ...(process.env.NEXT_PUBLIC_SHOW_STELLA === "true"
+    ? [
+        {
+          path: "/odey-archibong",
+          lastModified: "2026-09-23T02:51:33Z",
+        },
+      ]
+    : []),
   { path: "/meet-your-reps", lastModified: "2026-09-29T12:43:41+01:00" }, // page + lib/reps.ts (c1b60f7)
   { path: "/diaspora-connect", lastModified: "2026-09-29T12:43:41+01:00" }, // lib/diaspora.ts (c1b60f7)
   { path: "/news", lastModified: "2026-09-29T12:43:41+01:00" }, // lib/news.ts (c1b60f7)

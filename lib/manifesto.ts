@@ -193,7 +193,9 @@ export const manifestoExcerpts = [
       "A Fresh Start describes a model in which young people can contribute their creativity, ideas and expertise through policy development, community engagement, enterprise, technology and agriculture.",
       "It is a vision of a state where hard work is rewarded, vulnerable people are protected, young people can pursue meaningful opportunities, and every community has a place in Cross River's future.",
       "The future of Cross River should be something its people build, not something they wait for.",
-      "ODEY-ARCHIBONG 2027",
+      process.env.NEXT_PUBLIC_SHOW_STELLA === "true"
+        ? "ODEY-ARCHIBONG 2027"
+        : "JOHN UPAN ODEY 2027",
     ],
   },
 ] as const;

@@ -15,7 +15,7 @@ export const brand = {
   },
   /**
    * IVA-134 homepage challenges pane — campaign poster (vote governor).
-   * Prefer this over portraits.official so Odey Archibong / photos keep the
+   * Prefer this over portraits.official so the ticket and photo pages keep the
    * come-to-serve portrait.
    */
   homepagePoster: {
@@ -25,7 +25,7 @@ export const brand = {
     height: 2129,
   },
   /**
-   * Come-to-serve portrait for Odey Archibong / photo registry.
+   * Come-to-serve portrait for the ticket page and photo registry.
    * Homepage challenges pane uses homepagePoster (IVA-134).
    */
   portraits: {
@@ -42,19 +42,6 @@ export const brand = {
       width: 1058,
       height: 1486,
     },
-    /** Hero watermark only. The body portrait is the centered 4:5 file. */
-    stellaOfficial: {
-      src: "/images/people/odey-archibong-stella-official.jpg",
-      alt: "Apostle Dr. Stella Charles Archibong",
-      width: 1079,
-      height: 1280,
-    },
-    stellaOfficial4x5: {
-      src: "/images/people/odey-archibong-stella-official-4x5.jpg",
-      alt: "Apostle Dr. Stella Charles Archibong",
-      width: 1024,
-      height: 1280,
-    },
   },
   /** Official files on disk that must not proliferate on live routes. */
   reserved: {
@@ -63,15 +50,19 @@ export const brand = {
       "/brand/juo-official-2.jpg",
       "/brand/juo-official-3.jpg",
     ],
-    deputy: ["/brand/madam-deputy-1.jpg", "/brand/madam-deputy-2.jpg"],
+    deputy:
+      process.env.NEXT_PUBLIC_SHOW_STELLA === "true"
+        ? ["/brand/madam-deputy-1.jpg", "/brand/madam-deputy-2.jpg"]
+        : [],
   },
   serveLine: "I COME TO SERVE",
   sloganLead: "A FRESH START…",
   sloganLockup: "ONE PEOPLE, ONE CROSS RIVER",
   slogan: "A FRESH START… ONE PEOPLE, ONE CROSS RIVER",
   hashtags: [
-    "#OdeyArchibong2027",
-    "#VoteOdeyArchibong2027",
+    ...(process.env.NEXT_PUBLIC_SHOW_STELLA === "true"
+      ? (["#OdeyArchibong2027", "#VoteOdeyArchibong2027"] as const)
+      : []),
     "#AFreshStart",
     "#OnePeople",
     "#OneCrossRiver",

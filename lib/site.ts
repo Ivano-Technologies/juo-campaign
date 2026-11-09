@@ -68,14 +68,16 @@ export const footerQuickLinks = [
 
 export const footerAboutLinks = [
   { href: "/john-upan-odey", label: "Who is JUO" },
-  { href: "/odey-archibong", label: "Odey-Archibong" },
+  ...(process.env.NEXT_PUBLIC_SHOW_STELLA === "true"
+    ? ([{ href: "/odey-archibong", label: "Odey-Archibong" }] as const)
+    : []),
   { href: "/contact", label: "Contact" },
   { href: "/news", label: "News" },
   { href: "/manifesto", label: "Manifesto" },
   { href: "/privacy", label: "Privacy Notice" },
   { href: "/terms", label: "Terms of Use" },
   { href: "/cookies", label: "Cookie Notice" },
-] as const;
+];
 
 export const socialLinks = [
   {

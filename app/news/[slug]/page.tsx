@@ -11,6 +11,7 @@ import {
   newsPosts,
 } from "@/lib/community";
 import { pageShareTags } from "@/lib/page-seo";
+import { canonicalOrigin } from "@/lib/site";
 
 type NewsDetailPageProps = {
   params: Promise<{ slug: string }>;
@@ -31,13 +32,21 @@ export async function generateMetadata({
 
   const title = communityPostSeoTitle(post.title);
   const description = post.body[0] ?? post.title;
+  const shareImage = post.ogImage
+    ? {
+        url: `${canonicalOrigin}${post.ogImage.src}`,
+        width: post.ogImage.width,
+        height: post.ogImage.height,
+        alt: post.ogImage.alt,
+      }
+    : undefined;
 
   return {
     title: {
       absolute: title,
     },
     description,
-    ...pageShareTags(title, description, communityPostPath(post.id)),
+    ...pageShareTags(title, description, communityPostPath(post.id), shareImage),
   };
 }
 

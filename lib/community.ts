@@ -39,6 +39,7 @@ export type CommunityPost = {
   watch?: CommunityWatch;
   close?: CommunityClose;
   hashtags?: readonly string[];
+  ogImage?: CommunityImage;
 };
 
 function stellaSouthernChairmenImages(): readonly CommunityImage[] {
@@ -93,7 +94,43 @@ function stellaWardLeadersPost(): CommunityPost | null {
 
 const wardLeadersPost = stellaWardLeadersPost();
 
+const newsCentralPoster = {
+  src: "/brand/news/apc-has-failed-nigerians-poster.jpg",
+  width: 1280,
+  height: 720,
+  alt: "News Central interview with John Upan Odey video thumbnail.",
+} as const satisfies CommunityImage;
+
+const apcHasFailedNigeriansPost = {
+  id: "apc-has-failed-nigerians",
+  title: "APC HAS FAILED NIGERIANS!",
+  dateline: "24 November 2026",
+  body: [
+    "In a headline-making interview on News Central today, John Upan Odey, Governorship Candidate of the Nigeria Democratic Congress (NDC) in Cross River State, addressed governance, accountability and transparency.",
+    "He argued that Cross River needs a government that is transparent, accountable to its citizens and responsive to their needs.",
+    "He also criticised the All Progressives Congress (APC), declaring that Nigerians deserve answers on the state of governance.",
+    "Watch the interview. The conversation is about governance, transparency and the future of Cross River State.",
+  ],
+  images: [],
+  watch: {
+    url: "https://youtu.be/5GTz1N7oVr8",
+    embedSrc: "https://www.youtube-nocookie.com/embed/5GTz1N7oVr8",
+    poster: newsCentralPoster,
+    label: "Watch the interview.",
+  },
+  hashtags: [
+    "#JohnUpanOdey",
+    "#NewsCentral",
+    "#CrossRiver2027",
+    "#NDC",
+    "#Governance",
+    "#Accountability",
+  ],
+  ogImage: newsCentralPoster,
+} as const satisfies CommunityPost;
+
 export const communityPosts = [
+  apcHasFailedNigeriansPost,
   {
     id: "meeting-with-ndc-chapter-chairmen-southern-senatorial-district",
     title: "Meeting with NDC Chapter Chairmen, Southern Senatorial District",
@@ -261,7 +298,11 @@ const pvcCollectionNotice = {
 } as const satisfies CommunityPost;
 
 /** News index and story pages. Homepage community gallery stays on communityPosts. */
-export const newsPosts = [pvcCollectionNotice, ...communityPosts] as const satisfies readonly CommunityPost[];
+export const newsPosts = [
+  apcHasFailedNigeriansPost,
+  pvcCollectionNotice,
+  ...communityPosts.filter((post) => post.id !== apcHasFailedNigeriansPost.id),
+] as const satisfies readonly CommunityPost[];
 
 export function communityPostPath(id: string): `/news/${string}` {
   return `/news/${id}`;
